@@ -1,0 +1,32 @@
+button: dialog.png
+	background: 1,1,126,126
+	border-r: 127,1,1,126
+	border-l: 0,1,1,126
+	border-b: 1,127,126,1
+	border-t: 1,0,126,1
+	corner-tl: 0,0,1,1
+	corner-tr: 127,0,1,1
+	corner-bl: 0,127,1,1
+	corner-br: 127,127,1,1
+
+button-hover: dialog.png
+	background: 1,129,126,126
+	border-r: 127,129,1,126
+	border-l: 0,129,1,126
+	border-b: 1,255,126,1
+	border-t: 1,128,126,1
+	corner-tl: 0,128,1,1
+	corner-tr: 126,128,1,1
+	corner-bl: 1,255,1,1
+	corner-br: 127,255,1,1
+
+button-pressed: dialog.png
+	background: 129,1,126,126
+	border-r: 255,1,1,126
+	border-l: 128,1,1,126
+	border-b: 129,127,126,1
+	border-t: 129,0,126,1
+	corner-tl: 128,0,1,1
+	corner-tr: 255,0,1,1
+	corner-bl: 128,127,1,1
+	corner-br: 255,127,1,1

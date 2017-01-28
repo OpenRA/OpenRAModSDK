@@ -1,0 +1,71 @@
+Metadata:
+	Title: Example mod
+	Description: Illustrates the mod development scripts
+	Version: {DEV_VERSION}
+	Author: the OpenRA Developers
+
+RequiresMods:
+
+Packages:
+	.
+	$example: example
+	./mods/common: common
+	example|bits
+
+MapFolders:
+	example|maps: System
+
+Rules:
+	example|rules.yaml
+
+TileSets:
+	example|tileset.yaml
+
+Cursors:
+	example|cursor.yaml
+
+Chrome:
+	example|chrome.yaml
+
+Assemblies:
+	common|OpenRA.Mods.Common.dll
+	example|OpenRA.Mods.Example.dll
+
+ChromeLayout:
+	example|mainmenu.yaml
+
+Notifications:
+	example|notifications.yaml
+
+Translations:
+	example|english.yaml
+
+LoadScreen: BlankLoadScreen
+
+ServerTraits:
+	LobbyCommands
+	PlayerPinger
+	MasterServerPinger
+	LobbySettingsNotification
+
+ChromeMetrics:
+	common|metrics.yaml
+
+Fonts:
+	Bold:
+		Font: common|FreeSansBold.ttf
+		Size:14
+
+MapGrid:
+	TileSize: 32, 32
+	Type: Rectangular
+
+SpriteFormats: ShpTS
+
+SpriteSequenceFormat: DefaultSpriteSequence
+
+GameSpeeds:
+	default:
+		Name: Normal
+		Timestep: 40
+		OrderLatency: 3

@@ -1,0 +1,19 @@
+World:
+	PaletteFromCurrentTileset:
+		Name: terrain
+	AlwaysVisible:
+	ActorMap:
+	ScreenMap:
+	LoadWidgetAtGameStart:
+
+Player:
+	AlwaysVisible:
+	TechTree:
+	PlaceBuilding:
+	SupportPowerManager:
+	PowerManager:
+	PlayerResources:
+	ActorGroupProxy:
+	DeveloperMode:
+	Shroud:
+	FrozenActorLayer:

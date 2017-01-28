@@ -1,0 +1,18 @@
+General:
+	Name: Template
+	Id: TEMPLATE
+	Palette: template.pal
+	PlayerPalette: template.pal
+
+Terrain:
+	TerrainType@Clear:
+		Type: Clear
+
+Templates:
+	Template@255:
+		Id: 255
+		Images: blank.shp
+		Size: 1,1
+		Category: Terrain
+		Tiles:
+			0: Clear
