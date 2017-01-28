@@ -28,6 +28,10 @@ If you don't plan on including any custom C# logic in your mod then you should d
 Run the `launch-mod.sh` (Linux/macOS) or `TODO` (Windows) scripts to run your mod in development mode.
 Before you run this for the first time you must fetch and compile the engine code by running the `TODO` (Linux/macOS) or `TODO` (Windows) script.
 
+The first run scripts will automate the following:
+   * `git submodule update --init`
+   * `cd engine && make dependencies && make`
+
 ### Packaging your mod for distribution
 
 When you are ready to share your mod with other players you have two options:
