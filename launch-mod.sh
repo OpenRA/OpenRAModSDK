@@ -5,7 +5,7 @@ MODID="example"
 
 # Don't edit below this line
 MODLAUNCHER=$(python -c "import os; print(os.path.realpath('$0'))")
-MODROOT=$(dirname $MODLAUNCHER)
+MODROOT=$(dirname "$MODLAUNCHER")
 
 cd engine
 # TODO: Remove ./mods from the search path after we deprecate cross-mod references

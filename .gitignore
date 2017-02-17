@@ -1,0 +1,12 @@
+bin
+obj
+mods/*/*.dll
+mods/*/*.mdb
+mods/*/*.pdb
+/*.dll
+/*.dll.config
+/*.so
+/*.dylib
+/*.pdb
+/*.mdb
+/*.exe
