@@ -13,7 +13,6 @@ Player:
 	SupportPowerManager:
 	PowerManager:
 	PlayerResources:
-	ActorGroupProxy:
 	DeveloperMode:
 	Shroud:
 	FrozenActorLayer:

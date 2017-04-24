@@ -1,10 +1,6 @@
 Metadata:
 	Title: Example mod
-	Description: Illustrates the mod development scripts
 	Version: {DEV_VERSION}
-	Author: the OpenRA Developers
-
-RequiresMods:
 
 Packages:
 	.
