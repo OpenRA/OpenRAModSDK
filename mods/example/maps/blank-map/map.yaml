@@ -2,7 +2,7 @@ MapFormat: 11
 
 RequiresMod: example
 
-Title: Blank Shellmap
+Title: Placeholder Map
 
 Author:
 
@@ -12,9 +12,9 @@ MapSize: 5,5
 
 Bounds: 1,1,1,1
 
-Visibility: Shellmap
+Visibility: Shellmap, Lobby
 
-Categories: Shellmap
+Categories: Maps
 
 Players:
 	PlayerReference@Neutral:
