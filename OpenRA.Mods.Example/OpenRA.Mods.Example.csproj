@@ -38,14 +38,6 @@
         <HintPath>..\engine\thirdparty\download\Eluant.dll</HintPath>
         <Private>False</Private>
       </Reference>
-      <Reference Include="OpenRA.Game">
-		<HintPath>..\engine\OpenRA.Game.exe</HintPath>
-        <Private>False</Private>
-      </Reference>
-      <Reference Include="OpenRA.Mods.Common">
-		<HintPath>..\engine\mods\common\OpenRA.Mods.Common.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Widgets\Logic\TemplateMenuLogic.cs" />
@@ -53,6 +45,18 @@
   <ItemGroup>
     <Folder Include="Widgets\" />
     <Folder Include="Widgets\Logic\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\engine\OpenRA.Mods.Common\OpenRA.Mods.Common.csproj">
+      <Project>{FE6C8CC0-2F07-442A-B29F-17617B3B7FC6}</Project>
+      <Name>OpenRA.Mods.Common</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\engine\OpenRA.Game\OpenRA.Game.csproj">
+      <Project>{0DFB103F-2962-400F-8C6D-E2C28CCBA633}</Project>
+      <Name>OpenRA.Game</Name>
+      <Private>False</Private>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterBuild">
