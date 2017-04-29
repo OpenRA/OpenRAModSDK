@@ -5,27 +5,26 @@ This repository contains a bare development environment for creating a new mod/g
 ### Creating a new mod
 
 The `example` mod included in this repository provides the bare minimum structure to launch to the in-game main menu for the sole purpose of demonstrating the environment.
-It is not recommended or supported to use this as the basis of a new OpenRA mod.
 
-Instead, you should copy one of the default OpenRA mods from `engine/mods/` to the `mods` subdirectory and make the following changes:
+It is not recommended or supported to use the `example` mod as the basis for a new OpenRA mod; you should instead adapt one of the official mods using the following procedure:
 * Delete the `mods/example` directory.
 * Choose one of the default OpenRA mods to use as a base for your mod.  In this example we will assume you are copying `cnc`.
 * Choose a new internal name / id for you mod.  In this example we will assume you are using `mynewmod`.
 * Copy `engine/mods/cnc` to `mods/mynewmod`.
 * Open `mods/mynewmod/mod.yaml` and make the following changes:
-   * In the `Metadata` section set your mod title, version, and author.
+   * In the `Metadata` section set your mod title and version.
    * In the `Packaging` section replace `$cnc: cnc` with `$mynewmod: mynewmod`.  This tells OpenRA that the explicit mount `mymod` should refer to the root of your mod package.
    * Change all lines that start with `cnc|` to `mynewmod|`.  This updates the explicit mount references to account for the change that you have just made above.
-* Open `launch-mod.sh` and replace `MODID="template"` near the top of the file with `MODID="mynewmod"`.
+* Open `mod.config` and replace `MOD_ID="example"` near the top of the file with `MOD_ID="mynewmod"`.
 
 You should now have a functioning stand-alone clone of the `cnc` mod that you can adapt / replace piece by piece with your own project.
 
-If you don't plan on including any custom C# logic in your mod then you should delete `OpenRA.Mods.Example.sln` and the `OpenRA.Mods.Example` directory. If you do plan on including custom logic, then you will need to make some futher changes:
+If you don't plan on including any custom C# logic in your mod then you should delete `ExampleMod.sln`, `OpenRA.Mods.Example.sln`, and the `OpenRA.Mods.Example` directory. If you do plan on including custom logic, then you will need to make some futher changes:
    * TODO: Explain updating the GUIDs, project name, and changing the build output to `mods/mynewmod/`
 
 ### Developing / running your in-development mod
 
-Run the `launch-mod.sh` (Linux/macOS) or `TODO` (Windows) scripts to run your mod in development mode.
+Run the `launch-game.sh` (Linux/macOS) or `launch-game.cmd` (Windows) scripts to run your mod in development mode.
 Before you run this for the first time you must fetch and compile the engine code by running the `TODO` (Linux/macOS) or `TODO` (Windows) script.
 
 The first run scripts will automate the following:
