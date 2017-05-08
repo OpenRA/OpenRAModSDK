@@ -19,7 +19,7 @@ It is not recommended or supported to use the `example` mod as the basis for a n
 
 You should now have a functioning stand-alone clone of the `cnc` mod that you can adapt / replace piece by piece with your own project.
 
-If you don't plan on including any custom C# logic in your mod then you should delete `ExampleMod.sln`, `OpenRA.Mods.Example.sln`, and the `OpenRA.Mods.Example` directory. If you do plan on including custom logic, then you will need to make some futher changes:
+If you don't plan on including any custom C# logic in your mod then you should delete `ExampleMod.sln` and the `OpenRA.Mods.Example` directory. If you do plan on including custom logic, then you will need to make some futher changes:
    * TODO: Explain updating the GUIDs, project name, and changing the build output to `mods/mynewmod/`
 
 ### Developing / running your in-development mod
