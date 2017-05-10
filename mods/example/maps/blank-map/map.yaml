@@ -4,7 +4,7 @@ RequiresMod: example
 
 Title: Placeholder Map
 
-Author:
+Author: Example Mod author
 
 Tileset: TEMPLATE
 
@@ -21,6 +21,6 @@ Players:
 		Name: Neutral
 		OwnsWorld: True
 		NonCombatant: True
-		Faction: Random
+		Faction: example
 
 Actors:

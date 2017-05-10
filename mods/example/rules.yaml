@@ -5,6 +5,11 @@ World:
 	ActorMap:
 	ScreenMap:
 	LoadWidgetAtGameStart:
+	Faction@0:
+		Name: Example
+		InternalName: example
+		Side: Example
+		Selectable: False
 
 Player:
 	AlwaysVisible:
