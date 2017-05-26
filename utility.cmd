@@ -20,7 +20,7 @@ echo Press enter to view a list of valid utility commands.
 echo.
 
 set /P command=Please enter a command: OpenRA.Utility.exe %MOD_ID% 
-if /I "%command%" EQU "--exit" (exit)
+if /I "%command%" EQU "--exit" (cd .. & exit /b)
 echo.
 echo ----------------------------------------
 echo.
