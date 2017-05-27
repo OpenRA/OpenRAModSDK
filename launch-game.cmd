@@ -11,7 +11,8 @@ set MOD_SEARCH_PATHS=%MOD_SEARCH_PATHS%,./mods
 cd engine
 OpenRA.Game.exe Game.Mod=%MOD_ID% Engine.LaunchPath="%TEMPLATE_LAUNCHER%" "Engine.ModSearchPaths=%MOD_SEARCH_PATHS%"  "%*"
 if %errorlevel% neq 0 goto crashdialog
-exit
+cd ..
+exit /b
 :crashdialog
 echo ----------------------------------------
 echo OpenRA has encountered a fatal error.

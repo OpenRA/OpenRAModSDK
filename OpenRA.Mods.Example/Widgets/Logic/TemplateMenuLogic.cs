@@ -9,8 +9,8 @@
  */
 #endregion
 
-using OpenRA.Widgets;
 using OpenRA.Mods.Common.Widgets;
+using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Example.Widgets.Logic
 {

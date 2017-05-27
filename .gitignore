@@ -10,3 +10,6 @@ mods/*/*.pdb
 /*.pdb
 /*.mdb
 /*.exe
+DOCUMENTATION.md
+Lua-API.md
+StyleCopViolations.xml
