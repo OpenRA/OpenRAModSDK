@@ -5,7 +5,7 @@
 
 TEMPLATE_LAUNCHER=$(python -c "import os; print(os.path.realpath('$0'))")
 TEMPLATE_ROOT=$(dirname "${TEMPLATE_LAUNCHER}")
-source ${TEMPLATE_ROOT}/mod.config
+. "${TEMPLATE_ROOT}/mod.config"
 
 MOD_SEARCH_PATHS="${TEMPLATE_ROOT}/mods"
 if [ "${INCLUDE_DEFAULT_MODS}" = "True" ]; then
@@ -15,4 +15,4 @@ fi
 LAUNCH_MOD="${Mod:-"${MOD_ID}"}"
 
 cd engine
-MOD_SEARCH_PATHS="${MOD_SEARCH_PATHS}" mono --debug OpenRA.Utility.exe ${LAUNCH_MOD} $@
+MOD_SEARCH_PATHS="${MOD_SEARCH_PATHS}" mono --debug OpenRA.Utility.exe "${LAUNCH_MOD}" "$@"
