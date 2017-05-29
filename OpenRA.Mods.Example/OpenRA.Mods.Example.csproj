@@ -66,8 +66,8 @@
         We need to copy OpenRA.Mods.Cnc.pdb (not `.dll.pdb`). This is only necessary on Windows.
         Mono outputs a `.dll.mdb` so we can just append `.mdb` directly.
     -->
-    <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(SolutionDir)mods/example/" Condition="'$(OS)' == 'Windows_NT'" />
-    <Copy SourceFiles="$(TargetPath).mdb" DestinationFolder="$(SolutionDir)mods/example/" Condition="'$(OS)' == 'Unix'" />
+    <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(SolutionDir)mods/example/" Condition="Exists('$(TargetDir)$(TargetName).pdb')" />
+    <Copy SourceFiles="$(TargetPath).mdb" DestinationFolder="$(SolutionDir)mods/example/" Condition="Exists('$(TargetPath).mdb')" />
     <!-- Uncomment these lines when debugging or adding to this target
     <Message Text="DEBUG OS:                     $(OS)"/>
     <Message Text="DEBUG SolutionDir:            $(SolutionDir)"/>
