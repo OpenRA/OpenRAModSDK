@@ -3,7 +3,7 @@
 ###############################################################
 ########################## FUNCTIONS ##########################
 ###############################################################
-function All-Command 
+function All-Command
 {
 	$msBuild = FindMSBuild
 	$msBuildArguments = "/t:Rebuild /nr:false"
@@ -25,7 +25,7 @@ function All-Command
 	}
 }
 
-function Clean-Command 
+function Clean-Command
 {
 	$msBuild = FindMSBuild
 	$msBuildArguments = "/t:Clean /nr:false"
@@ -48,7 +48,7 @@ function Clean-Command
 	}
 }
 
-function Version-Command 
+function Version-Command
 {
 	if ($command.Length -gt 1)
 	{
@@ -74,7 +74,7 @@ function Version-Command
 	{
 		echo "Unable to locate Git. The version will remain unchanged."
 	}
-	
+
 	if ($version -ne $null)
 	{
 		$mod = "mods/" + $modID + "/mod.yaml"
