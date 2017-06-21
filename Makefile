@@ -19,11 +19,14 @@
 #   make check
 #
 
-.PHONY: utility fetch-engine build build-engine clean clean-engine version check-scripts check test
+.PHONY: utility build clean engine version check-scripts check test
 .DEFAULT_GOAL := build
 
 VERSION = $(shell git name-rev --name-only --tags --no-undefined HEAD 2>/dev/null || echo git-`git rev-parse --short HEAD`)
 MOD_ID = $(shell awk -F= '/MOD_ID/ { print $$2 }' mod.config)
+ENGINE_DIRECTORY = $(shell awk -F= '/ENGINE_DIRECTORY/ { print $$2 }' mod.config)
+AUTOMATIC_ENGINE_MANAGEMENT = $(shell awk -F= '/AUTOMATIC_ENGINE_MANAGEMENT/ { print $$2 }' mod.config)
+
 INCLUDE_DEFAULT_MODS = $(shell awk -F= '/INCLUDE_DEFAULT_MODS/ { print $$2 }' mod.config)
 
 MOD_SEARCH_PATHS = "$(shell python -c "import os; print(os.path.realpath('.'))")/mods"
@@ -37,13 +40,14 @@ HAS_MSBUILD = $(shell command -v msbuild 2> /dev/null)
 HAS_LUAC = $(shell command -v luac 2> /dev/null)
 LUA_FILES = $(shell find mods/*/maps/* -iname '*.lua')
 
-utility:
-	@test -f engine/OpenRA.Utility.exe || (printf "OpenRA.Utility.exe not found! Build the engine first.\n"; exit 1)
+engine:
+	@./fetch-engine.sh || (printf "Unable to continue without engine files\n"; exit 1)
+	@cd $(ENGINE_DIRECTORY) && make core
 
-fetch-engine:
-	@test -f engine/OpenRA.sln || git submodule update --init
+utility: engine
+	@test -f "$(ENGINE_DIRECTORY)/OpenRA.Utility.exe" || (printf "OpenRA.Utility.exe not found!\n"; exit 1)
 
-build: build-engine
+build: engine
 ifeq ("$(HAS_MSBUILD)","")
 	@xbuild /nologo /verbosity:quiet /p:TreatWarningsAsErrors=true
 else
@@ -51,21 +55,15 @@ else
 endif
 	@printf "The mod logic has been built.\n"
 
-build-engine: fetch-engine
-	@cd engine && make
-	@printf "The engine has been built.\n"
-
-clean: clean-engine
+clean: engine
 ifeq ("$(HAS_MSBUILD)","")
 	@xbuild /nologo /verbosity:quiet /p:TreatWarningsAsErrors=true /t:Clean
 else
 	@msbuild /t:Clean /nr:false
 endif
-	@printf "The mod logic been cleaned.\n"
-
-clean-engine:
-	@cd engine && make clean
-	@printf "The engine directory has been cleaned.\n"
+	@printf "The mod logic has been cleaned.\n"
+	@cd $(ENGINE_DIRECTORY) && make clean
+	@printf "The engine has been cleaned.\n"
 
 version:
 	@awk '{sub("Version:.*$$","Version: $(VERSION)"); print $0}' $(MANIFEST_PATH) > $(MANIFEST_PATH).tmp && \
@@ -84,14 +82,11 @@ ifneq ("$(LUA_FILES)","")
 endif
 
 check: utility
-	@echo
 	@echo "Checking for explicit interface violations..."
-	@MOD_SEARCH_PATHS="${MOD_SEARCH_PATHS}" mono --debug engine/OpenRA.Utility.exe $(MOD_ID) --check-explicit-interfaces
-	@echo
+	@MOD_SEARCH_PATHS="$(MOD_SEARCH_PATHS)" mono --debug "$(ENGINE_DIRECTORY)/OpenRA.Utility.exe" $(MOD_ID) --check-explicit-interfaces
 	@echo "Checking for code style violations in OpenRA.Mods.$(MOD_ID)..."
-	@MOD_SEARCH_PATHS="${MOD_SEARCH_PATHS}" mono --debug engine/OpenRA.Utility.exe $(MOD_ID) --check-code-style OpenRA.Mods.$(MOD_ID)
+	@MOD_SEARCH_PATHS="$(MOD_SEARCH_PATHS)" mono --debug "$(ENGINE_DIRECTORY)/OpenRA.Utility.exe" $(MOD_ID) --check-code-style OpenRA.Mods.$(MOD_ID)
 
 test: utility
-	@echo
 	@echo "Testing $(MOD_ID) mod MiniYAML..."
-	@MOD_SEARCH_PATHS="${MOD_SEARCH_PATHS}" mono --debug engine/OpenRA.Utility.exe $(MOD_ID) --check-yaml
+	@MOD_SEARCH_PATHS="$(MOD_SEARCH_PATHS)" mono --debug "$(ENGINE_DIRECTORY)/OpenRA.Utility.exe" $(MOD_ID) --check-yaml

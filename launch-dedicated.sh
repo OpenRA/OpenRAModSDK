@@ -1,13 +1,18 @@
 #!/bin/sh
-# example launch script, see https://github.com/OpenRA/OpenRA/wiki/Dedicated for details
-
 # Usage:
 #  $ ./launch-dedicated.sh # Launch a dedicated server with default settings
-#  $ Mod="d2k" ./launch-dedicated.sh # Launch a dedicated server with default settings but override the Mod
+#  $ Mod="<mod id>" ./launch-dedicated.sh # Launch a dedicated server with default settings but override the Mod
 #  Read the file to see which settings you can override
+
+set -e
+command -v make >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires make."; exit 1; }
+command -v python >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires python."; exit 1; }
+command -v mono >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires mono."; exit 1; }
 
 TEMPLATE_LAUNCHER=$(python -c "import os; print(os.path.realpath('$0'))")
 TEMPLATE_ROOT=$(dirname "${TEMPLATE_LAUNCHER}")
+
+# shellcheck source=mod.config
 . "${TEMPLATE_ROOT}/mod.config"
 
 MOD_SEARCH_PATHS="${TEMPLATE_ROOT}/mods"
@@ -23,7 +28,14 @@ ADVERTISE_ONLINE="${AdvertiseOnline:-"True"}"
 ENABLE_SINGLE_PLAYER="${EnableSingleplayer:-"False"}"
 PASSWORD="${Password:-""}"
 
-cd engine
+cd "${TEMPLATE_ROOT}"
+if [ ! -f "${ENGINE_DIRECTORY}/OpenRA.Game.exe" ]; then
+	echo "Required engine files not found."
+	echo "Run \`make\` in the mod directory to fetch and build the required files, then try again.";
+	exit 1
+fi
+
+cd "${ENGINE_DIRECTORY}"
 
 while true; do
      MOD_SEARCH_PATHS="${MOD_SEARCH_PATHS}" mono --debug OpenRA.Server.exe Game.Mod="${LAUNCH_MOD}" \

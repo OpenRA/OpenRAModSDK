@@ -95,11 +95,10 @@ function Version-Command
 
 function Test-Command
 {
-	if (Test-Path ./engine/OpenRA.Utility.exe)
+	if (Test-Path $utilityPath)
 	{
-		$msg = "Testing " + $modID + " mod MiniYAML"
-		echo $msg
-		./engine/OpenRA.Utility.exe $modID --check-yaml
+		echo "Testing $modID mod MiniYAML"
+		Invoke-Expression "$utilityPath $modID --check-yaml"
 	}
 	else
 	{
@@ -109,14 +108,13 @@ function Test-Command
 
 function Check-Command
 {
-	if (Test-Path ./engine/OpenRA.Utility.exe)
+	if (Test-Path $utilityPath)
 	{
 		echo "Checking for explicit interface violations..."
-		./engine/OpenRA.Utility.exe $modID --check-explicit-interfaces
+		Invoke-Expression "$utilityPath $modID --check-explicit-interfaces"
 
-		$msg = "Checking for code style violations in OpenRA.Mods." + $modID + "..."
-		echo $msg
-		./engine/OpenRA.Utility.exe $modID --check-code-style OpenRA.Mods.$modID
+		echo "Checking for code style violations in OpenRA.Mods.$modID..."
+		Invoke-Expression "$utilityPath $modID --check-code-style OpenRA.Mods.$modID"
 	}
 	else
 	{
@@ -143,10 +141,10 @@ function Check-Scripts-Command
 
 function Docs-Command
 {
-	if (Test-Path ./engine/OpenRA.Utility.exe)
+	if (Test-Path $utilityPath)
 	{
-		./engine/OpenRA.Utility.exe $modID --docs | Out-File -Encoding "UTF8" DOCUMENTATION.md
-		./engine/OpenRA.Utility.exe $modID --lua-docs | Out-File -Encoding "UTF8" Lua-API.md
+		Invoke-Expression "$utilityPath $modID --docs | Out-File -Encoding 'UTF8' DOCUMENTATION.md"
+		Invoke-Expression "$utilityPath $modID --lua-docs | Out-File -Encoding 'UTF8' Lua-API.md"
 		echo "Docs generated."
 	}
 	else
@@ -230,6 +228,36 @@ while($null -ne ($line = $reader.ReadLine()))
 	{
 		$env:INCLUDE_DEFAULT_MODS = $line.Replace('INCLUDE_DEFAULT_MODS=', '').Replace('"', '')
 	}
+
+	if ($line.StartsWith("ENGINE_VERSION"))
+	{
+		$env:ENGINE_VERSION = $line.Replace('ENGINE_VERSION=', '').Replace('"', '')
+	}
+
+	if ($line.StartsWith("AUTOMATIC_ENGINE_MANAGEMENT"))
+	{
+		$env:AUTOMATIC_ENGINE_MANAGEMENT = $line.Replace('AUTOMATIC_ENGINE_MANAGEMENT=', '').Replace('"', '')
+	}
+
+	if ($line.StartsWith("AUTOMATIC_ENGINE_SOURCE"))
+	{
+		$env:AUTOMATIC_ENGINE_SOURCE = $line.Replace('AUTOMATIC_ENGINE_SOURCE=', '').Replace('"', '')
+	}
+
+	if ($line.StartsWith("AUTOMATIC_ENGINE_EXTRACT_DIRECTORY"))
+	{
+		$env:AUTOMATIC_ENGINE_EXTRACT_DIRECTORY = $line.Replace('AUTOMATIC_ENGINE_EXTRACT_DIRECTORY=', '').Replace('"', '')
+	}
+
+	if ($line.StartsWith("AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME"))
+	{
+		$env:AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME = $line.Replace('AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME=', '').Replace('"', '')
+	}
+
+	if ($line.StartsWith("ENGINE_DIRECTORY"))
+	{
+		$env:ENGINE_DIRECTORY = $line.Replace('ENGINE_DIRECTORY=', '').Replace('"', '')
+	}
 }
 
 $env:MOD_SEARCH_PATHS = (Get-Item -Path ".\" -Verbose).FullName + "\mods"
@@ -241,50 +269,75 @@ if ($env:INCLUDE_DEFAULT_MODS -eq "True")
 # Run the same command on the engine's make file
 if ($command -eq "all" -or $command -eq "clean")
 {
-	if (Test-Path ./engine/OpenRA.sln)
+	$templateDir = $pwd.Path
+	$versionFile = $env:ENGINE_DIRECTORY + "/VERSION"
+	if ((Test-Path $versionFile) -and [System.IO.File]::OpenText($versionFile).ReadLine() -eq $env:ENGINE_VERSION)
 	{
-		cd ".\engine\"
-		$exp = ".\make.cmd " + $command
-		Invoke-Expression $exp
+		cd $env:ENGINE_DIRECTORY
+		Invoke-Expression ".\make.cmd $command"
 		echo ""
-		cd ..
+		cd $templateDir
+	}
+	elseif ($env:AUTOMATIC_ENGINE_MANAGEMENT -ne "True")
+	{
+		echo "Automatic engine management is disabled."
+		echo "Please manually update the engine to version $env:ENGINE_VERSION."
+		WaitForInput
 	}
 	else
 	{
-		if (Get-Command 'git' -ErrorAction SilentlyContinue)
-		{
-			$gitRepo = git rev-parse --is-inside-work-tree
-			if ($gitRepo)
-			{
-				git submodule update --init
+		echo "OpenRA engine version $env:ENGINE_VERSION is required."
 
-				if (Test-Path ./engine/OpenRA.sln)
-				{
-					cd ".\engine\"
-					$exp = ".\make.cmd " + $command
-					Invoke-Expression $exp
-					echo ""
-					cd ..
-				}
-				else
-				{
-					echo "Failed to initialize the submodule. You need to download the engine by hand."
-					WaitForInput
-				}
+		if (Test-Path $env:ENGINE_DIRECTORY)
+		{
+			if ((Test-Path $versionFile) -and [System.IO.File]::OpenText($versionFile).ReadLine() -ne "")
+			{
+				echo "Deleting engine version $currentEngine."
 			}
 			else
 			{
-				echo "Not a git repository. You need to download the engine by hand."
-				WaitForInput
+				echo "Deleting existing engine (unknown version)."
 			}
+
+			rm $env:ENGINE_DIRECTORY -r
 		}
-		else
+
+		echo "Downloading engine..."
+
+		if (Test-Path $env:AUTOMATIC_ENGINE_EXTRACT_DIRECTORY)
 		{
-			echo "Unable to locate Git. You need to download the engine by hand."
-			WaitForInput
+			rm $env:AUTOMATIC_ENGINE_EXTRACT_DIRECTORY -r
 		}
+
+		$url = $env:AUTOMATIC_ENGINE_SOURCE
+		$url = $url.Replace("$", "").Replace("{ENGINE_VERSION}", $env:ENGINE_VERSION)
+
+		mkdir $env:AUTOMATIC_ENGINE_EXTRACT_DIRECTORY > $null
+		$dlPath = Join-Path $pwd (Split-Path -leaf $env:AUTOMATIC_ENGINE_EXTRACT_DIRECTORY)
+		$dlPath = Join-Path $dlPath (Split-Path -leaf $env:AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME)
+
+		$client = new-object System.Net.WebClient 
+		$client.DownloadFile($url, $dlPath)
+
+		Add-Type -assembly "system.io.compression.filesystem"
+		[io.compression.zipfile]::ExtractToDirectory($dlPath, $env:AUTOMATIC_ENGINE_EXTRACT_DIRECTORY)
+		rm $dlPath
+
+		$extractedDir = Get-ChildItem -Recurse | ?{ $_.ToString().StartsWith("OpenRA-") -and $_.PSIsContainer }
+		Move-Item $extractedDir.FullName -Destination $templateDir
+		Rename-Item $extractedDir.Name (Split-Path -leaf $env:ENGINE_DIRECTORY)
+
+		rm $env:AUTOMATIC_ENGINE_EXTRACT_DIRECTORY -r
+
+		cd $env:ENGINE_DIRECTORY
+		Invoke-Expression ".\make.cmd version $env:ENGINE_VERSION"
+		Invoke-Expression ".\make.cmd $command"
+		echo ""
+		cd $templateDir
 	}
 }
+
+$utilityPath = $env:ENGINE_DIRECTORY + "/OpenRA.Utility.exe"
 
 $execute = $command
 if ($command.Length -gt 1)
