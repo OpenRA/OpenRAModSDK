@@ -19,9 +19,15 @@ if %INCLUDE_DEFAULT_MODS% neq "True" goto start
 set MOD_SEARCH_PATHS=%MOD_SEARCH_PATHS%,./mods
 
 :start
-cd engine
+if not exist %ENGINE_DIRECTORY%\OpenRA.Game.exe goto noengine
+cd %ENGINE_DIRECTORY%
 
 :loop
 OpenRA.Server.exe Game.Mod=%MOD_ID% Server.Name=%Name% Server.ListenPort=%ListenPort% Server.ExternalPort=%ExternalPort% Server.AdvertiseOnline=%AdvertiseOnline% Server.EnableSingleplayer=%EnableSingleplayer% Server.Password=%Password%
-
 goto loop
+
+:noengine
+echo Required engine files not found.
+echo Run `make all` in the mod directory to fetch and build the required files, then try again.
+pause
+exit /b

@@ -1,4 +1,0 @@
-[submodule "engine"]
-	path = engine
-	url = https://github.com/OpenRA/OpenRA/
-	branch = bleed

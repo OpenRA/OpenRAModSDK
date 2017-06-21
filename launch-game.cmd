@@ -8,11 +8,23 @@ if %INCLUDE_DEFAULT_MODS% neq "True" goto launch
 set MOD_SEARCH_PATHS=%MOD_SEARCH_PATHS%,./mods
 
 :launch
-cd engine
+set TEMPLATE_DIR=%CD%
+if not exist %ENGINE_DIRECTORY%\OpenRA.Game.exe goto noengine
+
+cd %ENGINE_DIRECTORY%
 OpenRA.Game.exe Game.Mod=%MOD_ID% Engine.LaunchPath="%TEMPLATE_LAUNCHER%" "Engine.ModSearchPaths=%MOD_SEARCH_PATHS%"  "%*"
-if %errorlevel% neq 0 goto crashdialog
-cd ..
+set ERROR=%errorlevel%
+cd %TEMPLATE_DIR%
+
+if ERROR neq 0 goto crashdialog
 exit /b
+
+:noengine
+echo Required engine files not found.
+echo Run `make all` in the mod directory to fetch and build the required files, then try again.
+pause
+exit /b
+
 :crashdialog
 echo ----------------------------------------
 echo OpenRA has encountered a fatal error.
