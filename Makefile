@@ -27,8 +27,8 @@ MOD_ID = $(shell awk -F= '/MOD_ID/ { print $$2 }' mod.config)
 INCLUDE_DEFAULT_MODS = $(shell awk -F= '/INCLUDE_DEFAULT_MODS/ { print $$2 }' mod.config)
 
 MOD_SEARCH_PATHS = "$(shell python -c "import os; print(os.path.realpath('.'))")/mods"
-ifeq ("$(INCLUDE_DEFAULT_MODS)","True")
-	MOD_SEARCH_PATHS = "$(MOD_SEARCH_PATHS),./mods"
+ifeq ($(INCLUDE_DEFAULT_MODS),"True")
+	MOD_SEARCH_PATHS := "$(MOD_SEARCH_PATHS),./mods"
 endif
 
 MANIFEST_PATH = "mods/$(MOD_ID)/mod.yaml"
