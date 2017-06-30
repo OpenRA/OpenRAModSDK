@@ -11,6 +11,11 @@ TEMPLATE_ROOT=$(dirname "${TEMPLATE_LAUNCHER}")
 # shellcheck source=mod.config
 . "${TEMPLATE_ROOT}/mod.config"
 
+if [ -f "${TEMPLATE_ROOT}/user.config" ]; then
+	# shellcheck source=user.config
+	. "${TEMPLATE_ROOT}/user.config"
+fi
+
 MOD_SEARCH_PATHS="${TEMPLATE_ROOT}/mods"
 if [ "${INCLUDE_DEFAULT_MODS}" = "True" ]; then
 	MOD_SEARCH_PATHS="${TEMPLATE_PATHS},./mods"

@@ -1,6 +1,7 @@
 @echo off
 
 FOR /F "tokens=1,2 delims==" %%A IN (mod.config) DO (set %%A=%%B)
+if exist user.config (FOR /F "tokens=1,2 delims==" %%A IN (user.config) DO (set %%A=%%B))
 
 title OpenRA.Utility.exe %MOD_ID%
 
