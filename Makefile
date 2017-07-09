@@ -49,19 +49,19 @@ utility: engine
 
 build: engine
 ifeq ("$(HAS_MSBUILD)","")
-	@xbuild /nologo /verbosity:quiet /p:TreatWarningsAsErrors=true
+	@find . -maxdepth 1 -name '*.sln' -exec xbuild /nologo /verbosity:quiet /p:TreatWarningsAsErrors=true \;
 else
-	@msbuild /t:Rebuild /nr:false
+	@find . -maxdepth 1 -name '*.sln' -exec msbuild /t:Rebuild /nr:false \;
 endif
-	@printf "The mod logic has been built.\n"
+	@find . -maxdepth 1 -name '*.sln' -exec printf "The mod logic has been built.\n" \;
 
 clean: engine
 ifeq ("$(HAS_MSBUILD)","")
-	@xbuild /nologo /verbosity:quiet /p:TreatWarningsAsErrors=true /t:Clean
+	@find . -maxdepth 1 -name '*.sln' -exec xbuild /nologo /verbosity:quiet /p:TreatWarningsAsErrors=true /t:Clean \;
 else
-	@msbuild /t:Clean /nr:false
+	@find . -maxdepth 1 -name '*.sln' -exec msbuild /t:Clean /nr:false \;
 endif
-	@printf "The mod logic has been cleaned.\n"
+	@find . -maxdepth 1 -name '*.sln' -exec printf "The mod logic has been cleaned.\n" \;
 	@cd $(ENGINE_DIRECTORY) && make clean
 	@printf "The engine has been cleaned.\n"
 

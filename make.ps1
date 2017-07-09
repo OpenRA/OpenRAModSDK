@@ -5,6 +5,11 @@
 ###############################################################
 function All-Command
 {
+	If (!(Test-Path "*.sln"))
+	{
+		return
+	}
+
 	$msBuild = FindMSBuild
 	$msBuildArguments = "/t:Rebuild /nr:false"
 	if ($msBuild -eq $null)
@@ -27,6 +32,11 @@ function All-Command
 
 function Clean-Command
 {
+	If (!(Test-Path "*.sln"))
+	{
+		return
+	}
+
 	$msBuild = FindMSBuild
 	$msBuildArguments = "/t:Clean /nr:false"
 	if ($msBuild -eq $null)
