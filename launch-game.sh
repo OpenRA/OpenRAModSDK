@@ -18,7 +18,7 @@ fi
 
 MOD_SEARCH_PATHS="${TEMPLATE_ROOT}/mods"
 if [ "${INCLUDE_DEFAULT_MODS}" = "True" ]; then
-	MOD_SEARCH_PATHS="${TEMPLATE_PATHS},./mods"
+	MOD_SEARCH_PATHS="${MOD_SEARCH_PATHS},./mods"
 fi
 
 cd "${TEMPLATE_ROOT}"
