@@ -19,7 +19,7 @@
 #   make check
 #
 
-.PHONY: utility build clean engine version check-scripts check test
+.PHONY: utility stylecheck build clean engine version check-scripts check test
 .DEFAULT_GOAL := build
 
 VERSION = $(shell git name-rev --name-only --tags --no-undefined HEAD 2>/dev/null || echo git-`git rev-parse --short HEAD`)
@@ -46,6 +46,9 @@ engine:
 
 utility: engine
 	@test -f "$(ENGINE_DIRECTORY)/OpenRA.Utility.exe" || (printf "OpenRA.Utility.exe not found!\n"; exit 1)
+
+stylecheck: engine
+	@test -f "$(ENGINE_DIRECTORY)/OpenRA.StyleCheck.exe" || (cd $(ENGINE_DIRECTORY) && make stylecheck)
 
 build: engine
 ifeq ("$(HAS_MSBUILD)","")
@@ -81,11 +84,11 @@ ifneq ("$(LUA_FILES)","")
 	@luac -p $(LUA_FILES)
 endif
 
-check: utility
+check: utility stylecheck
 	@echo "Checking for explicit interface violations..."
 	@MOD_SEARCH_PATHS="$(MOD_SEARCH_PATHS)" mono --debug "$(ENGINE_DIRECTORY)/OpenRA.Utility.exe" $(MOD_ID) --check-explicit-interfaces
 	@echo "Checking for code style violations in OpenRA.Mods.$(MOD_ID)..."
-	@MOD_SEARCH_PATHS="$(MOD_SEARCH_PATHS)" mono --debug "$(ENGINE_DIRECTORY)/OpenRA.Utility.exe" $(MOD_ID) --check-code-style OpenRA.Mods.$(MOD_ID)
+	@mono --debug "$(ENGINE_DIRECTORY)/OpenRA.StyleCheck.exe" OpenRA.Mods.$(MOD_ID)
 
 test: utility
 	@echo "Testing $(MOD_ID) mod MiniYAML..."
