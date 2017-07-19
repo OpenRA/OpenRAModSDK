@@ -199,6 +199,30 @@ function WaitForInput
 	}
 }
 
+function ReadConfigLine($line, $name)
+{
+	if ($line.StartsWith($name))
+	{
+		$prefix = $name + '='
+		[Environment]::SetEnvironmentVariable($name, $line.Replace($prefix, '').Replace('"', ''))
+	}
+}
+
+function ParseConfigFile($fileName)
+{
+	$names = @("MOD_ID", "INCLUDE_DEFAULT_MODS", "ENGINE_VERSION", "AUTOMATIC_ENGINE_MANAGEMENT", "AUTOMATIC_ENGINE_SOURCE",
+		"AUTOMATIC_ENGINE_EXTRACT_DIRECTORY", "AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME", "ENGINE_DIRECTORY")
+
+	$reader = [System.IO.File]::OpenText($fileName)
+	while($null -ne ($line = $reader.ReadLine()))
+	{
+		foreach ($name in $names)
+		{
+			ReadConfigLine $line $name
+		}
+	}
+}
+
 ###############################################################
 ############################ Main #############################
 ###############################################################
@@ -225,50 +249,14 @@ else
 
 # Load the environment variables from the config file
 # and get the mod ID from the local environment variable
-$reader = [System.IO.File]::OpenText("mod.config")
-while($null -ne ($line = $reader.ReadLine()))
+ParseConfigFile "mod.config"
+
+if (Test-Path "user.config")
 {
-	if ($line.StartsWith("MOD_ID"))
-	{
-		$env:MOD_ID = $line.Replace('MOD_ID=', '').Replace('"', '')
-		$modID = $env:MOD_ID
-	}
-
-	if ($line.StartsWith("INCLUDE_DEFAULT_MODS"))
-	{
-		$env:INCLUDE_DEFAULT_MODS = $line.Replace('INCLUDE_DEFAULT_MODS=', '').Replace('"', '')
-	}
-
-	if ($line.StartsWith("ENGINE_VERSION"))
-	{
-		$env:ENGINE_VERSION = $line.Replace('ENGINE_VERSION=', '').Replace('"', '')
-	}
-
-	if ($line.StartsWith("AUTOMATIC_ENGINE_MANAGEMENT"))
-	{
-		$env:AUTOMATIC_ENGINE_MANAGEMENT = $line.Replace('AUTOMATIC_ENGINE_MANAGEMENT=', '').Replace('"', '')
-	}
-
-	if ($line.StartsWith("AUTOMATIC_ENGINE_SOURCE"))
-	{
-		$env:AUTOMATIC_ENGINE_SOURCE = $line.Replace('AUTOMATIC_ENGINE_SOURCE=', '').Replace('"', '')
-	}
-
-	if ($line.StartsWith("AUTOMATIC_ENGINE_EXTRACT_DIRECTORY"))
-	{
-		$env:AUTOMATIC_ENGINE_EXTRACT_DIRECTORY = $line.Replace('AUTOMATIC_ENGINE_EXTRACT_DIRECTORY=', '').Replace('"', '')
-	}
-
-	if ($line.StartsWith("AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME"))
-	{
-		$env:AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME = $line.Replace('AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME=', '').Replace('"', '')
-	}
-
-	if ($line.StartsWith("ENGINE_DIRECTORY"))
-	{
-		$env:ENGINE_DIRECTORY = $line.Replace('ENGINE_DIRECTORY=', '').Replace('"', '')
-	}
+	ParseConfigFile "user.config"
 }
+
+$modID = $env:MOD_ID
 
 $env:MOD_SEARCH_PATHS = (Get-Item -Path ".\" -Verbose).FullName + "\mods"
 if ($env:INCLUDE_DEFAULT_MODS -eq "True")
@@ -326,7 +314,7 @@ if ($command -eq "all" -or $command -eq "clean")
 		$dlPath = Join-Path $pwd (Split-Path -leaf $env:AUTOMATIC_ENGINE_EXTRACT_DIRECTORY)
 		$dlPath = Join-Path $dlPath (Split-Path -leaf $env:AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME)
 
-		$client = new-object System.Net.WebClient 
+		$client = new-object System.Net.WebClient
 		$client.DownloadFile($url, $dlPath)
 
 		Add-Type -assembly "system.io.compression.filesystem"
