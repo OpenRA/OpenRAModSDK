@@ -17,7 +17,7 @@ OpenRA.Game.exe Game.Mod=%MOD_ID% Engine.LaunchPath="%TEMPLATE_LAUNCHER%" "Engin
 set ERROR=%errorlevel%
 cd %TEMPLATE_DIR%
 
-if ERROR neq 0 goto crashdialog
+if %ERROR% neq 0 goto crashdialog
 exit /b
 
 :noengine
