@@ -135,7 +135,7 @@ function Check-Command
 	}
 	else
 	{
-		echo "OpenRA.StyleCheck.exe could not be found. Build the project first using the `"all`" command."
+		echo "$styleCheckPath could not be found. Build the project first using the `"all`" command."
 	}
 }
 
@@ -190,7 +190,7 @@ function FindMSBuild
 
 function UtilityNotFound
 {
-	echo "OpenRA.Utility.exe could not be found. Build the project first using the `"all`" command."
+	echo "$utilityPath could not be found. Build the project first using the `"all`" command."
 }
 
 function WaitForInput
