@@ -122,13 +122,20 @@ function Check-Command
 	{
 		echo "Checking for explicit interface violations..."
 		Invoke-Expression "$utilityPath $modID --check-explicit-interfaces"
-
-		echo "Checking for code style violations in OpenRA.Mods.$modID..."
-		Invoke-Expression "$utilityPath $modID --check-code-style OpenRA.Mods.$modID"
 	}
 	else
 	{
 		UtilityNotFound
+	}
+
+	if (Test-Path $styleCheckPath)
+	{
+		echo "Checking for code style violations in OpenRA.Mods.$modID..."
+		Invoke-Expression "$styleCheckPath OpenRA.Mods.$modID"
+	}
+	else
+	{
+		echo "OpenRA.StyleCheck.exe could not be found. Build the project first using the `"all`" command."
 	}
 }
 
@@ -336,6 +343,7 @@ if ($command -eq "all" -or $command -eq "clean")
 }
 
 $utilityPath = $env:ENGINE_DIRECTORY + "/OpenRA.Utility.exe"
+$styleCheckPath = $env:ENGINE_DIRECTORY + "/OpenRA.StyleCheck.exe"
 
 $execute = $command
 if ($command.Length -gt 1)
