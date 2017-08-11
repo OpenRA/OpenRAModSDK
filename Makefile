@@ -39,6 +39,7 @@ MANIFEST_PATH = "mods/$(MOD_ID)/mod.yaml"
 HAS_MSBUILD = $(shell command -v msbuild 2> /dev/null)
 HAS_LUAC = $(shell command -v luac 2> /dev/null)
 LUA_FILES = $(shell find mods/*/maps/* -iname '*.lua')
+PROJECT_DIRS = $(shell dirname $$(find . -iname "*.csproj" -not -path "$(ENGINE_DIRECTORY)/*"))
 
 engine:
 	@./fetch-engine.sh || (printf "Unable to continue without engine files\n"; exit 1)
@@ -87,8 +88,10 @@ endif
 check: utility stylecheck
 	@echo "Checking for explicit interface violations..."
 	@MOD_SEARCH_PATHS="$(MOD_SEARCH_PATHS)" mono --debug "$(ENGINE_DIRECTORY)/OpenRA.Utility.exe" $(MOD_ID) --check-explicit-interfaces
-	@echo "Checking for code style violations in OpenRA.Mods.$(MOD_ID)..."
-	@mono --debug "$(ENGINE_DIRECTORY)/OpenRA.StyleCheck.exe" OpenRA.Mods.$(MOD_ID)
+	@for i in $(PROJECT_DIRS) ; do \
+		echo "Checking for code style violations in $${i}...";\
+		mono --debug "$(ENGINE_DIRECTORY)/OpenRA.StyleCheck.exe" $${i};\
+	done
 
 test: utility
 	@echo "Testing $(MOD_ID) mod MiniYAML..."
