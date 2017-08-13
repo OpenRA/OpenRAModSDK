@@ -45,6 +45,11 @@ if [ ! -f "${ENGINE_DIRECTORY}/Makefile" ]; then
 	exit 1
 fi
 
+if [ ! -d "${OUTPUTDIR}" ]; then
+	echo "Output directory '${OUTPUTDIR}' does not exist.";
+	exit 1
+fi
+
 make version VERSION="${TAG}"
 
 pushd ${ENGINE_DIRECTORY} > /dev/null
