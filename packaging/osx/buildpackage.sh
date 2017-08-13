@@ -89,9 +89,9 @@ echo "Packaging zip archive"
 
 zip "${PACKAGING_INSTALLER_NAME}-${TAG}" -r -9 "${PACKAGING_OSX_APP_NAME}" --quiet --symlinks
 
-mv "${PACKAGING_INSTALLER_NAME}-${TAG}.zip" ${OUTPUTDIR}
-
 popd > /dev/null
+
+mv "${BUILTDIR}/${PACKAGING_INSTALLER_NAME}-${TAG}.zip" "${OUTPUTDIR}"
 
 # Clean up
 rm -rf "${BUILTDIR}"
