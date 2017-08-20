@@ -1,6 +1,6 @@
 Metadata:
 	Title: Iron Dominion
-	Version: Alpha 20170820 0.30
+	Version: test
 
 PackageFormats: Mix, AudioBag
 
@@ -8,7 +8,6 @@ Packages:
 	~^Content/ra2
 	.
 	$id: id
-	$cnc: cnc
 	./mods/common: common
 	./mods/as: as
 	~ra2.mix
@@ -60,7 +59,7 @@ Packages:
 
 MapFolders:
 	id|maps: System
-	~^maps/id/{DEV_VERSION}: User
+	~^maps/id/test: User
 
 Rules:
 	id|rules/proxy-actors.yaml
