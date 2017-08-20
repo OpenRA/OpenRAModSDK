@@ -1,0 +1,576 @@
+g_p1c:
+	idle:
+	turret: g_p1ctur
+	barrel: g_p1cbarl
+
+g_p2b:
+	idle:
+	turret: g_p2btur
+	barrel: g_p2bbarl
+
+g_p4a:
+	idle:
+	turret: g_p4atur
+	barrel: g_p4abarl
+
+g_p35t:
+	idle:
+	turret: g_p35ttur
+	barrel: g_p35tbarl
+
+g_p38t:
+	idle:
+	turret: g_p38ttur
+	barrel: g_p38tbarl
+
+g_pj1:
+	idle:
+	turret: g_pj1tur
+	barrel: g_pj1barl
+
+g_bison:
+	idle:
+	turret: g_bisontur
+	barrel: g_bisonbarl
+
+g_p2c:
+	idle:
+	turret: g_p2ctur
+	barrel: g_p2cbarl
+
+g_p3e:
+	idle:
+	turret: g_p3etur
+	barrel: g_p3ebarl
+
+g_p4d:
+	idle:
+	turret: g_p4dtur
+	barrel: g_p4dbarl
+
+g_stug3b:
+	idle:
+	turret: g_stug3btur
+	barrel: g_stug3bbarl
+
+g_marder2:
+	idle:
+	turret: g_marder2tur
+	barrel: g_marder2barl
+
+g_wespe:
+	idle:
+	turret: g_wespetur
+	barrel: g_wespebarl
+
+g_p2d:
+	idle:
+	turret: g_p2dtur
+	barrel: g_p2dbarl
+
+g_p3f:
+	idle:
+	turret: g_p3ftur
+	barrel: g_p3fbarl
+
+g_p4f1:
+	idle:
+	turret: g_p4f1tur
+	barrel: g_p4f1barl
+
+g_stug3f:
+	idle:
+	turret: g_stug3ftur
+	barrel: g_stug3fbarl
+
+g_hetzer:
+	idle:
+	turret: g_hetzertur
+	barrel: g_hetzerbarl
+
+g_p4f2c:
+	idle: g_p4a
+	turret: g_p4f1tur
+	barrel: g_p4f2barl
+
+g_p3j:
+	idle:
+	turret: g_p3jtur
+	barrel: g_p3jbarl
+
+g_p4f2:
+	idle:
+	turret: g_p4f2tur
+	barrel: g_p4f2barl
+
+g_p7t:
+	idle:
+	turret: g_p7ttur
+	barrel: g_p7tbarl
+
+g_stug3g:
+	idle:
+	turret: g_stug3gtur
+	barrel: g_stug3gbarl
+
+g_grille:
+	idle:
+	turret: g_grilletur
+	barrel: g_grillebarl
+
+g_p3l:
+	idle:
+	turret: g_p3ltur
+	barrel: g_p3lbarl
+
+g_p4g:
+	idle:
+	turret: g_p4gtur
+	barrel: g_p4gbarl
+
+f_amxelc90:
+	idle: f_amxelc
+	turret: f_amxelctur
+	barrel: f_amxelc90barl
+
+f_amxelc:
+	idle:
+	turret: f_amxelctur
+	barrel: f_amxelcbarl
+
+f_renaultft:
+	idle:
+	turret: f_renaultfttur
+	barrel: f_renaultftbarl
+
+f_renaultr35:
+	idle:
+	turret: f_renaultr35tur
+	barrel: f_renaultr35barl
+
+f_fcm36:
+	idle:
+	turret: f_fcm36tur
+	barrel: f_fcm36barl
+
+f_d2:
+	idle:
+	turret: f_d2tur
+	barrel: f_d2barl
+
+f_renaultftac:
+	idle:
+	turret: f_renaultftactur
+	barrel: f_renaultftacbarl
+
+f_renaultft75bs:
+	idle: f_renaultft
+	turret: f_renaultfttur
+	barrel: f_renaultft75bsbarl
+
+f_h35:
+	idle:
+	turret: f_h35tur
+	barrel: f_h35barl
+
+f_b1:
+	idle:
+	turret: f_b1tur
+	barrel: f_b1barl
+	turret2: f_b1tur2
+	barrel2: f_b1barl2
+
+f_amx38:
+	idle:
+	turret: f_amx38tur
+	barrel: f_amx38barl
+
+f_s35:
+	idle:
+	turret: f_s35tur
+	barrel: f_s35barl
+
+f_renaultue57:
+	idle:
+	turret: f_renaultue57tur
+	barrel: f_renaultue57barl
+    
+f_39lam:
+	idle:
+	turret: f_39lamtur
+	barrel: f_39lambarl
+
+f_amx40:
+	idle:
+	turret: f_amx40tur
+	barrel: f_amx40barl
+    
+a_m2m:
+	idle:
+	turret: a_m2mtur
+	barrel: a_m2mbarl
+
+a_m2l:
+	idle:
+	turret: a_m2ltur
+	barrel: a_m2lbarl
+    
+a_m22:
+	idle:
+	turret: a_m22tur
+	barrel: a_m22barl
+    
+a_m3s:
+	idle:
+	turret: a_m3stur
+	barrel: a_m3sbarl
+
+a_m3lee:
+	idle:
+	turret: a_m3leetur
+	barrel: a_m3leebarl
+
+a_m9:
+	idle:
+	turret: a_m9tur
+	barrel: a_m9barl
+    
+a_m7p:
+	idle:
+	turret: a_m7ptur
+	barrel: a_m7pbarl
+
+a_m7m:
+	idle:
+	turret: a_m7mtur
+	barrel: a_m7mbarl
+
+a_m8a1:
+	idle:
+	turret: a_m8a1tur
+	barrel: a_m8a1barl
+
+a_m4i:
+	idle:
+	turret: a_m4itur
+	barrel: a_m4ibarl
+
+a_m5s:
+	idle:
+	turret: a_m5stur
+	barrel: a_m5sbarl
+
+a_m4s:
+	idle:
+	turret: a_m4stur
+	barrel: a_m4sbarl
+
+a_m6h:
+	idle:
+	turret: a_m6htur
+	barrel: a_m6hbarl
+	barrel2: a_m6hbarl2
+
+a_m10w:
+	idle:
+	turret: a_m10wtur
+	barrel: a_m10wbarl
+
+r_t127:
+	idle:
+	turret: r_t127tur
+	barrel: r_t127barl
+
+r_t26:
+	idle:
+	turret: r_t26tur
+	barrel: r_t26barl
+
+r_t28:
+	idle:
+	turret: r_t28tur
+	barrel: r_t28barl
+
+r_bt2:
+	idle:
+	turret: r_bt2tur
+	barrel: r_bt2barl
+
+r_t60:
+	idle:
+	turret: r_t60tur
+	barrel: r_t60barl
+
+r_su76:
+	idle:
+	turret: r_su76tur
+	barrel: r_su76barl
+
+r_bt7:
+	idle:
+	turret: r_bt7tur
+	barrel: r_bt7barl
+
+r_kv1:
+	idle:
+	turret: r_kv1tur
+	barrel: r_kv1barl
+
+r_su26:
+	idle:
+	turret: r_su26tur
+	barrel: r_su26barl
+
+r_t46:
+	idle:
+	turret: r_t46tur
+	barrel: r_t46barl
+
+r_t70:
+	idle:
+	turret: r_t70tur
+	barrel: r_t70barl
+
+r_t34:
+	idle:
+	turret: r_t34tur
+	barrel: r_t34barl
+
+r_t50:
+	idle:
+	turret: r_t50tur
+	barrel: r_t50barl
+
+b_cmk3:
+	idle:
+	turret: b_cmk3tur
+	barrel: b_cmk3barl
+
+b_m2:
+	idle:
+	turret: b_m2tur
+	barrel: b_m2barl
+
+b_m3s:
+	idle:
+	turret: b_m3stur
+	barrel: b_m3sbarl
+
+b_m3grant:
+	idle:
+	turret: b_m3granttur
+	barrel: b_m3grantbarl
+
+b_s3:
+	idle:
+	turret: b_s3tur
+	barrel: b_s3barl
+
+amcv:
+	idle: mcv
+
+aegis:
+	idle:
+
+asw:
+	idle:
+
+beag:
+	idle:
+
+bus:
+	idle:
+
+car:
+	idle:
+
+carrier:
+	idle:
+
+cdest:	#coast guard boat/SP unit
+	idle:
+
+cona:
+	idle:
+
+cop:
+	idle:
+
+cmin:
+	idle:
+	unload: cmon
+
+cargoplane:
+	idle: cplane
+
+cruise:
+	idle:
+
+dest:
+	idle:
+
+dred:
+	idle:
+
+euroc:
+	idle:
+
+falc:
+	idle:
+
+naflak:
+	turret: flaktur
+
+flata: #Unused
+	idle:
+
+fv:
+	idle:
+	turret-missile: fvtur
+	turret-mg: fvtur1
+	turret-repair: fvtur2
+	turret-hitech: fvtur3
+
+gtgcan:
+	turret: gtgcantur
+	barrel: gtgcanbarl
+
+mtnk:
+	idle: gtnk
+	turret: gtnktur
+	barrel: gtnkbarl
+
+harv:
+	idle:
+	turret: harvtur
+	unload: horv
+
+hind: #Unused
+	idle:
+
+hornet:
+	idle:
+
+htk: #Flak Track
+	idle:
+	turret: htktur
+	barrel: htkbarl
+
+htnk: #Rhino Tank
+	idle:
+	turret: htnktur
+	barrel: htnkbarl
+
+howi: #Howitzer Unused
+	idle: hwtz
+
+hyd: #Sea Scorpion
+	idle:
+
+nalasr:
+	turret: laser
+
+lcrf: #Allied transport
+	idle:
+
+limo:
+	idle:
+
+ltnk: #Light tank,Beta unit. Appears only in one mission as a prop
+	idle:
+	turret: ltnktur
+	barrel: ltnkbarl
+
+apoc: #Aplocalypse Tank
+	idle: mtnk
+	turret: mtnktur
+	barrel: mtnkbarl
+
+caoutp: #Tech outpost sam
+	turret: outp
+
+pdplane: #Paradrop plane
+	idle:
+
+paraplane: #Paradrop plane
+	idle:
+
+pick: #Cargo Truck
+	idle:
+
+propa:
+	idle:
+
+ptruck: #Pickup Truck
+	idle:
+
+mgtk: #Mirage Tank, the tur and barrel files are beta, final has fixed turret
+	idle: rtnk
+
+nasam:
+	turret: sam
+
+shad: #Nighthawk
+	idle:
+
+smcv:
+	idle:
+
+sref: #Has 3 charge states for the turret not possible yet
+	idle:
+	turret: sreftur
+
+stang:
+	idle:
+
+sub: #Typhoon Attack Sub
+	idle:
+
+subt: #Sub Torpedo needs voxel projectiles
+	idle:
+
+suvb:
+	idle:
+
+suvw:
+	idle:
+
+taxi:
+	idle:
+
+tnkd:
+	idle:
+
+tractor: #Unused
+	idle:
+
+sapc:
+	idle: trs
+
+dtruck:
+	idle: trucka
+
+trucka:
+	idle:
+
+truckb: #Psst Has crates in it :D
+	idle:
+
+ttnk:
+	idle:
+	turret: ttnktur
+
+tug: #Tug Boat
+	idle:
+
+v3:
+	idle:
+
+vlad: #Vladimir's Dreadnought SP unit
+	idle:
+
+wini: #Recreational Vehicle Not sure if used in RA2
+	idle:
+
+zep: #Kirov Reporting!
+	idle:

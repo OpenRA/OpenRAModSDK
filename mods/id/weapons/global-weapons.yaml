@@ -1,0 +1,91 @@
+UnitExplode:
+	Warhead@1Dam: SpreadDamage
+		Spread: 426
+		Damage: 100
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Versus:
+			None: 90
+			Wood: 75
+			Light: 60
+			Heavy: 25
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: airexplo01, airexplo02, airexplo03, airexplo04, airexplo05, airexplo06, airexplo07, airexplo08, airexplo09
+		ImpactSounds: explo01.aud, explo02.aud, explo03.aud, explo04.aud
+		ExplosionPalette: apolra50alpha
+
+UnitExplodeSmall:
+	Inherits: UnitExplode
+	Warhead@1Dam: SpreadDamage
+		Damage: 50
+	Warhead@2Eff: CreateEffect
+		Explosions: unitexplode01
+		Palette: unitexplode01
+		ImpactSounds: expnew13.wav
+		ExplosionPalette: unitexplode01
+
+SmallDebris:
+	ReloadDelay: 60
+	Range: 5c673
+	Report:
+	Projectile: BulletAS
+		Speed: 0c71, 0c177
+		LaunchAngle: 45, 135
+		Image: dbrissm
+		TrailImage: jflmtrail
+		TrailPalette: gensexplo
+		Sequences: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+		Shadow: true
+		Palette: tseffect
+
+LargeDebris:
+	ReloadDelay: 60
+	Range: 5c673
+	Report:
+	Projectile: BulletAS
+		Speed: 0c71, 0c177
+		LaunchAngle: 45, 135
+		Image: dbrislg
+		TrailImage: jflmtrail
+		TrailPalette: gensexplo
+		Sequences: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+		Shadow: true
+		Palette: tseffect
+
+Sparky:
+	ReloadDelay: 10
+	Range: 5c673
+	Report:
+	Projectile: BulletAS
+		Speed: 0c45, 0c91, 0c136, 0c45, 0c91, 0c136, 0c45, 0c91, 0c136, 0c45, 0c91, 0c136
+		LaunchAngle: 25, 45, 65, 85, 120, 135, 155, 175, 195, 210, 225, 245
+		Image: spark
+		Sequences: 1
+		Shadow: false
+		Palette: tseffect
+
+Bloody:
+	ReloadDelay: 10
+	Range: 1c424
+	Report:
+	Projectile: BulletAS
+		Speed: 0c91, 0c136, 0c181
+		LaunchAngle: 45, 90, 135
+		Image: blood
+		Palette: player
+		Sequences: 3
+		Shadow: false
+
+Flyman:
+	ReloadDelay: 10
+	Range: 5c673
+	Report: dedman1.aud, dedman2.aud, dedman3.aud, dedman4.aud, dedman5.aud, dedman6.aud
+	Projectile: BulletAS
+		Speed: 0c45, 0c177
+		LaunchAngle: 90, 135
+		Image: flyman
+		Palette: player
+		Sequences: 5
+		TrailImage: blood
+		TrailPalette: player
+		Shadow: true

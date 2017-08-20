@@ -1,0 +1,245 @@
+^BaseWorld:
+	Inherits: ^Palettes
+	AlwaysVisible:
+	MusicPlaylist:
+		VictoryMusic: 
+		DefeatMusic: 
+	ActorMap:
+	ScreenMap:
+	TerrainGeometryOverlay:
+	CliffBackImpassabilityLayer:
+	ShroudRenderer:
+		Index: 255, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 20, 40, 56, 65, 97, 130, 148, 194, 24, 33, 66, 132, 28, 41, 67, 134, 1, 2, 4, 8, 3, 6, 12, 9, 7, 14, 13, 11, 5, 10, 15, 255
+		UseExtendedIndex: true
+		FogPalette: shroud
+		ShroudPalette: shroud
+	Faction@random:
+		Name: Random
+		InternalName: Random
+		RandomFactionMembers: america, germany, france, russia
+		Side: Randoms
+		Description: Chooeses only fully playable factions
+	Faction@1:
+		Name: America
+		InternalName: america
+		Side: Allies
+		Description: Playable
+	Faction@2:
+		Name: Germany
+		InternalName: germany
+		Side: Axis
+		Description: Playable
+	Faction@3:
+		Name: Britain
+		InternalName: britain
+		Side: Allies
+		Description: WIP Playable
+	Faction@4:
+		Name: France
+		InternalName: france
+		Side: Allies
+		Description: Playable
+	Faction@5:
+		Name: Russia
+		InternalName: russia
+		Side: Allies
+		Description: Playable
+#	Faction@6:
+#		Name: Japan
+#		InternalName: korea
+#		Side: Axis
+#		Description: Not Playable
+#	Faction@6:
+#		Name: Cuba
+#		InternalName: cuba
+#		Side: Soviets
+#		Description: Placeholder
+#	Faction@7:
+#		Name: Libya
+#		InternalName: libya
+#		Side: Soviets
+#		Description: Placeholder
+#	Faction@8:
+#		Name: Iraq
+#		InternalName: iraq
+#		Side: Soviets
+#		Description: Placeholder
+	ResourceType@Ore:
+		ResourceType: 1
+		Palette: resource
+		Sequences: tib01, tib02, tib03, tib04, tib05, tib06, tib07, tib08, tib09, tib10, tib11, tib12, tib13, tib14, tib15, tib16, tib17, tib18, tib19, tib20
+		MaxDensity: 12
+		ValuePerUnit: 50
+		Type: Ore
+		Name: Valuable Minerals
+		PipColor: Yellow
+		AllowedTerrainTypes: Clear, Rough
+		AllowUnderActors: false
+		TerrainType: Ore
+	ResourceType@Gems:
+		ResourceType: 2
+		Palette: resource
+		Sequences: gem01, gem02, gem03, gem04, gem05, gem06, gem07, gem08, gem09, gem10, gem11, gem12
+		MaxDensity: 12
+		ValuePerUnit: 250
+		Type: Gems
+		Name: Valuable Minerals
+		PipColor: Red
+		AllowedTerrainTypes: Clear, Rough
+		AllowUnderActors: false
+		TerrainType: Gems
+
+World:
+	Inherits: ^BaseWorld
+	ChatCommands:
+	DevCommands:
+	PlayerCommands:
+	HelpCommand:
+	ScreenShaker:
+	BuildingInfluence:
+	ProductionQueueFromSelection:
+		ProductionPaletteWidget: PRODUCTION_PALETTE
+	DomainIndex:
+	SmudgeLayer@smallscorch:
+		Type: SmallScorch
+		Sequence: smallscorches
+		SmokeType: smallfire
+		SmokePercentage: 50
+	SmudgeLayer@mediumscorch:
+		Type: MediumScorch
+		Sequence: mediumscorches
+		SmokeType: mediumfire
+		SmokePercentage: 75
+	SmudgeLayer@largescorch:
+		Type: LargeScorch
+		Sequence: largescorches
+		SmokeType: largefire
+		SmokePercentage: 100
+	SmudgeLayer@smallcrater:
+		Type: SmallCrater
+		SmokeType: smallsmoke
+		Sequence: smallcraters
+	SmudgeLayer@mediumcrater:
+		Type: MediumCrater
+		SmokeType: smallsmoke
+		Sequence: mediumcraters
+	SmudgeLayer@largecrater:
+		Type: LargeCrater
+		SmokeType: largesmoke
+		Sequence: largecraters
+	ResourceLayer:
+	BridgeLayer:
+	CustomTerrainDebugOverlay:
+	ResourceClaimLayer:
+	WarheadDebugOverlay:
+	SpawnMapActors:
+	MapBuildRadius:
+	MapOptions:
+	CreateMPPlayers:
+	MPStartUnits@america0:
+		Class: none
+		ClassName: Normal
+		Factions: america
+		BaseActor: a_m2m
+		SupportActors: a_rifle,a_rifle,a_rifle,a_rifle,a_rifle,a_rifle,a_atinf,a_atinf,a_atinf,a_atinf
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@germany0:
+		Class: none
+		ClassName: Infantry
+		Factions: germany
+		BaseActor: g_p4a
+		SupportActors: g_rifle,g_rifle,g_rifle,g_rifle,g_rifle,g_rifle,g_atinf,g_atinf,g_atinf,g_atinf,
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@france0:
+		Class: none
+		ClassName: Infantry
+		Factions: france
+		BaseActor: f_amxelc90
+		SupportActors: f_rifle,f_rifle,f_rifle,f_rifle,f_rifle,f_rifle,f_atinf,f_atinf,f_atinf,f_atinf
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@russia0:
+		Class: none
+		ClassName: Infantry
+		Factions: russia
+		BaseActor: r_t127
+		SupportActors: r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@britain0:
+		Class: none
+		ClassName: Infantry
+		Factions: britain
+		BaseActor: b_cmk3
+		SupportActors: b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@america1:
+		Class: node
+		ClassName: Base
+		Factions: america
+		BaseActor: node
+		SupportActors: a_m2m
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@germany1:
+		Class: node
+		ClassName: Base
+		Factions: germany
+		BaseActor: node
+		SupportActors: g_p4a
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@france1:
+		Class: node
+		ClassName: Base
+		Factions: france
+		BaseActor: node
+		SupportActors: f_amxelc90
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@russia1:
+		Class: node
+		ClassName: Base
+		Factions: russia
+		BaseActor: node 
+		SupportActors: r_t127
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@britain1:
+		Class: node
+		ClassName: Base
+		Factions: britain
+		BaseActor: node 
+		SupportActors: b_cmk3
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	CrateSpawner:
+		Enabled: False
+		Minimum: 1
+		Maximum: 3
+		SpawnInterval: 3000
+		WaterChance: 25
+		InitialSpawnDelay: 1000
+	MPStartLocations:
+	SpawnMPUnits:
+	PathFinder:
+	ValidateOrder:
+	DebugPauseState:
+	RadarPings:
+	StartGameNotification:
+	DebugVisualizations:
+	ObjectivesPanel:
+		PanelName: SKIRMISH_STATS
+	LoadWidgetAtGameStart:
+    LuaScript:
+        Scripts: manager.lua
+
+EditorWorld:
+	Inherits: ^BaseWorld
+	EditorActorLayer:
+	EditorResourceLayer:
+	EditorSelectionLayer:
+	LoadWidgetAtGameStart:

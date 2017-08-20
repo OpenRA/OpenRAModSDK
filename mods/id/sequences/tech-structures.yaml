@@ -1,0 +1,144 @@
+caoild:
+	Defaults:
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+		Offset: 0, -30
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+		Offset: 0, -30
+	idle-pump: caoild_a
+		Length: 32
+		ShadowStart: 64
+		Offset: 0, -30
+	damaged-idle-pump: caoild_a
+		Start: 32
+		Length: 32
+		ShadowStart: 96
+		Offset: 0, -30
+	flag: caoild_f
+		Length: 16
+		ZOffset: 128
+	icon: xxicon
+		UseTilesetCode: false
+		Offset: 0, 0
+
+caairp:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 7, -40
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	idle-overlay: caairp_a
+		Length: 10
+		Tick: 400
+	damaged-idle-overlay: caairp_a
+		Start: 10
+		Length: 10
+		Tick: 400
+	flag: caairp_f
+		Length: 16
+		ZOffset: 128
+	make: caairp
+		ShadowStart: 4
+		Length: 1
+	icon: xxicon
+		UseTilesetCode: false
+		Offset: 0, 0
+
+cahosp:
+	Defaults:
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+		Offset: -30, -75
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+		Offset: -30, -75
+	idle-overlay: cahosp_a
+		Length: 2
+		Offset: -30, -75
+		Tick: 400
+	damaged-idle-overlay: cahosp_a
+		Start: 2
+		Length: 2
+		Offset: -30, -75
+		Tick: 400
+	flag: cahosp_f
+		Length: 16
+		ZOffset: 128
+	icon: xxicon
+		UseTilesetCode: false
+		Offset: 0, 0
+
+caoutp:
+	icon: xxicon
+		Offset: 0,0
+		UseTilesetCode: false
+	icon: xxicon
+		UseTilesetCode: false
+
+node:
+	Defaults:
+		UseTilesetCode: false
+		Offset: 0,-15
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	flag: node_a
+		Length: 16
+		ShadowStart: 16
+	icon: xxicon
+		UseTilesetCode: false
+		Offset: 0, 0
+
+cabunk01:
+	Defaults:
+		Offset: 0,-30
+		UseTilesetCode: true
+	idle:
+		Start: 2
+		ShadowStart: 4
+	damaged-idle:
+		Start: 2
+		ShadowStart: 4
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -1c0
+	make: cabunk01
+		Start: 2
+		ShadowStart: 4
+		Length: 1
+	icon: xxicon
+		UseTilesetCode: false
+		Offset: 0, 0
+
+cabunk02:
+	Defaults:
+		Offset: 0,-30
+		UseTilesetCode: true
+	idle:
+		Start: 2
+		ShadowStart: 4
+	damaged-idle:
+		Start: 2
+		ShadowStart: 4
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -1c0
+	make: cabunk02
+		Start: 2
+		ShadowStart: 4
+		Length: 1
+	icon: xxicon
+		UseTilesetCode: false
+		Offset: 0, 0

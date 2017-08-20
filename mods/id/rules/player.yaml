@@ -1,0 +1,81 @@
+Player:
+	AlwaysVisible:
+	TechTree:
+	ClassicProductionQueue@Building:
+		Type: Building
+		BuildDurationModifier: 30
+		LowPowerSlowdown: 3
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
+	ClassicProductionQueue@Support:
+		Type: Support
+		BuildDurationModifier: 30
+		LowPowerSlowdown: 1
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
+	ClassicProductionQueue@Vehicle:
+		Type: Vehicle
+		BuildDurationModifier: 1
+		LowPowerSlowdown: 1
+	ClassicProductionQueue@Infantry:
+		Type: Infantry
+		BuildDurationModifier: 1
+		LowPowerSlowdown: 1
+	ClassicProductionQueue@Aircraft:
+		Type: Aircraft
+		BuildDurationModifier: 1
+		LowPowerSlowdown: 1
+	ClassicProductionQueue@Ship:
+		Type: Ship
+		BuildDurationModifier: 1
+		LowPowerSlowdown: 1
+	PlaceBuilding:
+		Palette: effect75alpha
+	SupportPowerManager:
+	ScriptTriggers:
+	MissionObjectives:
+	ConquestVictoryConditions:
+	PowerManager:
+	AllyRepair:
+	PlayerResources:
+        SelectableCash: 0, 1000, 2500, 5000, 10000
+        DefaultCash: 5000
+	DeveloperMode:
+		Enabled: true
+	Shroud:
+        FogEnabled: True
+        ExploredMapEnabled: True
+	FrozenActorLayer:
+	BaseAttackNotifier:
+		AllyNotification: OurAllyIsUnderAttack
+	HarvesterAttackNotifier:
+		Notification: OreMinerUnderAttack
+	PlayerStatistics:
+	PlaceSimpleBeacon:
+		IsPlayerPalette: true
+		Palette: player
+	ProvidesTechPrerequisite@start:
+		Name: Start Phase
+		Prerequisites: techlevel.start
+		Id: startphase
+	ProvidesTechPrerequisite@early1:
+		Name: Early Phase I
+		Prerequisites: techlevel.early1
+		Id: early1
+	ProvidesTechPrerequisite@early2:
+		Name: Early Phase II
+		Prerequisites: techlevel.early1, techlevel.early2
+		Id: early2
+	ProvidesTechPrerequisite@early3:
+		Name: Early Phase III
+		Prerequisites: techlevel.early1, techlevel.early2, techlevel.early3
+		Id: early3
+	GrantConditionOnPrerequisiteManager:
+	VeteranProductionIconOverlay:
+		Offset: 2, 2
+		Image: cameo-chevron
+		Sequence: idle
+		Palette: cameo-chevron
+	ResourceStorageWarning:
+	PlayerExperience:
+    EnemyWatcher:

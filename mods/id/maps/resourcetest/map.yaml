@@ -1,0 +1,69 @@
+MapFormat: 11
+
+RequiresMod: ra2
+
+Title: resourcetest
+
+Author: jrb0001
+
+Tileset: TEMPERATE
+
+MapSize: 130,146
+
+Bounds: 1,17,128,128
+
+Visibility: Lobby
+
+Categories: Conquest
+
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: america
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: america
+		Enemies: Multi0
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: resourcefuelproduction
+		Owner: Neutral
+		Location: 99,-22
+	Actor1: resourceammoheatproduction
+		Owner: Neutral
+		Location: 99,-30
+	Actor2: resourceammoheatproduction
+		Owner: Neutral
+		Location: 93,-31
+	Actor3: resourceammoheproduction
+		Owner: Neutral
+		Location: 90,-24
+	Actor4: resourceammoapcrproduction
+		Owner: Neutral
+		Location: 93,-16
+	Actor5: resourceammoapproduction
+		Owner: Neutral
+		Location: 100,-14
+	Actor7: mpspawn
+		Owner: Neutral
+		Location: 119,-17
+	Actor8: ResourceTransportFuel
+		Owner: Multi0
+		Location: 150,-17
+	Actor9: ResourceTransportAmmo
+		Owner: Multi0
+		Location: 155,-17
+	Actor10: node
+		Owner: Multi0
+		Location: 125,-23
+	Actor11: resourcewarehousegeneric
+		Owner: Multi0
+		Location: 104,-22

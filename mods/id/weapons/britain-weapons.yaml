@@ -1,0 +1,38 @@
+LeeEnfield:
+	Inherits@caltype: ^Bullet
+	ReloadDelay: 50
+	Range: 10c0
+	Report: LeeEnfield_v1.wav, LeeEnfield_v2.wav, LeeEnfield_v3.wav, LeeEnfield_v4.wav
+	Projectile: BulletAS
+		Speed: 1c350
+		Inaccuracy: 0c512
+	Warhead@1Dam: SpreadDamage
+		Damage: 50
+
+LeeEnfieldGarrison:
+	Inherits@caltype: LeeEnfield
+	Range: 15c0
+
+QF2_40:
+	Inherits@calsize: ^40mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 150
+	Range: 17c680
+	Report: 4inch_v1.wav, 4inch_v2.wav, 4inch_v3.wav
+	Projectile: BulletAS
+		Speed: 1c188
+		Inaccuracy: 1c0
+
+BrenMG:
+	Inherits@caltype: ^Bullet
+	ReloadDelay: 100
+	Range: 10c0
+	Burst: 30
+	BurstDelay: 3
+	Report: Bren_v1.wav, Bren_v2.wav, Bren_v3.wav
+	ValidTargets: Infantry, OpenVehicle
+	Projectile: BulletAS
+		Speed: 1c230
+		Inaccuracy: 1c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 20

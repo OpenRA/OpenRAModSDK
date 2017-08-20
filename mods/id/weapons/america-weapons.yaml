@@ -1,0 +1,128 @@
+M1Garand:
+	Inherits@caltype: ^Bullet
+	ReloadDelay: 50
+	Range: 10c0
+	Report: m1_single_shot_v1.wav, m1_single_shot_v2.wav, m1_single_shot_v3.wav, m1_single_shot_v4.wav
+	Projectile: BulletAS
+		Speed: 1c350
+		Inaccuracy: 0c512
+	Warhead@1Dam: SpreadDamage
+		Damage: 50
+
+M1GarandGarrison:
+	Inherits@caltype: M1Garand
+	Range: 15c0
+
+Bazooka:
+	Inherits@calsize: ^88mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 100
+	Range: 6c512
+	Report: bazooka_v1.wav, bazooka_v2.wav, bazooka_v3.wav
+	Projectile: BulletAS
+		Speed: 0c195
+		Inaccuracy: 1c0
+
+BazookaGarrison:
+	Inherits@caltype: Bazooka
+	Range: 15c0
+
+M3_75:
+	Inherits@calsize: ^75mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 250
+	Range: 26c520
+	Report: 75mm_L40_v1.wav, 75mm_L40_v2.wav, 75mm_L40_v3.wav
+	Projectile: BulletAS
+		Speed: 0c929
+		Inaccuracy: 1c0
+
+M2MG:
+	Inherits@caltype: ^APBullet
+	ReloadDelay: 150
+	Range: 12c0
+	Burst: 20
+	BurstDelay: 4
+	Report: m2_bmg_v1.wav, m2_bmg_v2.wav, m2_bmg_v3.wav
+	ValidTargets: Infantry, OpenVehicle
+	Projectile: BulletAS
+		Speed: 1c392
+		Inaccuracy: 1c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 40
+
+M1919:
+	Inherits@caltype: ^Bullet
+	ReloadDelay: 100
+	Range: 10c0
+	Burst: 30
+	BurstDelay: 3
+	Report: m1919_v1.wav, m1919_v2.wav, m1919_v3.wav
+	ValidTargets: Infantry, OpenVehicle
+	Projectile: BulletAS
+		Speed: 1c230
+		Inaccuracy: 1c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 20
+
+M3_37:
+	Inherits@calsize: ^37mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 150
+	Range: 17c680
+	Report: 37mm_01.wav, 37mm_02.wav, 37mm_03.wav
+	Projectile: BulletAS
+		Speed: 1c140
+		Inaccuracy: 1c0
+        
+M5_37:
+	Inherits@calsize: ^37mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 150
+	Range: 17c680
+	Report: 37mm_01.wav, 37mm_02.wav, 37mm_03.wav
+	Projectile: BulletAS
+		Speed: 1c140
+		Inaccuracy: 1c0
+
+M1_76:
+	Inherits@calsize: ^76mm
+	Inherits@caltype: ^APCR
+	ReloadDelay: 200
+	Range: 26c520
+	Report: 76mm_v1.wav, 76mm_v2.wav, 76mm_v3.wav
+	Projectile: BulletAS
+		Speed: 1c500
+		Inaccuracy: 0c512
+
+M1_105:
+	Inherits@calsize: ^105mm
+	Inherits@caltype: ^HE
+	ReloadDelay: 200
+	Range: 50c0
+	Report: 105mm_M2_v1.wav, 105mm_M2_v2.wav, 105mm_M2_v3.wav
+	Projectile: BulletAS
+		LaunchAngle: 90
+		Speed: 0c708
+		Inaccuracy: 6c0
+		ContrailLength: 20
+
+M1_57:
+	Inherits@calsize: ^57mm
+	Inherits@caltype: ^APCR
+	ReloadDelay: 150
+	Range: 26c520
+	Report: 57mm_v1.wav, 57mm_v2.wav, 57mm_v3.wav
+	Projectile: BulletAS
+		Speed: 1c500
+		Inaccuracy: 0c512
+
+M3_76:
+	Inherits@calsize: ^76mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 250
+	Range: 26c520
+	Report: 76mm_v1.wav, 76mm_v2.wav, 76mm_v3.wav
+	Projectile: BulletAS
+		Speed: 0c929
+		Inaccuracy: 0c768

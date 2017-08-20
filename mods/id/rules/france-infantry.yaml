@@ -1,0 +1,77 @@
+f_rifle:
+	Inherits@1: ^Infantry
+	Inherits@2: ^ParachutableAllied
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetInfantry
+	Inherits@EXP: ^GainsExperienceFrance
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: French Rifleman
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 100
+	Mobile:
+		Speed: 40
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 15c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: FrenchRifle
+		LocalOffset: 128,0,512
+	Armament@garrison:
+		Weapon: FrenchRifleGarrison
+		Name: garrisoned
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	-TakeCover:
+	Voiced:
+		VoiceSet: GIVoice
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+    ExternalCaptures:
+        CaptureTypes: Tech, Garrison
+        Voice: Move
+        PlayerExperience: 500
+
+f_atinf:
+	Inherits@1: ^Infantry
+	Inherits@2: ^ParachutableAllied
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceAmerica
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: French AT-Infantry
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 100
+	Mobile:
+		Speed: 40
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 15c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: Bazooka
+		LocalOffset: 128,0,512
+	Armament@garrison:
+		Weapon: BazookaGarrison
+		Name: garrisoned
+	WithInfantryBody:
+		DefaultAttackSequence:
+	-TakeCover:
+	Voiced:
+		VoiceSet: GIVoice
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	Passenger:
+		PipType: Gray

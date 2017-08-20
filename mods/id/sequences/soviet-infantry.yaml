@@ -1,0 +1,334 @@
+dog:
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 80
+	idle1:
+		Start: 57
+		Length: 14
+		Tick: 120
+	idle2:
+		Start: 72
+		Length: 14
+		Tick: 120
+	die1:
+		Start: 87
+		Length: 14
+	die2:
+		Start: 102
+		Length: 14
+	die4: # todo: copy of die1
+		Start: 87
+		Length: 14
+	die6: # todo: copy of die1; art is missing
+		Start: 87
+		Length: 14
+	shoot: dogp
+		Length: 1
+		Facings: 64
+	icon: dogicon
+
+sqd:
+	stand:
+		Start: 160
+		Facings: -8
+	run:
+		Start: 0
+		Length: 20
+		Facings: -8
+		Tick: 80
+	punch:
+		Start: 168
+		Length: 14
+		Facings: -8
+		Tick: 120
+	icon: sqdicon
+
+e2:
+	Defaults: cons
+	stand:
+		Facings: 8
+	prone-stand:
+		Start: 260
+		Length: 2
+		Facings: 8
+		Tick: 100
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 120
+	idle1:
+		Start: 56
+		Length: 15
+		Tick: 100
+	idle2:
+		Start: 71
+		Length: 15
+		Tick: 100
+	prone-run:
+		Start: 86
+		Length: 6
+		Facings: 8
+		Tick: 100
+	die1:
+		Start: 134
+		Length: 14
+	die2:
+		Start: 149
+		Length: 14
+	die4: nukedie
+		Length: *
+		Tick: 50
+	die6: electro
+		Length: *
+		Tick: 80
+	shoot:
+		Start: 164
+		Length: 6
+		Facings: 8
+		Tick: 80
+	prone-shoot:
+		Start: 212
+		Length: 6
+		Facings: 8
+		Tick: 80
+	paradrop:
+		Start: 292
+	icon: e2icon
+
+flakt:
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 120
+	prone-run:
+		Start: 165
+		Length: 6
+		Facings: 8
+		Tick: 100
+	idle1:
+		Start: 56
+		Length: 15
+		Tick: 100
+	idle2:
+		Start: 71
+		Length: 15
+		Tick: 100
+	die1:
+		Start: 86
+		Length: 15
+		Facings: 8
+		Tick: 100
+	die2:
+		Start: 149
+		Length: 15
+	die4: nukedie
+		Length: *
+		Tick: 50
+	die6: electro
+		Length: *
+		Tick: 80
+	shoot:
+		Start: 116
+		Length: 6
+		Facings: 8
+		Tick: 80
+	prone-shoot:
+		Start: 245
+		Length: 6
+		Facings: 8
+		Tick: 80
+	paradrop:
+		Start: 293
+	icon: flkticon
+
+shk:
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 120
+	idle1:
+		Start: 56
+		Length: 15
+		Tick: 100
+	idle2:
+		Start: 71
+		Length: 15
+		Tick: 100
+	prone-run:
+		Start: 86
+		Length: 6
+		Facings: 8
+		Tick: 100
+	die1:
+		Start: 134
+		Length: 14
+	die2:
+		Start: 149
+		Length: 14
+	die4: nukedie
+		Length: *
+		Tick: 50
+	die6: electro
+		Length: *
+		Tick: 80
+	shoot:
+		Start: 164
+		Length: 6
+		Facings: 8
+		Tick: 80
+	prone-shoot:
+		Start: 212
+		Length: 6
+		Facings: 8
+		Tick: 80
+	paradrop:
+		Start: 292
+	icon: shkicon
+
+terror:
+	Defaults: trst
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 120
+	idle1:
+		Start: 56
+		Length: 15
+		Tick: 100
+	idle2:
+		Start: 71
+		Length: 15
+		Tick: 100
+	prone-run:
+		Start: 86
+		Length: 6
+		Facings: 8
+		Tick: 100
+	die1:
+		Start: 134
+		Length: 14
+	die2:
+		Start: 149
+		Length: 14
+	die4: nukedie
+		Length: *
+		Tick: 50
+	die6: electro
+		Length: *
+		Tick: 80
+	shoot:
+		Start: 164
+		Length: 6
+		Facings: 8
+		Tick: 80
+	prone-shoot:
+		Start: 212
+		Length: 6
+		Facings: 8
+		Tick: 80
+	icon: trsticon
+
+deso:
+	Defaults:
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 120
+	idle1:
+		Start: 56
+		Length: 15
+		Tick: 100
+	idle2:
+		Start: 71
+		Length: 15
+		Tick: 120
+	prone-run:
+		Start: 86
+		Length: 6
+		Facings: 8
+		Tick: 100
+	die1:
+		Start: 134
+		Length: 14
+	die2:
+		Start: 149
+		Length: 14
+	die4: nukedie
+		Length: *
+		Tick: 50
+	die6: electro
+		Length: *
+		Tick: 80
+	shoot:
+		Start: 164
+		Length: 6
+		Facings: 8
+		Tick: 80
+	prone-shoot:
+		Start: 212
+		Length: 6
+		Facings: 8
+		Tick: 80
+	icon: desoicon
+
+ivan:
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 120
+	idle1:
+		Start: 56
+		Length: 15
+		Tick: 100
+	idle2:
+		Start: 71
+		Length: 15
+		Tick: 100
+	prone-run:
+		Start: 86
+		Length: 6
+		Facings: 8
+		Tick: 100
+	die1:
+		Start: 134
+		Length: 14
+	die2:
+		Start: 149
+		Length: 14
+	die4: nukedie
+		Length: *
+		Tick: 50
+	die6: electro
+		Length: *
+		Tick: 80
+	shoot:
+		Start: 164
+		Length: 6
+		Facings: 8
+		Tick: 80
+	prone-shoot:
+		Start: 212
+		Length: 6
+		Facings: 8
+		Tick: 80
+	icon: ivanicon

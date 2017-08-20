@@ -1,0 +1,113 @@
+g_rifle:
+	Inherits@1: ^Infantry
+	Inherits@2: ^Parachutable
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetInfantry
+	Inherits@EXP: ^GainsExperienceGermany
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: German Rifleman
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 100
+	Mobile:
+		Speed: 40
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 15c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: Kar98
+		LocalOffset: 128,0,512
+	Armament@garrison:
+		Weapon: Kar98Garrison
+		Name: garrisoned
+	WithInfantryBody:
+		DefaultAttackSequence:
+	-TakeCover:
+	Voiced:
+		VoiceSet: GermanGIVoice
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+    ExternalCaptures:
+        CaptureTypes: Tech, Garrison
+        Voice: Move
+        PlayerExperience: 500
+
+g_atinf:
+	Inherits@1: ^Infantry
+	Inherits@2: ^Parachutable
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: German AT-Infantry
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 100
+	Mobile:
+		Speed: 40
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 15c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: Panzerschreck
+		LocalOffset: 128,0,512
+	Armament@garrison:
+		Weapon: PanzerschreckGarrison
+		Name: garrisoned
+	WithInfantryBody:
+		DefaultAttackSequence:
+	-TakeCover:
+	Voiced:
+		VoiceSet: GermanGIVoice
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	Passenger:
+		PipType: Gray
+
+g_smg:
+	Inherits@1: ^Infantry
+	Inherits@2: ^Parachutable
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetInfantry
+	Inherits@EXP: ^GainsExperienceGermany
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: German SMG-Infantry
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 125
+	Mobile:
+		Speed: 40
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 15c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: MP40
+		LocalOffset: 128,0,512
+	Armament@garrison:
+		Weapon: MP40Garrison
+		Name: garrisoned
+	WithInfantryBody:
+		DefaultAttackSequence:
+	-TakeCover:
+	Voiced:
+		VoiceSet: GermanGIVoice
+	QuantizeFacingsFromSequence:
+		Sequence: stand

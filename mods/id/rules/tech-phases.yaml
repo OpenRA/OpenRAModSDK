@@ -1,0 +1,91 @@
+early_phase1:
+	AlwaysVisible:
+	Tooltip:
+		Name: Early Phase I
+	RenderSprites:
+		Image: phase
+	ProvidesPrerequisite@name:
+        Prerequisite: EarlyPhaseI
+        
+early_phase2:
+	AlwaysVisible:
+	Tooltip:
+		Name: Early Phase II
+	RenderSprites:
+		Image: phase
+	ProvidesPrerequisite@name:
+        Prerequisite: EarlyPhaseII
+        
+early_phase3:
+	AlwaysVisible:
+	Tooltip:
+		Name: Early Phase III
+	Valued:
+		Cost: 1000
+	RenderSprites:
+		Image: phase
+	ProvidesPrerequisite@name:
+        Prerequisite: EarlyPhaseIII
+        
+mid_phase1:
+	AlwaysVisible:
+	Tooltip:
+		Name: Mid Phase I
+	RenderSprites:
+		Image: phase
+	ProvidesPrerequisite@name:
+        Prerequisite: MidPhaseI
+        
+mid_phase2:
+	AlwaysVisible:
+	Tooltip:
+		Name: Mid Phase II
+	RenderSprites:
+		Image: phase
+	ProvidesPrerequisite@name:
+        Prerequisite: MidPhaseII
+        
+mid_phase3:
+	AlwaysVisible:
+	Tooltip:
+		Name: Mid Phase II
+	RenderSprites:
+		Image: phase
+	ProvidesPrerequisite@name:
+        Prerequisite: MidPhaseIII
+        
+late_phase1:
+	AlwaysVisible:
+	Tooltip:
+		Name: Late Phase I
+	RenderSprites:
+		Image: phase
+	ProvidesPrerequisite@name:
+        Prerequisite: LatePhaseI
+        
+late_phase2:
+	AlwaysVisible:
+	Tooltip:
+		Name: Late Phase II
+	RenderSprites:
+		Image: phase
+	ProvidesPrerequisite@name:
+        Prerequisite: LatePhaseII
+        
+late_phase3:
+	AlwaysVisible:
+	Tooltip:
+		Name: Late Phase III
+	RenderSprites:
+		Image: phase
+	ProvidesPrerequisite@name:
+        Prerequisite: LatePhaseIII
+        
+post_phase:
+	AlwaysVisible:
+	Tooltip:
+		Name: Post Phase
+	RenderSprites:
+		Image: phase
+	ProvidesPrerequisite@name:
+        Prerequisite: PostPhase

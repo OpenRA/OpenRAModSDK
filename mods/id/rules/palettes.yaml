@@ -1,0 +1,194 @@
+^Palettes:
+	PlayerColorPalette:
+		BasePalette: player
+		RemapIndex: 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
+	PlayerHighlightPalette:
+	PaletteFromFile@playertem:
+		Name: player
+		Tileset: TEMPERATE
+		Filename: unittem.pal
+		ShadowIndex: 1
+	PaletteFromFile@temperatecity:
+		Name: city
+		Tileset: TEMPERATE
+		Filename: citytem.pal
+		ShadowIndex: 1
+	PaletteFromFile@snowcity:
+		Name: city
+		Tileset: SNOW
+		Filename: citysno.pal
+		ShadowIndex: 1
+	PaletteFromFile@urbancity:
+		Name: city
+		Tileset: URBAN
+		Filename: cityurb.pal
+		ShadowIndex: 1
+	PaletteFromFile@playerurb:
+		Name: player
+		Tileset: URBAN
+		Filename: uniturb.pal
+		ShadowIndex: 1
+	PaletteFromFile@playersno:
+		Name: player
+		Tileset: SNOW
+		Filename: unitsno.pal
+		ShadowIndex: 1
+	PaletteFromCurrentTileset:
+		Name: terrain
+		ShadowIndex: 1
+ 	PaletteFromFile@rubble1:
+		Name: rubble
+		Tileset: TEMPERATE
+		Filename: rubbletem.pal
+		ShadowIndex: 1
+	PaletteFromFile@chrome:
+		Name: chrome
+		Filename: cameo.pal
+		AllowModifiers: false
+		ShadowIndex: 242
+	PaletteFromFile@ts-chrome:
+		Name: ts-chrome
+		Filename: tscameo.pal
+		AllowModifiers: false
+		ShadowIndex: 242
+	PaletteFromFile@cameo-chevron:
+		Name: cameo-chevron
+		Filename: cameo-chevron.pal
+		AllowModifiers: false
+	PaletteFromFile@pips:
+		Name: pips
+		Filename: palette.pal
+		AllowModifiers: false
+		ShadowIndex: 4
+	PaletteFromFile@ra:
+		Name: ra
+		Filename: palette.pal
+		ShadowIndex: 4
+	PaletteFromFile@effect:
+		Name: effect
+		Filename: anim.pal
+	PaletteFromFile@tseffect:
+		Name: tseffect
+		Filename: tsanim.pal
+	PaletteFromFile@apolra2:
+		Name: apolra2
+		Filename: apolra2.pal
+	PaletteFromFile@mousepal:
+		Name: mouse
+		Filename: mousepal.pal
+	PaletteFromFile@ts-mousepal:
+		Name: ts-mouse
+		Filename: ts-mousepal.pal
+	PaletteFromFile@colorpicker:
+		Name: colorpicker
+		Filename: unittem.pal
+		AllowModifiers: false
+	PaletteFromFile@resource:
+		Name: resource
+		Filename: temperat.pal
+		ShadowIndex: 1
+	PaletteFromFile@cdvoxels:
+		Name: cdvoxels
+		Filename: cdvoxels.pal
+		ShadowIndex: 1
+	PaletteFromRGBA@shadow:
+		Name: shadow
+		R: 0
+		G: 0
+		B: 0
+		A: 140
+	PaletteFromPlayerPaletteWithAlpha@cloak:
+		BaseName: cloak
+		BasePalette: player
+		Alpha: 0.50
+	PaletteFromRGBA@invuln:
+		Name: invuln
+		R: 128
+		G: 0
+		B: 0
+		A: 128
+	PaletteFromRGBA@highlight:
+		Name: highlight
+		R: 255
+		G: 255
+		B: 255
+		A: 128
+	PaletteFromRGBA@moveflash:
+		Name: moveflash
+		R: 255
+		G: 255
+		B: 255
+		A: 64
+	PaletteFromRGBA@disabled:
+		Name: disabled
+		R: 0
+		G: 0
+		B: 0
+		A: 180
+	TSShroudPalette@shroud:
+		Type: Shroud
+		Name: shroud
+	PlayerColorPalette@cdvoxels:
+		BasePalette: cdvoxels
+		BaseName: cdvoxels
+		RemapIndex: 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
+	ShroudRenderer:
+		Index: 255, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 20, 40, 56, 65, 97, 130, 148, 194, 24, 33, 66, 132, 28, 41, 67, 134, 1, 2, 4, 8, 3, 6, 12, 9, 7, 14, 13, 11, 5, 10, 15, 255
+		UseExtendedIndex: true
+		ShroudPalette: shroud
+		FogPalette: shroud
+	VoxelNormalsPalette@normals:
+		Name: normals
+		Type: RedAlert2
+	VoxelNormalsPalette@ts-normals:
+		Name: ts-normals
+		Type: TiberianSun
+	MenuPaletteEffect:
+	PaletteFromPaletteWithAlpha@effect75alpha:
+		Name: effect75alpha
+		BasePalette: ra
+		Alpha: 0.75
+	PaletteFromPaletteWithAlpha@apolra250alpha:
+		Name: apolra50alpha
+		BasePalette: apolra2
+		Alpha: 0.5
+		Premultiply: False
+	PaletteFromPaletteWithAlpha@effect50alpha:
+		Name: effect50alpha
+		BasePalette: effect
+		Alpha: 0.5
+	FlashPaletteEffect@NUKE:
+		Type: Nuke
+		Length: 90
+	PaletteFromJasc32File@unitexplode01:
+		Name: unitexplode01
+		Filename: unitexplode01.pal
+		AllowModifiers: false
+	PaletteFromJasc32File@apexplosion01:
+		Name: apexplosion01
+		Filename: apexplosion01.pal
+		AllowModifiers: false
+	PaletteFromJasc32File@heexplosion01:
+		Name: heexplosion01
+		Filename: heexplosion01.pal
+		AllowModifiers: false
+	PaletteFromJasc32File@heexplosion02:
+		Name: heexplosion02
+		Filename: heexplosion02.pal
+		AllowModifiers: false
+	PaletteFromJasc32File@gensexplo:
+		Name: gensexplo
+		Filename: gensmkexploj.pal
+		AllowModifiers: false
+	PaletteFromJasc32File@pshotts:
+		Name: pshotts
+		Filename: pshotts.pal
+		AllowModifiers: false
+	PaletteFromJasc32File@ptankshot:
+		Name: ptankshot
+		Filename: ptankshot.pal
+		AllowModifiers: false
+	PaletteFromJasc32File@ssmuzzle:
+		Name: ssmuzzle
+		Filename: ssmuzzle.pal
+		AllowModifiers: false

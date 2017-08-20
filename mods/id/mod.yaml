@@ -1,0 +1,291 @@
+Metadata:
+	Title: Iron Dominion
+	Version: Alpha 20170820 0.30
+
+PackageFormats: Mix, AudioBag
+
+Packages:
+	~^Content/ra2
+	.
+	$id: id
+	$cnc: cnc
+	./mods/common: common
+	./mods/as: as
+	~ra2.mix
+	~language.mix
+	~multi.mix
+	~audio.mix
+	~cache.mix
+	~cameo.mix
+	~conquer.mix
+	~generic.mix
+	~isogen.mix
+	~isosnow.mix
+	~isotemp.mix
+	~isourb.mix
+	~load.mix
+	~local.mix
+	~neutral.mix
+	~sidec01.mix
+	~sidec02.mix
+	~sno.mix
+	~snow.mix
+	~tem.mix
+	~temperat.mix
+	~theme.mix
+	~urb.mix
+	~urban.mix
+	~audio.bag
+	id|bits
+	id|audio/data
+	id|audio/data/voice
+	id|bits/germany/infantry
+	id|bits/germany/vehicles
+	id|bits/france/infantry
+	id|bits/france/vehicles
+	id|bits/america/infantry
+	id|bits/america/vehicles
+	id|bits/russia/infantry
+	id|bits/russia/vehicles
+	id|bits/britain/infantry
+	id|bits/britain/vehicles
+	id|bits/cameos
+	id|bits/structures
+	id|bits/animations
+	id|bits/animations/debris
+	id|bits/animations/explosions
+	id|bits/animations/trails
+	id|bits/terrain/temperate
+	id|uibits
+
+MapFolders:
+	id|maps: System
+	~^maps/id/{DEV_VERSION}: User
+
+Rules:
+	id|rules/proxy-actors.yaml
+	id|rules/misc.yaml
+	id|rules/ai.yaml
+	id|rules/player.yaml
+	id|rules/world.yaml
+	id|rules/palettes.yaml
+	id|rules/defaults.yaml
+	id|rules/veterancy.yaml
+	id|rules/aircraft.yaml
+	id|rules/animals.yaml
+	id|rules/civilians.yaml
+	id|rules/civilian-infantry.yaml
+	id|rules/civilian-vehicles.yaml
+	id|rules/civilian-structures.yaml
+	id|rules/civilian-naval.yaml
+	id|rules/civilian-props.yaml
+	id|rules/tech-structures.yaml
+	id|rules/faction-structures.yaml
+	id|rules/trees.yaml
+	id|rules/tech-phases.yaml
+	id|rules/germany-infantry.yaml
+	id|rules/germany-vehicles.yaml
+	id|rules/france-infantry.yaml
+	id|rules/france-vehicles.yaml
+	id|rules/america-infantry.yaml
+	id|rules/america-vehicles.yaml
+	id|rules/russia-infantry.yaml
+	id|rules/russia-vehicles.yaml
+	id|rules/britain-infantry.yaml
+	id|rules/britain-vehicles.yaml
+
+Sequences:
+	id|sequences/misc.yaml
+	id|sequences/aircraft.yaml
+	id|sequences/animals.yaml
+	id|sequences/civilians.yaml
+	id|sequences/civilian-structures.yaml
+	id|sequences/civilian-props.yaml
+	id|sequences/tech-structures.yaml
+	id|sequences/vehicles.yaml
+	id|sequences/germany-infantry.yaml
+	id|sequences/germany-vehicles.yaml
+	id|sequences/france-infantry.yaml
+	id|sequences/france-vehicles.yaml
+	id|sequences/america-infantry.yaml
+	id|sequences/america-vehicles.yaml
+	id|sequences/russia-infantry.yaml
+	id|sequences/russia-vehicles.yaml
+	id|sequences/britain-infantry.yaml
+	id|sequences/britain-vehicles.yaml
+	id|sequences/trees.yaml
+
+ModelSequences:
+	id|sequences/voxels.yaml
+
+Cursors:
+	id|cursors.yaml
+
+Chrome:
+	id|chrome.yaml
+
+Assemblies:
+	common|OpenRA.Mods.Common.dll
+	common|OpenRA.Mods.Cnc.dll
+	as|OpenRA.Mods.AS.dll
+
+ChromeLayout:
+	id|chrome/ingame-player.yaml
+	id|chrome/ingame-infoobjectives.yaml
+	common|chrome/ingame-infostats.yaml
+	common|chrome/ingame-observerstats.yaml
+	common|chrome/musicplayer.yaml
+	common|chrome/tooltips.yaml
+	common|chrome/ingame.yaml
+	common|chrome/ingame-observer.yaml
+	common|chrome/ingame-chat.yaml
+	common|chrome/ingame-fmvplayer.yaml
+	common|chrome/ingame-menu.yaml
+	common|chrome/ingame-info.yaml
+	common|chrome/ingame-infoscripterror.yaml
+	common|chrome/ingame-infobriefing.yaml
+	common|chrome/ingame-debug.yaml
+	common|chrome/ingame-perf.yaml
+	common|chrome/mainmenu.yaml
+	common|chrome/settings.yaml
+	common|chrome/credits.yaml
+	common|chrome/lobby.yaml
+	common|chrome/lobby-players.yaml
+	common|chrome/lobby-options.yaml
+	common|chrome/lobby-music.yaml
+	common|chrome/lobby-mappreview.yaml
+	common|chrome/lobby-kickdialogs.yaml
+	common|chrome/lobby-globalchat.yaml
+	common|chrome/multiplayer.yaml
+	common|chrome/multiplayer-browser.yaml
+	common|chrome/multiplayer-createserver.yaml
+	common|chrome/multiplayer-directconnect.yaml
+	common|chrome/multiplayer-globalchat.yaml
+	common|chrome/map-chooser.yaml
+	common|chrome/connection.yaml
+	common|chrome/replaybrowser.yaml
+	id|chrome/assetbrowser.yaml
+	common|chrome/missionbrowser.yaml
+	common|chrome/confirmation-dialogs.yaml
+	common|chrome/color-picker.yaml
+	common|chrome/dropdowns.yaml
+	common|chrome/editor.yaml
+
+Weapons:
+	id|weapons.yaml
+	id|weapons/allied-infantry.yaml
+	id|weapons/soviet-infantry.yaml
+	id|weapons/global-weapons.yaml
+	id|weapons/caliber-size.yaml
+	id|weapons/caliber-types.yaml
+	id|weapons/germany-weapons.yaml
+	id|weapons/france-weapons.yaml
+	id|weapons/america-weapons.yaml
+	id|weapons/russia-weapons.yaml
+	id|weapons/britain-weapons.yaml
+
+Voices:
+	id|audio/voices.yaml
+
+Notifications:
+	id|audio/notifications.yaml
+
+TileSets:
+	id|tilesets/temperat.yaml
+	id|tilesets/snow.yaml
+	id|tilesets/urban.yaml
+
+MapGrid:
+	Type: RectangularIsometric
+	TileSize: 60,30
+	SubCellsOffsets: 0,0,0, -256,128,0, 0,-128,0, 256,128,0
+	DefaultSubCell: 2
+	MaximumTerrainHeight: 16
+
+Music:
+	id|audio/music.yaml
+
+Translations:
+	id|languages/english.yaml
+
+LoadScreen: LogoStripeLoadScreen
+	Image: id|uibits/loadscreen.png
+	Text: Carving wooden nickels..., Preparing paratroopers..., Welcoming you to Texas..., Optimizing helium mix..., Receiving thoughts..., Igniting boosters...
+
+ServerTraits:
+	LobbyCommands
+	PlayerPinger
+	MasterServerPinger
+
+ChromeMetrics:
+	common|metrics.yaml
+	id|metrics.yaml
+
+Fonts:
+	Regular:
+		Font: common|FreeSans.ttf
+		Size:14
+	Bold:
+		Font: common|FreeSansBold.ttf
+		Size:14
+	Title:
+		Font: common|FreeSansBold.ttf
+		Size:32
+	BigBold:
+		Font: common|FreeSansBold.ttf
+		Size:24
+	MediumBold:
+		Font: common|FreeSansBold.ttf
+		Size:18
+	Small:
+		Font: common|FreeSans.ttf
+		Size:12
+	Tiny:
+		Font: common|FreeSans.ttf
+		Size:10
+	TinyBold:
+		Font: common|FreeSansBold.ttf
+		Size:10
+
+SupportsMapsFrom: ra2, id
+
+SoundFormats: Aud, Wav
+
+SpriteFormats: ShpTS, TmpTS, ShpTD
+
+SpriteSequenceFormat: TilesetSpecificSpriteSequence
+	TilesetExtensions:
+		TEMPERATE: .tem
+		SNOW: .sno
+		URBAN: .urb
+	TilesetCodes:
+		GENERIC: g
+		SNOW: a
+		TEMPERATE: t
+		URBAN: u
+
+ModelSequenceFormat: VoxelModelSequence
+
+GameSpeeds:
+	default:
+		Name: Default
+		Timestep: 40
+		OrderLatency: 3
+
+ColorValidator:
+
+ModContent:
+	InstallPromptMessage: Red Alert 2 requires artwork and audio from the original game.
+	HeaderMessage: The original game content must be copied from an original game disc.
+	Packages:
+		base: Base Game Files
+			TestFiles: ^Content/ra2/ra2.mix, ^Content/ra2/language.mix
+			Sources: ra2, origin, tfd
+			Required: true
+		music: Base Game Music
+			TestFiles: ^Content/ra2/theme.mix
+			Sources: ra2, origin, tfd
+	Sources:
+		id|installer/ra2.yaml
+		id|installer/origin.yaml
+		id|installer/firstdecade.yaml
