@@ -1,0 +1,2311 @@
+G_P4A:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 100
+		Prerequisites: ~germany.commander, ~!MidPhaseI
+		BuildLimit: 1
+		BuildDuration: 1
+		Description: Start Phase
+	BaseBuilding:
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Pz.Kpfw. IV Ausf. A Befehlswagen
+	Mobile:
+		Speed: 47
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 1730
+	HitShape@Front:
+        ArmorTypes: Light
+        TargetableOffsets: 800,0,0, 800,-470,0, 800,470,0
+		Type: Rectangle
+			TopLeft: -470, -900
+			BottomRight: 470, -600
+	HitShape@Side:
+        ArmorTypes: Light
+        TargetableOffsets: 0,-470,0, 0,470,0
+		Type: Rectangle
+			TopLeft: -470, -600
+			BottomRight: 470, 600
+	HitShape@Rear:
+        ArmorTypes: Light
+        TargetableOffsets: -764,0,0, -764,-470,0, -764,470,0
+		Type: Rectangle
+			TopLeft: -470, 600
+			BottomRight: 470, 864
+	Armor@TypeFront/Side/Rear:
+		Type: Light
+	RevealsShroud:
+		Range: 20c0
+	Turreted:
+		TurnSpeed: 2
+	Armament@MainCannon:
+		Weapon: KwK37
+		AmmoPoolName: MainCannon
+		LocalOffset: 850,16,1024
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: MG34_p4
+		LocalOffset: 400,-32,1024
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+	ActorLostNotification:
+		Notification: CriticalUnitLost
+	ProvidesPrerequisite@name:
+	ProvidesPrerequisite@germany:
+		Prerequisite: vehicles.germany
+		Factions: germany
+	SelfHealing:
+		Step: 1
+		PercentageStep: 0
+		Delay: 3
+		HealIfBelow: 100
+		DamageCooldown: 400
+	ProvidesRadar:
+	CashTrickler:
+		Interval: 100
+		Amount: 100
+		ShowTicks: False
+	Production:
+		Produces: Building
+	ProductionBar@Building:
+		ProductionType: Building
+	ParatroopersPower@G_paradrop1:
+		Prerequisites: germany.commander
+		UnitType: paraplane
+		DropItems: g_rifle, g_rifle, g_rifle, g_rifle, g_rifle, g_rifle, g_rifle, g_rifle, g_rifle, g_rifle
+		Icon: paradrop
+		OrderName: GermanyInfantryDropOrder
+		SquadSize: 1
+		SquadOffset: -3072,3072,0
+		ChargeTime: 60
+		CameraActor: camera
+		Description: German Rifleman Drop
+		LongDesc: Drops 10 Rifleman on the field.
+		SelectTargetSpeechNotification: SelectTarget
+		LowPowerSpeechNotification: LowPower
+		LaunchSpeechNotification: ReinforcementsReady
+		DisplayBeacon: false
+		DisplayRadarPing: True
+		BeaconPoster:
+		ArrowSequence: arrow
+		CircleSequence: circles
+		ClockSequence: clock
+	ParatroopersPower@G_paradrop2:
+		Prerequisites: germany.commander
+		UnitType: paraplane
+		DropItems: g_atinf, g_atinf, g_atinf, g_atinf, g_atinf
+		Icon: paradrop
+		OrderName: GermanyATInfantryDropOrder
+		SquadSize: 1
+		SquadOffset: -3072,3072,0
+		ChargeTime: 60
+		CameraActor: camera
+		Description: German AT-Infantry Drop
+		LongDesc: Drops 5 AT-Infantry on the field.
+		SelectTargetSpeechNotification: SelectTarget
+		LowPowerSpeechNotification: LowPower
+		LaunchSpeechNotification: ReinforcementsReady
+		DisplayBeacon: false
+		DisplayRadarPing: True
+		BeaconPoster:
+		ArrowSequence: arrow
+		CircleSequence: circles
+		ClockSequence: clock
+	ParatroopersPower@G_paradrop13
+		Prerequisites: germany.commander
+		UnitType: paraplane
+		DropItems: g_smg, g_smg, g_smg, g_smg, g_smg, g_smg
+		Icon: paradrop
+		OrderName: GermanyInfantrySMGDropOrder
+		SquadSize: 1
+		SquadOffset: -3072,3072,0
+		ChargeTime: 60
+		CameraActor: camera
+		Description: German SMG-Infantry Drop
+		LongDesc: Drops 6 SMG-Infantry on the field.
+		SelectTargetSpeechNotification: SelectTarget
+		LowPowerSpeechNotification: LowPower
+		LaunchSpeechNotification: ReinforcementsReady
+		DisplayBeacon: false
+		DisplayRadarPing: True
+		BeaconPoster:
+		ArrowSequence: arrow
+		CircleSequence: circles
+		ClockSequence: clock
+        
+G_P1C:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetInfantry
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 101
+		Prerequisites: ~vehicles.germany, ~!EarlyPhaseI
+		BuildDuration: 1
+		Description: Start Phase
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Pz.Kpfw. I Ausf. C
+	Mobile:
+		Speed: 55
+		TurnSpeed: 5
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 540
+	HitShape@Front:
+        ArmorTypes: VeryLight
+        TargetableOffsets: 460,0,0, 460,-330,0, 460,330,0
+		Type: Rectangle
+			TopLeft: -330, -560
+			BottomRight: 330, -360
+	HitShape@Side:
+        ArmorTypes: VeryLight
+        TargetableOffsets: 0,-330,0, 0,330,0
+		Type: Rectangle
+			TopLeft: -330, -360
+			BottomRight: 330, 360
+	HitShape@Rear:
+        ArmorTypes: VeryLight
+        TargetableOffsets: -460,0,0, -460,-330,0, -460,330,0
+		Type: Rectangle
+			TopLeft: -330, 360
+			BottomRight: 330, 560
+	Armor@TypeFront/Side/Rear:
+		Type: VeryLight
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 0,64,0
+		TurnSpeed: 4
+	Armament@cannon:
+		Weapon: EW141
+		AmmoPoolName: MainCannon
+		LocalOffset: 440,-80,900
+		Recoil: 50
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@mg:
+		Weapon: MG34_p1
+		LocalOffset: 380,80,900
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 80
+        ReloadCount: 4
+        PipCount: 10
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+        
+G_P2B:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 102
+		Prerequisites: ~vehicles.germany, ~EarlyPhaseI, ~!EarlyPhaseII
+		BuildDuration: 1
+		Description: Early Phase I
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Pz.Kpfw. II Ausf. B
+	Mobile:
+		Speed: 60
+		TurnSpeed: 5
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 790
+	HitShape@Front:
+        ArmorTypes: Medium
+        TargetableOffsets: 550,0,0, 550,-350,0, 550,350,0
+        Type: Rectangle
+			TopLeft: -350, -650
+			BottomRight: 350, -350
+	HitShape@Sides:
+        ArmorTypes: LightMedium
+        TargetableOffsets: 0,-350,0, 0,350,0
+        Type: Rectangle
+			TopLeft: -350, -350
+			BottomRight: 350, 300
+	HitShape@Rear:
+        ArmorTypes: Light
+        TargetableOffsets: -600,0,0, -600,-350,0, -600,350,0
+        Type: Rectangle
+			TopLeft: -350, 300
+			BottomRight: 350, 700
+	Armor@TypeFront:
+		Type: Medium
+	Armor@TypeSide:
+		Type: LightMedium
+	Armor@TypeRear:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 92,0,0
+		TurnSpeed: 4
+	Armament@cannon:
+		Weapon: KwK30
+		AmmoPoolName: MainCannon
+		LocalOffset: 580,-80,900
+		Recoil: 50
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@mg:
+		Weapon: MG34_p2
+		LocalOffset: 400,80,900
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 50
+        ReloadCount: 5
+        PipCount: 10
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+
+G_P35T:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 103
+		Prerequisites: ~vehicles.germany, ~!EarlyPhaseI
+		BuildDuration: 1
+		Description: Start Phase
+	Valued:
+		Cost: 1800
+	Tooltip:
+		Name: Pz.Kpfw. 35(t)
+	Mobile:
+		Speed: 53
+		TurnSpeed: 4
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 1067
+	HitShape@Front:
+        ArmorTypes: LightMedium
+        TargetableOffsets: 550,0,0, 550,-350,0, 550,350,0
+        Type: Rectangle
+			TopLeft: -350, -650
+			BottomRight: 350, -350
+	HitShape@Sides:
+        ArmorTypes: Light
+        TargetableOffsets: 0,-350,0, 0,350,0
+        Type: Rectangle
+			TopLeft: -350, -350
+			BottomRight: 350, 300
+	HitShape@Rear:
+        ArmorTypes: Light
+        TargetableOffsets: -600,0,0, -600,-350,0, -600,350,0
+        Type: Rectangle
+			TopLeft: -350, 300
+			BottomRight: 350, 700
+	Armor@TypeFront:
+		Type: LightMedium
+	Armor@TypeRear/Side:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 92,0,0
+		TurnSpeed: 3
+	Armament@cannon:
+		Weapon: KwK34t
+		AmmoPoolName: MainCannon
+		LocalOffset: 650,0,1024
+		Recoil: 100
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@mg:
+		Weapon: MG34_p2
+		LocalOffset: 400,80,1000
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+
+G_P38T:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 104
+		Prerequisites: ~vehicles.germany, ~EarlyPhaseI, ~!EarlyPhaseII
+		BuildDuration: 1
+		Description: Early Phase I
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Pz.Kpfw. 38(t)
+	Mobile:
+		Speed: 63
+		TurnSpeed: 4
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 940
+	HitShape@Front:
+        ArmorTypes: Medium
+        TargetableOffsets: 550,0,0, 550,-350,0, 550,350,0
+        Type: Rectangle
+			TopLeft: -350, -650
+			BottomRight: 350, -350
+	HitShape@Sides:
+        ArmorTypes: LightMedium
+        TargetableOffsets: 0,-350,0, 0,350,0
+        Type: Rectangle
+			TopLeft: -350, -350
+			BottomRight: 350, 300
+	HitShape@Rear:
+        ArmorTypes: Light
+        TargetableOffsets: -600,0,0, -600,-350,0, -600,350,0
+        Type: Rectangle
+			TopLeft: -350, 300
+			BottomRight: 350, 700
+	Armor@TypeFront:
+		Type: Medium
+	Armor@TypeSide:
+		Type: LightMedium
+	Armor@TypeRear:
+		Type: VeryLight
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 92,0,0
+		TurnSpeed: 3
+	Armament@cannon:
+		Weapon: KwK38t
+		AmmoPoolName: MainCannon
+		LocalOffset: 640,0,1000
+		Recoil: 100
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@mg:
+		Weapon: MG34_p2
+		LocalOffset: 400,80,1000
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+        
+G_PJ1:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 105
+		Prerequisites: ~vehicles.germany, ~EarlyPhaseI, ~!EarlyPhaseII
+		BuildDuration: 1
+		Description: Early Phase I
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Panzerjäger I
+	Mobile:
+		Speed: 60
+		TurnSpeed: 4
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 640
+	HitShape@Front:
+        ArmorTypes: Light
+        TargetableOffsets: 480,0,0, 480,-320,0, 480,320,0
+		Type: Rectangle
+			TopLeft: -320, -580
+			BottomRight: 320, 380
+	HitShape@Side:
+        ArmorTypes: VeryLight
+        TargetableOffsets: 0,-320,0, 0,320,0
+		Type: Rectangle
+			TopLeft: -320, -380
+			BottomRight: 320, 380
+	HitShape@Rear:
+        ArmorTypes: Open
+        TargetableOffsets: -480,0,0, -480,-320,0, -480,320,0
+		Type: Rectangle
+			TopLeft: -320, 380
+			BottomRight: 320, 580
+	Armor@TypeFront:
+		Type: Light
+	Armor@TypeSide:
+		Type: VeryLight
+	Armor@TypeRear:
+		Type: Open
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		TurnSpeed: 3
+	Armament@cannon:
+		Weapon: PaK36t
+		AmmoPoolName: MainCannon
+		LocalOffset: 750,0,1000
+		Recoil: 200
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Blue
+	AttackFrontal:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+	Targetable:
+		TargetTypes: Ground, Vehicle, OpenVehicle, Repair, DetonateAttack
+        
+G_BISON:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 106
+		Prerequisites: ~vehicles.germany, ~EarlyPhaseI, ~!EarlyPhaseII
+		BuildDuration: 1
+		Description: Early Phase I
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Sturmpanzer I Bison
+	Mobile:
+		Speed: 52
+		TurnSpeed: 4
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 850
+	HitShape@Front:
+        ArmorTypes: Open
+        TargetableOffsets: 490,0,0, 490,-350,0, 490,350,0
+		Type: Rectangle
+			TopLeft: -350, -590
+			BottomRight: 350, -390
+	HitShape@Side:
+        ArmorTypes: Open
+        TargetableOffsets: 0,-350,0, 0,350,0
+		Type: Rectangle
+			TopLeft: -350, -390
+			BottomRight: 350, 390
+	HitShape@Rear:
+        ArmorTypes: Open
+        TargetableOffsets: -490,0,0, -490,-350,0, -490,350,0
+		Type: Rectangle
+			TopLeft: -350, 390
+			BottomRight: 350, 590
+	Armor@TypeFront/Side/Rear:
+		Type: Open
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		TurnSpeed: 3
+	Armament@cannon:
+		Weapon: InfG33
+		AmmoPoolName: MainCannon
+		LocalOffset: 850,0,1500
+		Recoil: 200
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Yellow
+	AttackFrontal:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+	Targetable:
+		TargetTypes: Ground, Vehicle, OpenVehicle, Repair, DetonateAttack
+	AutoTarget:
+		InitialStance: HoldFire
+		EnableStances: False
+		ScanRadius: 30
+
+G_P2C:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 107
+		Prerequisites: ~vehicles.germany, ~EarlyPhaseII, ~!EarlyPhaseIII
+		BuildDuration: 1
+		Description: Early Phase II
+	Valued:
+		Cost: 1600
+	Tooltip:
+		Name: Pz.Kpfw. II Ausf. C
+	Mobile:
+		Speed: 60
+		TurnSpeed: 5
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 890
+	HitShape@Front:
+        ArmorTypes: Medium
+        TargetableOffsets: 550,0,0, 550,-350,0, 550,350,0
+        Type: Rectangle
+			TopLeft: -350, -650
+			BottomRight: 350, -350
+	HitShape@Sides:
+        ArmorTypes: LightMedium
+        TargetableOffsets: 0,-350,0, 0,350,0
+        Type: Rectangle
+			TopLeft: -350, -350
+			BottomRight: 350, 300
+	HitShape@Rear:
+        ArmorTypes: Light
+        TargetableOffsets: -600,0,0, -600,-350,0, -600,350,0
+        Type: Rectangle
+			TopLeft: -350, 300
+			BottomRight: 350, 700
+	Armor@TypeFront:
+		Type: Medium
+	Armor@TypeSide:
+		Type: LightMedium
+	Armor@TypeRear:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 92,0,0
+		TurnSpeed: 4
+	Armament@cannon:
+		Weapon: KwK30
+		AmmoPoolName: MainCannon
+		LocalOffset: 580,-80,900
+		Recoil: 50
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@mg:
+		Weapon: MG34_p2
+		LocalOffset: 400,80,900
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 50
+        ReloadCount: 5
+        PipCount: 10
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+        
+G_P3E:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 108
+		Prerequisites: ~vehicles.germany, ~EarlyPhaseII, ~!EarlyPhaseIII
+		BuildDuration: 1
+		Description: Early Phase II
+	Valued:
+		Cost: 3000
+	Tooltip:
+		Name: Pz.Kpfw. III Ausf. E
+	Mobile:
+		Speed: 60
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 1980
+	HitShape@Front:
+        ArmorTypes: Medium
+        TargetableOffsets: 710,0,0, 710,-470,0, 710,470,0
+		Type: Rectangle
+			TopLeft: -470, -810
+			BottomRight: 470, -610
+	HitShape@Side:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-470,0, 0,470,0
+		Type: Rectangle
+			TopLeft: -470, -610
+			BottomRight: 470, 510
+	HitShape@Rear:
+        ArmorTypes: LightMedium
+        TargetableOffsets: -710,0,0, -710,-470,0, -710,470,0
+		Type: Rectangle
+			TopLeft: -470, 510
+			BottomRight: 470, 810
+	Armor@TypeFront/Side:
+		Type: Medium
+	Armor@TypeRear:
+		Type: LightMedium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 64,0,0
+		TurnSpeed: 2
+	Armament@cannon:
+		Weapon: KwK36
+		AmmoPoolName: MainCannon
+		LocalOffset: 850,16,1024
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: MG34_p4
+		LocalOffset: 400,64,1024
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+        
+G_P4D:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 109
+		Prerequisites: ~vehicles.germany, ~EarlyPhaseII, ~!EarlyPhaseIII
+		BuildDuration: 1
+		Description: Start Phase
+	Valued:
+		Cost: 3500
+	Tooltip:
+		Name: Pz.Kpfw. IV Ausf. D
+	Mobile:
+		Speed: 60
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 2000
+	HitShape@Front:
+        ArmorTypes: Medium
+        TargetableOffsets: 800,0,0, 800,-470,0, 800,470,0
+		Type: Rectangle
+			TopLeft: -470, -900
+			BottomRight: 470, -600
+	HitShape@Side:
+        ArmorTypes: LightMedium
+        TargetableOffsets: 0,-470,0, 0,470,0
+		Type: Rectangle
+			TopLeft: -470, -600
+			BottomRight: 470, 600
+	HitShape@Rear:
+        ArmorTypes: LightMedium
+        TargetableOffsets: -764,0,0, -764,-470,0, -764,470,0
+		Type: Rectangle
+			TopLeft: -470, 600
+			BottomRight: 470, 864
+	Armor@TypeFront/Side:
+		Type: Medium
+	Armor@TypeRear:
+		Type: LightMedium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		TurnSpeed: 2
+	Armament@cannon:
+		Weapon: KwK37
+		AmmoPoolName: MainCannon
+		LocalOffset: 900,16,1100
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: MG34_p4
+		LocalOffset: 400,92,1024
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 300
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+
+G_STUG3B:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 110
+		Prerequisites: ~vehicles.germany, ~EarlyPhaseII, ~!EarlyPhaseIII
+		BuildDuration: 1
+		Description: Early Phase II
+	Valued:
+		Cost: 3000
+	Tooltip:
+		Name: StuG III Ausf. B
+	Mobile:
+		Speed: 60
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 2200
+	HitShape@Front:
+        ArmorTypes: LightHeavy
+        TargetableOffsets: 710,0,0, 710,-470,0, 710,470,0
+		Type: Rectangle
+			TopLeft: -470, -810
+			BottomRight: 470, -610
+	HitShape@Side:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-470,0, 0,470,0
+		Type: Rectangle
+			TopLeft: -470, -610
+			BottomRight: 470, 610
+	HitShape@Rear:
+        ArmorTypes: Light
+        TargetableOffsets: -730,0,0, -730,-470,0, -730,470,0
+		Type: Rectangle
+			TopLeft: -470, 610
+			BottomRight: 470, 830
+	Armor@TypeFront:
+		Type: LightHeavy
+	Armor@TypeSide:
+		Type: Medium
+	Armor@TypeRear:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 0,0,0
+		TurnSpeed: 2
+	Armament@cannon:
+		Weapon: StuK40
+		AmmoPoolName: MainCannon
+		LocalOffset: 700,64,900
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackFrontal:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+
+G_MARDER2:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 111
+		Prerequisites: ~vehicles.germany, ~EarlyPhaseII, ~!EarlyPhaseIII
+		BuildDuration: 1
+		Description: Early Phase II
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Marder II
+	Mobile:
+		Speed: 68
+		TurnSpeed: 4
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 1070
+	HitShape@Front:
+        ArmorTypes: Medium
+        TargetableOffsets: 550,0,0, 550,-350,0, 550,350,0
+		Type: Rectangle
+			TopLeft: -350, -650
+			BottomRight: 350, -425
+	HitShape@Side:
+        ArmorTypes: VeryLight
+        TargetableOffsets: 0,-350,0, 0,350,0
+		Type: Rectangle
+			TopLeft: -350, -425
+			BottomRight: 350, 525
+	HitShape@Rear:
+        ArmorTypes: Open
+        TargetableOffsets: -550,0,0, -550,-350,0, -550,350,0
+		Type: Rectangle
+			TopLeft: -350, 525
+			BottomRight: 350, 700
+	Armor@TypeFront:
+		Type: Medium
+	Armor@TypeSide:
+		Type: VeryLight
+	Armor@TypeRear:
+		Type: Open
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 92,0,0
+		TurnSpeed: 3
+	Armament@cannon:
+		Weapon: PaK40
+		AmmoPoolName: MainCannon
+		LocalOffset: 1024,64,1100
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Blue
+	AttackFrontal:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+	Targetable:
+		TargetTypes: Ground, Vehicle, OpenVehicle, Repair, DetonateAttack
+
+G_WESPE:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 112
+		Prerequisites: ~vehicles.germany, ~EarlyPhaseII, ~!MidPhaseI
+		BuildDuration: 1
+		Description: Early Phase II
+	Valued:
+		Cost: 3000
+	Tooltip:
+		Name: Panzerhaubitze Wespe
+	Mobile:
+		Speed: 60
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 1148
+	HitShape@Front:
+        ArmorTypes: Medium
+        TargetableOffsets: 550,0,0, 550,-350,0, 550,350,0
+		Type: Rectangle
+			TopLeft: -350, -650
+			BottomRight: 350, -400
+	HitShape@Side:
+        ArmorTypes: VeryLight
+        TargetableOffsets: 0,-350,0, 0,350,0
+		Type: Rectangle
+			TopLeft: -350, -400
+			BottomRight: 350, 400
+	HitShape@Rear:
+        ArmorTypes: Open
+        TargetableOffsets: 550,0,0, 550,-350,0, 550,350,0
+		Type: Rectangle
+			TopLeft: -350, 400
+			BottomRight: 350, 700
+	Armor@TypeFront:
+		Type: Medium
+	Armor@TypeSide:
+		Type: VeryLight
+	Armor@TypeRear:
+		Type: Open
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 16,0,0
+		TurnSpeed: 2
+	Armament@cannon:
+		Weapon: FhB18
+		AmmoPoolName: MainCannon
+		LocalOffset: 1000,0,1400
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Red
+	AttackFrontal:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+	Targetable:
+		TargetTypes: Ground, Vehicle, OpenVehicle, Repair, DetonateAttack
+	AutoTarget:
+		InitialStance: HoldFire
+		EnableStances: False
+		ScanRadius: 30
+
+G_P2D:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 113
+		Prerequisites: ~vehicles.germany, ~EarlyPhaseIII
+		BuildDuration: 1
+		Description: Early Phase III
+	Valued:
+		Cost: 1700
+	Tooltip:
+		Name: Pz.Kpfw. II Ausf. D
+	Mobile:
+		Speed: 83
+		TurnSpeed: 6
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 1000
+	HitShape@Front:
+        ArmorTypes: Medium
+        TargetableOffsets: 550,0,0, 550,-350,0, 550,350,0
+        Type: Rectangle
+			TopLeft: -350, -650
+			BottomRight: 350, -350
+	HitShape@Sides:
+        ArmorTypes: LightMedium
+        TargetableOffsets: 0,-350,0, 0,350,0
+        Type: Rectangle
+			TopLeft: -350, -350
+			BottomRight: 350, 300
+	HitShape@Rear:
+        ArmorTypes: Light
+        TargetableOffsets: -600,0,0, -600,-350,0, -600,350,0
+        Type: Rectangle
+			TopLeft: -350, 300
+			BottomRight: 350, 700
+	Armor@TypeFront:
+		Type: Medium
+	Armor@TypeSide:
+		Type: LightMedium
+	Armor@TypeRear:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 92,0,0
+		TurnSpeed: 5
+	Armament@cannon:
+		Weapon: KwK30
+		AmmoPoolName: MainCannon
+		LocalOffset: 580,-80,900
+		Recoil: 50
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@mg:
+		Weapon: MG42_p4
+		LocalOffset: 400,80,900
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 50
+        ReloadCount: 5
+        PipCount: 10
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+
+G_P3F:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 114
+		Prerequisites: ~vehicles.germany, ~EarlyPhaseIII, ~!MidPhaseI
+		BuildDuration: 1
+		Description: Early Phase III
+	Valued:
+		Cost: 3200
+	Tooltip:
+		Name: Pz.Kpfw. III Ausf. F
+	Mobile:
+		Speed: 60
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 2100
+	HitShape@Front:
+        ArmorTypes: Medium
+        TargetableOffsets: 710,0,0, 710,-470,0, 710,470,0
+		Type: Rectangle
+			TopLeft: -470, -810
+			BottomRight: 470, -610
+	HitShape@Side:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-470,0, 0,470,0
+		Type: Rectangle
+			TopLeft: -470, -610
+			BottomRight: 470, 510
+	HitShape@Rear:
+        ArmorTypes: LightMedium
+        TargetableOffsets: -710,0,0, -710,-470,0, -710,470,0
+		Type: Rectangle
+			TopLeft: -470, 510
+			BottomRight: 470, 810
+	Armor@TypeFront/Side:
+		Type: Medium
+	Armor@TypeRear:
+		Type: LightMedium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 64,0,0
+		TurnSpeed: 2
+	Armament@cannon:
+		Weapon: KwK39
+		AmmoPoolName: MainCannon
+		LocalOffset: 850,16,1024
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: MG42_p4
+		LocalOffset: 400,64,1024
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+        
+G_P4F1:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 115
+		Prerequisites: ~vehicles.germany, ~EarlyPhaseIII, ~!MidPhaseI
+		BuildDuration: 1
+		Description: Start Phase
+	Valued:
+		Cost: 3500
+	Tooltip:
+		Name: Pz.Kpfw. IV Ausf. F1
+	Mobile:
+		Speed: 65
+		TurnSpeed: 4
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 2230
+	HitShape@Front:
+        ArmorTypes: LightHeavy
+        TargetableOffsets: 800,0,0, 800,-470,0, 800,470,0
+		Type: Rectangle
+			TopLeft: -470, -900
+			BottomRight: 470, -600
+	HitShape@Side:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-470,0, 0,470,0
+		Type: Rectangle
+			TopLeft: -470, -600
+			BottomRight: 470, 600
+	HitShape@Rear:
+        ArmorTypes: LightMedium
+        TargetableOffsets: -764,0,0, -764,-470,0, -764,470,0
+		Type: Rectangle
+			TopLeft: -470, 600
+			BottomRight: 470, 864
+	Armor@TypeFront:
+		Type: LightHeavy
+	Armor@TypeSide:
+		Type: Medium
+	Armor@TypeRear:
+		Type: LightMedium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		TurnSpeed: 3
+	Armament@cannon:
+		Weapon: KwK37
+		AmmoPoolName: MainCannon
+		LocalOffset: 900,16,1100
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: MG42_p4
+		LocalOffset: 400,92,1024
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 300
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+
+G_STUG3F:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 116
+		Prerequisites: ~vehicles.germany, ~EarlyPhaseIII, ~!MidPhaseI
+		BuildDuration: 1
+		Description: Early Phase II
+	Valued:
+		Cost: 3300
+	Tooltip:
+		Name: StuG III Ausf. F
+	Mobile:
+		Speed: 60
+		TurnSpeed: 4
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 2340
+	HitShape@Front:
+        ArmorTypes: LightHeavy
+        TargetableOffsets: 710,0,0, 710,-470,0, 710,470,0
+		Type: Rectangle
+			TopLeft: -470, -810
+			BottomRight: 470, -610
+	HitShape@Side:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-470,0, 0,470,0
+		Type: Rectangle
+			TopLeft: -470, -610
+			BottomRight: 470, 610
+	HitShape@Rear:
+        ArmorTypes: Light
+        TargetableOffsets: -730,0,0, -730,-470,0, -730,470,0
+		Type: Rectangle
+			TopLeft: -470, 610
+			BottomRight: 470, 830
+	Armor@TypeFront:
+		Type: LightHeavy
+	Armor@TypeSide:
+		Type: Medium
+	Armor@TypeRear:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 0,0,0
+		TurnSpeed: 4
+	Armament@cannon:
+		Weapon: StuK40L/48
+		AmmoPoolName: MainCannon
+		LocalOffset: 1100,0,830
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Blue
+	AttackFrontal:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+
+G_HETZER:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 117
+		Prerequisites: ~vehicles.germany, ~EarlyPhaseIII
+		BuildDuration: 1
+		Description: Early Phase III
+	Valued:
+		Cost: 3000
+	Tooltip:
+		Name: Jagdpanzer 38(t) Hetzer
+	Mobile:
+		Speed: 63
+		TurnSpeed: 4
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 1600
+	HitShape@Front:
+        ArmorTypes: Ultra
+        TargetableOffsets: 550,0,0, 550,-350,0, 550,350,0
+        Type: Rectangle
+			TopLeft: -350, -650
+			BottomRight: 350, -350
+	HitShape@Sides:
+        ArmorTypes: LightMedium
+        TargetableOffsets: 0,-350,0, 0,350,0
+        Type: Rectangle
+			TopLeft: -350, -350
+			BottomRight: 350, 300
+	HitShape@Rear:
+        ArmorTypes: VeryLight
+        TargetableOffsets: -600,0,0, -600,-350,0, -600,350,0
+        Type: Rectangle
+			TopLeft: -350, 300
+			BottomRight: 350, 700
+	Armor@TypeFront:
+		Type: Ultra
+	Armor@TypeSide:
+		Type: LightMedium
+	Armor@TypeRear:
+		Type: VeryLight
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 0,128,0
+		TurnSpeed: 4
+	Armament@cannon:
+		Weapon: StuK40L/48
+		AmmoPoolName: MainCannon
+		LocalOffset: 1250,0,830
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: MG42_p4
+		LocalOffset: 250,-256,1150
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Blue
+	AttackFrontal:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+        
+G_P4F2C:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 118
+		Prerequisites: ~germany.commander, ~MidPhaseI
+		BuildLimit: 1
+		BuildDuration: 1
+		Description: Mid Phase I
+	BaseBuilding:
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Pz.Kpfw. IV Ausf. F2 Befehlswagen
+	Mobile:
+		Speed: 60
+		TurnSpeed: 4
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 2360
+	HitShape@Front:
+        ArmorTypes: LightHeavy
+        TargetableOffsets: 800,0,0, 800,-470,0, 800,470,0
+		Type: Rectangle
+			TopLeft: -470, -900
+			BottomRight: 470, -600
+	HitShape@Side:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-470,0, 0,470,0
+		Type: Rectangle
+			TopLeft: -470, -600
+			BottomRight: 470, 600
+	HitShape@Rear:
+        ArmorTypes: LightMedium
+        TargetableOffsets: -764,0,0, -764,-470,0, -764,470,0
+		Type: Rectangle
+			TopLeft: -470, 600
+			BottomRight: 470, 864
+	Armor@TypeFront:
+		Type: LightHeavy
+	Armor@TypeSide:
+		Type: Medium
+	Armor@TypeRear:
+		Type: LightMedium
+	RevealsShroud:
+		Range: 20c0
+	Turreted:
+		TurnSpeed: 3
+	Armament@cannon:
+		Weapon: KwK40/L43
+		AmmoPoolName: MainCannon
+		LocalOffset: 1100,0,1100
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: MG42_p4
+		LocalOffset: 400,92,1024
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 300
+        ResetOnFire: True
+        PipType: Gray
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+	ActorLostNotification:
+		Notification: CriticalUnitLost
+	ProvidesPrerequisite@name:
+	ProvidesPrerequisite@germany:
+		Prerequisite: vehicles.germany
+		Factions: germany
+	SelfHealing:
+		Step: 1
+		PercentageStep: 0
+		Delay: 3
+		HealIfBelow: 100
+		DamageCooldown: 400
+	ProvidesRadar:
+	CashTrickler:
+		Interval: 100
+		Amount: 100
+		ShowTicks: False
+	Production:
+		Produces: Building
+	ProductionBar@Building:
+		ProductionType: Building
+	ParatroopersPower@G_paradrop1:
+		Prerequisites: germany.commander
+		UnitType: paraplane
+		DropItems: g_rifle, g_rifle, g_rifle, g_rifle, g_rifle, g_rifle, g_rifle, g_rifle, g_rifle, g_rifle
+		Icon: paradrop
+		OrderName: GermanyInfantryDropOrder
+		SquadSize: 1
+		SquadOffset: -3072,3072,0
+		ChargeTime: 60
+		CameraActor: camera
+		Description: German Rifleman Drop
+		LongDesc: Drops 10 Rifleman on the field.
+		SelectTargetSpeechNotification: SelectTarget
+		LowPowerSpeechNotification: LowPower
+		LaunchSpeechNotification: ReinforcementsReady
+		DisplayBeacon: false
+		DisplayRadarPing: True
+		BeaconPoster:
+		ArrowSequence: arrow
+		CircleSequence: circles
+		ClockSequence: clock
+	ParatroopersPower@G_paradrop2:
+		Prerequisites: germany.commander
+		UnitType: paraplane
+		DropItems: g_atinf, g_atinf, g_atinf, g_atinf, g_atinf
+		Icon: paradrop
+		OrderName: GermanyATInfantryDropOrder
+		SquadSize: 1
+		SquadOffset: -3072,3072,0
+		ChargeTime: 60
+		CameraActor: camera
+		Description: German AT-Infantry Drop
+		LongDesc: Drops 5 AT-Infantry on the field.
+		SelectTargetSpeechNotification: SelectTarget
+		LowPowerSpeechNotification: LowPower
+		LaunchSpeechNotification: ReinforcementsReady
+		DisplayBeacon: false
+		DisplayRadarPing: True
+		BeaconPoster:
+		ArrowSequence: arrow
+		CircleSequence: circles
+		ClockSequence: clock
+	ParatroopersPower@G_paradrop13
+		Prerequisites: germany.commander
+		UnitType: paraplane
+		DropItems: g_smg, g_smg, g_smg, g_smg, g_smg, g_smg
+		Icon: paradrop
+		OrderName: GermanyInfantrySMGDropOrder
+		SquadSize: 1
+		SquadOffset: -3072,3072,0
+		ChargeTime: 60
+		CameraActor: camera
+		Description: German SMG-Infantry Drop
+		LongDesc: Drops 6 SMG-Infantry on the field.
+		SelectTargetSpeechNotification: SelectTarget
+		LowPowerSpeechNotification: LowPower
+		LaunchSpeechNotification: ReinforcementsReady
+		DisplayBeacon: false
+		DisplayRadarPing: True
+		BeaconPoster:
+		ArrowSequence: arrow
+		CircleSequence: circles
+		ClockSequence: clock
+
+G_P3J:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 120
+		Prerequisites: ~vehicles.germany, ~MidPhaseI, ~!MidPhaseII
+		BuildDuration: 1
+		Description: Early Phase III
+	Valued:
+		Cost: 3400
+	Tooltip:
+		Name: Pz.Kpfw. III Ausf. J
+	Mobile:
+		Speed: 60
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 2230
+	HitShape@Front:
+        ArmorTypes: LightHeavy
+        TargetableOffsets: 710,0,0, 710,-470,0, 710,470,0
+		Type: Rectangle
+			TopLeft: -470, -810
+			BottomRight: 470, -610
+	HitShape@Side:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-470,0, 0,470,0
+		Type: Rectangle
+			TopLeft: -470, -610
+			BottomRight: 470, 510
+	HitShape@Rear:
+        ArmorTypes: Medium
+        TargetableOffsets: -710,0,0, -710,-470,0, -710,470,0
+		Type: Rectangle
+			TopLeft: -470, 510
+			BottomRight: 470, 810
+	Armor@TypeFront:
+		Type: LightHeavy
+	Armor@TypeSide/Rear:
+		Type: Medium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 64,0,0
+		TurnSpeed: 2
+	Armament@cannon:
+		Weapon: KwK39
+		AmmoPoolName: MainCannon
+		LocalOffset: 850,16,1024
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: MG42_p4
+		LocalOffset: 400,64,1024
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+        
+G_P4F2:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 121
+		Prerequisites: ~vehicles.germany, ~MidPhaseI
+		BuildDuration: 1
+		Description: Mid Phase I
+	Valued:
+		Cost: 3700
+	Tooltip:
+		Name: Pz.Kpfw. IV Ausf. F2
+	Mobile:
+		Speed: 60
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 2360
+	HitShape@Front:
+        ArmorTypes: LightHeavy
+        TargetableOffsets: 800,0,0, 800,-470,0, 800,470,0
+		Type: Rectangle
+			TopLeft: -470, -900
+			BottomRight: 470, -600
+	HitShape@Side:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-470,0, 0,470,0
+		Type: Rectangle
+			TopLeft: -470, -600
+			BottomRight: 470, 600
+	HitShape@Rear:
+        ArmorTypes: LightMedium
+        TargetableOffsets: -764,0,0, -764,-470,0, -764,470,0
+		Type: Rectangle
+			TopLeft: -470, 600
+			BottomRight: 470, 864
+	Armor@TypeFront:
+		Type: LightHeavy
+	Armor@TypeSide:
+		Type: Medium
+	Armor@TypeRear:
+		Type: LightMedium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		TurnSpeed: 2
+	Armament@cannon:
+		Weapon: KwK40/L43
+		AmmoPoolName: MainCannon
+		LocalOffset: 1100,0,1100
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: MG42_p4
+		LocalOffset: 400,92,1024
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 300
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+        
+G_P7T:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 122
+		Prerequisites: ~vehicles.germany, ~MidPhaseI
+		BuildDuration: 1
+		Description: Mid Phase I
+	Valued:
+		Cost: 5500
+	Tooltip:
+		Name: Pz.Kpfw. VII Tiger Ausf. E
+	Mobile:
+		Speed: 50
+		TurnSpeed: 2
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 5600
+	HitShape@Front:
+        ArmorTypes: Ultra
+        TargetableOffsets: 850,0,0, 850,-570,0, 850,570,0
+        Type: Rectangle
+			TopLeft: -570, -900
+			BottomRight: 570, -600
+	HitShape@Sides:
+        ArmorTypes: VeryHeavy
+        TargetableOffsets: 0,-570,0, 0,570,0
+        Type: Rectangle
+			TopLeft: -570, -600
+			BottomRight: 570, 600
+	HitShape@Rear:
+        ArmorTypes: Heavy
+        TargetableOffsets: -850,0,0, -850,-570,0, -850,570,0
+        Type: Rectangle
+			TopLeft: -570, 600
+			BottomRight: 570, 950
+	Armor@TypeFront:
+		Type: Ultra
+	Armor@TypeSide:
+		Type: VeryHeavy
+	Armor@TypeRear:
+		Type: Heavy
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		TurnSpeed: 1
+	Armament@cannon:
+		Weapon: KwK36L/56
+		AmmoPoolName: MainCannon
+		LocalOffset: 1550,16,1250
+		Recoil: 200
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: MG42_p4
+		LocalOffset: 500,92,1100
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 300
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+
+G_STUG3G:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 123
+		Prerequisites: ~vehicles.germany, ~MidPhaseI
+		BuildDuration: 1
+		Description: Mid Phase I
+	Valued:
+		Cost: 3500
+	Tooltip:
+		Name: StuG III Ausf. G
+	Mobile:
+		Speed: 60
+		TurnSpeed: 4
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 2400
+	HitShape@Front:
+        ArmorTypes: Heavy
+        TargetableOffsets: 710,0,0, 710,-470,0, 710,470,0
+		Type: Rectangle
+			TopLeft: -470, -810
+			BottomRight: 470, -610
+	HitShape@Side:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-470,0, 0,470,0
+		Type: Rectangle
+			TopLeft: -470, -610
+			BottomRight: 470, 610
+	HitShape@Rear:
+        ArmorTypes: LightMedium
+        TargetableOffsets: -730,0,0, -730,-470,0, -730,470,0
+		Type: Rectangle
+			TopLeft: -470, 610
+			BottomRight: 470, 830
+	Armor@TypeFront:
+		Type: Heavy
+	Armor@TypeSide:
+		Type: Medium
+	Armor@TypeRear:
+		Type: LightMedium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 0,0,0
+		TurnSpeed: 4
+	Armament@cannon:
+		Weapon: StuK40L/48
+		AmmoPoolName: MainCannon
+		LocalOffset: 1100,0,830
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Blue
+	AttackFrontal:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+
+G_GRILLE:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 124
+		Prerequisites: ~vehicles.germany, ~MidPhaseI
+		BuildDuration: 1
+		Description: Mid Phase I
+	Valued:
+		Cost: 3500
+	Tooltip:
+		Name: Sturmpanzer Grille
+	Mobile:
+		Speed: 63
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 1200
+	HitShape@Front:
+        ArmorTypes: LightMedium
+        TargetableOffsets: 550,0,0, 550,-350,0, 550,350,0
+        Type: Rectangle
+			TopLeft: -350, -650
+			BottomRight: 350, -350
+	HitShape@Side:
+        ArmorTypes: VeryLight
+        TargetableOffsets: 0,-350,0, 0,350,0
+		Type: Rectangle
+			TopLeft: -350, -350
+			BottomRight: 350, 400
+	HitShape@Rear:
+        ArmorTypes: Open
+        TargetableOffsets: 550,0,0, 550,-350,0, 550,350,0
+		Type: Rectangle
+			TopLeft: -350, 400
+			BottomRight: 350, 700
+	Armor@TypeFront:
+		Type: LightMedium
+	Armor@TypeSide:
+		Type: VeryLight
+	Armor@TypeRear:
+		Type: Open
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: -64,0,0
+		TurnSpeed: 2
+	Armament@cannon:
+		Weapon: SlG33
+		AmmoPoolName: MainCannon
+		LocalOffset: 900,0,1400
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Red
+	AttackFrontal:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+	Targetable:
+		TargetTypes: Ground, Vehicle, OpenVehicle, Repair, DetonateAttack
+	AutoTarget:
+		InitialStance: HoldFire
+		EnableStances: False
+		ScanRadius: 30
+
+G_P3L:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 125
+		Prerequisites: ~vehicles.germany, ~MidPhaseII
+		BuildDuration: 1
+		Description: Early Phase III
+	Valued:
+		Cost: 3600
+	Tooltip:
+		Name: Pz.Kpfw. III Ausf. L
+	Mobile:
+		Speed: 60
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 2300
+	HitShape@Front:
+        ArmorTypes: Heavy
+        TargetableOffsets: 710,0,0, 710,-470,0, 710,470,0
+		Type: Rectangle
+			TopLeft: -470, -810
+			BottomRight: 470, -610
+	HitShape@Side:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-470,0, 0,470,0
+		Type: Rectangle
+			TopLeft: -470, -610
+			BottomRight: 470, 510
+	HitShape@Rear:
+        ArmorTypes: Medium
+        TargetableOffsets: -710,0,0, -710,-470,0, -710,470,0
+		Type: Rectangle
+			TopLeft: -470, 510
+			BottomRight: 470, 810
+	Armor@TypeFront:
+		Type: Heavy
+	Armor@TypeSide/Rear:
+		Type: Medium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 64,0,0
+		TurnSpeed: 2
+	Armament@cannon:
+		Weapon: KwK39/L60
+		AmmoPoolName: MainCannon
+		LocalOffset: 1050,16,1024
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: MG42_p4
+		LocalOffset: 400,64,1024
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Blue
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice
+        
+G_P4G:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceGermany
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 126
+		Prerequisites: ~vehicles.germany, ~MidPhaseII
+		BuildDuration: 1
+		Description: Mid Phase II
+	Valued:
+		Cost: 3900
+	Tooltip:
+		Name: Pz.Kpfw. IV Ausf. G
+	Mobile:
+		Speed: 60
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 2400
+	HitShape@Front:
+        ArmorTypes: Heavy
+        TargetableOffsets: 800,0,0, 800,-470,0, 800,470,0
+		Type: Rectangle
+			TopLeft: -470, -900
+			BottomRight: 470, -600
+	HitShape@Side:
+        ArmorTypes: LightHeavy
+        TargetableOffsets: 0,-470,0, 0,470,0
+		Type: Rectangle
+			TopLeft: -470, -600
+			BottomRight: 470, 600
+	HitShape@Rear:
+        ArmorTypes: Medium
+        TargetableOffsets: -764,0,0, -764,-470,0, -764,470,0
+		Type: Rectangle
+			TopLeft: -470, 600
+			BottomRight: 470, 864
+	Armor@TypeFront:
+		Type: Heavy
+	Armor@TypeSide:
+		Type: LightHeavy
+	Armor@TypeRear:
+		Type: Medium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		TurnSpeed: 2
+	Armament@cannon:
+		Weapon: KwK40/L48
+		AmmoPoolName: MainCannon
+		LocalOffset: 1200,0,1100
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: MG42_p4
+		LocalOffset: 400,92,1024
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 300
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GermanAlliedVehicleVoice

@@ -1,0 +1,96 @@
+caoild:
+	Inherits: ^TechBuilding
+	Selectable:
+		Bounds: 96, 104, -2, -26
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	EngineerRepairable:
+	CashTrickler:
+		Interval: 100
+		Amount: 20
+	Tooltip:
+		Name: Tech Oil Derrick
+	Health:
+		HP: 1000
+	RevealsShroud:
+		Range: 4c0
+	Armor:
+		Type: Steel
+	WithIdleOverlay@pump:
+		Sequence: idle-pump
+	WithIdleOverlay@flag:
+		Sequence: flag
+		Offset: 1000,0,0
+	GivesBuildableArea:
+	GivesCashOnCapture:
+		Amount: 1000
+
+caairp:
+	Inherits: ^TechBuilding
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Tech Airport
+	Armor@Type:
+		Type: Medium
+	Health:
+		HP: 5000
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+    HitShape:
+        UseOccupiedCellsOffsets: true
+        Type: Rectangle
+            LocalYaw: 128
+            TopLeft: -1536, -1536
+            BottomRight: 1536, 1536
+	WithIdleOverlay@decoration:
+	WithIdleOverlay@flag:
+		Sequence: flag
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+    ProvidesPrerequisite@Name:
+	ProductionBar@Vehicle:
+        ProductionType: Vehicle
+    PrimaryBuilding:
+	RallyPoint:
+		Offset: 4,2
+		Palette: mouse
+		IsPlayerPalette: false
+	Exit@1:
+		SpawnOffset: -1024,0,0
+		ExitCell: 3,2
+	ProductionFromMapEdge:
+		ReadyAudio: ReinforcementsArrived
+		Produces: Vehicle
+
+cahosp:
+	Inherits: ^TechBuilding
+	Building:
+		Footprint: xxxx xxxx xxxx xxxx xxxx xxxx
+		Dimensions: 6, 4
+	Tooltip:
+		Name: Civilian Hospital
+	Health:
+		HP: 800
+	RevealsShroud:
+		Range: 6c0
+	Armor@type:
+		Type: Heavy
+	GivesBuildableArea:
+	RepairsUnits:
+		StartRepairingNotification:
+	RallyPoint:
+	WithIdleOverlay:
+	WithIdleOverlay@flag:
+		Sequence: flag
+		Offset: 0,-500,2520
+
+cathosp:
+	Inherits: cahosp
+	EditorOnlyTooltip:
+		Name: Tech Hospital
+	RenderSprites:
+		Image: cahosp

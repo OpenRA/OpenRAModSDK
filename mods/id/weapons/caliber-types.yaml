@@ -1,0 +1,200 @@
+^Bullet:
+#	ValidTargets: Infantry, OpenVehicle
+	Projectile: BulletAS
+		Image: bullet
+		LaunchAngle: 45
+		Palette: tseffect
+		Speed: 1c0
+		Inaccuracy: 1c0
+		Blockable: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 64
+		Versus:
+			Infantry: 100
+			Vehicle: 50
+			Open: 50
+			VeryLight: 10
+			Light: 5
+			LightMedium: 0
+			Medium: 0
+			LightHeavy: 0
+			Heavy: 0
+			VeryHeavy: 0
+			Ultra: 0
+			UltraHeavy: 0
+			Buildings: 0
+			Walls: 0
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+#        ValidTargets: Infantry, OpenVehicle
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
+		ValidTargets: Ground
+		InValidTargets: Water
+        
+^APBullet:
+#	ValidTargets: Infantry, OpenVehicle
+	Projectile: BulletAS
+		Image: bullet
+		LaunchAngle: 45
+		Palette: tseffect
+		Speed: 1c0
+		Inaccuracy: 1c0
+		Blockable: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 64
+		Versus:
+			Infantry: 100
+			Vehicle: 75
+			Open: 100
+			VeryLight: 15
+			Light: 10
+			LightMedium: 5
+			Medium: 0
+			LightHeavy: 0
+			Heavy: 0
+			VeryHeavy: 0
+			Ultra: 0
+			UltraHeavy: 0
+			Buildings: 0
+			Walls: 0
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+#        ValidTargets: Infantry, OpenVehicle
+	Warhead@2Eff: CreateEffect
+		Explosions: gatexp1
+		ExplosionPalette: tseffect
+		ValidTargets: Ground
+		InValidTargets: Water
+
+^HE:
+	Warhead@1Dam: SpreadDamage
+		Spread: 512
+		Versus:
+			Infantry: 100
+			Vehicle: 50
+			Open: 200
+			VeryLight: 180
+			Light: 150
+			LightMedium: 100
+			Medium: 75
+			LightHeavy: 50
+			Heavy: 35
+			VeryHeavy: 25
+			Ultra: 10
+			UltraHeavy: 5
+			Buildings: 200
+			Walls: 100
+		DamageTypes: Prone100Percent, TriggerProne, FlameDeath
+	Warhead@1Dam: SpreadDamage
+		Falloff: 100, 50, 40, 30, 20
+	Warhead@2Eff: CreateEffect
+		Explosions: heexplosion01
+		ImpactSounds: grenexpl1.aud, grenexpl2.aud, grenexpl3.aud, grenexpl4.aud
+		InValidTargets: Water
+		ExplosionPalette: heexplosion01
+
+^AP:
+	Warhead@1Dam: SpreadDamage
+		Spread: 256
+		Versus:
+			Infantry: 100
+			Vehicle: 100
+			Open: 200
+			VeryLight: 200
+			Light: 175
+			LightMedium: 150
+			Medium: 125
+			LightHeavy: 100
+			Heavy: 75
+			VeryHeavy: 50
+			Ultra: 25
+			UltraHeavy: 15
+			Buildings: 50
+			Walls: 75
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@1Dam: SpreadDamage
+		Falloff: 100, 50, 25
+	Warhead@2Eff: CreateEffect
+		Explosions: apexplosion01
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+		ExplosionPalette: apexplosion01
+
+^APCR:
+	Warhead@1Dam: SpreadDamage
+		Spread: 256
+		Versus:
+			Infantry: 100
+			Vehicle: 125
+			Open: 200
+			VeryLight: 200
+			Light: 175
+			LightMedium: 150
+			Medium: 125
+			LightHeavy: 100
+			Heavy: 75
+			VeryHeavy: 50
+			Ultra: 25
+			UltraHeavy: 15
+			Buildings: 50
+			Walls: 75
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@1Dam: SpreadDamage
+		Falloff: 100, 50, 25
+	Warhead@2Eff: CreateEffect
+		Explosions: apexplosion01
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+		ExplosionPalette: apexplosion01
+
+^HEAT:
+	Warhead@1Dam: SpreadDamage
+		Spread: 256
+		Versus:
+			Infantry: 100
+			Vehicle: 150
+			Open: 200
+			VeryLight: 200
+			Light: 175
+			LightMedium: 150
+			Medium: 125
+			LightHeavy: 100
+			Heavy: 75
+			VeryHeavy: 50
+			Ultra: 25
+			UltraHeavy: 15
+			Buildings: 75
+			Walls: 80
+		DamageTypes: Prone70Percent, TriggerProne, FlameDeath
+	Warhead@1Dam: SpreadDamage
+		Falloff: 100, 50, 25
+	Warhead@2Eff: CreateEffect
+		Explosions: heexplosion01
+		ImpactSounds: grenexpl1.aud, grenexpl2.aud, grenexpl3.aud, grenexpl4.aud
+		InValidTargets: Water
+		ExplosionPalette: heexplosion01
+
+^ARTY_HEAT:
+	Warhead@1Dam: SpreadDamage
+		Spread: 512
+			Infantry: 100
+			Vehicle: 150
+			Open: 200
+			VeryLight: 200
+			Light: 175
+			LightMedium: 150
+			Medium: 125
+			LightHeavy: 100
+			Heavy: 75
+			VeryHeavy: 50
+			Ultra: 25
+			UltraHeavy: 15
+			Buildings: 75
+			Walls: 80
+		DamageTypes: Prone70Percent, TriggerProne, FlameDeath
+	Warhead@1Dam: SpreadDamage
+		Falloff: 100, 50, 40, 30, 20
+	Warhead@2Eff: CreateEffect
+		Explosions: heexplosion02
+		ImpactSounds: grenexpl1.aud, grenexpl2.aud, grenexpl3.aud, grenexpl4.aud
+		InValidTargets: Water
+		ExplosionPalette: heexplosion02

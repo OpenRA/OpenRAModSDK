@@ -1,0 +1,39 @@
+b_rifle:
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 10
+		Facings: 8
+		Tick: 120
+	idle1:
+		Start: 88
+		Length: 15
+		Tick: 100
+	idle2:
+		Start: 238
+		Length: 15
+		Tick: 100
+	die1:
+		Start: 223
+		Length: 15
+		Tick: 80
+	die2:
+		Start: 223
+		Length: 15
+		Tick: 80
+	die4: nukedie
+		Length: *
+		Tick: 50
+	die6: electro
+		Length: *
+		Tick: 80
+	shoot:
+		Start: 103
+		Length: 15
+		Facings: 8
+		Tick: 80
+	paradrop:
+		Start: 253
+		Length: 1
+	icon: xxicon

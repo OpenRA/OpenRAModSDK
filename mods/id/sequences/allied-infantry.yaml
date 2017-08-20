@@ -1,0 +1,504 @@
+engineer:
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	liedown:
+		Start: 66
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 114
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 87
+		Length: 7
+		Facings: 8
+	prone-run:
+		Start: 87
+		Length: 7
+		Facings: 8
+		Tick: 100
+	idle1:
+		Start: 57
+		Length: 14
+		Tick: 120
+	idle2:
+		Start: 72
+		Length: 14
+		Tick: 120
+	cheer:
+		Start: 245
+		Length: 8
+		Tick: 120
+	die1:
+		Start: 134
+		Length: 15
+		Tick: 80
+	die2:
+		Start: 149
+		Length: 15
+		Tick: 80
+	die4: nukedie
+		Length: *
+		Tick: 50
+	die6: electro
+		Length: *
+		Tick: 80
+	icon: engnicon
+
+adog:
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 80
+	idle1:
+		Start: 57
+		Length: 14
+		Tick: 120
+	idle2:
+		Start: 72
+		Length: 14
+		Tick: 120
+	die1:
+		Start: 87
+		Length: 14
+	die2:
+		Start: 102
+		Length: 14
+	die4: # todo: copy of die1
+		Start: 87
+		Length: 14
+	die6: # todo: copy of die1; art is missing
+		Start: 87
+		Length: 14
+	shoot: adogp
+		Length: 1
+		Facings: 64
+	icon: adogicon
+
+dlph:
+	stand:
+		Start: 48
+		Facings: -8
+	run:
+		Start: 0
+		Length: 6
+		Facings: -8
+		Tick: 80
+	cheer:
+		Start: 103
+		Length: 12
+		Tick: 120
+	die: # TODO
+		Start: 116
+		Length: 14
+	shoot:
+		Start: 56
+		Length: 6
+		Facings: 8
+	icon: dlphicon
+
+e1:
+	Defaults: gi
+	stand:
+		Facings: 8
+	prone-stand:
+		Start: 260
+		Length: 2
+		Facings: 8
+		Tick: 100
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 120
+	idle1:
+		Start: 56
+		Length: 15
+		Tick: 100
+	idle2:
+		Start: 71
+		Length: 15
+		Tick: 100
+	prone-run:
+		Start: 86
+		Length: 6
+		Facings: 8
+		Tick: 100
+	die1:
+		Start: 134
+		Length: 14
+		Tick: 80
+	die2:
+		Start: 149
+		Length: 14
+		Tick: 80
+	die4: nukedie
+		Length: *
+		Tick: 50
+	die6: electro
+		Length: *
+		Tick: 80
+	shoot:
+		Start: 164
+		Length: 6
+		Facings: 8
+		Tick: 80
+	prone-shoot:
+		Start: 212
+		Length: 6
+		Facings: 8
+		Tick: 80
+	deployed:
+		Start: 292
+		Facings: 8
+	deploy:
+		Start: 300
+		Length: 15
+	shoot-deployed:
+		Start: 315
+		Length: 6
+		Facings: 8
+	paradrop:
+		Start: 363
+	icon: giicon
+
+snipe:
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 80
+	idle1:
+		Start: 56
+		Length: 15
+		Tick: 100
+	idle2:
+		Start: 71
+		Length: 15
+		Tick: 100
+	prone-run:
+		Start: 86
+		Length: 6
+		Facings: 8
+		Tick: 100
+	die1:
+		Start: 134
+		Length: 14
+	die2:
+		Start: 149
+		Length: 14
+	die4: nukedie
+		Length: *
+		Tick: 50
+	die6: electro
+		Length: *
+		Tick: 80
+	shoot:
+		Start: 164
+		Length: 6
+		Facings: 8
+		Tick: 80
+	prone-shoot:
+		Start: 212
+		Length: 6
+		Facings: 8
+		Tick: 80
+	icon: snipicon
+
+spy:
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 120
+	idle1:
+		Start: 56
+		Length: 15
+		Tick: 100
+	idle2:
+		Start: 71
+		Length: 15
+		Tick: 100
+	prone-run:
+		Start: 86
+		Length: 6
+		Facings: 8
+		Tick: 100
+	die1:
+		Start: 134
+		Length: 14
+	die2:
+		Start: 149
+		Length: 14
+	die4: nukedie
+		Length: *
+		Tick: 50
+	die6: electro
+		Length: *
+		Tick: 80
+	shoot:
+		Start: 164
+		Length: 6
+		Facings: 8
+		Tick: 80
+	prone-shoot:
+		Start: 212
+		Length: 6
+		Facings: 8
+		Tick: 80
+	icon: spyicon
+
+seal: # TODO: seala on SNOW
+	stand:
+		Facings: 8
+	swim-stand:
+		Start: 340
+		Facings: 8
+		Length: 6
+		Tick: 160
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 120
+	swim-run:
+		Start: 388
+		Facings: 8
+		Length: 6
+		Tick: 120
+	idle1:
+		Start: 56
+		Length: 15
+		Tick: 100
+	idle2:
+		Start: 71
+		Length: 15
+		Tick: 100
+	prone-run:
+		Start: 86
+		Length: 6
+		Facings: 8
+		Tick: 100
+	die1:
+		Start: 134
+		Length: 14
+	swim-die1:
+		Start: 512
+		Length: 22
+	die2:
+		Start: 149
+		Length: 14
+	swim-die2:
+		Start: 534
+		Length: 20
+	die4: nukedie
+		Length: *
+		Tick: 50
+	die6: electro
+		Length: *
+		Tick: 80
+	shoot:
+		Start: 164
+		Length: 6
+		Facings: 8
+		Tick: 80
+	prone-shoot:
+		Start: 212
+		Length: 6
+		Facings: 8
+		Tick: 80
+	swim-shoot:
+		Start: 436
+		Length: 6
+		Facings: 8
+		Tick: 80
+	icon: sealicon
+
+tany:
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 120
+	swim-run:
+		Start: 506
+		Facings: 8
+		Length: 6
+		Tick: 120
+	idle1:
+		Start: 56
+		Length: 15
+		Tick: 100
+	idle2:
+		Start: 71
+		Length: 15
+		Tick: 100
+	swim-stand:
+		Start: 362
+		Facings: 8
+		Length: 6
+		Tick: 160
+	prone-run:
+		Start: 86
+		Length: 6
+		Facings: 8
+		Tick: 100
+	die1:
+		Start: 134
+		Length: 14
+	swim-die1:
+		Start: 323
+		Length: 28
+	die2:
+		Start: 149
+		Length: 14
+	swim-die2:
+		Start: 342
+		Length: 22
+	die4: nukedie
+		Length: *
+		Tick: 50
+	die6: electro
+		Length: *
+		Tick: 80
+	shoot:
+		Start: 164
+		Length: 6
+		Facings: 8
+		Tick: 80
+	prone-shoot:
+		Start: 212
+		Length: 6
+		Facings: 8
+		Tick: 80
+	swim-shoot:
+		Start: 554
+		Length: 6
+		Facings: 8
+		Tick: 80
+	paradrop:
+		Start: 602
+	icon: tanyicon
+
+jumpjet:
+	Defaults: rock
+		Length: 6
+		Facings: 8
+	stand:
+		Length: 1
+	run:
+		Start: 8
+		Tick: 120
+	idle1:
+		Start: 56
+		Length: 15
+		Facings: 1
+		Tick: 100
+	idle2:
+		Start: 71
+		Length: 15
+		Facings: 1
+		Tick: 100
+	prone-run:
+		Start: 86
+		Tick: 100
+	die1: # copied from die-air
+	#	Start: 134
+	#	Length: 14
+		Start: 340
+		Length: 15
+		Facings: 2
+		Tick: 80
+	die2: # copied from die-air
+	#	Start: 149
+	#	Length: 14
+		Start: 340
+		Length: 15
+		Facings: 2
+		Tick: 80
+	die4: nukedie
+		Length: *
+		Tick: 50
+		Facings: 1
+	die6: electro
+		Length: *
+		Facings: 1
+		Tick: 80
+	shoot:
+		Start: 164
+		Tick: 80
+	prone-shoot:
+		Start: 212
+		Tick: 80
+	fly:
+		Start: 292
+		Tick: 100
+	die-air:
+		Start: 340
+		Length: 16
+		Facings: 2
+		Tick: 80
+	shoot-air:
+		Start: 370
+		Tick: 80
+	idle-air:
+		Start: 418
+		Length: 9
+		Facings: 1
+		Tick: 100
+	icon: jjeticon
+		Length: 1
+		Facings: 1
+
+cleg:
+	stand:
+		Facings: 8
+	run:
+		Start: 117
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 68
+		Length: 6
+		Facings: 8
+	idle1:
+		Start: 8
+		Length: 15
+	idle2:
+		Start: 23
+		Length: 15
+	die1:
+		Start: 38
+		Length: 15
+	die2:
+		Start: 53
+		Length: 15
+	die3:
+		Start: 68
+		Length: 8
+	die4: nukedie
+		Length: *
+		Tick: 50
+	die6: electro
+		Length: *
+		Tick: 80
+	cheer:
+		Start: 166
+		Length: 7
+	icon: clegicon

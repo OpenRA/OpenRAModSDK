@@ -1,0 +1,75 @@
+r_rifle:
+	Inherits@1: ^Infantry
+	Inherits@2: ^ParachutableSoviet
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetInfantry
+	Inherits@EXP: ^GainsExperienceRussia
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Russian Rifleman
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 100
+	Mobile:
+		Speed: 40
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 15c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: Mosin
+		LocalOffset: 128,0,512
+	Armament@garrison:
+		Weapon: MosinGarrison
+		Name: garrisoned
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	-TakeCover:
+	Voiced:
+		VoiceSet: ConscriptVoice
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+    ExternalCaptures:
+        CaptureTypes: Tech, Garrison
+        Voice: Move
+        PlayerExperience: 500
+
+r_smg:
+	Inherits@1: ^Infantry
+	Inherits@2: ^ParachutableSoviet
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetInfantry
+	Inherits@EXP: ^GainsExperienceRussia
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Russian SMG-Infantry
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 125
+	Mobile:
+		Speed: 40
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 15c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: PPSH
+		LocalOffset: 128,0,512
+	Armament@garrison:
+		Weapon: PPSHGarrison
+		Name: garrisoned
+	WithInfantryBody:
+		DefaultAttackSequence:
+	-TakeCover:
+	Voiced:
+		VoiceSet: ConscriptVoice
+	QuantizeFacingsFromSequence:
+		Sequence: stand

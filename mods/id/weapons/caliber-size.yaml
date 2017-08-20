@@ -1,0 +1,355 @@
+^BasicShell:
+	Projectile: BulletAS
+		Speed: 1c0
+		Inaccuracy: 1c0
+		Image: shell02
+		Shadow: true
+		LaunchAngle: 45
+		Palette: tseffect
+		ContrailLength: 10
+		ContrailColor: FFFFFF
+		ContrailWidth: 0c15
+		Blockable: true        
+#    Warhead@Capture: CaptureActor
+#        Range: 1c0
+#        CaptureTypes: Tech
+#        Experience: 350
+#        PlayerExperience: 25
+
+^20mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Warhead@1Dam: SpreadDamage
+		Damage: 75
+	Warhead@2Eff: CreateEffect
+		Explosions: tiny_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater, SmallScorch
+        
+^25mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c16
+	Warhead@1Dam: SpreadDamage
+		Damage: 164
+	Warhead@2Eff: CreateEffect
+		Explosions: tiny_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater, SmallScorch
+        
+^37mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c18
+	Warhead@1Dam: SpreadDamage
+		Damage: 245
+	Warhead@2Eff: CreateEffect
+		Explosions: small_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater, SmallScorch
+        
+^40mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c19
+	Warhead@1Dam: SpreadDamage
+		Damage: 341
+	Warhead@2Eff: CreateEffect
+		Explosions: small_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater, SmallScorch
+        
+^45mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c19
+	Warhead@1Dam: SpreadDamage
+		Damage: 368
+	Warhead@2Eff: CreateEffect
+		Explosions: small_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater, SmallScorch
+
+^47mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c19
+	Warhead@1Dam: SpreadDamage
+		Damage: 409
+	Warhead@2Eff: CreateEffect
+		Explosions: small_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater, SmallScorch
+
+^50mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c20
+	Warhead@1Dam: SpreadDamage
+		Damage: 477
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater, SmallScorch
+
+^57mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c21
+	Warhead@1Dam: SpreadDamage
+		Damage: 580
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater, SmallScorch
+
+^75mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c24
+	Warhead@1Dam: SpreadDamage
+		Damage: 750
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, SmallScorch
+
+^76mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c25
+	Warhead@1Dam: SpreadDamage
+		Damage: 784
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, SmallScorch
+
+^85mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c28
+	Warhead@1Dam: SpreadDamage
+		Damage: 1091
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
+^88mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c29
+	Warhead@1Dam: SpreadDamage
+		Damage: 1500
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
+^90mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c30
+	Warhead@1Dam: SpreadDamage
+		Damage: 1636
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
+^95mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c32
+	Warhead@1Dam: SpreadDamage
+		Damage: 1943
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
+^105mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c33
+	Warhead@1Dam: SpreadDamage
+		Damage: 2386
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: LargeCrater, MediumScorch
+
+^122mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c34
+	Warhead@1Dam: SpreadDamage
+		Damage: 2659
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: LargeCrater, MediumScorch
+
+^128mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c35
+	Warhead@1Dam: SpreadDamage
+		Damage: 3341
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: LargeCrater, MediumScorch
+
+^150mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c40
+	Warhead@1Dam: SpreadDamage
+		Damage: 4000
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: LargeCrater, MediumScorch
+
+^152mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c40
+	Warhead@1Dam: SpreadDamage
+		Damage: 4773
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: LargeCrater, MediumScorch
+
+^155mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c40
+	Warhead@1Dam: SpreadDamage
+		Damage: 5011
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: LargeCrater, MediumScorch

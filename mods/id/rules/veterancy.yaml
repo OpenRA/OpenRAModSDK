@@ -1,0 +1,529 @@
+^GainsExperience:
+	GainsExperience:
+		PlayerExperienceModifier: 1
+		Conditions:
+			100: rank # 5% aim/reload
+			200: rank # 10% aim/reload
+			300: rank # 15% aim/reload
+			400: rank # 20% aim/reload
+			600: rank # 30% aim/reload 5% DMG reduction
+			800: rank # 40% aim/reload 10% DMG reduction 5% firepower
+			1000: rank # 50% aim/reload 15% DMG reduction 10% firepower
+			1200: rank # 60% aim 50% reload 20% DMG reduction 15% firepower
+			1400: rank # 70% aim 50% reload 25% DMG reduction 20% firepower
+			1600: rank # 80% aim 50% reload 30% DMG reduction 25% firepower Selfhealing
+	ReloadDelayMultiplier@1:
+		RequiresCondition: rank == 1
+		Modifier: 95
+	InaccuracyMultiplier@1:
+		RequiresCondition: rank == 1
+		Modifier: 95
+	ReloadDelayMultiplier@2:
+		RequiresCondition: rank == 2
+		Modifier: 90
+	InaccuracyMultiplier@2:
+		RequiresCondition: rank == 2
+		Modifier: 90
+	ReloadDelayMultiplier@3:
+		RequiresCondition: rank == 3
+		Modifier: 85
+	InaccuracyMultiplier@3:
+		RequiresCondition: rank == 3
+		Modifier: 85
+	ReloadDelayMultiplier@4:
+		RequiresCondition: rank == 4
+		Modifier: 80
+	InaccuracyMultiplier@4:
+		RequiresCondition: rank == 4
+		Modifier: 80
+	ReloadDelayMultiplier@5:
+		RequiresCondition: rank == 5
+		Modifier: 70
+	InaccuracyMultiplier@5:
+		RequiresCondition: rank == 5
+		Modifier: 70
+	DamageMultiplier@5:
+		RequiresCondition: rank == 5
+		Modifier: 95
+	ReloadDelayMultiplier@6:
+		RequiresCondition: rank == 6
+		Modifier: 60
+	InaccuracyMultiplier@6:
+		RequiresCondition: rank == 6
+		Modifier: 60
+	DamageMultiplier@6:
+		RequiresCondition: rank == 6
+		Modifier: 90
+	FirepowerMultiplier@6:
+		RequiresCondition: rank == 6
+		Modifier: 105
+	ReloadDelayMultiplier@7:
+		RequiresCondition: rank == 7
+		Modifier: 50
+	InaccuracyMultiplier@7:
+		RequiresCondition: rank == 7
+		Modifier: 50
+	DamageMultiplier@7:
+		RequiresCondition: rank == 7
+		Modifier: 85
+	FirepowerMultiplier@7:
+		RequiresCondition: rank == 7
+		Modifier: 110
+	ReloadDelayMultiplier@8:
+		RequiresCondition: rank == 8
+		Modifier: 40
+	InaccuracyMultiplier@8:
+		RequiresCondition: rank == 8
+		Modifier: 40
+	DamageMultiplier@8:
+		RequiresCondition: rank == 8
+		Modifier: 80
+	FirepowerMultiplier@8:
+		RequiresCondition: rank == 8
+		Modifier: 115
+	ReloadDelayMultiplier@9:
+		RequiresCondition: rank == 9
+		Modifier: 30
+	InaccuracyMultiplier@9:
+		RequiresCondition: rank == 9
+		Modifier: 30
+	DamageMultiplier@9:
+		RequiresCondition: rank == 9
+		Modifier: 75
+	FirepowerMultiplier@9:
+		RequiresCondition: rank == 9
+		Modifier: 120            
+	ReloadDelayMultiplier@10:
+		RequiresCondition: rank == 10
+		Modifier: 20
+	InaccuracyMultiplier@10:
+		RequiresCondition: rank == 10
+		Modifier: 20
+	DamageMultiplier@10:
+		RequiresCondition: rank == 10
+		Modifier: 70
+	FirepowerMultiplier@10:
+		RequiresCondition: rank == 10
+		Modifier: 125     
+	SelfHealing@10:
+		PercentageStep: 2
+		Step: 2
+		Ticks: 100
+		HealIfBelow: 100
+		DamageCooldown: 200
+		RequiresCondition: rank == 10
+        
+^GainsExperienceGermany:
+	Inherits@Experience: ^GainsExperience
+	WithDecoration@1:
+		Image: rank
+		Sequence: germany0
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 1
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@2:
+		Image: rank
+		Sequence: germany1
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 2
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@3:
+		Image: rank
+		Sequence: germany2
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 3
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@4:
+		Image: rank
+		Sequence: germany3
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 4
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@5:
+		Image: rank
+		Sequence: germany4
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 5
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@6:
+		Image: rank
+		Sequence: germany5
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 6
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@7:
+		Image: rank
+		Sequence: germany6
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 7
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@8:
+		Image: rank
+		Sequence: germany7
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 8
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@9:
+		Image: rank
+		Sequence: germany8
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 9
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@10:
+		Image: rank
+		Sequence: germany9
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 10
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+        
+^GainsExperienceFrance:
+	Inherits@Experience: ^GainsExperience
+	WithDecoration@1:
+		Image: rank
+		Sequence: france0
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 1
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@2:
+		Image: rank
+		Sequence: france1
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 2
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@3:
+		Image: rank
+		Sequence: france2
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 3
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@4:
+		Image: rank
+		Sequence: france3
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 4
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@5:
+		Image: rank
+		Sequence: france4
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 5
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@6:
+		Image: rank
+		Sequence: france5
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 6
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@7:
+		Image: rank
+		Sequence: france6
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 7
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@8:
+		Image: rank
+		Sequence: france7
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 8
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@9:
+		Image: rank
+		Sequence: france8
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 9
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@10:
+		Image: rank
+		Sequence: france9
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 10
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+        
+^GainsExperienceAmerica:
+	Inherits@Experience: ^GainsExperience
+	WithDecoration@1:
+		Image: rank
+		Sequence: america0
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 1
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@2:
+		Image: rank
+		Sequence: america1
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 2
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@3:
+		Image: rank
+		Sequence: america2
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 3
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@4:
+		Image: rank
+		Sequence: america3
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 4
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@5:
+		Image: rank
+		Sequence: america4
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 5
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@6:
+		Image: rank
+		Sequence: america5
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 6
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@7:
+		Image: rank
+		Sequence: america6
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 7
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@8:
+		Image: rank
+		Sequence: america7
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 8
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@9:
+		Image: rank
+		Sequence: america8
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 9
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@10:
+		Image: rank
+		Sequence: america9
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 10
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+        
+^GainsExperienceRussia:
+	Inherits@Experience: ^GainsExperience
+	WithDecoration@1:
+		Image: rank
+		Sequence: russia0
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 1
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@2:
+		Image: rank
+		Sequence: russia1
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 2
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@3:
+		Image: rank
+		Sequence: russia2
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 3
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@4:
+		Image: rank
+		Sequence: russia3
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 4
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@5:
+		Image: rank
+		Sequence: russia4
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 5
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@6:
+		Image: rank
+		Sequence: russia5
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 6
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@7:
+		Image: rank
+		Sequence: russia6
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 7
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@8:
+		Image: rank
+		Sequence: russia7
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 8
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@9:
+		Image: rank
+		Sequence: russia8
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 9
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@10:
+		Image: rank
+		Sequence: russia9
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 10
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+        
+^GainsExperienceBritain:
+	Inherits@Experience: ^GainsExperience
+	WithDecoration@1:
+		Image: rank
+		Sequence: britain0
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 1
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@2:
+		Image: rank
+		Sequence: britain1
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 2
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@3:
+		Image: rank
+		Sequence: britain2
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 3
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@4:
+		Image: rank
+		Sequence: britain3
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 4
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@5:
+		Image: rank
+		Sequence: britain4
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 5
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@6:
+		Image: rank
+		Sequence: britain5
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 6
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@7:
+		Image: rank
+		Sequence: britain6
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 7
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@8:
+		Image: rank
+		Sequence: britain7
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 8
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@9:
+		Image: rank
+		Sequence: britain8
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 9
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@10:
+		Image: rank
+		Sequence: britain9
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank == 10
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy

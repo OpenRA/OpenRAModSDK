@@ -57,12 +57,12 @@ popd > /dev/null
 
 # Add mod files
 cp -r "${TEMPLATE_ROOT}/mods/"* "${BUILTDIR}/mods"
-cp "${MOD_ID}.ico" "${BUILTDIR}"
+cp "${TEMPLATE_ROOT}/icons/${MOD_ID}.ico" "${BUILTDIR}"
 cp "${SRC_DIR}/OpenRA.Game.exe.config" "${BUILTDIR}"
 
 echo "Compiling Windows launcher"
 sed "s|DISPLAY_NAME|${PACKAGING_DISPLAY_NAME}|" "${SRC_DIR}/packaging/windows/WindowsLauncher.cs.in" | sed "s|MOD_ID|${MOD_ID}|" | sed "s|FAQ_URL|${PACKAGING_FAQ_URL}|" > "${BUILTDIR}/WindowsLauncher.cs"
-mcs -sdk:4.5 "${BUILTDIR}/WindowsLauncher.cs" -warn:4 -codepage:utf8 -warnaserror -out:"${BUILTDIR}/${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe" -t:winexe ${LAUNCHER_LIBS} -win32icon:"${MOD_ID}.ico"
+mcs -sdk:4.5 "${BUILTDIR}/WindowsLauncher.cs" -warn:4 -codepage:utf8 -warnaserror -out:"${BUILTDIR}/${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe" -t:winexe ${LAUNCHER_LIBS} -win32icon:"${BUILTDIR}/${MOD_ID}.ico"
 rm "${BUILTDIR}/WindowsLauncher.cs"
 mono "${SRC_DIR}/fixheader.exe" "${BUILTDIR}/${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe" > /dev/null
 

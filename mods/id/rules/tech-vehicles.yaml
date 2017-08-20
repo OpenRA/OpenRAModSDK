@@ -1,0 +1,6 @@
+SupplyTruck:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Supply Truck
+    RenderVoxels:
+    Image: truckb

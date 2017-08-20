@@ -1,0 +1,331 @@
+#Kar98
+Kar98:
+	Inherits@caltype: ^Bullet
+	ReloadDelay: 50
+	Range: 10c0
+	Report: kar_98_1.wav, kar_98_2.wav, kar_98_3.wav, kar_98_4.wav
+	Projectile: BulletAS
+		Speed: 1c350
+		Inaccuracy: 0c512
+	Warhead@1Dam: SpreadDamage
+		Damage: 50
+
+Kar98Garrison:
+	Inherits@caltype: Kar98
+	Range: 15c0
+        
+#Panzerschreck
+Panzerschreck:
+	Inherits@calsize: ^88mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 100
+	Range: 6c512
+	Report: panzerschreck_v1.wav, panzerschreck_v2.wav
+	Projectile: BulletAS
+		Speed: 0c195
+		Inaccuracy: 1c0
+
+PanzerschreckGarrison:
+	Inherits@caltype: Panzerschreck
+	Range: 15c0
+
+#MP40
+MP40:
+	Inherits@caltype: ^Bullet
+	ReloadDelay: 80
+	Range: 8c0
+	Burst: 5
+	BurstDelay: 3
+	Report: mp40_v1.wav, mp40_v2.wav, mp40_v3.wav, mp40_v4.wav
+	Projectile: BulletAS
+		Speed: 1c350
+		Inaccuracy: 1c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 25
+
+MP40Garrison:
+	Inherits@caltype: MP40
+	Range: 13c0
+
+#Panzer IV A Cannon
+KwK37:
+	Inherits@calsize: ^75mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 250
+	Range: 26c520
+	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
+	Projectile: BulletAS
+		Speed: 0c675
+		Inaccuracy: 1c0
+
+#Panzer IV A MG
+MG34_p4:
+	Inherits@caltype: ^Bullet
+	ReloadDelay: 150
+	Range: 10c0
+	Burst: 75
+	BurstDelay: 3
+	Report: mg_34_v1.wav, mg_34_v2.wav, mg_34_v3.wav
+	ValidTargets: Infantry, OpenVehicle
+	Projectile: BulletAS
+		Speed: 1c148
+		Inaccuracy: 1c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 20
+        
+#Panzer I C MG
+MG34_p1:
+	Inherits@caltype: ^Bullet
+	ReloadDelay: 100
+	Range: 17c68
+	Burst: 40
+	BurstDelay: 2
+	Report: mg_34_v1.wav, mg_34_v2.wav, mg_34_v3.wav
+	ValidTargets: Infantry, OpenVehicle
+	Projectile: BulletAS
+		Speed: 1c148
+		Inaccuracy: 1c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 20
+        
+#Panzer II B MG
+MG34_p2:
+	Inherits@caltype: ^Bullet
+	ReloadDelay: 100
+	Range: 17c68
+	Burst: 20
+	BurstDelay: 3
+	Report: mg_34_v1.wav, mg_34_v2.wav, mg_34_v3.wav
+	ValidTargets: Infantry, OpenVehicle
+	Projectile: BulletAS
+		Speed: 1c148
+		Inaccuracy: 1c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 20
+                
+#Panzer I C Cannon
+EW141:
+	Inherits@calsize: ^20mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 200
+	Range: 12c0
+	Burst: 4
+	BurstDelay: 7
+	Report: 20mm_KwK30_v1.wav, 20mm_KwK30_v2.wav, 20mm_KwK30_v3.wav
+	Projectile: BulletAS
+		Speed: 1c755
+		Inaccuracy: 1c256
+	Warhead@2Eff: CreateEffect
+		InValidTargets: Vehicle
+	Warhead@3Eff: CreateEffect
+		Explosions: pshotts1, pshotts2, pshotts3
+		ExplosionPalette: pshotts
+		ImpactSounds: tank_hit_bounce_1.wav, tank_hit_bounce_2.wav, tank_hit_bounce_3.wav, tank_hit_bounce_4.wav, tank_hit_bounce_5.wav
+		ValidTargets: Vehicle
+                
+#Panzer II B Cannon
+KWK30:
+	Inherits@calsize: ^20mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 200
+	Range: 12c0
+	Burst: 5
+	BurstDelay: 7
+	Report: 20mm_KwK30_v1.wav, 20mm_KwK30_v2.wav, 20mm_KwK30_v3.wav
+	Projectile: BulletAS
+		Speed: 1c575
+		Inaccuracy: 1c256
+	Warhead@2Eff: CreateEffect
+		InValidTargets: Vehicle
+	Warhead@3Eff: CreateEffect
+		Explosions: pshotts1, pshotts2, pshotts3
+		ExplosionPalette: pshotts
+		ImpactSounds: tank_hit_bounce_1.wav, tank_hit_bounce_2.wav, tank_hit_bounce_3.wav, tank_hit_bounce_4.wav, tank_hit_bounce_5.wav
+		ValidTargets: Vehicle
+        
+#Panzer 35t Cannon
+KwK34t:
+	Inherits@calsize: ^37mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 200
+	Range: 17c680
+	Report: 37mm_01.wav, 37mm_02.wav, 37mm_03.wav
+	Projectile: BulletAS
+		Speed: 1c013
+		Inaccuracy: 1c0
+        
+#Panzer 38t Cannon
+KwK38t:
+	Inherits@calsize: ^50mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 250
+	Range: 17c680
+	Report: 50mm_Kwk39_L60_v1.wav, 50mm_Kwk39_L60_v2.wav, 50mm_Kwk39_L60_v3.wav
+	Projectile: BulletAS
+		Speed: 1c125
+		Inaccuracy: 1c0
+               
+#Panzerjäger I Cannon        
+PaK36t:
+	Inherits@calsize: ^47mm
+	Inherits@caltype: ^APCR
+	ReloadDelay: 140
+	Range: 26c520
+	Report: 47mm_v1.wav, 47mm_v2.wav, 47mm_v3.wav
+	Projectile: BulletAS
+		Speed: 1c241
+		Inaccuracy: 0c512
+
+#Sturmpanzer I Cannon  
+InfG33:
+	Inherits@calsize: ^150mm
+	Inherits@caltype: ^HE
+	ReloadDelay: 300
+	Range: 50c0
+	Report: mortar_shoot_v1.wav, mortar_shoot_v2.wav, mortar_shoot_v3.wav
+	Projectile: BulletAS
+		LaunchAngle: 90
+		Speed: 0c413
+		Inaccuracy: 6c0
+		ContrailLength: 20
+        
+#Panzer III E Cannon
+KwK36:
+	Inherits@calsize: ^37mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 220
+	Range: 26c520
+	Report: 37mm_01.wav, 37mm_02.wav, 37mm_03.wav
+	Projectile: BulletAS
+		Speed: 0c745
+		Inaccuracy: 1c0
+
+#StuG III B Cannon
+StuK40:
+	Inherits@calsize: ^75mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 200
+	Range: 26c520
+	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
+	Projectile: BulletAS
+		Speed: 1c185
+		Inaccuracy: 0c512
+
+#Marder II B Cannon
+PaK40:
+	Inherits@calsize: ^75mm
+	Inherits@caltype: ^APCR
+	ReloadDelay: 200
+	Range: 35c360
+	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
+	Projectile: BulletAS
+		Speed: 1c400
+		Inaccuracy: 0c512
+
+#Wespe Cannon
+FhB18:
+	Inherits@calsize: ^105mm
+	Inherits@caltype: ^ARTY_HEAT
+	ReloadDelay: 200
+	Range: 50c0
+	Report: 105mm_M2_v1.wav, 105mm_M2_v2.wav, 105mm_M2_v3.wav
+	Projectile: BulletAS
+		LaunchAngle: 90
+		Speed: 0c810
+		Inaccuracy: 6c0
+		ContrailLength: 20
+        
+#Panzer III F Cannon
+KwK39:
+	Inherits@calsize: ^50mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 220
+	Range: 26c520
+	Report: 50mm_Kwk39_L60_v1.wav, 50mm_Kwk39_L60_v2.wav, 50mm_Kwk39_L60_v3.wav
+	Projectile: BulletAS
+		Speed: 1c252
+		Inaccuracy: 1c0
+
+
+#StuG III B Cannon
+StuK40L/48:
+	Inherits@calsize: ^75mm
+	Inherits@caltype: ^APCR
+	ReloadDelay: 200
+	Range: 35c360
+	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
+	Projectile: BulletAS
+		Speed: 1c185
+		Inaccuracy: 1c0
+        
+#Panzer III L Cannon
+KwK39/L60:
+	Inherits@calsize: ^50mm
+	Inherits@caltype: ^APCR
+	ReloadDelay: 220
+	Range: 26c520
+	Report: 50mm_Kwk39_L60_v1.wav, 50mm_Kwk39_L60_v2.wav, 50mm_Kwk39_L60_v3.wav
+	Projectile: BulletAS
+		Speed: 1c770
+		Inaccuracy: 0c768
+
+#Panzer IV F2 Cannon
+KwK40/L43:
+	Inherits@calsize: ^75mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 250
+	Range: 35c360
+	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
+	Projectile: BulletAS
+		Speed: 1c185
+		Inaccuracy: 0c768
+        
+#Panzer VII E Cannon
+KwK36L/56:
+	Inherits@calsize: ^88mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 250
+	Range: 35c360
+	Report: 88mm_KwK36_v1.wav, 88mm_KwK36_v2.wav, 88mm_KwK36_v3.wav
+	Projectile: BulletAS
+		Speed: 1c117
+		Inaccuracy: 0c768
+
+#Panzer IV F2 MG
+MG42_p4:
+	Inherits@caltype: ^Bullet
+	ReloadDelay: 150
+	Range: 10c0
+	Burst: 75
+	BurstDelay: 3
+	Report: mg_42_v1.wav, mg_42_v2.wav, mg_42_v3.wav, mg_42_v4.wav, mg_42_v5.wav, mg_42_v6.wav
+	ValidTargets: Infantry, OpenVehicle
+	Projectile: BulletAS
+		Speed: 1c148
+		Inaccuracy: 1c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 30
+
+#Grille Cannon
+SlG33:
+	Inherits@calsize: ^150mm
+	Inherits@caltype: ^ARTY_HEAT
+	ReloadDelay: 300
+	Range: 50c0
+	Report: mortar_shoot_v1.wav, mortar_shoot_v2.wav, mortar_shoot_v3.wav
+	Projectile: BulletAS
+		LaunchAngle: 90
+		Speed: 0c413
+		Inaccuracy: 6c0
+		ContrailLength: 20
+
+#Panzer IV G Cannon
+KwK40/L48:
+	Inherits@calsize: ^75mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 250
+	Range: 35c360
+	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
+	Projectile: BulletAS
+		Speed: 1c185
+		Inaccuracy: 0c512

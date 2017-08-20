@@ -1,0 +1,210 @@
+g_outpost:
+	Inherits: caairp
+	RenderSprites:
+        Image: caairp
+	Tooltip:
+		Name: German Outpost
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 100
+		BuildLimit: 1
+		Prerequisites: node, ~vehicles.germany
+		Description: Airfield
+	ProvidesPrerequisite@GermanyCommander:
+		Prerequisite: germany.commander
+
+f_outpost:
+	Inherits: caairp
+	RenderSprites:
+        Image: caairp
+	Tooltip:
+		Name: French Outpost
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 200
+		BuildLimit: 1
+		Prerequisites: node, ~vehicles.france
+		Description: Airfield
+	ProvidesPrerequisite@FranceCommander:
+		Prerequisite: france.commander
+
+a_outpost:
+	Inherits: caairp
+	RenderSprites:
+        Image: caairp
+	Tooltip:
+		Name: American Outpost
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 300
+		BuildLimit: 1
+		Prerequisites: node, ~vehicles.america
+		Description: Airfield
+	ProvidesPrerequisite@AmericaCommander:
+		Prerequisite: america.commander
+
+r_outpost:
+	Inherits: caairp
+	RenderSprites:
+        Image: caairp
+	Tooltip:
+		Name: Russian Outpost
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 400
+		BuildLimit: 1
+		Prerequisites: node, ~vehicles.russia
+		Description: Airfield
+	ProductionFromMapEdge:
+		ReadyAudio: ReinforcementsArrived
+		Produces: Vehicle
+	ProvidesPrerequisite@RussiaCommander:
+		Prerequisite: russia.commander
+
+b_outpost:
+	Inherits: caairp
+	RenderSprites:
+        Image: caairp
+	Tooltip:
+		Name: British Outpost
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 500
+		BuildLimit: 1
+		Prerequisites: node, ~vehicles.britain
+		Description: Airfield
+	ProductionFromMapEdge:
+		ReadyAudio: ReinforcementsArrived
+		Produces: Vehicle
+	ProvidesPrerequisite@BritainCommander:
+		Prerequisite: britain.commander
+
+node:
+	Inherits: ^TechBuilding
+	Selectable:
+		Bounds: 50, 228, 0, 0
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Tooltip:
+		Name: Capture Node
+	Health:
+		HP: 5000
+	RevealsShroud:
+		Range: 20c0
+	WithIdleOverlay@flag:
+		Sequence: flag
+	BaseProvider:
+		Range: 15c0
+	CashTrickler:
+		Interval: 1000
+		Amount: 500
+		ShowTicks: True
+	Selectable:
+		Bounds: 64, 64, 0, -6        
+	-Sellable:
+	SpawnActorOnDeath:
+		Actor: node
+		OwnerType: Killer
+	ProvidesPrerequisite@name:
+		Prerequisite: node
+	SelfHealing:
+		Step: 1
+		PercentageStep: 5
+		Delay: 1
+		HealIfBelow: 100
+		DamageCooldown: 1000
+	Targetable@node:
+		TargetTypes: Node
+    WithRangeCircle:
+        UsePlayerColor: True
+        Range: 10c0
+    ProximityExternalCondition:
+        Condition: repair_node
+        Range: 10c0
+        
+cabunk01:
+	Inherits: ^GarrisonBuilding
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Buildable:
+		Queue: Support
+		BuildPaletteOrder: 10
+		Prerequisites: node
+		Description: Garrisonable Bunker
+	Valued:
+		Cost: 5000
+	Tooltip:
+		Name: Concrete Bunker
+	Armor@Type:
+		Type: Heavy
+	RevealsShroud:
+		Range: 20c0
+	Health:
+		HP: 10000
+    HitShape:
+        UseOccupiedCellsOffsets: true
+        Type: Rectangle
+            LocalYaw: 128
+            TopLeft: -1024, -1024
+            BottomRight: 1024, 1024
+	AttackGarrisoned:
+		Armaments: garrisoned
+		PortOffsets: 384,0,512, 224,-341,512, -224,-341,512, -384,0,512, -224,341,512, 224,341,512
+		PortYaws: 0, 176, 341, 512, 682, 853
+		PortCones: 88, 88, 88, 88, 88, 88
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	SpawnActorOnDeath:
+		Actor: cabunk01.rubble
+
+cabunk01.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 2,2
+		Footprint: __ __
+	RenderSprites:
+		Image: cabunk01
+
+cabunk02:
+	Inherits: ^GarrisonBuilding
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Buildable:
+		Queue: Support
+		BuildPaletteOrder: 10
+		Prerequisites: node
+		Description: Garrisonable Bunker
+	Valued:
+		Cost: 5000
+	Tooltip:
+		Name: Concrete Bunker
+	Armor@Type:
+		Type: Heavy
+	RevealsShroud:
+		Range: 20c0
+	Health:
+		HP: 10000
+    HitShape:
+        UseOccupiedCellsOffsets: true
+        Type: Rectangle
+            LocalYaw: 128
+            TopLeft: -1024, -1024
+            BottomRight: 1024, 1024
+	AttackGarrisoned:
+		Armaments: garrisoned
+		PortOffsets: 384,0,512, 224,-341,512, -224,-341,512, -384,0,512, -224,341,512, 224,341,512
+		PortYaws: 0, 176, 341, 512, 682, 853
+		PortCones: 88, 88, 88, 88, 88, 88
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	SpawnActorOnDeath:
+		Actor: cabunk02.rubble
+
+cabunk02.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 2,2
+		Footprint: __ __
+	RenderSprites:
+		Image: cabunk02

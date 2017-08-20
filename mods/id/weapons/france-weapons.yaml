@@ -1,0 +1,125 @@
+FrenchRifle:
+	Inherits@caltype: ^Bullet
+	ReloadDelay: 50
+	Range: 10c0
+	Report: frifle_v1.wav, frifle_v2.wav, frifle_v3.wav
+	Projectile: BulletAS
+		Speed: 1c140
+		Inaccuracy: 0c512
+	Warhead@1Dam: SpreadDamage
+		Damage: 50
+
+FrenchRifleGarrison:
+	Inherits@caltype: FrenchRifle
+	Range: 15c0
+
+D915:
+	Inherits@calsize: ^90mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 250
+	Range: 26c520
+	Report: 90mm M3_L53_v1.wav, 90mm M3_L53_v2.wav, 90mm M3_L53_v3.wav
+	Projectile: BulletAS
+		Speed: 1c235
+		Inaccuracy: 1c0
+        
+SA18:
+	Inherits@calsize: ^37mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 100
+	Range: 17c680
+	Report: 37mm_01.wav, 37mm_02.wav, 37mm_03.wav
+	Projectile: BulletAS
+		Speed: 0c900
+		Inaccuracy: 1c0
+
+SA34:
+	Inherits@calsize: ^47mm
+	Inherits@caltype: ^HE
+	ReloadDelay: 200
+	Range: 26c520
+	Report: 47mm_v1.wav, 47mm_v2.wav, 47mm_v3.wav
+	Projectile: BulletAS
+		Speed: 0c735
+		Inaccuracy: 1c0
+
+SA35:
+	Inherits@calsize: ^47mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 150
+	Range: 26c520
+	Report: 47mm_v1.wav, 47mm_v2.wav, 47mm_v3.wav
+	Projectile: BulletAS
+		Speed: 0c750
+		Inaccuracy: 1c0
+        
+7.5mmMG:
+	Inherits@caltype: ^Bullet
+	ReloadDelay: 150
+	Range: 10c0
+	Burst: 30
+	BurstDelay: 3
+	Report: hmg.aud
+	ValidTargets: Infantry, OpenVehicle
+	Projectile: BulletAS
+		Speed: 1c125
+		Inaccuracy: 1c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 20
+        
+7.5mmMGFT:
+	Inherits@caltype: ^Bullet
+	ReloadDelay: 100
+	Range: 10c0
+	Burst: 30
+	BurstDelay: 3
+	Report: hmg.aud
+	Projectile: BulletAS
+		Speed: 1c125
+		Inaccuracy: 1c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 20
+
+SA37:
+	Inherits@calsize: ^47mm
+	Inherits@caltype: ^APCR
+	ReloadDelay: 200
+	Range: 35c360
+	Report: 47mm_v1.wav, 47mm_v2.wav, 47mm_v3.wav
+	Projectile: BulletAS
+		Speed: 1c283
+		Inaccuracy: 0c512
+
+75mmBS:
+	Inherits@calsize: ^75mm
+	Inherits@caltype: ^HE
+	ReloadDelay: 200
+	Range: 50c0
+	Report: 75mm_L40_v1.wav, 75mm_L40_v2.wav, 75mm_L40_v3.wav
+	Projectile: BulletAS
+		LaunchAngle: 90
+		Speed: 0c330
+		Inaccuracy: 6c0
+		ContrailLength: 20
+
+105mmL:
+	Inherits@calsize: ^105mm
+	Inherits@caltype: ^ARTY_HEAT
+	ReloadDelay: 200
+	Range: 50c0
+	Report: 105mm_M2_v1.wav, 105mm_M2_v2.wav, 105mm_M2_v3.wav
+	Projectile: BulletAS
+		LaunchAngle: 90
+		Speed: 0c810
+		Inaccuracy: 6c0
+		ContrailLength: 20
+        
+SA32:
+	Inherits@calsize: ^75mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 250
+	Range: 26c520
+	Report: 75mm_L40_v1.wav, 75mm_L40_v2.wav, 75mm_L40_v3.wav
+	Projectile: BulletAS
+		Speed: 1c112
+		Inaccuracy: 1c0

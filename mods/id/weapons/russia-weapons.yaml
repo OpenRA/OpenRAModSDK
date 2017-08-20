@@ -1,0 +1,166 @@
+Mosin:
+	Inherits@caltype: ^Bullet
+	ReloadDelay: 50
+	Range: 10c0
+	Report: mosin_v1.wav, mosin_v2.wav, mosin_v3.wav
+	Projectile: BulletAS
+		Speed: 1c350
+		Inaccuracy: 0c512
+	Warhead@1Dam: SpreadDamage
+		Damage: 50
+
+MosinGarrison:
+	Inherits@caltype: Mosin
+	Range: 15c0
+
+PPSH:
+	Inherits@caltype: ^Bullet
+	ReloadDelay: 80
+	Range: 8c0
+	Burst: 8
+	BurstDelay: 3
+	Report: ppsh_v1.wav, ppsh_v2.wav, ppsh_v3.wav
+	Projectile: BulletAS
+		Speed: 1c350
+		Inaccuracy: 1c256
+	Warhead@1Dam: SpreadDamage
+		Damage: 15
+
+PPSHGarrison:
+	Inherits@caltype: PPSH
+	Range: 13c0
+
+M1938_45:
+	Inherits@calsize: ^45mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 150
+	Range: 17c680
+	Report: 45mm_Model_38_v1.wav, 45mm_Model_38_v2.wav, 45mm_Model_38_v3.wav
+	Projectile: BulletAS
+		Speed: 1c140
+		Inaccuracy: 1c0
+
+Degtyaryov:
+	Inherits@caltype: ^APBullet
+	ReloadDelay: 150
+	Range: 12c0
+	Burst: 20
+	BurstDelay: 4
+	Report: Degtyaryov_v1.wav, Degtyaryov_v2.wav, Degtyaryov_v3.wav
+	ValidTargets: Infantry, OpenVehicle
+	Projectile: BulletAS
+		Speed: 1c392
+		Inaccuracy: 1c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 40
+
+M1937_45:
+	Inherits@calsize: ^45mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 150
+	Range: 17c680
+	Report: 45mm_Model_38_v1.wav, 45mm_Model_38_v2.wav, 45mm_Model_38_v3.wav
+	Projectile: BulletAS
+		Speed: 1c140
+		Inaccuracy: 1c0
+        
+M27/32:
+	Inherits@calsize: ^76mm
+	Inherits@caltype: ^HE
+	ReloadDelay: 200
+	Range: 26c520
+	Report: 76-2mm_f34_v1.wav, 76-2mm_f34_v2.wav, 76-2mm_f34_v3.wav
+	Projectile: BulletAS
+		Speed: 0c675
+		Inaccuracy: 1c0
+
+M1930_37:
+	Inherits@calsize: ^37mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 150
+	Range: 17c680
+	Report: 37mm_01.wav, 37mm_02.wav, 37mm_03.wav
+	Projectile: BulletAS
+		Speed: 1c275
+		Inaccuracy: 1c0
+
+ShVAK20mm:
+	Inherits@calsize: ^20mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 150
+	Range: 12c0
+	Burst: 4
+	BurstDelay: 4
+	Report: 20mm_v1.wav, 20mm_v2.wav, 20mm_v3.wav
+	Projectile: BulletAS
+		Speed: 1c185
+		Inaccuracy: 1c256
+	Warhead@2Eff: CreateEffect
+		InValidTargets: Vehicle
+	Warhead@3Eff: CreateEffect
+		Explosions: pshotts1, pshotts2, pshotts3
+		ExplosionPalette: pshotts
+		ImpactSounds: tank_hit_bounce_1.wav, tank_hit_bounce_2.wav, tank_hit_bounce_3.wav, tank_hit_bounce_4.wav, tank_hit_bounce_5.wav
+		ValidTargets: Vehicle
+        
+M1942_76:
+	Inherits@calsize: ^76mm
+	Inherits@caltype: ^APCR
+	ReloadDelay: 200
+	Range: 26c520
+	Report: 76mm_v1.wav, 76mm_v2.wav, 76mm_v3.wav
+	Projectile: BulletAS
+		Speed: 1c020
+		Inaccuracy: 0c512
+
+M1930_45:
+	Inherits@calsize: ^45mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 150
+	Range: 17c680
+	Report: 45mm_Model_38_v1.wav, 45mm_Model_38_v2.wav, 45mm_Model_38_v3.wav
+	Projectile: BulletAS
+		Speed: 1c275
+		Inaccuracy: 1c0
+        
+L11_76:
+	Inherits@calsize: ^76mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 200
+	Range: 26c520
+	Report: 76-2mm_f34_v1.wav, 76-2mm_f34_v2.wav, 76-2mm_f34_v3.wav
+	Projectile: BulletAS
+		Speed: 1c020
+		Inaccuracy: 1c0
+        
+M1902/30:
+	Inherits@calsize: ^76mm
+	Inherits@caltype: ^HE
+	ReloadDelay: 200
+	Range: 50c0
+	Report: 75mm_L40_v1.wav, 75mm_L40_v2.wav, 75mm_L40_v3.wav
+	Projectile: BulletAS
+		LaunchAngle: 90
+		Speed: 0c993
+		Inaccuracy: 6c0
+		ContrailLength: 20
+        
+F34/41:
+	Inherits@calsize: ^76mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 200
+	Range: 26c520
+	Report: 76-2mm_f34_v1.wav, 76-2mm_f34_v2.wav, 76-2mm_f34_v3.wav
+	Projectile: BulletAS
+		Speed: 0c993
+		Inaccuracy: 0c768
+
+M1937/L46_45:
+	Inherits@calsize: ^45mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 150
+	Range: 26c520
+	Report: 45mm_Model_38_v1.wav, 45mm_Model_38_v2.wav, 45mm_Model_38_v3.wav
+	Projectile: BulletAS
+		Speed: 1c140
+		Inaccuracy: 0c768
