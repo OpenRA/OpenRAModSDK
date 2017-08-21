@@ -84,4 +84,4 @@ mv "${PACKAGING_INSTALLER_NAME}-${TAG}.zip" "${OUTPUTDIR}"
 popd > /dev/null
 
 # Clean up
-#rm -rf "${BUILTDIR}"
+rm -rf "${BUILTDIR}"

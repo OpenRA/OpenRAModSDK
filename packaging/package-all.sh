@@ -22,20 +22,12 @@ function build()
 	OUTPUTDIR="$2"
 	DIRECTORY="$3"
 	DISPLAYNAME="$4"
-	ENABLED="$5"
 
-	if [ "${ENABLED^^}" == "FALSE" ]; then
-		echo "$DISPLAYNAME package build is disabled."
-		return
-	fi
-
-	pushd $DIRECTORY >/dev/null
 	echo "Building $DISPLAYNAME package"
-	./buildpackage.sh "${TAG}" "${OUTPUTDIR}"
+	"./$DIRECTORY/buildpackage.sh" "${TAG}" "${OUTPUTDIR}"
 	if [ $? -ne 0 ]; then
 	    echo "$DISPLAYNAME package build failed."
 	fi
-	popd >/dev/null
 }
 
 
@@ -45,8 +37,8 @@ OUTPUTDIR="$2"
 # Set the working dir to the location of this script
 cd "$(dirname $0)"
 
-build "${TAG}" "${OUTPUTDIR}" "windows" "Windows" "${PACKAGING_WINDOWS_ENABLED}"
-build "${TAG}" "${OUTPUTDIR}" "osx" "macOS" "${PACKAGING_OSX_ENABLED}"
-build "${TAG}" "${OUTPUTDIR}" "zip" ".zip" "${PACKAGING_ZIP_ENABLED}"
+build "${TAG}" "${OUTPUTDIR}" "windows" "Windows"
+build "${TAG}" "${OUTPUTDIR}" "osx" "macOS"
+build "${TAG}" "${OUTPUTDIR}" "zip" ".zip"
 
 echo "Package builds done."
