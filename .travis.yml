@@ -1,0 +1,32 @@
+# Travis-CI Build for OpenRAModSDK
+# see travis-ci.org for details
+
+language: csharp
+mono: 4.6.1
+sudo: false
+
+addons:
+  apt:
+    packages:
+    - liblua5.1-0
+    - nsis
+    - nsis-common
+
+script:
+ - make
+ - make test
+
+before_deploy:
+ - mkdir build
+ - cd build && ../packaging/package-all.sh ${TRAVIS_TAG} ${PWD} && cd ..
+ - . mod.config
+
+deploy:
+  provider: releases
+  api_key: ${GH_DEPLOY_API_KEY}
+  file:
+    - build/${PACKAGING_INSTALLER_NAME}-${TRAVIS_TAG}.exe
+    - build/${PACKAGING_INSTALLER_NAME}-${TRAVIS_TAG}.zip
+  skip_cleanup: true
+  on:
+    tags: true
