@@ -58,6 +58,11 @@ if [ ! -f "${ENGINE_DIRECTORY}/Makefile" ]; then
 	exit 1
 fi
 
+if [ ! -d "${OUTPUTDIR}" ]; then
+	echo "Output directory '${OUTPUTDIR}' does not exist.";
+	exit 1
+fi
+
 make version VERSION="${TAG}"
 
 pushd ${ENGINE_DIRECTORY} > /dev/null
@@ -83,9 +88,10 @@ modify_plist "{JOIN_SERVER_URL_SCHEME}" "openra-${MOD_ID}-${TAG}" "${PACKAGING_O
 echo "Packaging zip archive"
 
 zip "${PACKAGING_INSTALLER_NAME}-${TAG}" -r -9 "${PACKAGING_OSX_APP_NAME}" --quiet --symlinks
-mv "${PACKAGING_INSTALLER_NAME}-${TAG}.zip" ${OUTPUTDIR}
 
 popd > /dev/null
+
+mv "${BUILTDIR}/${PACKAGING_INSTALLER_NAME}-${TAG}.zip" "${OUTPUTDIR}"
 
 # Clean up
 rm -rf "${BUILTDIR}"
