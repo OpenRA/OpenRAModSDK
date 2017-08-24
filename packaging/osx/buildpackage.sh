@@ -70,7 +70,7 @@ popd > /dev/null
 
 # Add mod files
 cp -r "${TEMPLATE_ROOT}/mods/"* "${BUILTDIR}/OpenRA.app/Contents/Resources/mods"
-cp "${MOD_ID}.icns" "${BUILTDIR}/OpenRA.app/Contents/Resources/"
+cp "${TEMPLATE_ROOT}/icons/${MOD_ID}.icns" "${BUILTDIR}/OpenRA.app/Contents/Resources/"
 
 pushd "${BUILTDIR}" > /dev/null
 mv "OpenRA.app" "${PACKAGING_OSX_APP_NAME}"
@@ -82,8 +82,8 @@ modify_plist "{JOIN_SERVER_URL_SCHEME}" "openra-${MOD_ID}-${TAG}" "${PACKAGING_O
 
 echo "Packaging zip archive"
 
-zip "${PACKAGING_INSTALLER_NAME}-${TAG}" -r -9 "${PACKAGING_OSX_APP_NAME}" --quiet --symlinks
-mv "${PACKAGING_INSTALLER_NAME}-${TAG}.zip" ${OUTPUTDIR}
+zip "${PACKAGING_INSTALLER_NAME}-${TAG}-osx" -r -9 "${PACKAGING_OSX_APP_NAME}" --quiet --symlinks
+mv "${PACKAGING_INSTALLER_NAME}-${TAG}-osx.zip" ${OUTPUTDIR}
 
 popd > /dev/null
 
