@@ -7,6 +7,10 @@ if [ $# -ne "1" ]; then
 fi
 
 command -v python >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires python."; exit 1; }
+command -v make >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires make."; exit 1; }
+command -v curl >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires curl."; exit 1; }
+command -v makensis >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires makensis."; exit 1; }
+
 OUTPUTDIR=$(python -c "import os; print(os.path.realpath('.'))")
 
 # Set the working dir to the location of this script
