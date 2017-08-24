@@ -6,6 +6,11 @@ if [ $# -ne "2" ]; then
     exit 1
 fi
 
+command -v python >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires python."; exit 1; }
+command -v make >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires make."; exit 1; }
+command -v curl >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires curl."; exit 1; }
+command -v makensis >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires makensis."; exit 1; }
+
 # Set the working dir to the location of this script
 cd "$(dirname $0)"
 
