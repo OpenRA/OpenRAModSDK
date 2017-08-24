@@ -26,12 +26,12 @@ if [ "${INCLUDE_DEFAULT_MODS}" = "True" ]; then
 	exit 1
 fi
 
+TAG="$1"
+OUTPUTDIR=$(python -c "import os; print(os.path.realpath('$2'))")
+BUILTDIR="${PACKAGING_DIR}/build"
+
 # Set the working dir to the location of this script
 cd "${PACKAGING_DIR}"
-
-TAG="$1"
-OUTPUTDIR="$2"
-BUILTDIR="$(pwd)/build"
 
 LAUNCHER_LIBS="-r:System.dll -r:System.Drawing.dll -r:System.Windows.Forms.dll -r:${BUILTDIR}/OpenRA.Game.exe"
 
@@ -73,12 +73,12 @@ rm "${BUILTDIR}/WindowsLauncher.cs"
 mono "${SRC_DIR}/fixheader.exe" "${BUILTDIR}/${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe" > /dev/null
 
 echo "Building Windows setup.exe"
+pushd "${PACKAGING_DIR}" > /dev/null
 makensis -V2 -DSRCDIR="${BUILTDIR}" -DDEPSDIR="${SRC_DIR}/thirdparty/download/windows" -DTAG="${TAG}" -DMOD_ID="${MOD_ID}" -DPACKAGING_WINDOWS_INSTALL_DIR_NAME="${PACKAGING_WINDOWS_INSTALL_DIR_NAME}" -DPACKAGING_WINDOWS_LAUNCHER_NAME="${PACKAGING_WINDOWS_LAUNCHER_NAME}" -DPACKAGING_DISPLAY_NAME="${PACKAGING_DISPLAY_NAME}" -DPACKAGING_WEBSITE_URL="${PACKAGING_WEBSITE_URL}" -DPACKAGING_AUTHORS="${PACKAGING_AUTHORS}" -DPACKAGING_WINDOWS_REGISTRY_KEY="${PACKAGING_WINDOWS_REGISTRY_KEY}" buildpackage.nsi
 if [ $? -eq 0 ]; then
 	mv OpenRA.Setup.exe "${OUTPUTDIR}/${PACKAGING_INSTALLER_NAME}-$TAG.exe"
-else
-	exit 1
 fi
+popd > /dev/null
 
 # Cleanup
 rm -rf "${BUILTDIR}"

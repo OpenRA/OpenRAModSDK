@@ -28,13 +28,13 @@ if [ "${INCLUDE_DEFAULT_MODS}" = "True" ]; then
 	exit 1
 fi
 
+TAG="$1"
+OUTPUTDIR=$(python -c "import os; print(os.path.realpath('$2'))")
+BUILTDIR="${PACKAGING_DIR}/build"
+PACKAGING_OSX_APP_NAME="OpenRA - ${PACKAGING_DISPLAY_NAME}.app"
+
 # Set the working dir to the location of this script
 cd "${PACKAGING_DIR}"
-
-TAG="$1"
-OUTPUTDIR="$2"
-BUILTDIR="$(pwd)/build"
-PACKAGING_OSX_APP_NAME="OpenRA - ${PACKAGING_DISPLAY_NAME}.app"
 
 modify_plist() {
 	sed "s|$1|$2|g" "$3" > "$3.tmp" && mv "$3.tmp" "$3"
@@ -87,10 +87,8 @@ modify_plist "{JOIN_SERVER_URL_SCHEME}" "openra-${MOD_ID}-${TAG}" "${PACKAGING_O
 
 echo "Packaging zip archive"
 
-zip "${PACKAGING_INSTALLER_NAME}-${TAG}" -r -9 "${PACKAGING_OSX_APP_NAME}" --quiet --symlinks
-
-mv "${PACKAGING_INSTALLER_NAME}-${TAG}.zip" ${OUTPUTDIR}
-
+zip "${PACKAGING_INSTALLER_NAME}-${TAG}.zip" -r -9 "${PACKAGING_OSX_APP_NAME}" --quiet --symlinks
+mv "${PACKAGING_INSTALLER_NAME}-${TAG}.zip" "${OUTPUTDIR}"
 popd > /dev/null
 
 # Clean up
