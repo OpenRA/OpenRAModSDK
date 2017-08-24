@@ -6,8 +6,8 @@ command -v make >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires 
 command -v python >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires python."; exit 1; }
 command -v curl >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires curl."; exit 1; }
 
-if [ $# -ne "2" ]; then
-	echo "Usage: `basename $0` tag outputdir"
+if [ $# -eq "0" ]; then
+	echo "Usage: `basename $0` version [outputdir]"
 	exit 1
 fi
 
@@ -29,7 +29,12 @@ if [ "${INCLUDE_DEFAULT_MODS}" = "True" ]; then
 fi
 
 TAG="$1"
-OUTPUTDIR=$(python -c "import os; print(os.path.realpath('$2'))")
+if [ $# -eq "1" ]; then
+	OUTPUTDIR=$(python -c "import os; print(os.path.realpath('.'))")
+else
+	OUTPUTDIR=$(python -c "import os; print(os.path.realpath('$2'))")
+fi
+
 BUILTDIR="${PACKAGING_DIR}/build"
 PACKAGING_OSX_APP_NAME="OpenRA - ${PACKAGING_DISPLAY_NAME}.app"
 

@@ -1,9 +1,16 @@
 #!/bin/bash
 set -e
 
-if [ $# -ne "2" ]; then
-    echo "Usage: `basename $0` version outputdir"
-    exit 1
+if [ $# -eq "0" ]; then
+	echo "Usage: `basename $0` version [outputdir]"
+	exit 1
+fi
+
+TAG="$1"
+if [ $# -eq "1" ]; then
+	OUTPUTDIR=$(pwd)
+else
+	OUTPUTDIR=$2
 fi
 
 command -v python >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires python."; exit 1; }
@@ -14,15 +21,15 @@ command -v makensis >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requi
 PACKAGING_DIR=$(python -c "import os; print(os.path.dirname(os.path.realpath('$0')))")
 
 echo "Building Windows package"
-${PACKAGING_DIR}/windows/buildpackage.sh "$1" "$2"
+${PACKAGING_DIR}/windows/buildpackage.sh "${TAG}" "${OUTPUTDIR}"
 if [ $? -ne 0 ]; then
-    echo "Windows package build failed."
+	echo "Windows package build failed."
 fi
 
 echo "Building macOS package"
-${PACKAGING_DIR}/osx/buildpackage.sh "$1" "$2"
+${PACKAGING_DIR}/osx/buildpackage.sh "${TAG}" "${OUTPUTDIR}"
 if [ $? -ne 0 ]; then
-    echo "macOS package build failed."
+	echo "macOS package build failed."
 fi
 
 echo "Package build done."
