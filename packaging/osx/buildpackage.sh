@@ -80,7 +80,7 @@ popd > /dev/null
 
 # Add mod files
 cp -r "${TEMPLATE_ROOT}/mods/"* "${BUILTDIR}/OpenRA.app/Contents/Resources/mods"
-cp "${MOD_ID}.icns" "${BUILTDIR}/OpenRA.app/Contents/Resources/"
+cp "mod.icns" "${BUILTDIR}/OpenRA.app/Contents/Resources/${MOD_ID}.icns"
 
 pushd "${BUILTDIR}" > /dev/null
 mv "OpenRA.app" "${PACKAGING_OSX_APP_NAME}"
