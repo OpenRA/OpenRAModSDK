@@ -208,9 +208,9 @@ function WaitForInput
 
 function ReadConfigLine($line, $name)
 {
-	if ($line.StartsWith($name))
+	$prefix = $name + '='
+	if ($line.StartsWith($prefix))
 	{
-		$prefix = $name + '='
 		[Environment]::SetEnvironmentVariable($name, $line.Replace($prefix, '').Replace('"', ''))
 	}
 }
