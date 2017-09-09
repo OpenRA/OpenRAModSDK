@@ -29,6 +29,7 @@ deploy:
   file:
     - build/${PACKAGING_INSTALLER_NAME}-${TRAVIS_TAG}.exe
     - build/${PACKAGING_INSTALLER_NAME}-${TRAVIS_TAG}-macOS.zip
+    - build/${PACKAGING_INSTALLER_NAME}-${TRAVIS_TAG}-winportable.zip
   skip_cleanup: true
   on:
     tags: true
