@@ -233,6 +233,13 @@ function ParseConfigFile($fileName)
 ###############################################################
 ############################ Main #############################
 ###############################################################
+if ($PSVersionTable.PSVersion.Major -clt 3)
+{
+    echo "The makefile requires Powershell version 3 or higher."
+    echo "Please upgrade your Powershell installation."
+    WaitForInput
+}
+
 if ($args.Length -eq 0)
 {
 	echo "Command list:"
