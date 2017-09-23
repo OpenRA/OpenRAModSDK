@@ -235,7 +235,7 @@ function ParseConfigFile($fileName)
 ###############################################################
 if ($PSVersionTable.PSVersion.Major -clt 3)
 {
-    echo "The makefile requires Powershell version 3 or higher."
+    echo "The makefile requires PowerShell version 3 or higher."
     echo "Please download and install the latest Windows Management Framework version from Microsoft."
     WaitForInput
 }

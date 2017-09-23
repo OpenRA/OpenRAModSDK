@@ -4,7 +4,7 @@ Thank you for your interest in OpenRA, OpenRA modding, and the OpenRA Mod SDK.  
 
 Please note that this repository is specifically for the scripts and infrastructure used to develop and build mods; bugs and feature requests against OpenRA itself should be directed to [the main OpenRA/OpenRA repository](https://github.com/OpenRA/OpenRA).  If you do come across a bug with the Mod SDK, or would like to request a new feature, then please take a look at the issue tracker first to see if it has already been reported.
 
-When developing new features, it is important to make sure that they work on all our supported platforms.  Right now, this means Windows >= 7, macOS >= 10.7, and Linux.  We would like to also support *BSD, but do not currently have a means to test this.
+When developing new features, it is important to make sure that they work on all our supported platforms.  Right now, this means Windows >= 7 (with PowerShell >= 3), macOS >= 10.7, and Linux.  We would like to also support *BSD, but do not currently have a means to test this.
 
 Some issues to be aware of include:
 * Use http://www.shellcheck.net/ to confirm POSIX compatibility of *.sh scripts.
