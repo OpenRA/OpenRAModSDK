@@ -7,11 +7,6 @@ command -v mono >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires 
 TEMPLATE_LAUNCHER=$(python -c "import os; print(os.path.realpath('$0'))")
 TEMPLATE_ROOT=$(dirname "${TEMPLATE_LAUNCHER}")
 
-# Mono >= 5.2 on macOS default mono to 64bit. Force 32 bit until the engine is ready
-if [ "$(uname -s)" = "Darwin" ] && command -v mono32 >/dev/null 2>&1; then
-	alias mono=mono32
-fi
-
 # shellcheck source=mod.config
 . "${TEMPLATE_ROOT}/mod.config"
 

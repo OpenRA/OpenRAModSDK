@@ -36,6 +36,9 @@ Notifications:
 Translations:
 	example|english.yaml
 
+Hotkeys:
+	common|hotkeys/game.yaml
+
 LoadScreen: BlankLoadScreen
 
 ServerTraits:
