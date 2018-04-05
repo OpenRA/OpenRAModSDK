@@ -1,6 +1,6 @@
 This repository contains a bare development environment for creating a new mod/game on the [OpenRA](https://github.com/OpenRA/OpenRA) engine.
 
-These scripts and support files wrap and automatically manage a copy of the OpenRA game engine and common files, and provide entrypoints to run development versions of your project and to generate platform-specific installers for your players.
+These scripts and support files wrap and automatically manage a copy of the OpenRA game engine and common files during development, and generates Windows installers, macOS .app bundles, and Linux [AppImages](https://appimage.org/) for distribution.
 
 The key scripts in this SDK are:
 

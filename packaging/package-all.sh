@@ -32,4 +32,14 @@ if [ $? -ne 0 ]; then
 	echo "macOS package build failed."
 fi
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	echo "Linux AppImage packaging requires a Linux host."
+else
+	echo "Building Linux AppImage package"
+	${PACKAGING_DIR}/linux/buildpackage.sh "${TAG}" "${OUTPUTDIR}"
+	if [ $? -ne 0 ]; then
+		echo "Linux AppImage package build failed."
+	fi
+fi
+
 echo "Package build done."
