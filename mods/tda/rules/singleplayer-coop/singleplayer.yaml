@@ -1,0 +1,287 @@
+World:
+	-SpawnMPUnits:
+	-MPStartLocations:
+	-CrateSpawner:
+	ObjectivesPanel:
+		PanelName: MISSION_OBJECTIVES
+	MapBuildRadius:
+		AllyBuildRadiusLocked: True
+		AllyBuildRadiusEnabled: False
+	MapOptions:
+		ShortGameLocked: True
+		ShortGameEnabled: True
+
+Player:
+	-ConquestVictoryConditions:
+	MissionObjectives:
+		EarlyGameOver: False
+	Shroud:
+		FogLocked: True
+		FogEnabled: False
+		ExploredMapLocked: True
+		ExploredMapEnabled: False
+	PlayerResources:
+		DefaultCashLocked: True
+		DefaultCash: 5000
+
+airstrike.proxy:
+	AlwaysVisible:
+	AirstrikePower:
+		Icon: airstrike
+		StartFullyCharged: True
+		ChargeTime: 120
+		SquadSize: 3
+		QuantizedFacings: 8
+		Description: Air Strike
+		LongDesc: Deploy an aerial napalm strike.\nBurns buildings and infantry along a line.
+		EndChargeSpeechNotification: AirstrikeReady
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		IncomingSpeechNotification: EnemyPlanesApproaching
+		UnitType: a10
+		DisplayBeacon: True
+		BeaconPoster: airstrike
+		DisplayRadarPing: True
+		CameraActor: camera
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+
+^Palettes:
+	-PlayerColorPalette:
+	IndexedPlayerPalette:
+		BasePalette: terrain
+		RemapIndex: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+		PlayerIndex:
+			GDI: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+			Nod: 127, 126, 125, 124, 122, 46, 120, 47, 125, 124, 123, 122, 42, 121, 120, 120
+			Neutral: 192, 164, 132, 155, 133, 197, 112, 12, 163, 132, 155, 133, 134, 197, 154, 198
+	IndexedPlayerPalette@units:
+		BasePalette: terrain
+		BaseName: player-units
+		RemapIndex: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+		PlayerIndex:
+			GDI: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+			Nod: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
+			Nod1: 119, 118, 117, 116, 115, 114, 113, 12, 117, 118, 119, 204, 205, 115, 198, 114
+			Nod2: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
+			Nod3: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
+			Neutral: 192, 164, 132, 155, 133, 197, 112, 12, 163, 132, 155, 133, 134, 197, 154, 198
+	IndexedPlayerPalette@playerRAunits:
+		BasePalette: playerRA
+		BaseName: playerRAunits
+		RemapIndex: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95
+		PlayerIndex:
+			Nod: 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143
+			Nod1: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+			Nod2: 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143
+			Nod3: 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143
+	PaletteFromFile@PlayerColor:
+		Name: PlayerColor
+		Filename: temperat.pal
+		ShadowIndex: 4
+		AllowModifiers: false
+	PlayerColorPalette@PlayerColor:
+		BasePalette: terrain
+		BaseName: PlayerColor
+		RemapIndex: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+		PlayerIndex:
+			GDI: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+			Nod: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+			Nod1: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+			Nod2: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+			Nod3: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+			Neutral: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+
+^Building:
+	RenderSprites:
+		PlayerPalette: PlayerColor
+	Tooltip:
+		GenericVisibility: Enemy
+		ShowOwnerRow: false
+
+^Vehicle:
+	RenderSprites:
+		PlayerPalette: player-units
+	Tooltip:
+		GenericVisibility: Enemy
+		ShowOwnerRow: false
+	MustBeDestroyed:
+		RequiredForShortGame: true
+
+^Tank:
+	RenderSprites:
+		PlayerPalette: player-units
+	Tooltip:
+		GenericVisibility: Enemy
+		ShowOwnerRow: false
+
+^Helicopter:
+	RenderSprites:
+		PlayerPalette: player-units
+	Tooltip:
+		GenericVisibility: Enemy
+		ShowOwnerRow: false
+
+^Infantry:
+	RenderSprites:
+		PlayerPalette: player-units
+	WithDeathAnimation:
+		DeathSequencePalette: player-units
+	Tooltip:
+		GenericVisibility: Enemy
+		ShowOwnerRow: false
+	MustBeDestroyed:
+		RequiredForShortGame: true
+
+^CommonHuskDefaults:
+	RenderSprites:
+		PlayerPalette: player-units
+	Tooltip:
+		GenericVisibility: Enemy, Ally, Neutral
+		GenericStancePrefix: false
+		ShowOwnerRow: false
+
+BOAT:
+	RenderSprites:
+		PlayerPalette: PlayerColor
+
+# MIG:
+	# RenderSprites:
+		# PlayerPalette: playerRAunits
+
+3TNK:
+	RenderSprites:
+		PlayerPalette: playerRAunits
+
+DTRK:
+	RenderSprites:
+		PlayerPalette: playerRAunits
+
+FTNK:
+	RenderSprites:
+		PlayerPalette: PlayerColor
+
+C17:
+	RenderSprites:
+		PlayerPalette: player-units
+	Contrail@1:
+		UsePlayerColor: False
+	Contrail@2:
+		UsePlayerColor: False
+	Contrail@3:
+		UsePlayerColor: False
+	Contrail@4:
+		UsePlayerColor: False
+
+HARV:
+	RenderSprites:
+		PlayerPalette: PlayerColor
+
+HARVGDI:
+	RenderSprites:
+		PlayerPalette: PlayerColor
+
+HARVNOD:
+	RenderSprites:
+		PlayerPalette: PlayerColor
+
+HEAVY_HARV_GDI:
+	RenderSprites:
+		PlayerPalette: PlayerColor
+
+STEALTH_HARV_NOD:
+	RenderSprites:
+		PlayerPalette: PlayerColor
+
+STEALTH_HARV_NOD.Husk:
+	RenderSprites:
+		PlayerPalette: PlayerColor
+
+HEAVY_HARV_GDI.Husk:
+	RenderSprites:
+		PlayerPalette: PlayerColor
+
+MCV:
+	RenderSprites:
+		PlayerPalette: PlayerColor
+
+HARV.Husk:
+	RenderSprites:
+		PlayerPalette: PlayerColor
+
+3TNK.Husk:
+	RenderSprites:
+		PlayerPalette: playerRAunits
+
+MCV.Husk:
+	RenderSprites:
+		PlayerPalette: PlayerColor
+
+LST:
+	RenderSprites:
+		PlayerPalette: PlayerColor
+
+#OLDLST:
+	# RenderSprites:
+		# PlayerPalette: PlayerColor
+#####################################
+
+^Plane:
+	Tooltip:
+		GenericVisibility: Enemy
+		ShowOwnerRow: false
+
+^Ship:
+	Tooltip:
+		GenericVisibility: Enemy
+		ShowOwnerRow: false
+
+^Wall:
+	Tooltip:
+		ShowOwnerRow: false
+
+^CivBuilding:
+	Tooltip:
+		GenericVisibility: Enemy, Neutral
+		ShowOwnerRow: false
+
+^CivBuildingHusk:
+	Tooltip:
+		GenericVisibility: Enemy, Neutral
+		ShowOwnerRow: false
+
+^TechBuilding:
+	Tooltip:
+		GenericVisibility: None
+		ShowOwnerRow: false
+
+^DINO:
+	Tooltip:
+		ShowOwnerRow: false
+
+MISS:
+	Tooltip:
+		GenericVisibility: None
+		ShowOwnerRow: False
+
+ARCO:
+	Tooltip:
+		GenericVisibility: None
+		ShowOwnerRow: False
+
+ARCO.Husk:
+	Tooltip:
+		GenericVisibility: None
+
+V19.Husk:
+	Tooltip:
+		GenericVisibility: None
+
+HOSP.Husk:
+	Tooltip:
+		GenericVisibility: None
+
+BIO.Husk:
+	Tooltip:
+		GenericVisibility: None

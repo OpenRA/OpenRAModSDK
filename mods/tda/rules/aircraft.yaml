@@ -1,0 +1,700 @@
+TRAN:
+	Inherits@1: ^Helicopter
+	Inherits@2: ^CapTran
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Chinook Transport
+	Buildable:
+		BuildPaletteOrder: 10
+		Prerequisites: hpad
+		Queue: Aircraft.GDI, Aircraft.Nod
+		Description: Infantry Transport Helicopter.\n  Unarmed
+	Aircraft:
+		LandWhenIdle: true
+		TurnSpeed: 5
+		Speed: 140
+		InitialFacing: 0
+		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Tiberium,BlueTiberium,RedTiberium
+		AltitudeVelocity: 0c100
+		TurnToLand: true
+#so if the player use deploy on empty transport it will return to the barracks, its kinda hacky logic
+		RearmBuildings: barracks
+	Health:
+		HP: 90
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+	WithIdleOverlay@ROTOR1AIR:
+		Offset: 597,0,85
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR1GROUND:
+		Offset: 597,0,85
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	WithIdleOverlay@ROTOR2AIR:
+		Offset: -597,0,171
+		Sequence: rotor2
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR2GROUND:
+		Offset: -597,0,171
+		Sequence: slow-rotor2
+		RequiresCondition: !airborne
+	Cargo:
+		Types: Infantry, Doctor
+		MaxWeight: 10
+		PipCount: 10
+		PassengerFacing: 224
+	SpawnActorOnDeath:
+		Actor: TRAN.Husk
+	Explodes:
+		Weapon: HeliExplode
+		EmptyWeapon: HeliExplode
+	SelectionDecorations:
+	-ProducibleWithLevel:
+	Selectable:
+		DecorationBounds: 41,41
+
+OSPREY:
+	Inherits@1: ^Helicopter
+	Inherits@2: ^CapTran
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: V-22 Osprey
+	Buildable:
+		BuildPaletteOrder: 10
+		Prerequisites: hpad
+		Queue: Aircraft.GDI, Aircraft.Nod
+		Description: Vehicle And Infantry Transport Helicopter.\n  Unarmed
+	Aircraft:
+		LandWhenIdle: True
+		TurnSpeed: 5
+		Speed: 140
+		InitialFacing: 0
+		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Tiberium,BlueTiberium,RedTiberium
+		AltitudeVelocity: 0c100
+		TurnToLand: false
+		Repulsable: true
+		CruiseAltitude: 2160
+		CanHover: true
+#so if the player use deploy on empty transport it will return to the vehicle production building, its kinda hacky logic
+		RearmBuildings: vehicleproduction
+		ReturnOnIdle: True
+		AirborneCondition: airborne
+		TakeOffOnResupply: true
+		VTOL: true
+	Carryall:
+		LoadingDelay: 10
+		UnloadingDelay: 10
+		LocalOffset: -70, -60, -670
+		DropRange: 3c0
+	Health:
+		HP: 90
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+	WithIdleOverlay@ROTOR1AIR:
+		Offset: 0,847,50
+# ^forward, right, up^
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR1GROUND:
+		Offset: 0,847,50
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	WithIdleOverlay@ROTOR2AIR:
+		Offset: 0,-847,50
+		Sequence: rotor2
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR2GROUND:
+		Offset: 0,-847,50
+		Sequence: slow-rotor2
+		RequiresCondition: !airborne
+	SpawnActorOnDeath:
+		Actor: OSPREY.Husk
+	Explodes:
+		Weapon: HeliExplode
+		EmptyWeapon: HeliExplode
+	SelectionDecorations:
+	-ProducibleWithLevel:
+	RenderSprites:
+		PlayerPalette: playerRA
+	Cargo:
+		Types: Infantry, Doctor
+		MaxWeight: 5
+		PipCount: 5
+		PassengerFacing: 224
+	Selectable:
+		DecorationBounds: 41,41
+
+OSPREY.delivery:
+	Inherits: OSPREY
+	Tooltip:
+		Name: V-22 Osprey
+	Aircraft:
+		LandWhenIdle: false
+		TurnSpeed: 5
+		Speed: 326
+		InitialFacing: 0
+		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Tiberium,BlueTiberium,RedTiberium
+		AltitudeVelocity: 0c100
+		TurnToLand: false
+		Repulsable: false
+		CruiseAltitude: 2160
+		CanHover: true
+		AirborneCondition: airborne
+		TakeOffOnResupply: true
+		VTOL: true
+	FlyAwayOnIdle:
+	RenderSprites:
+		PlayerPalette: playerRA
+		Image: osprey
+	RejectsOrders:
+	DamageMultiplier@INVULNERABLE:
+		Modifier: 0
+	RevealsShroud:
+		Range: 0c0
+		Type: CenterPosition
+	-Selectable:
+	-Buildable:
+	-Targetable@GROUND:
+	-Targetable@AIRBORNE:
+	Interactable:
+
+# MIG:
+	# Inherits: ^Plane
+	# Buildable:
+		# BuildPaletteOrder: 20
+		# Prerequisites: ~airfield, ~anyhq, ~techlevel.medium
+		# Queue:
+		# Description: Description: Fast Air-Attack Plane.\n  Strong vs Aircraft\n  Weak vs Anti-air.
+	# Valued:
+		# Cost: 2000
+	# Tooltip:
+		# Name: Raptor
+	# Health:
+		# HP: 70
+	# Armor:
+		# Type: Light
+	# RevealsShroud:
+		# Range: 12c0
+		# Type: CenterPosition
+	# Armament:
+		# Weapon: R-33
+		# LocalOffset: 0,-640,0, 0,640,0
+		# LocalYaw: -40, 24
+	# AttackPlane:
+		# FacingTolerance: 20
+	# Aircraft:
+		# CruiseAltitude: 2560
+		# InitialFacing: 0
+		# TurnSpeed: 3
+		# Speed: 300
+		# RepulsionSpeed: 40
+		# MaximumPitch: 56
+		# RearmBuildings: airfield
+		# AirborneCondition: airborne
+	# Targetable@GROUND:
+		# TargetTypes: Ground, Vehicle
+		# RequiresCondition: !airborne
+	# Targetable@AIRBORNE:
+		# TargetTypes: Air
+		# RequiresCondition: airborne
+	# AutoTarget:
+		# EnableStances: false
+	# AmmoPool:
+		# Ammo: 4
+	# ReturnOnIdle:
+	# Selectable:
+		# Bounds: 36,28,0,2
+	# SelectionDecorations:
+		# VisualBounds: 40,29,0,1
+	# Contrail@1:
+		# Offset: -598,-683,0
+	# Contrail@2:
+		# Offset: -598,683,0
+	# SmokeTrailWhenDamaged:
+		# Offset: -853,0,171
+		# Interval: 2
+	# Voiced:
+		# VoiceSet: VehicleVoice
+	# RenderSprites:
+		# PlayerPalette: playerRA
+# #	-FlyAwayOnIdle:
+	# -RejectsOrders:
+
+HELI:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Apache
+	Buildable:
+		BuildPaletteOrder: 20
+		Prerequisites: ~hpad, ~anyhq, ~techlevel.medium
+		Queue: Aircraft.Nod
+		Description: Attack Helicopter.\n  Strong vs Infantry, Light Vehicles and\n  Aircraft\n  Weak vs Tanks
+	Aircraft:
+		RearmBuildings: hpad
+		InitialFacing: 224
+		TurnSpeed: 4
+		Speed: 180
+		TurnToLand: True
+		LandWhenIdle: False
+		ReturnOnIdle: True
+	Health:
+		HP: 130
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+	Armament@PRIMARY:
+		Weapon: HeliAGGun
+		LocalOffset: 128,-213,-85, 128,213,-85
+		MuzzleSequence: muzzle
+		AmmoPoolName: HeliAGGunA
+		PauseOnCondition: !ammo
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: HeliMissiles
+		LocalOffset: 128,-213,-85, 128,213,-85
+		MuzzleSequence: muzzle
+		AmmoPoolName: HeliMissilesA
+		PauseOnCondition: !ammo
+	AmmoPool@HeliAGGunA:
+		Name: HeliAGGunA
+		Ammo: 20
+		SelfReloads: False
+		SelfReloadDelay: 20
+		ReloadCount: 1
+		PipCount: 0
+		AmmoCondition: ammo
+	AmmoPool@HeliMissilesA:
+		Name: HeliMissilesA
+		Ammo: 8
+		PipCount: 5
+		SelfReloads: False
+		ReloadCount: 8
+		AmmoCondition: ammo
+	AttackHeli:
+		FacingTolerance: 20
+	WithIdleOverlay@ROTORAIR:
+		Offset: 0,0,85
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTORGROUND:
+		Offset: 0,0,85
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	WithMuzzleOverlay:
+	SpawnActorOnDeath:
+		Actor: HELI.Husk
+	AutoTarget:
+	Explodes:
+		Weapon: HeliExplode
+		EmptyWeapon: HeliExplode
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 30,24
+
+ORCA:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Orca
+	Buildable:
+		BuildPaletteOrder: 20
+		Prerequisites: ~hpad, ~anyhq, ~techlevel.medium
+		Queue: Aircraft.GDI
+		Description: Helicopter Gunship with AG Missiles.\n  Strong vs Buildings, Tanks\n  Weak vs Infantry
+	Aircraft:
+		RearmBuildings: hpad
+		InitialFacing: 224
+		TurnSpeed: 4
+		Speed: 200
+		TurnToLand: True
+		LandWhenIdle: False
+		ReturnOnIdle: True
+	Health:
+		HP: 100
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+	Armament@PRIMARY:
+		Weapon: OrcaAGMissiles
+		LocalOffset: 427,-171,-213, 427,171,-213
+		PauseOnCondition: !ammo
+	Armament@SECONDARY:
+		Weapon: OrcaAAMissiles
+		LocalOffset: 427,-171,-213, 427,171,-213
+		PauseOnCondition: !ammo
+	AttackHeli:
+		FacingTolerance: 20
+	AmmoPool:
+		Ammo: 8
+		PipCount: 8
+		SelfReloads: False
+		ReloadCount: 2
+		SelfReloadDelay: 100
+		AmmoCondition: ammo
+	SpawnActorOnDeath:
+		Actor: ORCA.Husk
+	AutoTarget:
+	Explodes:
+		Weapon: HeliExplode
+		EmptyWeapon: HeliExplode
+	WithMoveAnimation:
+		MoveSequence: move
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 30,24
+
+C17:
+	Inherits: ^Plane
+	Tooltip:
+		Name: Supply Aircraft
+	Valued:
+		Cost: 2000
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 326
+		Repulsable: False
+		MaximumPitch: 36
+	Health:
+		HP: 25
+	Armor:
+		Type: Heavy
+	Cargo:
+		MaxWeight: 10
+		PipCount: 10
+	DamageMultiplier@INVULNERABLE:
+		Modifier: 0
+	Contrail@1:
+		Offset: -261,-650,0
+		TrailLength: 15
+	Contrail@2:
+		Offset: -85,-384,0
+		TrailLength: 16
+	Contrail@3:
+		Offset: -85,384,0
+		TrailLength: 16
+	Contrail@4:
+		Offset: -261,650,0
+		TrailLength: 15
+	-ProducibleWithLevel:
+	RenderSprites:
+		Scale: 1.30
+	Buildable:
+		Description: Drops vehicle reinforcements on Airstrips
+
+C17D:
+	Inherits: C17
+	RenderSprites:
+		Image: c17
+	ParaDrop:
+		DropRange: 1c0
+	Health:
+		HP: 120
+	Armor:
+		Type: Light
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 250
+		Repulsable: False
+		MaximumPitch: 36
+		CruiseAltitude: 2560
+	Targetable:
+		TargetTypes: Air
+	Cargo:
+		MaxWeight: 10
+	SelectionDecorations:
+		RenderSelectionBars: False
+	Tooltip:
+		Name: C17
+	Contrail@1:
+		Offset: -261,-650,0
+		TrailLength: 15
+	Contrail@2:
+		Offset: -85,-384,0
+		TrailLength: 16
+	Contrail@3:
+		Offset: -85,384,0
+		TrailLength: 16
+	Contrail@4:
+		Offset: -261,650,0
+		TrailLength: 15
+	SmokeTrailWhenDamaged@0:
+		Offset: -432,560,0
+		Interval: 2
+	SmokeTrailWhenDamaged@1:
+		Offset: -432,-560,0
+		Interval: 2
+	RejectsOrders:
+	GivesExperience:
+		Experience: 1000
+	SpawnActorOnDeath:
+		Actor: C17D.Husk
+	-DamageMultiplier@INVULNERABLE:
+		Modifier: 0
+
+C130:
+	Inherits: ^Plane
+	Inherits@2: ^GainsExperience
+	ParaDrop:
+		DropRange: 4c0
+	Health:
+		HP: 120
+	Armor:
+		Type: Light
+	Aircraft:
+		CruiseAltitude: 4560
+		TurnSpeed: 5
+		Speed: 200
+		Repulsable: False
+		MaximumPitch: 56
+	Cargo:
+		MaxWeight: 10
+	SelectionDecorations:
+		RenderSelectionBars: False
+	Tooltip:
+		Name: C-130
+	SpawnActorOnDeath:
+		Actor: C130.Husk
+	SmokeTrailWhenDamaged@0:
+		Offset: -432,560,0
+		Interval: 2
+	SmokeTrailWhenDamaged@1:
+		Offset: -432,-560,0
+		Interval: 2
+	RejectsOrders:
+	Valued:
+		Cost: 100
+	RenderSprites:
+		PlayerPalette: playerRA
+
+ARTYFIRE:
+	Inherits: ^Plane
+	RenderSprites:
+		Image: null
+	Tooltip:
+		Name:
+	Valued:
+		Cost: 2000
+	Aircraft:
+		TurnSpeed: 4
+		Speed: 300
+		Repulsable: False
+		CruiseAltitude: 18000
+	Health:
+		HP: 80
+	Armor:
+		Type: Heavy
+	AttackBomber:
+		Armaments: gun
+	Armament@GUNS:
+		Name: gun
+		Weapon: HeavyArtilleryShell
+		LocalOffset: 0,0,0
+	AttackSounds:
+		Sounds: aertyincoming1.aud, aertyincoming3.aud, artyinco01.aud
+		Delay: 0
+		DelayRelativeTo: Preparation
+	WithMuzzleOverlay:
+	-ProducibleWithLevel:
+	RejectsOrders:
+	DamageMultiplier@INVULNERABLE:
+		Modifier: 0
+	RevealsShroud:
+		Range: 0c0
+		Type: CenterPosition
+	-AppearsOnRadar:
+
+A10:
+	Inherits: ^Plane
+	Tooltip:
+		Name: A10 Bomber
+	Valued:
+		Cost: 2000
+	Aircraft:
+		TurnSpeed: 4
+		Speed: 280
+		Repulsable: False
+	Health:
+		HP: 120
+	Armor:
+		Type: Heavy
+	AttackBomber:
+		Armaments: gun, bombs
+	Armament@GUNS:
+		Name: gun
+		Weapon: Vulcan
+		LocalOffset: 1024,0,-85
+	AttackSounds:
+		Sounds: null.wav, a10_strafingrun1.wav, null.wav, a10_strafingrun2.wav, null.wav, null.wav, null.wav, null.wav, null.wav, null.wav, null.wav
+		Delay: 0
+		DelayRelativeTo: Attack
+	WithMuzzleOverlay:
+	Armament@BOMBS:
+		Name: bombs
+		Weapon: NapalmB
+		LocalOffset: 0,-256,-43, 0,256,-43
+	Contrail@1:
+		Offset: -640,171,0
+		TrailLength: 15
+	Contrail@2:
+		Offset: -640,-171,0
+		TrailLength: 15
+	-ProducibleWithLevel:
+	Targetable:
+		TargetTypes: Air
+	Buildable:
+		Description: Used to deliver air strikes.
+	SpawnActorOnDeath:
+		Actor: A10.Husk
+
+A10.Husk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: A10
+		GenericName: Destroyed Plane
+	Contrail@1:
+		Offset: -598,-683,0
+	Contrail@2:
+		Offset: -598,683,0
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 180
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2
+		MinDamage: Undamaged
+	RevealsShroud:
+		Range: 13c0
+		Type: GroundPosition
+	RenderSprites:
+		Image: A10
+
+C17D.Husk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: c17
+		GenericName: Destroyed Plane
+	Contrail@1:
+		Offset: -598,-683,0
+	Contrail@2:
+		Offset: -598,683,0
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 180
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2
+		MinDamage: Undamaged
+	RevealsShroud:
+		Range: 13c0
+		Type: GroundPosition
+	RenderSprites:
+		Image: C17
+		Scale: 1.30
+
+TRAN.Husk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Chinook Transport
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 140
+	RevealsShroud:
+		Range: 8c0
+		Type: CenterPosition
+	WithIdleOverlay@ROTOR1:
+		Offset: 597,0,85
+		Sequence: rotor
+	WithIdleOverlay@ROTOR2:
+		Offset: -597,0,171
+		Sequence: rotor2
+	RenderSprites:
+		Image: tran
+
+OSPREY.Husk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: V-22 Osprey
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 140
+	RevealsShroud:
+		Range: 8c0
+		Type: CenterPosition
+	WithIdleOverlay@ROTOR1:
+		Offset: 0,847,50
+		Sequence: rotor
+	WithIdleOverlay@ROTOR2:
+		Offset: 0,-847,50
+		Sequence: rotor2
+	RenderSprites:
+		Image: osprey
+	RenderSprites:
+		PlayerPalette: playerRA
+	FallsToEarth:
+		Velocity: 0c100
+
+HELI.Husk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Apache Longbow
+	Aircraft:
+		TurnSpeed: 4
+		Speed: 186
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+	WithIdleOverlay:
+		Offset: 0,0,85
+		Sequence: rotor
+	RenderSprites:
+		Image: heli
+
+ORCA.Husk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Orca
+	Aircraft:
+		TurnSpeed: 4
+		Speed: 186
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+	RenderSprites:
+		Image: orca
+
+C130.Husk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: C-130
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 149
+	SmokeTrailWhenDamaged@0:
+		Offset: -432,560,0
+		Interval: 2
+		MinDamage: Undamaged
+	SmokeTrailWhenDamaged@1:
+		Offset: -432,-560,0
+		Interval: 2
+		MinDamage: Undamaged
+	RenderSprites:
+		Image: c130
+		PlayerPalette: playerRA

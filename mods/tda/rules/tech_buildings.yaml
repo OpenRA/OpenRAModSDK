@@ -1,0 +1,228 @@
+V19:
+	Inherits: ^TechBuilding
+	CashTrickler:
+	# CashTricklerBar:
+		# DisplayStances: Ally
+		# Color: c5c5c5
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Health:
+		HP: 1000
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Oil Derrick
+	SpawnActorOnDeath:
+		Actor: V19_DES
+		OwnerType: InternalName
+		InternalOwner: Neutral
+
+HOSP:
+	Inherits: ^TechBuilding
+	Selectable:
+		Priority: 0
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 1000
+	Tooltip:
+		Name: Hospital
+	SpawnActorOnDeath:
+		Actor: HOSP_DES
+		OwnerType: InternalName
+		InternalOwner: Neutral
+	WithBuildingBib:
+		HasMinibib: Yes
+	ProvidesPrerequisite@buildingname:
+	CaptureNotification:
+		Notification: CivilianBuildingCaptured
+
+BIO:
+	Inherits: ^TechBuilding
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 2000
+	Tooltip:
+		Name: Biological Lab
+	Exit@1:
+		SpawnOffset: 0,-426,0
+		ExitCell: 0,-1
+	Production:
+		Produces: Biolab
+	ProductionQueue:
+		Type: Biolab
+		Group: Infantry
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
+	RallyPoint:
+		Offset: -1,-1
+	SpawnActorOnDeath:
+		Actor: BIO_DES
+		OwnerType: InternalName
+		InternalOwner: Neutral
+	ProvidesPrerequisite@buildingname:
+
+MISS:
+	Inherits: ^TechBuilding
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Tooltip:
+		Name: Tech Center
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+	Valued:
+		Cost: 2000
+	WithBuildingBib:
+		HasMinibib: Yes
+	WithMakeAnimation:
+	ProvidesPrerequisite@buildingname:
+	SpawnActorOnDeath:
+		Actor: MISS_DES
+		OwnerType: InternalName
+		InternalOwner: Neutral
+
+BARR:
+	Inherits: ^TechBuilding
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Private Security Barracks
+	ProvidesPrerequisite:
+		Prerequisite: barracks
+	Buildable:
+		BuildPaletteOrder: 30
+		Description: Trains infantry
+	WithBuildingBib:
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 500
+	RevealsShroud:
+		Range: 5c0
+	RallyPoint:
+		Offset: 1,2
+	Exit@1:
+		SpawnOffset: -170,810,0
+		ExitCell: 1,2
+	Exit@2:
+		SpawnOffset: -725,640,0
+		ExitCell: 0,2
+	Production:
+		Produces: Mercs
+	ProductionQueue:
+		Type: Mercs
+		Group: Infantry
+		LowPowerSlowdown: 0
+	ProductionBar:
+	Power:
+		Amount: 0
+	ProvidesPrerequisite@buildingname:
+	SelectionDecorations:
+	Selectable:
+		Bounds: 48,42,0,-5
+		DecorationBounds: 48,42,0,-5
+	RenderSprites:
+		PlayerPalette: playerRA
+	SpawnActorOnDeath:
+		Actor: BARR_DES
+		OwnerType: InternalName
+		InternalOwner: Neutral
+
+FIXN:
+	Inherits: ^TechBuilding
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Machine Shop
+	Building:
+		Footprint: __x xxx x__
+		Dimensions: 3,3
+	Health:
+		HP: 500
+	RevealsShroud:
+		Range: 5c0
+	Power:
+		Amount: 0
+	SelectionDecorations:
+	Selectable:
+		Bounds: 48,42,0,-5
+		DecorationBounds: 48,42,0,-5
+	WithIdleOverlay@ROOF:
+		Sequence: idle-roof
+	BodyOrientation:
+		QuantizedFacings: 8
+	WithBuildingBib:
+	SpawnActorOnDeath:
+		Actor: FIXN_DES
+		OwnerType: InternalName
+		InternalOwner: Neutral
+	ProvidesPrerequisite@buildingname:
+
+PORT:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x1Shape
+	Valued:
+		Cost: 6000
+	Tooltip:
+		Name: Shipyard
+	Building:
+		Footprint: xxxxxxx xxxxxxx xxxxxxx xxxxxxx xxx=xxx xxx=xxx xxx=xxx
+		Dimensions: 7,7
+	Production:
+		Produces: Ship.Nod, Ship.GDI
+	ProductionQueue@NodShip:
+		Type: Ship.Nod
+		Factions: nod
+		Group: Ship
+		LowPowerSlowdown: 3
+	ProductionQueue@GDIShip:
+		Type: Ship.GDI
+		Factions: gdi
+		Group: Ship
+		LowPowerSlowdown: 3
+	ProductionBar@ShipGDI:
+		ProductionType: Ship.GDI
+	ProductionBar@ShipNod:
+		ProductionType: Ship.Nod
+	WithIdleOverlay@ROOF:
+		Sequence: idle-roof
+	RallyPoint:
+		Offset: 3,5
+	Exit@1:
+		SpawnOffset: 0,0,0
+		ExitCell: 3,5
+		ExitDelay: 1
+	Health:
+		HP: 5000
+	RevealsShroud:
+		Range: 7c0
+	RenderSprites:
+	WithSpriteBody:
+	Power:
+		Amount: 0
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	-EngineerRepairable:
+	-Sellable:
+	-Capturable:
+	-GivesBuildableArea:
+	-EmitInfantryOnSell:
+	-WithDeathAnimation:
+	-RepairableBuilding:
+	-Targetable:
+	-WithMakeAnimation:
+	ProximityCapturable:
+		Range: 10c0
+		CaptorTypes: Vehicle, Tank, Infantry
+		MustBeClear: true
+		Sticky: true
+		Permanent: false

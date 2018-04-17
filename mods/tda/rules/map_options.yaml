@@ -1,0 +1,60 @@
+Player:
+	LobbyPrerequisiteCheckbox@GLOBALFACTUNDEPLOY:
+		ID: factundeploy
+		Label: Redeployable MCVs
+		Description: Allow undeploying Construction Yard.
+		Enabled: True
+		DisplayOrder: 7
+		Prerequisites: global-factundeploy
+	LobbyPrerequisiteCheckbox@GLOBALBOUNTY:
+		ID: bounty
+		Label: Kill Bounties
+		Description: Players receive cash bonuses when killing enemy units
+		Enabled: True
+		DisplayOrder: 6
+		Prerequisites: global-bounty
+	PlayerResources:
+		SelectableCash: 0, 500, 1000, 1500, 2000, 2500, 5000, 10000, 20000, 50000, 1000000
+		DefaultCashDropdownDisplayOrder: 0
+	DeveloperMode:
+		CheckboxDisplayOrder: 8
+	Shroud:
+		FogCheckboxEnabled: False
+		ExploredMapCheckboxEnabled: False
+		FogCheckboxDisplayOrder: 4
+		ExploredMapCheckboxDisplayOrder: 0
+	LobbyPrerequisiteCheckbox@HarvesterTruce:	
+		ID: HarvesterTruce
+		Label: Harvester Truce
+		Description: Harvesters Won't die (Do Not Use with Short Game Off)
+		Enabled: False
+		DisplayOrder: 10
+		Prerequisites: HarvesterTruce
+
+World:
+	MapBuildRadius:
+		AllyBuildRadiusCheckboxDisplayOrder: 4
+		BuildRadiusCheckboxDisplayOrder: 5
+		BuildRadiusCheckboxEnabled: False
+	MapOptions:
+		ShortGameCheckboxDisplayOrder: 3
+		TechLevelDropdownDisplayOrder: 2
+		GameSpeedDropdownDisplayOrder: 3
+	MapCreeps:
+		CheckboxEnabled: True
+		CheckboxLocked: True
+		CheckboxDisplayOrder: 9
+		CheckboxVisible: False
+	CrateSpawner:
+		DeliveryAircraft: c130
+		Minimum: 1
+		Maximum: 1
+		SpawnInterval: 1500
+		WaterChance: 0
+		InitialSpawnDelay: 1500
+		CrateActors: crate, crateheal, crateunit, cratewood
+		CrateActorShares: 70, 20, 30, 1
+		CheckboxDisplayOrder: 1
+	SpawnMPUnits:
+		StartingUnitsClass: 4
+		DropdownDisplayOrder: 1

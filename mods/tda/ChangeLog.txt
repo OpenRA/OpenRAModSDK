@@ -1,0 +1,46 @@
+Added: attack cursor to demo truck vs buildings.
+Fixed: grammar mistakes on mod db description page (Helped by DrStrangelove).
+Fixed: a problem with short game not be able to finish when player(s) was defeated.
+Removed: the ability to see enemy planes while inside the fog of war.
+Fixed: nuke super weapon not revealing the target. 
+Fixed: coop missions to be playable again.(not fully tested tho)
+Fixed: bib of some buildings to use the intended ones.
+Added: new bibs for jungle tileset.
+Fixed: tech center bib.
+Reverted: back to the old snow tileset until i add water cliffs (you can now play again on snow maps).
+Added: antena to gdi tech center.
+Changed: sniper to be only a gdi unit(to counter nod rocked soldiers, this might change in the future).
+Changed: mechanic and medic to be buildable on both gdi and nod (this might change in the future).
+Fixed: some problems with powerdown conditions not working(still there is work to be done).
+Balanced: riflemen grenade damage vs buildings, now is lower.
+Balanced: grenadier grenade damage now is lower vs infantry and higher vs buildings.
+Fixed: description of apc.
+Fixed: description of buggy.
+Balanced: Hum-Vee TOW missile not to target infantry.
+Added: pip icon to sniper so the owner can locate the unit.
+Added: a test AI for testing reasons(dont use it, it wont build any thing aside from units if buildings pre-exist on the map)
+Reworked: the build order, temple of nod and adv,com center moved to defense tab, and they only work as supper weapons, thier old factionality is replaced by the tech centers.
+Balanced: obelisk of light to use less power.
+Replaced: nod service depot with a better one.
+Fixed: some problems with service depots lighit effects.
+Merged: harvesters to one.
+Added: Condition bonuses from all removed harvesters to the new one that includes: stealth generator, tiberium armor.
+Added: pip icon "shield" to show up on the harvester after tiberium armor has been researched.
+ReAdded: nod and gdi harvester icons for each side.
+Changed: default speed to normal in the lobby.
+Removed: some unfinished dev maps.
+Changed: the position of some pip icons.
+Added: a video in the end of the installer(because its cool).
+Added: missing buildings from the AI\Bot build list.
+Fixed: units not attacking automaticly some defenses.
+Balanced: tiberium growth speed per tree, you can now place 3 refineries per green tiberium tree, 2 per blue, 1 per red, without running out of tiberium.
+Balanced: tiberium ValuePerUnit, now you get $100 green, $125 blue, $150 red (before it was $35 Greeen, $70 Blue, $105 Red)
+Balanced: harvester carry ammount from 20 to 8, now with a full harvester you get $800 from green tiberium, $1000 from blue, $1200 from red, before was $700 from green, $1400 from blue, $2100 from red.
+Balanced: harvesters now collect faster and deposit faster tiberium.
+Balanced: harvester price is now 1400, but build speed is 27 secs like in red alert (faster).
+Balanced: refanery price is now 2000, but build speed is 34 secs like in red alert (faster).
+Balanced: refinery consumes 30 power instead of 50.
+Balanced: c130 spawn rate, now its lower.
+
+
+

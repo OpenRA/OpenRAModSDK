@@ -1,0 +1,229 @@
+^BaseWorld:
+	AlwaysVisible:
+	Inherits: ^Palettes
+	ScreenMap:
+	ActorMap:
+	MusicPlaylist:
+		VictoryMusic: win1
+		DefeatMusic: nod_map1
+	DebugVisualizations:
+	TerrainGeometryOverlay:
+	ShroudRenderer:
+		ShroudVariants: typea, typeb, typec, typed
+		FogVariants: typea, typeb, typec, typed
+		OverrideFullShroud: full
+		OverrideFullFog: full
+	Faction@Random:
+		Name: Any
+		InternalName: Random
+		RandomFactionMembers: gdi, nod
+		Description: Select a random faction.
+	Faction@gdi:
+		Name: GDI
+		InternalName: gdi
+		Description: Global Defense Initiative\nThe GDI is an international military branch of the United Nations tasked\nwith keeping world peace. Commanding the combined forces of the world's\nmost powerful nations, they possess an unmatched arsenal of high-tech weaponry.
+	Faction@nod:
+		Name: Nod
+		InternalName: nod
+		Description: Brotherhood of Nod\nThe Brotherhood is a terrorist group centered around their leader Kane\nand the Unknown substance Tiberium. They utilize stealth technology\nand guerilla tactics to defeat those who oppose them.
+	ResourceType@green-tib:
+		ResourceType: 1
+		Palette: greentiberium
+		TerrainType: Tiberium
+		Sequences: ti1,ti2,ti3,ti4,ti5,ti6,ti7,ti8,ti9,ti10,ti11,ti12
+		MaxDensity: 12
+		ValuePerUnit: 100
+		Name: Tiberium
+		PipColor: Green
+		AllowedTerrainTypes: Clear
+		AllowUnderActors: true
+		Type: Tiberium
+	ResourceType@blue-tib:
+		ResourceType: 2
+		Palette: bluetiberium
+		TerrainType: BlueTiberium
+		Sequences: bti1,bti2,bti3,bti4,bti5,bti6,bti7,bti8,bti9,bti10,bti11,bti12
+		MaxDensity: 12
+		ValuePerUnit: 125
+		Name: Blue Tiberium
+		PipColor: Blue
+		AllowedTerrainTypes: Clear
+		AllowUnderActors: true
+		Type: BlueTiberium
+	ResourceType@red-tib:
+		ResourceType: 3
+		Palette: redtiberium
+		TerrainType: RedTiberium
+		Sequences: bti1,bti2,bti3,bti4,bti5,bti6,bti7,bti8,bti9,bti10,bti11,bti12
+		MaxDensity: 12
+		ValuePerUnit: 150
+		Name: Red Tiberium
+		PipColor: Red
+		AllowedTerrainTypes: Clear
+		AllowUnderActors: true
+		Type: RedTiberium
+
+World:
+	Inherits: ^BaseWorld
+	WormManager:
+		Minimum: 30
+		Maximum: 200
+		SpawnInterval: 50
+		WormSignature: TibShimmering
+# WormSignature@1: TibShimmeringRed
+# WormSignature@2: TibShimmeringBlue
+# WormSignature@3: TibShimmeringGreen
+		WormSignNotification:
+		WormOwnerPlayer: Neutral
+	ChatCommands:
+	DevCommands:
+	DebugVisualizationCommands:
+	PlayerCommands:
+	HelpCommand:
+	ScreenShaker:
+	BuildingInfluence:
+	LegacyBridgeLayer:
+		Bridges: bridge1, bridge2, bridge3, bridge4
+	ProductionQueueFromSelection:
+		ProductionTabsWidget: PRODUCTION_TABS
+	DomainIndex:
+	SmudgeLayer@SCORCH:
+		Type: Scorch
+		Sequence: scorches
+		SmokePercentage: 50
+	SmudgeLayer@CRATER:
+		Type: Crater
+		Sequence: craters
+	ResourceLayer:
+	ResourceClaimLayer:
+	WarheadDebugOverlay:
+	CustomTerrainDebugOverlay:
+	SpawnMapActors:
+	MPStartLocations:
+	CreateMPPlayers:
+	MPStartUnits@1:
+		Class: 1
+		ClassName: Sole Survivor
+		Factions: gdi, nod
+		BaseActor: solesurvivor
+	MPStartUnits@2:
+		Class: 2
+		ClassName: MCV
+		Factions: gdi, nod
+		BaseActor: mcv
+	MPStartUnits@3:
+		Class: 3
+		ClassName: MCV with soldier
+		Factions: gdi, nod
+		BaseActor: mcv
+		SupportActors: e1
+	MPStartUnits@4gdi1:
+		Class: 4
+		ClassName: MCV and scout
+		Factions: gdi
+		BaseActor: mcv
+		SupportActors: jeep
+	MPStartUnits@4nod1:
+		Class: 4
+		ClassName: MCV and scout
+		Factions: nod
+		BaseActor: mcv
+		SupportActors: bggy
+	MPStartUnits@5gdi1:
+		Class: 5
+		ClassName: Light Support
+		Factions: gdi
+		BaseActor: mcv
+		SupportActors: e1,e1,e1,e1,e1,e3,e3,jeep
+	MPStartUnits@5gdi2:
+		Class: 5
+		ClassName: Light Support
+		Factions: gdi
+		BaseActor: mcv
+		SupportActors: e1,e1,e1,e1,e1,e1,e3,apc
+	MPStartUnits@5nod1:
+		Class: 5
+		ClassName: Light Support
+		Factions: nod
+		BaseActor: mcv
+		SupportActors: e1,e1,e1,e1,e3,bggy,bike
+	MPStartUnits@5nod2:
+		Class: 5
+		ClassName: Light Support
+		Factions: nod
+		BaseActor: mcv
+		SupportActors: e1,e1,e1,e3,e3,e3,bggy
+	MPStartUnits@6nod1:
+		Class: 6
+		ClassName: Heavy Support
+		Factions: nod
+		BaseActor: mcv
+		SupportActors: e1,e1,e1,e1,e3,e3,ltnk,ltnk,ftnk
+	MPStartUnits@6nod2:
+		Class: 6
+		ClassName: Heavy Support
+		Factions: nod
+		BaseActor: mcv
+		SupportActors: e1,e1,e1,e1,e1,e3,e3,e3,ftnk,ftnk
+	MPStartUnits@6gdi1:
+		Class: 6
+		ClassName: Heavy Support
+		Factions: gdi
+		BaseActor: mcv
+		SupportActors: e1,e1,e1,e1,e3,e3,jeep,mtnk,mtnk
+	MPStartUnits@6gdi2:
+		Class: 6
+		ClassName: Heavy Support
+		Factions: gdi
+		BaseActor: mcv
+		SupportActors: e1,e1,e1,e1,e1,e2,e2,e2,e3,e3,apc,mtnk
+	MPStartUnits@7nod:
+		Class: 7
+		ClassName: Invasion Force!
+		Factions: nod
+		BaseActor: mcv
+		SupportActors: e1,e1,e1,e1,e1,e3,e3,e3,e3,e3,e1,e1,e1,e1,e1,e3,e3,e3,e3,e3,3tnk,3tnk,3tnk,3tnk,3tnk,3tnk,ltnk,ltnk,ltnk,ltnk
+	MPStartUnits@7gdi:
+		Class: 7
+		ClassName: Invasion Force!
+		Factions: gdi
+		BaseActor: mcv
+		SupportActors: e1,e1,e1,e1,e1,e3,e3,e3,e3,e3,e1,e1,e1,e1,e1,e3,e3,e3,e3,e3,mtnk,mtnk,mtnk,mtnk,mtnk,mtnk,mtnk,mtnk,mtnk,mtnk
+	MPStartUnits@specialops:
+		Class: specialops
+		ClassName: Special Ops
+		Factions: gdi, nod
+		BaseActor: flag_starting_units
+		SupportActors: e6,rmbo,e3,medi,spy,e6,rmbo,e3,medi,spy,tran
+	MPStartUnits@Barracksnod:
+		Class: barracks
+		ClassName: Only barracks
+		Factions: nod
+		BaseActor: handsole
+	MPStartUnits@barracksgdi:
+		Class: barracks
+		ClassName: Only barracks
+		Factions: gdi
+		BaseActor: pylesole
+	PathFinder:
+	ValidateOrder:
+	DebugPauseState:
+	ObjectivesPanel:
+		PanelName: SKIRMISH_STATS
+	RadarPings:
+	LoadWidgetAtGameStart:
+		ShellmapRoot: MENU_BACKGROUND
+	LuaScript:
+		Scripts:tda|data/environment/daynight.lua
+	GlobalLightingPaletteEffect:	
+		Red: 1.000
+		Green: 1.000
+		Blue: 1.000
+		Ambient: 1.000
+
+EditorWorld:
+	Inherits: ^BaseWorld
+	EditorActorLayer:
+	EditorResourceLayer:
+	EditorSelectionLayer:
+	LoadWidgetAtGameStart:

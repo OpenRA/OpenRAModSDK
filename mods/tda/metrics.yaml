@@ -1,0 +1,27 @@
+Metrics:
+	ButtonDepth: 0
+	ButtonFont: Bold
+	CheckboxPressedState: true
+	ColorPickerActorType: ^fact.colorpicker
+	ColorPickerRemapIndices: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+#up is new version defaults
+	ButtonTextColor: 0eaf08
+	ButtonTextColorDisabled: 808080
+	ButtonTextContrast: false
+	ButtonTextShadow: false
+	ButtonTextContrastColorDark: 000000
+	ButtonTextContrastColorLight: 7F7F7F
+	ButtonBaseLine: 0
+	HotkeyFont: Regular
+	HotkeyColor: 0eaf08
+	HotkeyColorDisabled: 808080
+	TextfieldFont: Bold
+	TextfieldColor: 0eaf08
+	TextfieldColorDisabled: 808080
+	TextfieldColorInvalid: FFC0C0
+	TextFont: Regular
+	TextColor: 0eaf08
+	TextContrast: false
+	TextShadow: false
+	TextContrastColorDark: 062100
+	TextContrastColorLight: 7F7F7F

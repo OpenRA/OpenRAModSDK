@@ -1,0 +1,14 @@
+For The Next Version:
+
+FIX:
+improve night day cycle script.
+humvee description.
+BALANCE:
+
+ADD:
+add fanatic to nod(rifleman who will run and explode on enemies when he is low on health and the enemies are 4-5 on target cell, he will also have black helmet).
+add GDI unit simular to nod rocket soldier.
+add repair vehicle that spawns engineers to repair units on the spot.
+add heavy lift helicopter for auto harverter and repairs pickup.
+add red and blue colored tiberium shimmering effects.
+Find how to add forcecore's dll in the mod.

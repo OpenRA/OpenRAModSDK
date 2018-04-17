@@ -1,0 +1,558 @@
+SPY:
+	Inherits: ^Infantry
+	Buildable:
+		BuildPaletteOrder: 90
+		Prerequisites: ~anytech, ~techlevel.high, ~!research_heavy_weapons_nod, ~research_stlh_weapons_nod
+		Queue: Infantry.Nod
+		BuildDuration: 500
+		Description: Infiltrates enemy structures for intel or\nsabotage. Exact effect depends on the\nbuilding infiltrated.\nLoses disguise when attacking.\nCan detect cloaked units and spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n  Special Ability: Disguised
+	Valued:
+		Cost: 1000
+	DisguiseTooltip:
+		Name: Spy
+		GenericName: Soldier
+	RevealsShroud:
+		Range: 5c0
+	Passenger:
+		PipType: Red
+		Voice: Move
+	Disguise:
+		Voice: Move
+		DisguisedCondition: disguise
+	Infiltrates:
+		EnterBehaviour: Dispose
+		PlayerExperience: 100
+		ValidStances: Enemy, Neutral
+		Types: SpyInfiltrate
+		Notification:
+	-WithInfantryBody:
+	WithDisguisingInfantryBody:
+		AttackSequence: shoot
+		IdleSequences: idle1,idle2
+		StandSequences: stand,stand2
+	WithDecoration@disguise:
+		Image: pips
+		Sequence: pip-disguise
+		Palette: playerRA
+		ReferencePoint: Top, Right
+		ZOffset: 256
+		RequiresCondition: disguise
+		RequiresSelection: True
+	IgnoresDisguise:
+	Armament:
+		Weapon: SilencedPPK
+	AttackFrontal:
+	AttackMove:
+		Voice: Move
+	Voiced:
+		VoiceSet: SpyVoice
+	Mobile:
+		Speed: 56
+	Health:
+		HP: 50
+
+MEDI:
+	Inherits@1: ^Infantry
+	Inherits@2: ^Doctor
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Infantry.GDI, Infantry.Nod
+		BuildPaletteOrder: 40
+		Description: Heals nearby infantry.\n  Unarmed
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Medic
+	Health:
+		HP: 25
+	RevealsShroud:
+		Range: 3c0
+	Passenger:
+		PipType: Blue
+		Voice: Action
+	Armament:
+		Weapon: Heal
+		Cursor: heal
+		OutsideRangeCursor: heal
+		TargetStances: Ally
+		ForceTargetStances: Ally
+	AutoTarget:
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: heal
+		StandSequences: stand
+	Voiced:
+		VoiceSet: MedicVoice
+	TakeCover:
+		DamageModifiers:
+			Prone50Percent: 50
+		DamageTriggers: TriggerProne
+	Mobile:
+		Speed: 56
+	Guard:
+		Voice: Action
+
+MECH:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Infantry.GDI, Infantry.Nod
+		BuildPaletteOrder: 100
+		Prerequisites: ~anyfix, ~techlevel.medium
+		Description: Repairs nearby vehicles and restores\nhusks to working condition by capturing them.\n  Unarmed
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Mechanic
+	Health:
+		HP: 25
+	Mobile:
+		Voice: Move
+	RevealsShroud:
+		Range: 3c0
+	Passenger:
+		PipType: Blue
+		Voice: Move
+	AutoTarget:
+	Armament:
+		Weapon: Repair
+		Cursor: repair
+		OutsideRangeCursor: repair
+		TargetStances: Ally
+		ForceTargetStances: None
+	AttackFrontal:
+		Voice: Move
+	Captures:
+		CaptureTypes: husk
+		PlayerExperience: 25
+	WithInfantryBody:
+		DefaultAttackSequence: repair
+		StandSequences: stand
+	Voiced:
+		VoiceSet: MechanicVoice
+	Mobile:
+		Speed: 56
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+	MustBeDestroyed:
+		RequiredForShortGame: true
+
+SOLESURVIVOR:
+	Inherits: E1
+	RenderSprites:
+		Image: e1
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	Valued:
+		Cost: 1000
+	-Buildable:
+	Health:
+		HP: 150
+	Tooltip:
+		Name: Sole Survivor
+	ConditionManager:
+	ProvidesPrerequisite:
+		Prerequisite: solesurvivor
+	SoundOnDamageTransition:
+		DamagedSounds: inftakingfire1.wav, inftakingfire2.wav, inftakingfire3.wav, inftakingfire4.wav
+
+SNIPER:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Sniper
+	Buildable:
+		BuildPaletteOrder: 50
+		Prerequisites: ~anyhq, ~techlevel.medium
+		Queue: Infantry.GDI
+		Description: Sniper infantry.\n  Strong vs Infantry\n  Weak vs Vehicles
+	Mobile:
+		Speed: 60
+	Health:
+		HP: 40
+	Armament:
+		Weapon: Sniper2
+		AmmoPoolName: SniperAmmo
+	AmmoPool@SniperAmmo:
+		Name: SniperAmmo
+		Ammo: 10
+		SelfReloads: True
+		PipCount: 0
+	AutoTarget:
+		ScanRadius: 15
+	AttackSounds:
+		Sounds: barrett1.aud, barrett2.aud
+		Delay: 0
+		DelayRelativeTo: Attack
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		-IdleSequences:
+	Armament@PILLBOX:
+		Name: pillbox
+		Weapon: Sniper2
+		AmmoPoolName: SniperAmmo
+	Armament@GUARDTOWER:
+		Name: guardtower
+		Weapon: Sniper2
+		AmmoPoolName: SniperAmmo
+	SoundOnDamageTransition:
+		DamagedSounds: inftakingfire1.wav, inftakingfire2.wav, inftakingfire3.wav, inftakingfire4.wav
+	ReloadAmmoPool@1:
+		AmmoPool: SniperAmmo
+	WithDecoration@SNIPER:
+		Image: pips
+		Sequence: pip-sniper
+		ReferencePoint: Top, Center
+		ValidStances: Ally
+		RequiresSelection: False
+
+E1:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Minigunner
+	Buildable:
+		BuildPaletteOrder: 10
+		Queue: Infantry.GDI, Infantry.Nod
+		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles
+	Mobile:
+		Speed: 56
+	Health:
+		HP: 50
+	Armament:
+		Name: primary
+		Weapon: M16
+		FireDelay: 3
+		AmmoPoolName: VehGrenadeANDBulletsA
+	Armament@VehicleGrenade:
+		Name: secondary
+		AmmoPoolName: VehGrenadeANDBulletsA
+		Weapon: VehicleGrenade
+		LocalOffset: 0,0,427
+		FireDelay: 16
+	AmmoPool@VehGrenadeANDBullets:
+		Name: VehGrenadeANDBulletsA
+		Ammo: 2
+		PipCount: 0
+	Armament@Gren:
+		Name: secondary
+		Weapon: FragGrenade
+		LocalOffset: 0,0,427
+		FireDelay: 15
+	AttackFrontal:
+	WithInfantryBody:
+		IdleSequences: idle1,idle2,idle3,idle4,idle5
+		AttackSequences: 
+			primary: shoot
+			secondary: throw
+	Armament@PILLBOX:
+		Name: pillbox
+		Weapon: HighVRA
+		MuzzleSequence: garrison-muzzle
+	Armament@GUARDTOWER:
+		Name: guardtower
+		Weapon: HighV
+		MuzzleSequence: garrison-muzzle
+	SoundOnDamageTransition:
+		DamagedSounds: inftakingfire1.wav, inftakingfire2.wav, inftakingfire3.wav, inftakingfire4.wav
+	ReloadAmmoPool@1:
+		AmmoPool: VehGrenadeANDBulletsA
+		Delay: 4
+		Count: 1
+		ResetOnFire: False
+
+E2:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 160
+	Tooltip:
+		Name: Grenadier
+	Buildable:
+		BuildPaletteOrder: 40
+		Prerequisites: ~anyhq, ~techlevel.medium
+		Queue: Infantry.GDI
+		Description: Fast infantry armed with grenades. \n  Strong vs Buildings, slow-moving targets
+	Mobile:
+		Speed: 71
+	Health:
+		HP: 50
+	Armament:
+		Weapon: Grenade
+		LocalOffset: 0,0,427
+		FireDelay: 15
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: throw
+	Explodes:
+		Weapon: GrenadierExplode
+		EmptyWeapon: GrenadierExplode
+		Chance: 50
+	Armament@PILLBOX:
+		Name: pillbox
+		Weapon: Grenade
+		FireDelay: 15
+	Armament@GUARDTOWER:
+		Name: guardtower
+		Weapon: GrenadeTower
+		FireDelay: 15
+	SoundOnDamageTransition:
+		DamagedSounds: inftakingfire1.wav, inftakingfire2.wav, inftakingfire3.wav, inftakingfire4.wav
+
+E3:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Rocket Soldier
+	Buildable:
+		BuildPaletteOrder: 20
+		Queue: Infantry.Nod
+		Description: Anti-tank/Anti-aircraft infantry. \n  Strong vs Tanks, Aircraft\n  Weak vs Infantry
+	Mobile:
+		Speed: 42
+	Health:
+		HP: 45
+	AutoTarget:
+		ScanRadius: 6
+	Armament:
+		Weapon: Rockets
+		LocalOffset: 256,43,341
+		FireDelay: 5
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Armament@PILLBOX:
+		Name: pillbox
+		Weapon: Rockets
+	Armament@GUARDTOWER:
+		Name: guardtower
+		Weapon: Rockets
+	SoundOnDamageTransition:
+		DamagedSounds: inftakingfire1.wav, inftakingfire2.wav, inftakingfire3.wav, inftakingfire4.wav
+
+E4:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Flamethrower
+	Buildable:
+		BuildPaletteOrder: 40
+		Prerequisites: ~anyhq, ~techlevel.medium
+		Queue: Infantry.Nod
+		Description: Advanced Anti-infantry unit.\n  Strong vs Infantry, Buildings\n  Weak vs Tanks
+	Mobile:
+		Speed: 56
+	Health:
+		HP: 80
+	Armament:
+		Weapon: Flamethrower
+		LocalOffset: 341,0,256
+		FireDelay: 3
+		MuzzleSequence: muzzle
+	AttackFrontal:
+	WithMuzzleOverlay:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Armament@PILLBOX:
+		Name: pillbox
+		Weapon: Flamethrower
+		FireDelay: 3
+		MuzzleSequence: muzzle
+	Armament@GUARDTOWER:
+		Name: guardtower
+		Weapon: Flamethrower
+		FireDelay: 3
+		MuzzleSequence: muzzle
+	SoundOnDamageTransition:
+		DamagedSounds: inftakingfire1.wav, inftakingfire2.wav, inftakingfire3.wav, inftakingfire4.wav
+
+E5:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Chemical Warrior
+	Buildable:
+		BuildPaletteOrder: 50
+		Prerequisites: ~anytech, ~bio, ~techlevel.high
+		Queue: Infantry.Nod
+		Description: Advanced general-purpose infantry.\n  Strong vs all Ground units
+	Mobile:
+		Speed: 56
+		TerrainSpeeds:
+			Tiberium: 90
+				PathingCost: 90
+			BlueTiberium: 90
+				PathingCost: 90
+			RedTiberium: 90
+				PathingCost: 90
+	Health:
+		HP: 90
+	Armament:
+		Weapon: Chemspray
+		LocalOffset: 341,0,256
+		FireDelay: 3
+		MuzzleSequence: muzzle
+	AttackFrontal:
+	WithMuzzleOverlay:
+	-DamagedByTerrain:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Armament@PILLBOX:
+		Name: pillbox
+		Weapon: Chemspray
+		LocalOffset: 341,0,256
+		FireDelay: 3
+		MuzzleSequence: muzzle
+	Armament@GUARDTOWER:
+		Name: guardtower
+		Weapon: Chemspray
+		LocalOffset: 341,0,256
+		FireDelay: 3
+		MuzzleSequence: muzzle
+	SoundOnDamageTransition:
+		DamagedSounds: inftakingfire1.wav, inftakingfire2.wav, inftakingfire3.wav, inftakingfire4.wav
+
+E6:
+	Inherits: ^Soldier
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Engineer
+	Buildable:
+		BuildPaletteOrder: 30
+		Queue: Infantry.GDI, Infantry.Nod
+		Description: Damages and captures enemy structures.\n  Unarmed
+	Mobile:
+		Speed: 56
+	Health:
+		HP: 25
+	Passenger:
+		PipType: Yellow
+	EngineerRepair:
+	RepairsBridges:
+	Captures:
+		CaptureTypes: building, husk, CapTran
+		PlayerExperience: 50
+	-AutoTarget:
+	-ProducibleWithLevel:
+	SoundOnDamageTransition:
+		DamagedSounds: inftakingfire1.wav, inftakingfire2.wav, inftakingfire3.wav, inftakingfire4.wav
+
+RMBO:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Commando
+	Buildable:
+		BuildPaletteOrder: 60
+		Prerequisites: ~anytech, ~techlevel.high
+		Queue: Infantry.GDI, Infantry.Nod
+		Description: Elite sniper infantry unit.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles
+		BuildLimit: 1
+	Mobile:
+		Speed: 71
+		Voice: Move
+	Guard:
+		Voice: Move
+	Health:
+		HP: 110
+	Passenger:
+		PipType: Red
+		Voice: Move
+	RevealsShroud:
+		Range: 6c0
+	AutoTarget:
+		ScanRadius: 8
+	Demolition:
+		DetonationDelay: 45
+		Voice: Demolish
+	Armament:
+		Weapon: Sniper
+	AttackFrontal:
+		Voice: Attack
+	AttackMove:
+		Voice: Attack
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		IdleSequences: idle1,idle2,idle3
+	AnnounceOnBuild:
+	AnnounceOnKill:
+	Voiced:
+		VoiceSet: CommandoVoice
+	Armament@PILLBOX:
+		Name: pillbox
+		Weapon: Sniper
+	Armament@GUARDTOWER:
+		Name: guardtower
+		Weapon: Sniper
+
+PVICE:
+	Inherits: ^Viceroid
+	Mobile:
+		Crushes: crate
+	Tooltip:
+	ActorLostNotification:
+	Buildable:
+		Description: Mutated abomination that spits liquid Tiberium.\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft
+	Sandworm:
+		WanderMoveRadius: 5
+	ConditionManager:
+
+STEG:
+	Inherits: ^DINO
+	Tooltip:
+		Name: Stegosaurus
+	Armament:
+		Weapon: tail
+	WithDeathAnimation:
+		DeathSequencePalette: terrain
+		DeathPaletteIsPlayerPalette: false
+	Buildable:
+		Description: A large, heavily built, herbivorous quadruped
+
+TREX:
+	Inherits: ^DINO
+	Tooltip:
+		Name: Tyrannosaurus rex
+	Armament:
+		Weapon: teeth
+	Selectable:
+		Bounds: 48,36,2,1
+		DecorationBounds: 52,38
+	SelectionDecorations:
+	Buildable:
+		Description: Bipedal carnivore with a massive skull
+
+TRIC:
+	Inherits: ^DINO
+	Tooltip:
+		Name: Triceratops
+	Armament:
+		Weapon: horn
+	SelectionDecorations:
+	Buildable:
+		Description: Quadruped with large bony frill and three horns
+	Selectable:
+		DecorationBounds: 34,24,0,2
+
+RAPT:
+	Inherits: ^DINO
+	Tooltip:
+		Name: Velociraptor
+	Armament:
+		Weapon: claw
+	Buildable:
+		Description: Bipedal with enlarged sickle-shaped claw on each hindfoot

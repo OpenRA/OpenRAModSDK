@@ -1,0 +1,81 @@
+^ImpactSoundsShell:
+	Warhead@ShellToFlesh: CreateEffect
+		ImpactSounds: ImpactShellFlesh1.aud,ImpactShellFlesh2.aud,ImpactShellFlesh3.aud,ImpactShellFlesh4.aud,ImpactShellFlesh5.aud,ImpactShellFlesh6.aud
+		ValidTargets: Infantry
+		InvalidTargets: Vehicle, Water, Structure, Wall, Husk
+	Warhead@ShellToHeavyMetal: CreateEffect
+		ImpactSounds: ImpactShellTank1.aud,ImpactShellTank2.aud,ImpactShellTank3.aud,ImpactShellTank4.aud,ImpactShellTank5.aud,ImpactShellTank6.aud,ImpactShellTank7.aud,ImpactShellTank8.aud
+		ValidTargets: Tank, Husk
+		InvalidTargets: Water, Structure, Wall, Infantry
+	Warhead@ShellToMetal: CreateEffect
+		ImpactSounds: ImpactShellVehicle1.aud,ImpactShellVehicle2.aud,ImpactShellVehicle3.aud,ImpactShellVehicle4.aud,ImpactShellVehicle5.aud,ImpactShellVehicle6.aud,ImpactShellVehicle7.aud,ImpactShellVehicle8.aud,ImpactShellVehicle9.aud
+		ValidTargets: Vehicle, Husk
+		InvalidTargets: Water, Structure, Wall, Infantry
+	Warhead@ShellToConcrete: CreateEffect
+		ImpactSounds: ImpactShellConcrete1.aud,ImpactShellConcrete2.aud,ImpactShellConcrete3.aud
+		ValidTargets: Structure, Wall
+		InvalidTargets: Water, Vehicle, Husk, Infantry
+	Warhead@ShellToWater: CreateEffect
+		ImpactSounds:
+		ValidTargets: Water
+		InvalidTargets: Vehicle, Husk, Ground, Infantry, Structure, Wall
+	Warhead@ShellToGround: CreateEffect
+		ImpactSounds: ImpactBulletRicoGround1.aud,ImpactBulletRicoGround2.aud,ImpactBulletRicoGround3.aud,ImpactBulletRicoGround4.aud,ImpactBulletRicoGround5.aud,ImpactBulletRicoGround6.aud,ImpactBulletRicoGround7.aud,ImpactBulletRicoGround8.aud,ImpactBulletGround1.aud,ImpactBulletGround10.aud,ImpactBulletGround11.aud,ImpactBulletGround12.aud,ImpactBulletGround13.aud,ImpactBulletGround14.aud,ImpactBulletGround15.aud,ImpactBulletGround16.aud,ImpactBulletGround17.aud,ImpactBulletGround2.aud,ImpactBulletGround3.aud,ImpactBulletGround4.aud,ImpactBulletGround5.aud,ImpactBulletGround6.aud,ImpactBulletGround7.aud,ImpactBulletGround8.aud,ImpactBulletGround9.aud
+		ValidTargets: Ground
+		InvalidTargets: Vehicle, Husk, Water, Infantry, Structure, Wall
+
+^ImpactSoundsBullet:
+	Warhead@BulletToFlesh: CreateEffect
+		ImpactSounds: ImpactBulletFlesh1.aud, ImpactBulletFlesh2.aud, ImpactBulletFlesh3.aud, ImpactBulletFlesh4.aud, ImpactBulletFlesh5.aud, ImpactBulletFlesh6.aud, ImpactBulletFlesh7.aud, ImpactBulletFlesh8.aud, ImpactBulletFlesh9.aud, ImpactBulletFlesh10.aud
+		ValidTargets: Infantry
+		InvalidTargets: Vehicle, Water, Structure, Wall, Husk
+	Warhead@BulletToMetal: CreateEffect
+		ImpactSounds: ImpactBulletRicoMetal1.aud,ImpactBulletRicoMetal2.aud,ImpactBulletRicoMetal3.aud,ImpactBulletMetal1.aud,ImpactBulletMetal10.aud,ImpactBulletMetal11.aud,ImpactBulletMetal12.aud,ImpactBulletMetal13.aud,ImpactBulletMetal14.aud,ImpactBulletMetal2.aud,ImpactBulletMetal3.aud,ImpactBulletMetal4.aud,ImpactBulletMetal5.aud,ImpactBulletMetal6.aud,ImpactBulletMetal7.aud,ImpactBulletMetal8.aud,ImpactBulletMetal9.aud
+		ValidTargets: Vehicle, Husk, Tank
+		InvalidTargets: Water, Structure, Wall, Infantry
+	Warhead@BulletToConcrete: CreateEffect
+		ImpactSounds: ImpactBulletRicoConcrete1.aud,ImpactBulletRicoConcrete2.aud,ImpactBulletRicoConcrete3.aud,ImpactBulletRicoConcrete4.aud,ImpactBulletRicoConcrete5.aud,ImpactBulletConcrete1.aud,ImpactBulletConcrete10.aud,ImpactBulletConcrete11.aud,ImpactBulletConcrete12.aud,ImpactBulletConcrete15.aud,ImpactBulletConcrete16.aud,ImpactBulletConcrete19.aud,ImpactBulletConcrete2.aud,ImpactBulletConcrete21.aud,ImpactBulletConcrete22.aud,ImpactBulletConcrete25.aud,ImpactBulletConcrete27.aud,mpactBulletConcrete28.aud,ImpactBulletConcrete3.aud,ImpactBulletConcrete30.aud,ImpactBulletConcrete4.aud,ImpactBulletConcrete5.aud,ImpactBulletConcrete6.aud,ImpactBulletConcrete7.aud,ImpactBulletConcrete8.aud,ImpactBulletConcrete9.aud
+		ValidTargets: Structure, Wall
+		InvalidTargets: Water, Vehicle, Husk, Infantry
+	Warhead@BulletToWater: CreateEffect
+		ImpactSounds: ImpactBulletWater1.aud,ImpactBulletWater2.aud,ImpactBulletWater3.aud,ImpactBulletWater4.aud,ImpactBulletWater5.aud
+		ValidTargets: Water
+		InvalidTargets: Vehicle, Husk, Ground, Infantry, Structure, Wall
+	Warhead@BulletToGround: CreateEffect
+		ImpactSounds: ImpactBulletRicoGround1.aud,ImpactBulletRicoGround2.aud,ImpactBulletRicoGround3.aud,ImpactBulletRicoGround4.aud,ImpactBulletRicoGround5.aud,ImpactBulletRicoGround6.aud,ImpactBulletRicoGround7.aud,ImpactBulletRicoGround8.aud,ImpactBulletGround1.aud,ImpactBulletGround10.aud,ImpactBulletGround11.aud,ImpactBulletGround12.aud,ImpactBulletGround13.aud,ImpactBulletGround14.aud,ImpactBulletGround15.aud,ImpactBulletGround16.aud,ImpactBulletGround17.aud,ImpactBulletGround2.aud,ImpactBulletGround3.aud,ImpactBulletGround4.aud,ImpactBulletGround5.aud,ImpactBulletGround6.aud,ImpactBulletGround7.aud,ImpactBulletGround8.aud,ImpactBulletGround9.aud
+		ValidTargets: Ground
+		InvalidTargets: Vehicle, Husk, Water, Infantry, Structure, Wall
+
+^FireTrailL:
+	Inherits: ^ImpactSoundsShell
+	Projectile: Bullet
+		ContrailLength: 6
+		ContrailWidth: 32
+		LaunchAngle: 1
+		ContrailColor: FFCE82
+
+^FireTrailS:
+	Inherits: ^ImpactSoundsBullet
+	Projectile: Bullet
+		ContrailLength: 6
+		ContrailWidth: 16
+		LaunchAngle: 1
+		ContrailColor: FFCE82
+		ContrailZOffset: 1000
+		ContrailDelay: 0
+
+^RocketsBasic:
+	ReloadDelay: 50
+	Range: 6c0
+	Report: bazook1.aud
+	ValidTargets: Ground, Air
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+	Warhead@4EffFlash: CreateEffect
+		Explosions: flash3small
+		ExplosionPalette: alpha
+		InvalidTargets: Water

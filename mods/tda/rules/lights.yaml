@@ -1,0 +1,102 @@
+^Palettes:
+	GlobalLightingPaletteEffect:
+		ExcludePalettes: ra2foricamos, flashyeffectra, flashyeffect, effect, effectra, alpha, chrome, lights_Red_Pal, lights_Red_50, lights_Red_05, lights_Blue_Pal, lights_Blue_50, lights_Blue_05, lights_Green_Pal, lights_Green_50, lights_Green_05, lights_Gray_Pal, lights_Gray_50, lights_Gray_05, PlayerColorLights, PlayerColorLights_RA
+	FlashPaletteEffect:
+# LIGHTS PALETTES-------------------------------------------------------------------------------------------------------------------------------------------------
+# GRAY
+	PaletteFromFile@lights_Gray_Pal:
+		Name: lights_Gray_Pal
+		Filename: lightsgray.pal
+		ShadowIndex: 4
+	PaletteFromPaletteWithAlpha@lights_Gray_50:
+		Name: lights_Gray_50
+		BasePalette: lights_Gray_Pal
+		Alpha: 0.50
+	PaletteFromPaletteWithAlpha@lights_Gray_05:
+		Name: lights_Gray_05
+		BasePalette: lights_Gray_Pal
+		Alpha: 0.05
+# RED
+	PaletteFromFile@lights_Red_Pal:
+		Name: lights_Red_Pal
+		Filename: lightsred.pal
+		ShadowIndex: 4
+	PaletteFromPaletteWithAlpha@lights_Red_50:
+		Name: lights_Red_50
+		BasePalette: lights_Red_Pal
+		Alpha: 0.50
+	PaletteFromPaletteWithAlpha@lights_Red_05:
+		Name: lights_Red_05
+		BasePalette: lights_Red_Pal
+		Alpha: 0.05
+# BLUE
+	PaletteFromFile@lights_Blue_Pal:
+		Name: lights_Blue_Pal
+		Filename: lightsblue.pal
+		ShadowIndex: 4
+	PaletteFromPaletteWithAlpha@lights_Blue_50:
+		Name: lights_Blue_50
+		BasePalette: lights_Blue_Pal
+		Alpha: 0.50
+	PaletteFromPaletteWithAlpha@lights_Blue_05:
+		Name: lights_Blue_05
+		BasePalette: lights_Blue_Pal
+		Alpha: 0.05
+# GREEN
+	PaletteFromFile@lights_Green_Pal:
+		Name: lights_Green_Pal
+		Filename: lightsgreen.pal
+		ShadowIndex: 4
+	PaletteFromPaletteWithAlpha@lights_Green_50:
+		Name: lights_Green_50
+		BasePalette: lights_Green_Pal
+		Alpha: 0.50
+	PaletteFromPaletteWithAlpha@lights_Green_05:
+		Name: lights_Green_05
+		BasePalette: lights_Green_Pal
+		Alpha: 0.05
+# PLAYER COLORED PALETTES***************************************************************************************************************************************
+	PlayerColorPalette@PlayerColorLights:
+		BaseName: PlayerColorLights
+		Name: PlayerColorLights
+		BasePalette: terrain
+		RemapIndex: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+		AllowModifiers: True
+	PlayerColorPalette@PlayerColorLights_RA:
+		BaseName: PlayerColorLights_RA
+		Name: PlayerColorLights_RA
+		BasePalette: terrain
+		RemapIndex: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95
+		AllowModifiers: True
+# FLASH PALETTES-------------------------------------------------------------------------------------------------------------------------------------------------
+	PaletteFromFile@flashyeffect:
+		Name: flashyeffect
+		Filename: temperat.pal
+		ShadowIndex: 4
+	PaletteFromFile@effectra:
+		Name: effectra
+		Filename: temperatRA.pal
+		ShadowIndex: 4
+	PaletteFromFile@flashyeffectra:
+		Name: flashyeffectra
+		Filename: temperatRA.pal
+		ShadowIndex: 4
+	PaletteFromFile@alpha:
+		Name: alpha
+		Filename: alpha.pal
+	PaletteFromPaletteWithAlpha@raeffect50alpha:
+		Name: raeffect50alpha
+		BasePalette: flashyeffectra
+		Alpha: 0.5
+	PaletteFromPaletteWithAlpha@raeffect25alpha:
+		Name: raeffect25alpha
+		BasePalette: flashyeffectra
+		Alpha: 0.25
+	PaletteFromPaletteWithAlpha@tdeffect50alpha:
+		Name: tdeffect50alpha
+		BasePalette: flashyeffect
+		Alpha: 0.5
+	PaletteFromPaletteWithAlpha@tdeffect25alpha:
+		Name: tdeffect25alpha
+		BasePalette: flashyeffect
+		Alpha: 0.25

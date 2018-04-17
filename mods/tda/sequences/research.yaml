@@ -1,0 +1,41 @@
+re_advpower_icon_nod:
+	idle:
+		Length: *
+	icon:
+		Nod: re_advpower_icon_nod
+
+re_advpower_icon_gdi:
+	idle:
+		Length: *
+	icon:
+		GDI: re_advpower_icon_gdi
+
+re_stlhharver_icon_nod:
+	idle:
+		Length: *
+	icon:
+		Nod: re_stlhharver_icon_nod
+
+re_armorharver_icon_gdi:
+	idle:
+		Length: *
+	icon:
+		Nod: re_armorharver_icon_gdi
+
+re_tow_icon_gdi:
+	idle:
+		Length: *
+	icon:
+		Nod: re_tow_icon_gdi
+
+re_mil_doctrine1_icon_nod:
+	idle:
+		Length: *
+	icon:
+		Nod: re_mil_doctrine1_icon_nod
+
+re_mil_doctrine2_icon_nod:
+	idle:
+		Length: *
+	icon:
+		Nod: re_mil_doctrine2_icon_nod

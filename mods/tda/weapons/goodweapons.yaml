@@ -1,0 +1,23 @@
+Heal:
+	ReloadDelay: 70
+	Range: 2c0
+	Report: heal2.aud
+	ValidTargets: Infantry
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Spread: 100
+		Damage: -30
+		ValidTargets: Infantry
+		DebugOverlayColor: 00FF00
+
+Repair:
+	ReloadDelay: 80
+	Range: 3c0
+	Report: fixit1.aud
+	ValidTargets: Repair
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: -20
+		ValidTargets: Repair
+		DebugOverlayColor: 00FF00

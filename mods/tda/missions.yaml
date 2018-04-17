@@ -1,0 +1,36 @@
+GDI Campaign:
+	./mods/tda/maps/gdi01
+	./mods/tda/maps/gdi02
+	./mods/tda/maps/gdi03
+	./mods/tda/maps/gdi04a
+	./mods/tda/maps/gdi04b
+	./mods/tda/maps/gdi04c
+	./mods/tda/maps/gdi05a
+	./mods/tda/maps/gdi05b
+	./mods/tda/maps/gdi06
+	./mods/tda/maps/gdi07
+
+Nod Campaign:
+	./mods/tda/maps/nod01
+	./mods/tda/maps/nod02a
+	./mods/tda/maps/nod02b
+	./mods/tda/maps/nod03a
+	./mods/tda/maps/nod03b
+	./mods/tda/maps/nod04a
+	./mods/tda/maps/nod04b
+	./mods/tda/maps/nod05
+	./mods/tda/maps/nod06a
+	./mods/tda/maps/nod06b
+	./mods/tda/maps/nod06c
+	./mods/tda/maps/nod07a
+	./mods/tda/maps/nod07b
+	./mods/tda/maps/nod07c
+	./mods/tda/maps/nod08a
+	./mods/tda/maps/nod08b
+	./mods/tda/maps/nod09
+
+Funpark Campaign:
+	./mods/tda/maps/funpark01
+
+Bonus Missions:
+	./mods/tda/maps/tda64gdi01

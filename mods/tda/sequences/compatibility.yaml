@@ -1,0 +1,40 @@
+v19.husk:
+	idle: v19
+		Start: 28
+	fire-start: flmspt
+		Length: *
+		Offset: 7,-15
+		ZOffset: 1
+	fire-loop: flmspt
+		Start: 50
+		Length: *
+		Offset: 7,-15
+		ZOffset: 1
+
+hosp.husk:
+	idle: hosp
+		Start: 8
+	bib: mbHOSP
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+		Length: *
+		Offset: 0,1
+
+bio.husk:
+	idle: bio
+		Start: 2
+
+miss.husk:
+	idle: miss
+		Start: 2
+	bib: mbMISS
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+		Length: *
+		Offset: 0,1

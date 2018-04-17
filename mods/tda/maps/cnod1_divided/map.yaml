@@ -1,0 +1,105 @@
+MapFormat: 11
+
+RequiresMod: tda
+
+Title: Divided
+
+Author: KOYK
+
+Tileset: SNOW
+
+MapSize: 102,62
+
+Bounds: 1,1,100,60
+
+Visibility: Lobby
+
+Categories: under development
+
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: gdi
+	PlayerReference@Villagers:
+		Name: Villagers
+		NonCombatant: True
+		Faction: gdi
+	PlayerReference@GDI:
+		Name: GDI
+		Faction: gdi
+		Color: F5D378
+		Allies: Villagers, GDI1
+		Enemies: Nod, Nod1
+	PlayerReference@GDI1:
+		Name: GDI1
+		Faction: gdi
+		Color: F5D378
+		Allies: Villagers, GDI
+		Enemies: Nod, Nod1
+	PlayerReference@Nod:
+		Name: Nod
+		AllowBots: False
+		Playable: True
+		Required: True
+		LockFaction: True
+		Faction: nod
+		LockColor: True
+		Color: BF0D0D
+		LockSpawn: True
+		LockTeam: True
+		Team: 1
+		Allies: Nod1
+		Enemies: GDI, GDI1, Villagers
+	PlayerReference@Nod1:
+		Name: Nod1
+		Playable: True
+		Required: True
+		LockFaction: True
+		Faction: nod
+		LockColor: True
+		Color: 872AB2
+		LockSpawn: True
+		LockTeam: True
+		Team: 1
+		Allies: Nod
+		Enemies: GDI, GDI1, Villagers
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: GDI, GDI1, Nod, Nod1, Multi0
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: tc05
+		Owner: Neutral
+		Location: 62,8
+	Actor1: tc03
+		Owner: Neutral
+		Location: 56,7
+	Actor2: tc04
+		Owner: Neutral
+		Location: 54,8
+	Actor3: v19_des
+		Owner: Neutral
+		Location: 75,38
+	Actor4: v19_des
+		Owner: Neutral
+		Location: 76,38
+	Actor5: v19_des
+		Owner: Neutral
+		Location: 77,38
+	Actor6: split2
+		Owner: Neutral
+		Location: 71,22
+	Actor7: mpspawn
+		Owner: Neutral
+		Location: 61,27
+
+Rules: tda|rules/singleplayer-coop/coop.yaml, tda|rules/singleplayer-coop/singleplayer.yaml

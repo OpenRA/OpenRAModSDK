@@ -1,0 +1,141 @@
+V19_DES:
+	Inherits: ^TechBuilding
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Health:
+		HP: 20
+	Valued:
+		Cost: 0
+	Tooltip:
+		Name: Destroyed Oil Derrick
+	TransformOnCapture:
+		IntoActor: v19
+		ForceHealthPercentage: 10	
+		SkipMakeAnims: True
+	Capturable:
+		CaptureThreshold: 100
+	EditorOnlyTooltip:
+		Name: Use this
+
+HOSP_DES:
+	Inherits: ^TechBuilding
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 20
+	Valued:
+		Cost: 0
+	Tooltip:
+		Name: Destroyed Hospital
+	WithBuildingBib:
+		HasMinibib: Yes
+	ProvidesPrerequisite@buildingname:
+	TransformOnCapture:
+		IntoActor: hosp
+		ForceHealthPercentage: 10	
+		SkipMakeAnims: True
+	Capturable:
+		CaptureThreshold: 100
+	EditorOnlyTooltip:
+		Name: Use this
+
+BIO_DES:
+	Inherits: ^TechBuilding
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 20
+	Valued:
+		Cost: 0
+	Tooltip:
+		Name: Destroyed Biological Lab
+	TransformOnCapture:
+		IntoActor: bio
+		ForceHealthPercentage: 10	
+		SkipMakeAnims: True
+	Capturable:
+		CaptureThreshold: 100
+	EditorOnlyTooltip:
+		Name: Use this
+
+MISS_DES:
+	Inherits: ^TechBuilding
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Tooltip:
+		Name: Destroyed Tech Center
+	Health:
+		HP: 20
+	Valued:
+		Cost: 0
+	WithBuildingBib:
+		HasMinibib: Yes
+	TransformOnCapture:
+		IntoActor: miss
+		ForceHealthPercentage: 10	
+		SkipMakeAnims: True
+	Capturable:
+		CaptureThreshold: 100
+	EditorOnlyTooltip:
+		Name: Use this
+
+BARR_DES:
+	Inherits: ^TechBuilding
+	Valued:
+		Cost: 0
+	Tooltip:
+		Name: Destroyed Private Security Barracks
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	WithBuildingBib:
+	Health:
+		HP: 20
+	RevealsShroud:
+		Range: 5c0
+	SelectionDecorations:
+	TransformOnCapture:
+		IntoActor: barr
+		ForceHealthPercentage: 10	
+		SkipMakeAnims: True
+	Capturable:
+		CaptureThreshold: 100
+	RenderSprites:
+		PlayerPalette: playerRA
+	EditorOnlyTooltip:
+		Name: Use this
+	Selectable:
+		DecorationBounds: 48,42,0,-5
+
+FIXN_DES:
+	Inherits: ^TechBuilding
+	Valued:
+		Cost: 0
+	Tooltip:
+		Name: Destroyed Machine Shop
+	Building:
+		Footprint: __x xxx x__
+		Dimensions: 3,3
+	Health:
+		HP: 20
+	RevealsShroud:
+		Range: 5c0
+	Power:
+		Amount: 0
+	SelectionDecorations:
+	TransformOnCapture:
+		IntoActor: fixn
+		ForceHealthPercentage: 10	
+		SkipMakeAnims: True
+	Selectable:
+		Bounds: 48,42,0,-5
+		DecorationBounds: 48,42,0,-5
+	WithIdleOverlay@ROOF:
+		Sequence: idle-roof
+	Capturable:
+		CaptureThreshold: 100
+	WithBuildingBib:

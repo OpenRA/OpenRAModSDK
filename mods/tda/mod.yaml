@@ -1,0 +1,301 @@
+Metadata:
+	Title: Tiberian Dawn Apolyton
+	Version: TDA-154
+
+PackageFormats: Mix
+
+Packages:
+	~^Content/cnc
+	~^Content/cnc/movies
+	.
+	$tda: tda
+	./mods/common: common
+	~speech.mix
+	~conquer.mix
+	~sounds.mix
+	~tempicnh.mix
+	~temperat.mix
+	~winter.mix
+	~movies.mix
+	~scores.mix
+	~scores2.mix
+	~scores-covertops.mix
+	~transit.mix
+	tda|uibits
+	tda|data
+	tda|data/ss
+	tda|data/destroyed
+	tda|data/icon
+	tda|data/palettes
+	tda|data/fonts
+	tda|data/sounds
+	tda|data/sounds/weapons/impact
+	tda|data/sounds/weapons/fire
+	tda|data/sounds/weapons/reload
+	tda|data/sounds/superweapons
+	tda|data/sounds/ambient
+	tda|data/sounds/interface
+	tda|data/music
+	tda|tilesets/desert
+	tda|tilesets/winter
+	tda|tilesets/snow
+	tda|tilesets/temperat
+	tda|tilesets/jungle
+	tda|tilesets/snow/snow.mix
+	tda|tilesets/desert/desert.mix
+
+MapFolders:
+	tda|maps: System
+	~^maps/tda/TDA-154: User
+
+Rules:
+	tda|rules/misc.yaml
+	tda|rules/bots.yaml
+	tda|rules/player.yaml
+	tda|rules/world.yaml
+	tda|rules/palettes.yaml
+	tda|rules/defaults.yaml
+	tda|rules/structures.yaml
+	tda|rules/infantry.yaml
+	tda|rules/vehicles.yaml
+	tda|rules/trees.yaml
+	tda|rules/civilian.yaml
+	tda|rules/civilian-desert.yaml
+	tda|rules/tech_buildings.yaml
+	tda|rules/ships.yaml
+	tda|rules/aircraft.yaml
+	tda|rules/husks.yaml
+	tda|rules/destroyed.yaml
+	tda|rules/research.yaml
+	tda|rules/compatibility.yaml
+	tda|rules/lights.yaml
+	tda|rules/map_options.yaml
+Sequences:
+	tda|sequences/structures.yaml
+	tda|sequences/vehicles.yaml
+	tda|sequences/infantry.yaml
+	tda|sequences/aircraft.yaml
+	tda|sequences/decorations.yaml
+	tda|sequences/misc.yaml
+	tda|sequences/funpark.yaml
+	tda|sequences/civilian.yaml
+	tda|sequences/campaign.yaml
+	tda|sequences/ships.yaml
+	tda|sequences/destroyed.yaml
+	tda|sequences/research.yaml
+	tda|sequences/compatibility.yaml
+
+TileSets:
+	tda|tilesets/desert.yaml
+	tda|tilesets/winter.yaml
+	tda|tilesets/snow.yaml
+	tda|tilesets/temperat.yaml
+	tda|tilesets/jungle.yaml
+
+Weapons:
+	tda|weapons/explosions.yaml
+	tda|weapons/largecaliber.yaml
+	tda|weapons/missiles.yaml
+	tda|weapons/other.yaml
+	tda|weapons/smallcaliber.yaml
+	tda|weapons/superweapons.yaml
+	tda|weapons/goodweapons.yaml
+	tda|weapons/default.yaml
+
+Cursors:
+	tda|cursors.yaml
+
+Chrome:
+	tda|chrome.yaml
+
+Assemblies:
+	common|OpenRA.Mods.Common.dll
+	common|OpenRA.Mods.Cnc.dll
+	tda|OpenRA.Mods.D2k.dll
+	# tda|OpenRA.Mods.yupgi_alert.dll
+
+ChromeLayout:
+	tda|chrome/mainmenu.yaml
+	tda|chrome/ingame.yaml
+	tda|chrome/multiplayer-browser.yaml
+	tda|chrome/multiplayer-browserpanels.yaml
+	tda|chrome/multiplayer-createserver.yaml
+	tda|chrome/multiplayer-directconnect.yaml
+	tda|chrome/lobby.yaml
+	tda|chrome/lobby-mappreview.yaml
+	tda|chrome/lobby-players.yaml
+	tda|chrome/lobby-options.yaml
+	tda|chrome/lobby-music.yaml
+	tda|chrome/lobby-servers.yaml
+	tda|chrome/lobby-kickdialogs.yaml
+	tda|chrome/connection.yaml
+	tda|chrome/color-picker.yaml
+	tda|chrome/mapchooser.yaml
+	tda|chrome/replaybrowser.yaml
+	tda|chrome/ingame-chat.yaml
+	tda|chrome/ingame-menu.yaml
+	tda|chrome/ingame-debug.yaml
+	tda|chrome/ingame-infochat.yaml
+	tda|chrome/ingame-info.yaml
+	tda|chrome/ingame-infobriefing.yaml
+	tda|chrome/ingame-infoscripterror.yaml
+	tda|chrome/ingame-infoobjectives.yaml
+	tda|chrome/ingame-infostats.yaml
+	tda|chrome/ingame-observerstats.yaml
+	tda|chrome/music.yaml
+	tda|chrome/settings.yaml
+	tda|chrome/credits.yaml
+	tda|chrome/dialogs.yaml
+	tda|chrome/tooltips.yaml
+	tda|chrome/assetbrowser.yaml
+	tda|chrome/missionbrowser.yaml
+	tda|chrome/editor.yaml
+
+Voices:
+	tda|audio/voices.yaml
+
+Notifications:
+	tda|audio/notifications.yaml
+
+Music:
+	tda|audio/music.yaml
+
+Translations:
+	tda|languages/english.yaml
+
+Hotkeys:
+	common|hotkeys/game.yaml
+	common|hotkeys/observer.yaml
+	common|hotkeys/production-common.yaml
+	common|hotkeys/production-peractor.yaml
+	common|hotkeys/supportpowers.yaml
+	common|hotkeys/viewport.yaml
+	tda|hotkeys.yaml
+
+LoadScreen: CncLoadScreen
+	Image: tda|uibits/chrome.png
+	Text: I see you!
+
+ServerTraits:
+	LobbyCommands
+	PlayerPinger
+	MasterServerPinger
+	LobbySettingsNotification
+
+ChromeMetrics:
+	common|metrics.yaml
+	tda|metrics.yaml
+
+Fonts:
+	Small:
+		Font: tda|data/fonts/smallfont.ttf
+		Size:16
+	Regular:
+		Font: tda|data/fonts/smallfont.ttf
+		Size:17
+	Bold:
+		Font: tda|data/fonts/army.ttf
+		Size:12
+	Title:
+		Font: tda|data/fonts/army.ttf
+		Size:20
+	MediumBold:
+		Font: tda|data/fonts/army.ttf
+		Size:14
+	BigBold:
+		Font: tda|data/fonts/army.ttf
+		Size:17
+	Tiny:
+		Font: tda|data/fonts/smallfont.ttf
+		Size:14
+	TinyBold:
+		Font: tda|data/fonts/smallfont.ttf
+		Size:15
+	Timer:
+		Font: tda|data/fonts/army.ttf
+		Size:14
+	BigTimer:
+		Font: tda|data/fonts/army.ttf
+		Size:17
+	CashSmall:
+		Font: tda|data/fonts/cash.ttf
+		Size:12
+
+Missions:
+	./mods/tda/missions.yaml
+
+MapGrid:
+	TileSize: 24,24
+	Type: Rectangular
+
+SupportsMapsFrom: cnc, tda
+
+SoundFormats: Aud, Wav
+
+SpriteFormats: ShpTD, TmpTD, ShpTS, TmpRA
+
+SpriteSequenceFormat: TilesetSpecificSpriteSequence
+	TilesetExtensions:
+		TEMPERAT: .tem
+		WINTER: .win
+		SNOW: .sno
+		DESERT: .des
+		JUNGLE: .jun
+
+ModelSequenceFormat: PlaceholderModelSequence
+
+GameSpeeds:
+	slower:
+		Name: Slower -1
+		Timestep: 50
+		OrderLatency: 3
+	default:
+		Name: Normal 0
+		Timestep: 40
+		OrderLatency: 3
+	fast:
+		Name: Fast +1
+		Timestep: 35
+		OrderLatency: 4
+	faster:
+		Name: Faster +2
+		Timestep: 30
+		OrderLatency: 4
+	fastest:
+		Name: Fastest +3
+		Timestep: 20
+		OrderLatency: 6
+
+ColorValidator:
+
+ModContent:
+	InstallPromptMessage: Tiberian Dawn requires artwork and audio from the original game.\n\nQuick Install will automatically download this content (without music\nor videos) from a mirror of the 2007 C&C Gold freeware release.\n\nAdvanced Install includes options for downloading the music and for\ncopying the videos and other content from an original game disc.
+	QuickDownload: basefiles
+	HeaderMessage: Game content may be extracted from the original game discs or an\nexisting digital install. OpenRA can also download the base game\nfiles from an online mirror of the 2007 freeware release of C&C.
+	Packages:
+		base: Base Game Files
+			TestFiles: ^Content/cnc/conquer.mix, ^Content/cnc/desert.mix, ^Content/cnc/sounds.mix, ^Content/cnc/speech.mix, ^Content/cnc/temperat.mix, ^Content/cnc/tempicnh.mix, ^Content/cnc/winter.mix
+			Sources: gdi95, gdi95-linux, nod95, nod95-linux, tfd, origin
+			Required: true
+			Download: basefiles
+		music: Base Game Music
+			TestFiles: ^Content/cnc/scores.mix
+			Sources: gdi95, gdi95-linux, nod95, nod95-linux, tfd, origin
+			Download: music
+		movies-gdi: GDI Campaign Briefings
+			TestFiles: ^Content/cnc/movies/visor.vqa, ^Content/cnc/movies/turtkill.vqa, ^Content/cnc/movies/trailer.vqa, ^Content/cnc/movies/tbrinfo3.vqa, ^Content/cnc/movies/tbrinfo2.vqa, ^Content/cnc/movies/tbrinfo1.vqa, ^Content/cnc/movies/seige.vqa, ^Content/cnc/movies/samsite.vqa, ^Content/cnc/movies/samdie.vqa, ^Content/cnc/movies/sabotage.vqa, ^Content/cnc/movies/retro.vqa, ^Content/cnc/movies/podium.vqa, ^Content/cnc/movies/planecra.vqa, ^Content/cnc/movies/pintle.vqa, ^Content/cnc/movies/paratrop.vqa, ^Content/cnc/movies/nodsweep.vqa, ^Content/cnc/movies/nodlose.vqa, ^Content/cnc/movies/nodflees.vqa, ^Content/cnc/movies/nod1.vqa, ^Content/cnc/movies/nitejump.vqa, ^Content/cnc/movies/napalm.vqa, ^Content/cnc/movies/logo.vqa, ^Content/cnc/movies/landing.vqa, ^Content/cnc/movies/intro2.vqa, ^Content/cnc/movies/hellvaly.vqa, ^Content/cnc/movies/gunboat.vqa, ^Content/cnc/movies/generic.vqa, ^Content/cnc/movies/gdilose.vqa, ^Content/cnc/movies/gdifinb.vqa, ^Content/cnc/movies/gdifina.vqa, ^Content/cnc/movies/gdiend2.vqa, ^Content/cnc/movies/gdiend1.vqa, ^Content/cnc/movies/gdi9.vqa, ^Content/cnc/movies/gdi8b.vqa, ^Content/cnc/movies/gdi8a.vqa, ^Content/cnc/movies/gdi7.vqa, ^Content/cnc/movies/gdi6.vqa, ^Content/cnc/movies/gdi5.vqa, ^Content/cnc/movies/gdi4b.vqa, ^Content/cnc/movies/gdi4a.vqa, ^Content/cnc/movies/gdi3lose.vqa, ^Content/cnc/movies/gdi3.vqa, ^Content/cnc/movies/gdi2.vqa, ^Content/cnc/movies/gdi15.vqa, ^Content/cnc/movies/gdi14.vqa, ^Content/cnc/movies/gdi13.vqa, ^Content/cnc/movies/gdi12.vqa, ^Content/cnc/movies/gdi11.vqa, ^Content/cnc/movies/gdi10.vqa, ^Content/cnc/movies/gdi1.vqa, ^Content/cnc/movies/gameover.vqa, ^Content/cnc/movies/forestkl.vqa, ^Content/cnc/movies/flyy.vqa, ^Content/cnc/movies/flag.vqa, ^Content/cnc/movies/dino.vqa, ^Content/cnc/movies/desolat.vqa, ^Content/cnc/movies/consyard.vqa, ^Content/cnc/movies/cc2tease.vqa, ^Content/cnc/movies/burdet2.vqa, ^Content/cnc/movies/burdet1.vqa, ^Content/cnc/movies/bombflee.vqa, ^Content/cnc/movies/bombaway.vqa, ^Content/cnc/movies/bkground.vqa, ^Content/cnc/movies/bcanyon.vqa, ^Content/cnc/movies/banner.vqa
+			Sources: gdi95, gdi95-linux, tfd, origin
+		movies-nod: Nod Campaign Briefings
+			TestFiles: ^Content/cnc/movies/visor.vqa, ^Content/cnc/movies/trtkil_d.vqa, ^Content/cnc/movies/trailer.vqa, ^Content/cnc/movies/tiberfx.vqa, ^Content/cnc/movies/tankkill.vqa, ^Content/cnc/movies/tankgo.vqa, ^Content/cnc/movies/sundial.vqa, ^Content/cnc/movies/stealth.vqa, ^Content/cnc/movies/spycrash.vqa, ^Content/cnc/movies/sethpre.vqa, ^Content/cnc/movies/seige.vqa, ^Content/cnc/movies/samsite.vqa, ^Content/cnc/movies/retro.vqa, ^Content/cnc/movies/refint.vqa, ^Content/cnc/movies/obel.vqa, ^Content/cnc/movies/nuke.vqa, ^Content/cnc/movies/nodlose.vqa, ^Content/cnc/movies/nodfinal.vqa, ^Content/cnc/movies/nodend4.vqa, ^Content/cnc/movies/nodend3.vqa, ^Content/cnc/movies/nodend2.vqa, ^Content/cnc/movies/nodend1.vqa, ^Content/cnc/movies/nod9.vqa, ^Content/cnc/movies/nod8.vqa, ^Content/cnc/movies/nod7b.vqa, ^Content/cnc/movies/nod7a.vqa, ^Content/cnc/movies/nod6.vqa, ^Content/cnc/movies/nod5.vqa, ^Content/cnc/movies/nod4b.vqa, ^Content/cnc/movies/nod4a.vqa, ^Content/cnc/movies/nod3.vqa, ^Content/cnc/movies/nod2.vqa, ^Content/cnc/movies/nod1pre.vqa, ^Content/cnc/movies/nod13.vqa, ^Content/cnc/movies/nod12.vqa, ^Content/cnc/movies/nod11.vqa, ^Content/cnc/movies/nod10b.vqa, ^Content/cnc/movies/nod10a.vqa, ^Content/cnc/movies/nod1.vqa, ^Content/cnc/movies/logo.vqa, ^Content/cnc/movies/landing.vqa, ^Content/cnc/movies/kanepre.vqa, ^Content/cnc/movies/intro2.vqa, ^Content/cnc/movies/insites.vqa, ^Content/cnc/movies/generic.vqa, ^Content/cnc/movies/gdi1.vqa, ^Content/cnc/movies/gameover.vqa, ^Content/cnc/movies/forestkl.vqa, ^Content/cnc/movies/flag.vqa, ^Content/cnc/movies/dino.vqa, ^Content/cnc/movies/dessweep.vqa, ^Content/cnc/movies/deskill.vqa, ^Content/cnc/movies/desflees.vqa, ^Content/cnc/movies/consyard.vqa, ^Content/cnc/movies/cc2tease.vqa, ^Content/cnc/movies/bombflee.vqa, ^Content/cnc/movies/bombaway.vqa, ^Content/cnc/movies/bcanyon.vqa, ^Content/cnc/movies/banner.vqa, ^Content/cnc/movies/akira.vqa, ^Content/cnc/movies/airstrk.vqa
+			Sources: nod95, nod95-linux, tfd, origin
+		music-covertops: Covert Operations Music
+			TestFiles: ^Content/cnc/scores-covertops.mix
+			Sources: covertops, covertops-linux, tfd, origin
+	Downloads:
+		tda|installer/downloads.yaml
+	Sources:
+		tda|installer/covertops.yaml
+		tda|installer/firstdecade.yaml
+		tda|installer/gdi95.yaml
+		tda|installer/nod95.yaml
+		tda|installer/origin.yaml

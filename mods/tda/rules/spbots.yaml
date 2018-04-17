@@ -1,0 +1,167 @@
+Player:
+	HackyAI@nod:
+		Name: nod
+		Type: nod
+		MinimumExcessPower: 60
+		BuildingCommonNames:
+			ConstructionYard: fact
+			Refinery: proc
+			Power: nuke,nuk2
+			Barracks: pyle,hand
+			VehiclesFactory: weap,afld
+			Production: pyle,hand,weap,afld,hpad
+			Silo: silo
+		UnitsCommonNames:
+			Mcv: mcv
+		BuildingQueues: Building.Nod, Building.GDI
+		DefenseQueues: Defence.Nod, Defence.GDI
+		UnitQueues: Vehicle.Nod, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.GDI
+		BuildingLimits:
+			proc: 0
+			pyle: 0
+			hand: 0
+			hq: 0
+			hqnod: 0
+			weap: 0
+			afld: 0
+			hpad: 0
+			eye: 0
+			tmpl: 0
+			fix: 0
+			fix_nod: 0
+			silo: 0
+		BuildingFractions:
+			proc: 0%
+			nuke: 0%
+			pyle: 0%
+			hand: 0%
+			hq: 0%
+			hqnod: 0%
+			nuk2: 0%
+			weap: 0%
+			afld: 0%
+			gtwr: 0%
+			gun: 0%
+			atwr: 0%
+			obli: 0%
+			sam: 0%
+			eye: 0%
+			tmpl: 0%
+			silo: 0%
+			fix: 0%
+			fix_nod: 0%
+			hpad: 0%
+			pbox: 0%
+		UnitsToBuild:
+			e1: 65%
+			e2: 25%
+			e3: 40%
+			e4: 15%
+			e5: 15%
+			medi: 15%
+			mech: 15%
+			sniper: 10%
+			harv: 10%
+			bggy: 5%
+			bike: 40%
+			ltnk: 25%
+			ftnk: 10%
+			arty: 60%
+			stnk: 40%
+			jeep: 5%
+			mtnk: 20%
+			msam: 40%
+			htnk: 50%
+			heli: 5%
+			orca: 5%
+			research_adv_nuke: 100%
+			research_stl_harv: 100%
+			research_arm_harv: 100%
+			research_humvee_tow: 100%
+			research_heavy_weapons_nod: 100%
+			research_stlh_weapons_nod: 100%
+		UnitLimits:
+			harv: 8
+		SquadSize: 15
+		SupportPowerDecision@Airstrike:
+			OrderName: AirstrikePowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@ArtileryStrike:
+			OrderName: ArtileryBarrageInfoOrder
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: AItagPP, AItagREF, AItagRAX, AItagWF, AItagHQ, AItagFIX, AItagAvoid, AItagArtyType
+				Attractiveness: 5
+				TargetMetric: None
+				CheckRadius: 2c0
+			Consideration@Ally: 
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 4c0
+		SupportPowerDecision@ParatroopersPower:
+			OrderName: Airdrop
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Tank
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@IonCannonPower:
+			OrderName: IonCannonPowerInfoOrder
+			MinimumAttractiveness: 1000
+			FineScanRadius: 2
+			Consideration@1:
+				Against: Enemy
+				Types: Air, Tank, Vehicle, Infantry, Water
+				Attractiveness: 2
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@3:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 3c0
+		SupportPowerDecision@NukePower:
+			OrderName: NukePowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0

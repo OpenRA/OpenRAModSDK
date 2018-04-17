@@ -1,0 +1,63 @@
+v19_des:
+	idle:
+		Length: *
+	fire-start: flmspt
+		Length: *
+		Offset: 7,-15
+		ZOffset: 1
+	fire-loop: flmspt
+		Start: 50
+		Length: *
+		Offset: 7,-15
+		ZOffset: 1
+
+hosp_des:
+	idle:
+		Start: 0
+		Offset: 0,-2
+	bib: mbHOSP
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+		Length: *
+		Offset: 0,1
+
+bio_des:
+	idle:
+		Start: 0
+
+miss_des:
+	idle:
+		Start: 0
+		Offset: 0,-1
+	bib: mbMISS
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+		Length: *
+		Offset: 0,1
+
+barr_des:
+	idle:
+		Start: 0
+		Offset: 0,-6
+	bib: bib3
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+		Length: *
+
+fixn_des:
+	idle:
+		Start: 0
+	idle-roof: fixn2_des
+		Start: 0
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *

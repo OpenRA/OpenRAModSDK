@@ -1,0 +1,9 @@
+gunboat:
+	idle:
+		Facings: 32
+	turret: gunboatgun
+		Facings: 32
+	muzzle: gunfire2
+		Length: *
+	icon: boaticnh.tem
+		AddExtension: False

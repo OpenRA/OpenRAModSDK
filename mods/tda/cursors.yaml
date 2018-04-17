@@ -1,0 +1,251 @@
+Palettes:
+	cursor: temperat.pal
+	racursor: racursor.pal
+
+Cursors:
+	mouse_apolyton1.shp: cursor
+		scroll-t:
+			Start: 1
+			Y: -12
+		scroll-tr:
+			Start: 2
+			X: 14
+			Y: -12
+		scroll-r:
+			Start: 3
+			X: 14
+		scroll-br:
+			Start: 4
+			X: 14
+			Y: 11
+		scroll-b:
+			Start: 5
+			Y: 11
+		scroll-bl:
+			Start: 6
+			X: -15
+			Y: 11
+		scroll-l:
+			Start: 7
+			X: -15
+		scroll-tl:
+			Start: 8
+			X: -15
+			Y: -12
+		scroll-t-blocked:
+			Start: 130
+			Y: -12
+		scroll-tr-blocked:
+			Start: 131
+			X: 14
+			Y: -12
+		scroll-r-blocked:
+			Start: 132
+			X: 14
+		scroll-br-blocked:
+			Start: 133
+			X: 14
+			Y: 11
+		scroll-b-blocked:
+			Start: 134
+			Y: 11
+		scroll-bl-blocked:
+			Start: 135
+			X: -15
+			Y: 11
+		scroll-l-blocked:
+			Start: 136
+			X: -15
+		scroll-tl-blocked:
+			Start: 137
+			X: -15
+			Y: -12
+		select:
+			Start: 12
+			Length: 6
+		default-minimap:
+			Start: 86
+			Length: 1
+			X: -16
+			Y: -12
+		generic-blocked:
+			Start: 9
+		generic-blocked-minimap:
+			Start: 27
+		attack:
+			Start: 18
+			Length: 8
+		attack-minimap:
+			Start: 140
+			Length: 8
+		harvest:
+			Start: 18
+			Length: 8
+		harvest-minimap:
+			Start: 140
+			Length: 8
+		enter:
+			Start: 119
+			Length: 3
+		enter-minimap:
+			Start: 148
+			Length: 3
+		c4:
+			Start: 122
+			Length: 3
+		c4-minimap:
+			Start: 127
+			Length: 3
+		joystick-t-blocked:
+			Start: 130
+		joystick-tr-blocked:
+			Start: 131
+		joystick-r-blocked:
+			Start: 132
+		joystick-br-blocked:
+			Start: 133
+		joystick-b-blocked:
+			Start: 134
+		joystick-bl-blocked:
+			Start: 135
+		joystick-l-blocked:
+			Start: 136
+		joystick-tl-blocked:
+			Start: 137
+# Cursors that need minimap variants
+		deploy:
+			Start: 53
+			Length: 9
+		repair:
+			Start: 29
+			Length: 24
+		repair-blocked:
+			Start: 126
+			Length: 1
+		sell:
+			Start: 62
+			Length: 24
+		sell-blocked:
+			Start: 125
+			Length: 1
+		ability:
+			Start: 88
+			Length: 8
+		nuke:
+			Start: 96
+			Length: 7
+		ioncannon:
+			Start: 103
+			Length: 16
+		sell-vehicle:
+			Start: 154
+			Length: 24
+# --------------------------------
+		default:
+			Start: 0
+			X: -16
+			Y: -12
+		joystick-all:
+			Start: 0
+			X: -16
+			Y: -12
+		deploy-blocked:
+			Start: 178
+			Length: 1
+		move:
+			Start: 179
+			Length: 8
+		move-minimap:
+			Start: 187
+			Length: 4
+		move-rough:
+			Start: 178
+			Length: 8
+		attackmove:
+			Start: 191
+			Length: 8
+		attackmove-minimap:
+			Start: 199
+			Length: 4
+		move-blocked:
+			Start: 203
+			Length: 2
+		move-blocked-minimap:
+			Start: 205
+			Length: 1
+		guard:
+			Start: 206
+			Length: 8
+		guard-minimap:
+			Start: 214
+			Length: 8
+		goldwrench:
+			Start: 222
+			Length: 3
+		goldwrench-minimap:
+			Start: 225
+			Length: 3
+		goldwrench-blocked:
+			Start: 228
+			Length: 1
+		goldwrench-blocked-minimap:
+			Start: 229
+			Length: 1
+		capture:
+			Start: 230
+			Length: 3
+		capture-minimap:
+			Start: 233
+			Length: 3
+		capture-blocked:
+			Start: 236
+			Length: 1
+		capture-blocked-minimap:
+			Start: 237
+			Length: 1
+		enter-blocked:
+			Start: 238
+			Length: 1
+		enter-blocked-minimap:
+			Start: 239
+			Length: 1
+		attackoutsiderange:
+			Start: 240
+			Length: 8
+		attackoutsiderange-minimap:
+			Start: 248
+			Length: 8
+		assaultmove:
+			Start: 256
+			Length: 8
+		assaultmove-minimap:
+			Start: 264
+			Length: 4
+		attackmove-blocked:
+			Start: 203
+			Length: 1
+		attackmove-blocked-minimap:
+			Start: 205
+			Length: 1
+	ramouse.shp: racursor
+		heal:
+			Start: 160
+			Length: 4
+		heal-minimap:
+			Start: 194
+			Length: 1
+	mouse_apolyton2.shp: cursor
+		artilerybarrage:
+			Start: 0
+			Length: 6
+		airdrop:
+			Start: 7
+			Length: 5
+		airstrike:
+			Start: 12
+			Length: 14
+		# changeownernod:
+			# Start: 27
+# #-1 frame
+			# Length: 26
+# #-1 frame

@@ -1,0 +1,106 @@
+e6a:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	# stand -> prone transition
+	liedown:
+		Start: 66
+		Length: 2
+		Facings: 8
+	# prone -> stand transition
+	standup:
+		Start: 114
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 82
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 82
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 82
+		Length: 4
+		Facings: 8
+		Tick: 100
+	idle1:
+		Start: 114
+		Length: 6
+		Tick: 120
+	idle2:
+		Start: 200
+		Length: 6
+		Tick: 120
+	cheer:
+		Start: 200
+		Length: 3
+		Facings: 8
+		Tick: 120
+	# Shot
+	die1:
+		Start: 146
+		Length: 8
+		Tick: 80
+	# Explode
+	die2:
+		Start: 154
+		Length: 8
+		Tick: 80
+	# Fly and explode in air
+	die3:
+		Start: 162
+		Length: 8
+		Tick: 80
+	# Fly through air squish on ground
+	die4:
+		Start: 170
+		Length: 12
+		Tick: 80
+	# Burn
+	die5:
+		Start: 182
+		Length: 18
+		Tick: 80
+	# Tib
+	die6:
+		Start: 130
+		Length: 4
+		Tick: 80
+	die-crushed: e1rot
+		Start: 16
+		Length: 4
+		Tick: 1600
+		ZOffset: -511
+	icon: e6aicnh.tem
+		AddExtension: False
+
+smoke2_m:
+	idle:
+		Length: *
+		Offset: 2, -5
+		ZOffset: 512
+	loop:
+		Start: 49
+		Length: 42
+		Offset: 2, -5
+		ZOffset: 512
+	end:
+		Start: 26
+		Length: -26
+		Offset: 2, -5
+		ZOffset: 512
+
+truk:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	icon: trukicon

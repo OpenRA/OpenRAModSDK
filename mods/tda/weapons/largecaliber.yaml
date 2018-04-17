@@ -1,0 +1,301 @@
+70mm:
+	Inherits: ^FireTrailL
+	ReloadDelay: 30
+	Range: 4c0
+	Report: tnkfire3.aud
+	Projectile: Bullet
+		Image: 120MM
+		Speed: 853
+		Shadow: true
+		Palette: flashyeffect
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 25
+		Versus:
+			None: 25
+			Wood: 75
+			Light: 100
+			Heavy: 90
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		InvalidTargets: Water
+		ExplosionPalette: flashyeffect
+	# Warhead@4Eff: CreateEffect
+		# Explosions: sml_splash
+		# ImpactSounds: ssplash3.aud
+		# ExplosionPalette: effectra
+		# ValidTargets : Water
+	Warhead@5EffFlash: CreateEffect
+		Explosions: flash3small
+		ExplosionPalette: alpha
+		InvalidTargets: Water
+
+105mm:
+	Inherits: ^FireTrailL
+	ReloadDelay: 50
+	Range: 4c768
+	Report: tnkfire4.aud
+	Projectile: Bullet
+		Image: 120MM
+		Speed: 682
+		Shadow: true
+		Palette: flashyeffect
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 30
+		Versus:
+			None: 30
+			Wood: 75
+			Light: 75
+			Heavy: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ExplosionPalette: flashyeffect
+	Warhead@4EffFlash: CreateEffect
+		Explosions: flash3small
+		ExplosionPalette: alpha
+		InvalidTargets: Water
+
+105mmRA:
+	Inherits: ^FireTrailL
+	ReloadDelay: 70
+	Range: 4c768
+	Report: cannon1.aud
+	Burst: 2
+	BurstDelay: 4
+	Projectile: Bullet
+		Speed: 682
+		Image: 120MM
+		Shadow: true
+		Palette: flashyeffect
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 40
+		Versus:
+			None: 20
+			Wood: 75
+			Light: 75
+			Concrete: 50
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+	Warhead@3EffGround: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: kaboom12.aud
+		InvalidTargets: Water
+		ExplosionPalette: flashyeffect
+	Warhead@4EffFlash: CreateEffect
+		Explosions: flash3small
+		ExplosionPalette: alpha
+		InvalidTargets: Water
+
+120mm:
+	Inherits: ^FireTrailL
+	ReloadDelay: 40
+	Range: 5c768
+	Report: tnkfire6.aud
+	Projectile: Bullet
+		Image: 120MM
+		Speed: 682
+		Shadow: true
+		Palette: flashyeffect
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 40
+		Versus:
+			None: 25
+			Wood: 100
+			Light: 100
+			Heavy: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ExplosionPalette: flashyeffect
+	Warhead@4EffFlash: CreateEffect
+		Explosions: flash3small
+		ExplosionPalette: alpha
+		InvalidTargets: Water
+
+120mmDual:
+	Inherits: ^FireTrailL
+	ReloadDelay: 40
+	Range: 4c768
+	Report: tnkfire6.aud
+	Burst: 2
+	BurstDelay: 8
+	Projectile: Bullet
+		Image: 120MM
+		Speed: 682
+		Shadow: true
+		Palette: flashyeffect
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 40
+		Versus:
+			None: 25
+			Wood: 100
+			Light: 100
+			Heavy: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ExplosionPalette: flashyeffect
+	Warhead@4EffFlash: CreateEffect
+		Explosions: flash3small
+		ExplosionPalette: alpha
+		InvalidTargets: Water
+
+TurretGun:
+	Inherits: ^FireTrailL
+	ReloadDelay: 20
+	Range: 6c0
+	Report: tnkfire6.aud
+	Projectile: Bullet
+		Image: 120MM
+		Speed: 853
+		Shadow: true
+		Palette: flashyeffect
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 40
+		Versus:
+			None: 20
+			Wood: 25
+			Light: 100
+			Heavy: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ExplosionPalette: flashyeffect
+	Warhead@4EffFlash: CreateEffect
+		Explosions: flash3small
+		ExplosionPalette: alpha
+		InvalidTargets: Water
+
+TurretGunBoatGun:
+	Inherits: ^FireTrailL
+	ReloadDelay: 20
+	Range: 12c0
+	MinRange: 6c0
+	Report: tnkfire6.aud
+	Projectile: Bullet
+		Image: 120MM
+		Speed: 853
+		Shadow: true
+		Palette: flashyeffect
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 40
+		Versus:
+			None: 20
+			Wood: 25
+			Light: 100
+			Heavy: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: small_frag
+		ImpactSounds: xplos.aud
+		ExplosionPalette: flashyeffect
+	Warhead@4EffFlash: CreateEffect
+		Explosions: flash3small
+		ExplosionPalette: alpha
+		InvalidTargets: Water
+
+ArtilleryShell:
+	ReloadDelay: 105
+	Range: 11c0
+	MinRange: 2c896
+	Report: artyinco01.aud
+	Projectile: Bullet
+		Speed: 204
+		Blockable: false
+		LaunchAngle: 56
+		Inaccuracy: 1c256
+		ContrailLength: 30
+		Image: 120MM
+		Palette: flashyeffect
+		Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Damage: 150
+		Versus:
+			None: 100
+			Wood: 80
+			Light: 75
+			Heavy: 50
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: poof
+		ImpactSounds: xplosml2.aud
+		ExplosionPalette: flashyeffect
+	Warhead@4EffFlash: CreateEffect
+		Explosions: flash3
+		ExplosionPalette: alpha
+		InvalidTargets: Water
+
+HeavyArtilleryShell:
+	Inherits: ^FireTrailL
+	Range: 4c0
+	Burst: 2
+	BurstDelay: 3
+	Report: artyinco01.aud
+	Projectile: Bullet
+		Speed: 350
+		Blockable: false
+		LaunchAngle: 1
+		Inaccuracy: 1c0
+		ContrailLength: 30
+		Image: 120MM
+		Palette: flashyeffect
+		Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 400
+		Damage: 300
+		Versus:
+			None: 100
+			Wood: 25
+			Light: 100
+			Heavy: 100
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: poof
+		ImpactSounds: xplosml2.aud
+		ExplosionPalette: flashyeffect
+	Warhead@4EffFlash: CreateEffect
+		Explosions: flash3
+		ExplosionPalette: alpha
+		InvalidTargets: Water
+	Warhead@5Res_impact: DestroyResource
+		Size: 1
