@@ -1,6 +1,6 @@
 Metadata:
 	Title: Tiberian Dawn Apolyton
-	Version: TDA-154
+	Version: TDA-155
 
 PackageFormats: Mix
 
@@ -10,6 +10,7 @@ Packages:
 	.
 	$tda: tda
 	./mods/common: common
+	./mods/d2k: d2k
 	~speech.mix
 	~conquer.mix
 	~sounds.mix
@@ -46,7 +47,7 @@ Packages:
 
 MapFolders:
 	tda|maps: System
-	~^maps/tda/TDA-154: User
+	~^maps/tda/TDA-155: User
 
 Rules:
 	tda|rules/misc.yaml
@@ -111,8 +112,7 @@ Chrome:
 Assemblies:
 	common|OpenRA.Mods.Common.dll
 	common|OpenRA.Mods.Cnc.dll
-	tda|OpenRA.Mods.D2k.dll
-	# tda|OpenRA.Mods.yupgi_alert.dll
+	d2k|OpenRA.Mods.D2k.dll
 
 ChromeLayout:
 	tda|chrome/mainmenu.yaml
