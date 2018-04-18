@@ -1,17 +1,38 @@
-This repository contains a bare development environment for creating a new mod/game on the [OpenRA](https://github.com/OpenRA/OpenRA) engine.
+OpenRa Tiberian Dawn Apolyton
 
-These scripts and support files wrap and automatically manage a copy of the OpenRA game engine and common files during development, and generates Windows installers, macOS .app bundles, and Linux [AppImages](https://appimage.org/) for distribution.
+Credits:
+|Name|--------|Contribution|
+|-------------|-------------------------------------------------------------------|
+|abcdefg30| Helped a lot and more than I can count with lua and github.|
+|Nolt| Helped me to learn 3DSMax.|
+|Frame_limiter| Donated code for my riflemen that can throw grenades.|
+|Voidwalker| He did a huge and hard work on spawnmanager trait!|
+|MustaphaTR| Helped me with github and also spoted a lot of bugs.|
+|Flamewh| voice for the "Researcher". Voice still not in the game yet sorry|
 
-The key scripts in this SDK are:
 
-| Windows               | Linux / macOS            | Purpose
-| --------------------- | ------------------------ | ------------- |
-| make.cmd              | Makefile                 | Compiles your project and fetches dependencies (including the OpenRA engine).
-| launch-game.cmd       | launch-game.sh           | Launches your project from the SDK directory.
-| launch-server.cmd     | launch-server.sh         | Launches a dedicated server for your project from the SDK directory.
-| utility.cmd           | utility.sh         | Launches the OpenRA Utility for your project.
-| &lt;not available&gt; | packaging/package-all.sh | Generates release installers for your project.
+VIP:
+|Name|------------|Contribution|
+|-----------------|-------------------------------------------------------------------|
+|Reaperrr| with out him this mod would have been dead! He updated my mod to the latest OpenRa engine Version, and because of that this mod has a future!
+|Abarrat| by playtesting and by providing servers and advertising the mod!
+|Westwood studios| For this legendary game!
+|Joseph D. Kucan| For being Kane!!!
+|Frank Klepacki| For the awesome music he made!!
 
-To launch your project from the development environment you must first compile the project by running `make.cmd` (Windows), or opening a terminal in the SDK directory and running `make` (Linux / macOS).  You can then run `launch-game.cmd` (Windows) or `launch-game.sh` (Linux / macOS) to run your game.
 
-The `example` mod included in this repository provides the bare minimum structure to launch to the in-game main menu for the sole purpose of demonstrating the SDK.  See [Getting Started](https://github.com/OpenRA/OpenRAModTemplate/wiki/Getting-Started) on the Wiki for instructions on how to adapt this template for your own projects.  For common questions, please see the [FAQ](https://github.com/OpenRA/OpenRAModSDK/wiki/FAQ).
+PlayTest Participants:
+|name|
+|---------------------|
+|Shpooky|
+|Abarrat|
+|CatGirls420(NerevarII)|
+|memers.club|
+|Polemos|
+
+Supported by:
+|My girlfriend (for not killing me).|
+|My big brother.|
+
+And finally the OpenRa developers for the
+engine that made my dream a reality.
