@@ -1,7 +1,7 @@
 OpenRa Tiberian Dawn Apolyton
 
 Credits:
-|Name|--------|Contribution|
+|Name|        |Contribution|
 |-------------|-------------------------------------------------------------------|
 |abcdefg30| Helped a lot and more than I can count with lua and github.|
 |Nolt| Helped me to learn 3DSMax.|
@@ -12,7 +12,7 @@ Credits:
 
 
 VIP:
-|Name|------------|Contribution|
+|Name             |Contribution|
 |-----------------|-------------------------------------------------------------------|
 |Reaperrr| with out him this mod would have been dead! He updated my mod to the latest OpenRa engine Version, and because of that this mod has a future!
 |Abarrat| by playtesting and by providing servers and advertising the mod!
@@ -22,7 +22,7 @@ VIP:
 
 
 PlayTest Participants:
-|name|
+|name                 |
 |---------------------|
 |Shpooky|
 |Abarrat|
@@ -36,3 +36,11 @@ Supported by:
 
 And finally the OpenRa developers for the
 engine that made my dream a reality.
+
+| Windows               | Linux / macOS            | Purpose
+| --------------------- | ------------------------ | ------------- |
+| make.cmd              | Makefile                 | Compiles your project and fetches dependencies (including the OpenRA engine).
+| launch-game.cmd       | launch-game.sh           | Launches your project from the SDK directory.
+| launch-server.cmd     | launch-server.sh         | Launches a dedicated server for your project from the SDK directory.
+| utility.cmd           | utility.sh         | Launches the OpenRA Utility for your project.
+| &lt;not available&gt; | packaging/package-all.sh | Generates release installers for your project.
