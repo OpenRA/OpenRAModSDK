@@ -1,3 +1,5 @@
+PACKAGING_APPIMAGE_DEPENDENCIES_TAG, PACKAGING_APPIMAGE_DEPENDENCIES_SOURCE, PACKAGING_APPIMAGE_DEPENDENCIES_TEMP_ARCHIVE_NAME
+
 ##############################################################################
 # Core Configuration
 #
@@ -6,7 +8,7 @@
 
 # The id of the mod packaged by this project.
 # This must exist as a directory in the mods directory and should not contain spaces.
-MOD_ID="tda"
+MOD_ID="example"
 
 # The OpenRA engine version to use for this project.
 ENGINE_VERSION="release-20180307"
@@ -26,7 +28,7 @@ INCLUDE_DEFAULT_MODS="False"
 
 # Enable tests for common errors when a new commit is pushed to the GitHub repository
 # Accepts values "True" or "False".
-TRAVIS_TEST_MOD="False"
+TRAVIS_TEST_MOD="True"
 
 # Perform a dry run of the installer generation when a new commit is pushed to the GitHub repository
 # Accepts values "True" or "False".
@@ -41,7 +43,8 @@ TRAVIS_TEST_PACKAGING="False"
 # The prefix used for the installer filenames.
 #  - Windows installers will be named as {PACKAGING_INSTALLER_NAME}-{TAG}.exe
 #  - macOS installers will be named as {PACKAGING_INSTALLER_NAME}-{TAG}.zip
-PACKAGING_INSTALLER_NAME="TiberianDawnApolytonInstaller"
+#  - Linux .appimages will be named as {PACKAGING_INSTALLER_NAME}-${TAG}.AppImage
+PACKAGING_INSTALLER_NAME="ExampleMod"
 
 # The human-readable name for this project.
 # This is used in:
@@ -53,12 +56,13 @@ PACKAGING_INSTALLER_NAME="TiberianDawnApolytonInstaller"
 #  - Windows start menu
 #  - Windows desktop shortcut
 #  - Windows "Programs and Features" list
-PACKAGING_DISPLAY_NAME="Tiberian Dawn Apolyton"
+#  - Linux launcher shortcut
+PACKAGING_DISPLAY_NAME="Example Mod"
 
 # The URL for the project homepage.
 # This is used in:
 #  - Windows "Add/Remove Programs" list
-PACKAGING_WEBSITE_URL="http://www.moddb.com/mods/tiberian-dawn-apolyton"
+PACKAGING_WEBSITE_URL="http://openra.net"
 
 # The URL that is opened when a player presses the "FAQ" button in the crash dialog.
 PACKAGING_FAQ_URL="http://wiki.openra.net/FAQ"
@@ -66,24 +70,23 @@ PACKAGING_FAQ_URL="http://wiki.openra.net/FAQ"
 # The human-readable project authors.
 # This is used in:
 #  - Windows "Add/Remove Programs" list
-PACKAGING_AUTHORS="KOYK"
+PACKAGING_AUTHORS="Example Mod authors"
 
 # The git tag to use for the macOS Launcher files.
 PACKAGING_OSX_LAUNCHER_TAG="osx-launcher-20171118"
 
 # Filename to use for the launcher executable on Windows.
-PACKAGING_WINDOWS_LAUNCHER_NAME="Tiberian Dawn Apolyton"
+PACKAGING_WINDOWS_LAUNCHER_NAME="ExampleMod"
 
 # The name of the Windows Program Files directory to install the project files to.
-PACKAGING_WINDOWS_INSTALL_DIR_NAME="Tiberian Dawn Apolyton"
+PACKAGING_WINDOWS_INSTALL_DIR_NAME="OpenRA Example Mod"
 
 # The key prefix used for Windows registry metadata.
 # This should not contain spaces or special characters.
-PACKAGING_WINDOWS_REGISTRY_KEY="OpenRATiberianDawnApolyton"
+PACKAGING_WINDOWS_REGISTRY_KEY="OpenRAExampleMod"
 
 # The git tag to use for the AppImage dependencies.
 PACKAGING_APPIMAGE_DEPENDENCIES_TAG="20180408"
-# guinea pig
 
 ##############################################################################
 # Advanced Configuration
@@ -112,8 +115,6 @@ PACKAGING_OSX_LAUNCHER_TEMP_ARCHIVE_NAME="launcher.zip"
 
 # The url to download the OpenRA AppImage dependencies.
 PACKAGING_APPIMAGE_DEPENDENCIES_SOURCE="https://github.com/OpenRA/AppImageSupport/releases/download/${PACKAGING_APPIMAGE_DEPENDENCIES_TAG}/libs.tar.bz2"
-# guinea pig
 
 # Temporary file name used when downloading the OpenRA AppImage dependencies.
 PACKAGING_APPIMAGE_DEPENDENCIES_TEMP_ARCHIVE_NAME="libs.tar.bz2"
-# guinea pig
