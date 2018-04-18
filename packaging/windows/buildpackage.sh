@@ -63,6 +63,12 @@ make windows-dependencies
 make core SDK="-sdk:4.5"
 make install-engine gameinstalldir="" DESTDIR="${BUILTDIR}"
 make install-common-mod-files gameinstalldir="" DESTDIR="${BUILTDIR}"
+
+for f in ${PACKAGING_COPY_ENGINE_FILES}; do
+  mkdir -p "${BUILTDIR}/$(dirname "${f}")"
+  cp -r "${f}" "${BUILTDIR}/${f}"
+done
+
 popd > /dev/null
 popd > /dev/null
 

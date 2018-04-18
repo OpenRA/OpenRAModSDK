@@ -75,6 +75,12 @@ make osx-dependencies
 make core SDK="-sdk:4.5"
 make install-engine gameinstalldir="/Contents/Resources/" DESTDIR="${BUILTDIR}/OpenRA.app"
 make install-common-mod-files gameinstalldir="/Contents/Resources/" DESTDIR="${BUILTDIR}/OpenRA.app"
+
+for f in ${PACKAGING_COPY_ENGINE_FILES}; do
+  mkdir -p "${BUILTDIR}/OpenRA.app/Contents/Resources/$(dirname "${f}")"
+  cp -r "${f}" "${BUILTDIR}/OpenRA.app/Contents/Resources/${f}"
+done
+
 popd > /dev/null
 popd > /dev/null
 
