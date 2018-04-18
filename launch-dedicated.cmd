@@ -21,6 +21,7 @@ set MOD_SEARCH_PATHS=%MOD_SEARCH_PATHS%,./mods
 
 :start
 if not exist %ENGINE_DIRECTORY%\OpenRA.Game.exe goto noengine
+>nul find %ENGINE_VERSION% %ENGINE_DIRECTORY%\VERSION || goto noengine
 cd %ENGINE_DIRECTORY%
 
 :loop
