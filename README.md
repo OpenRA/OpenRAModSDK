@@ -35,8 +35,8 @@ Name          | Contribution
 
 	Supported by:
 
- | My girlfriend (for not killing me). | 
- | My big brother.                     | 
+   My girlfriend (for not killing me).  
+   My big brother.                       
 
 	And finally the OpenRa developers for the
 	engine that made my dream a reality.
