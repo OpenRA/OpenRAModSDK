@@ -1,7 +1,8 @@
 OpenRa Tiberian Dawn Apolyton
 
 Credits:
-|Name|        |Contribution|
+
+ | Name |        | Contribution | 
  | ------------- | ------------------------------------------------------------------- | 
  | abcdefg30 |  Helped a lot and more than I can count with lua and github. | 
  | Nolt |  Helped me to learn 3DSMax. | 
@@ -12,6 +13,7 @@ Credits:
 
 
 VIP:
+
  | Name              | Contribution | 
  | ----------------- | ------------------------------------------------------------------- | 
  | Reaperrr |  with out him this mod would have been dead! He updated my mod to the latest OpenRa engine Version, and because of that this mod has a future!
@@ -22,6 +24,7 @@ VIP:
 
 
 PlayTest Participants:
+
  | name                  | 
  | --------------------- | 
  | Shpooky | 
@@ -31,6 +34,7 @@ PlayTest Participants:
  | Polemos | 
 
 Supported by:
+
  | My girlfriend (for not killing me). | 
  | My big brother. | 
 
