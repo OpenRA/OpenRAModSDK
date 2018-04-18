@@ -10,6 +10,7 @@ command -v mono >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires 
 
 TEMPLATE_LAUNCHER=$(python -c "import os; print(os.path.realpath('$0'))")
 TEMPLATE_ROOT=$(dirname "${TEMPLATE_LAUNCHER}")
+MOD_SEARCH_PATHS="${TEMPLATE_ROOT}/mods,./mods"
 
 # shellcheck source=mod.config
 . "${TEMPLATE_ROOT}/mod.config"
@@ -17,11 +18,6 @@ TEMPLATE_ROOT=$(dirname "${TEMPLATE_LAUNCHER}")
 if [ -f "${TEMPLATE_ROOT}/user.config" ]; then
 	# shellcheck source=user.config
 	. "${TEMPLATE_ROOT}/user.config"
-fi
-
-MOD_SEARCH_PATHS="${TEMPLATE_ROOT}/mods"
-if [ "${INCLUDE_DEFAULT_MODS}" = "True" ]; then
-	MOD_SEARCH_PATHS="${MOD_SEARCH_PATHS},./mods"
 fi
 
 LAUNCH_MOD="${Mod:-"${MOD_ID}"}"

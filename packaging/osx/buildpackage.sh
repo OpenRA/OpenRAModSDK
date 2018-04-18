@@ -22,12 +22,6 @@ if [ -f "${TEMPLATE_ROOT}/user.config" ]; then
 	. "${TEMPLATE_ROOT}/user.config"
 fi
 
-if [ "${INCLUDE_DEFAULT_MODS}" = "True" ]; then
-	echo "Cannot generate installers while INCLUDE_DEFAULT_MODS is enabled."
-	echo "Make sure that this setting is disabled in both your mod.config and user.config."
-	exit 1
-fi
-
 TAG="$1"
 if [ $# -eq "1" ]; then
 	OUTPUTDIR=$(python -c "import os; print(os.path.realpath('.'))")
