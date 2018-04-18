@@ -11,6 +11,13 @@
  | MustaphaTR |  Helped me with github and also spoted a lot of bugs.
  | Flamewh |  voice for the "Researcher". Voice still not in the game yet sorry
 
+ |  Name                |  Contribution             
+ |  ---------------------  |  ------------------------  |  
+ |  abcdefg30              |  Helped a lot and more than I can count with lua and github.
+ |  launch-game.cmd        |  launch-game.sh            |  Launches your project from the SDK directory.
+ |  launch-server.cmd      |  launch-server.sh          |  Launches a dedicated server for your project from the SDK directory.
+ |  utility.cmd            |  utility.sh          |  Launches the OpenRA Utility for your project.
+ |  &lt;not available&gt;  |  packaging/package-all.sh  |  Generates release installers for your project.
 
 	VIP:
 
