@@ -64,6 +64,11 @@ make core SDK="-sdk:4.5"
 make install-engine prefix="usr" DESTDIR="${BUILTDIR}/"
 make install-common-mod-files prefix="usr" DESTDIR="${BUILTDIR}/"
 
+for f in ${PACKAGING_COPY_ENGINE_FILES}; do
+  mkdir -p "${BUILTDIR}/usr/lib/openra/$(dirname "${f}")"
+  cp -r "${f}" "${BUILTDIR}/usr/lib/openra/${f}"
+done
+
 popd > /dev/null
 popd > /dev/null
 
