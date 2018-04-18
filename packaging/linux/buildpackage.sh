@@ -78,7 +78,7 @@ chmod a+x appimagetool-x86_64.AppImage
 echo "Building AppImage"
 
 # Add mod files
-cp -r "${TEMPLATE_ROOT}/mods/"* "${BUILTDIR}/usr/lib/openra/mods"
+cp -Lr "${TEMPLATE_ROOT}/mods/"* "${BUILTDIR}/usr/lib/openra/mods"
 
 install -Dm 0755 libSDL2.so "${BUILTDIR}/usr/lib/openra/"
 install -Dm 0644 include/SDL2-CS.dll.config "${BUILTDIR}/usr/lib/openra/"
