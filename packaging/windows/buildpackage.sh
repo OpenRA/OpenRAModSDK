@@ -67,7 +67,7 @@ popd > /dev/null
 popd > /dev/null
 
 # Add mod files
-cp -r "${TEMPLATE_ROOT}/mods/"* "${BUILTDIR}/mods"
+cp -Lr "${TEMPLATE_ROOT}/mods/"* "${BUILTDIR}/mods"
 cp "mod.ico" "${BUILTDIR}/${MOD_ID}.ico"
 cp "${SRC_DIR}/OpenRA.Game.exe.config" "${BUILTDIR}"
 
@@ -88,7 +88,7 @@ popd > /dev/null
 echo "Packaging zip archive"
 pushd "${BUILTDIR}" > /dev/null
 find "${SRC_DIR}/thirdparty/download/windows/" -name '*.dll' -exec cp '{}' '.' ';'
-zip "${PACKAGING_INSTALLER_NAME}-${TAG}-winportable" -r -9 * --quiet --symlinks
+zip "${PACKAGING_INSTALLER_NAME}-${TAG}-winportable" -r -9 * --quiet
 mv "${PACKAGING_INSTALLER_NAME}-${TAG}-winportable.zip" "${OUTPUTDIR}"
 popd > /dev/null
 
