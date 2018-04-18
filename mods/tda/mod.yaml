@@ -10,7 +10,6 @@ Packages:
 	.
 	$tda: tda
 	./mods/common: common
-	./mods/d2k: d2k
 	~speech.mix
 	~conquer.mix
 	~sounds.mix
@@ -112,7 +111,8 @@ Chrome:
 Assemblies:
 	common|OpenRA.Mods.Common.dll
 	common|OpenRA.Mods.Cnc.dll
-	d2k|OpenRA.Mods.D2k.dll
+	tda|OpenRA.Mods.D2k.dll
+	# tda|OpenRA.Mods.yupgi_alert.dll
 
 ChromeLayout:
 	tda|chrome/mainmenu.yaml
