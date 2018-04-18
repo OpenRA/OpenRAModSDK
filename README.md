@@ -1,6 +1,6 @@
-OpenRa Tiberian Dawn Apolyton
+	OpenRa Tiberian Dawn Apolyton
 
-Credits:
+	Credits:
 
  | Name          | Contribution
  | ------------- | ------------------------------------------------------------------- | 
@@ -12,7 +12,7 @@ Credits:
  | Flamewh |  voice for the "Researcher". Voice still not in the game yet sorry
 
 
-VIP:
+	VIP:
 
  | Name              | Contribution
  | ----------------- | ------------------------------------------------------------------- | 
@@ -23,7 +23,7 @@ VIP:
  | Frank Klepacki    |  For the awesome music he made!!
 
 
-PlayTest Participants:
+	PlayTest Participants:
 
  | name
  | ---------------------- | 
@@ -33,13 +33,13 @@ PlayTest Participants:
  | memers.club            | 
  | Polemos                | 
 
-Supported by:
+	Supported by:
 
  | My girlfriend (for not killing me). | 
  | My big brother.                     | 
 
-And finally the OpenRa developers for the
-engine that made my dream a reality.
+	And finally the OpenRa developers for the
+	engine that made my dream a reality.
 
  |  Windows                |  Linux / macOS             |  Purpose
  |  ---------------------  |  ------------------------  |  -------------  | 
