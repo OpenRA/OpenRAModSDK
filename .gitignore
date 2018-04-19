@@ -16,3 +16,17 @@ DOCUMENTATION.md
 Lua-API.md
 StyleCopViolations.xml
 .DS_Store
+Do not upload to github/Windows Installer.lnk
+Do not upload to github/ToDo.txt
+Do not upload to github/Copy to new sdk if needed/packaging/windows/mod.ico
+Do not upload to github/Copy to new sdk if needed/packaging/osx/mod.icns
+Do not upload to github/Copy to new sdk if needed/mod.config
+Do not upload to github/Copy to new sdk if needed/.travis.yml
+Do not upload to github/Copy to new sdk if needed/packaging/linux/mod_128x128.png
+Do not upload to github/Copy to new sdk if needed/packaging/linux/mod_16x16.png
+Do not upload to github/Copy to new sdk if needed/packaging/linux/mod_256x256.png
+Do not upload to github/Copy to new sdk if needed/packaging/linux/mod_32x32.png
+Do not upload to github/Copy to new sdk if needed/packaging/linux/mod_48x48.png
+Do not upload to github/Copy to new sdk if needed/packaging/linux/mod_64x64.png
+Do not upload to github/Source.lnk
+Do not upload to github/travis link.url
