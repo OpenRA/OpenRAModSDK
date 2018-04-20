@@ -2,14 +2,10 @@
 
 FOR /F "tokens=1,2 delims==" %%A IN (mod.config) DO (set %%A=%%B)
 if exist user.config (FOR /F "tokens=1,2 delims==" %%A IN (user.config) DO (set %%A=%%B))
+set MOD_SEARCH_PATHS=%~dp0mods,./mods
 
 title OpenRA.Utility.exe %MOD_ID%
 
-set MOD_SEARCH_PATHS=%~dp0mods
-if %INCLUDE_DEFAULT_MODS% neq "True" goto start
-set MOD_SEARCH_PATHS=%MOD_SEARCH_PATHS%,./mods
-
-:start
 set TEMPLATE_DIR=%CD%
 if not exist %ENGINE_DIRECTORY%\OpenRA.Game.exe goto noengine
 >nul find %ENGINE_VERSION% %ENGINE_DIRECTORY%\VERSION || goto noengine
