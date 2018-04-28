@@ -6,6 +6,18 @@ command -v make >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires 
 command -v python >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires python."; exit 1; }
 command -v curl >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires curl."; exit 1; }
 
+require_variables() {
+	missing=""
+	for i in "$@"; do
+		eval check="\$$i"
+		[ -z "${check}" ] && missing="${missing}   ${i}\n"
+	done
+	if [ ! -z "${missing}" ]; then
+		echo "Required mod.config variables are missing:\n${missing}Repair your mod.config (or user.config) and try again."
+		exit 1
+	fi
+}
+
 if [ $# -eq "0" ]; then
 	echo "Usage: `basename $0` version [outputdir]"
 	exit 1
@@ -21,6 +33,10 @@ if [ -f "${TEMPLATE_ROOT}/user.config" ]; then
 	# shellcheck source=user.config
 	. "${TEMPLATE_ROOT}/user.config"
 fi
+
+require_variables "MOD_ID" "ENGINE_DIRECTORY" "PACKAGING_DISPLAY_NAME" "PACKAGING_INSTALLER_NAME" \
+	"PACKAGING_OSX_LAUNCHER_TAG" "PACKAGING_OSX_LAUNCHER_SOURCE" "PACKAGING_OSX_LAUNCHER_TEMP_ARCHIVE_NAME" \
+	"PACKAGING_FAQ_URL"
 
 TAG="$1"
 if [ $# -eq "1" ]; then

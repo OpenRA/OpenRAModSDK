@@ -228,6 +228,27 @@ function ParseConfigFile($fileName)
 			ReadConfigLine $line $name
 		}
 	}
+
+	$missing = @()
+	foreach ($name in $names)
+	{
+		if (!([System.Environment]::GetEnvironmentVariable($name)))
+		{
+			$missing += $name
+		}
+	}
+
+	if ($missing)
+	{
+		echo "Required mod.config variables are missing:"
+		foreach ($m in $missing)
+		{
+			echo "   $m"
+		}
+		echo "Repair your mod.config (or user.config) and try again."
+		WaitForInput
+		exit
+	}
 }
 
 ###############################################################
