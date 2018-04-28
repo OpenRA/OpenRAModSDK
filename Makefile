@@ -34,7 +34,20 @@ HAS_LUAC = $(shell command -v luac 2> /dev/null)
 LUA_FILES = $(shell find mods/*/maps/* -iname '*.lua')
 PROJECT_DIRS = $(shell dirname $$(find . -iname "*.csproj" -not -path "$(ENGINE_DIRECTORY)/*"))
 
-engine:
+variables:
+	@if [ -z "$(MOD_ID)" ] || [ -z "$(ENGINE_DIRECTORY)" ];then \
+			echo "Required mod.config variables are missing:"; \
+			if [ -z "$(MOD_ID)" ]; then \
+				echo "   MOD_ID"; \
+			fi; \
+			if [ -z "$(ENGINE_DIRECTORY)" ]; then \
+				echo "   ENGINE_DIRECTORY"; \
+			fi; \
+			echo "Repair your mod.config (or user.config) and try again."; \
+			exit 1; \
+		fi
+
+engine: variables
 	@./fetch-engine.sh || (printf "Unable to continue without engine files\n"; exit 1)
 	@cd $(ENGINE_DIRECTORY) && make core
 
@@ -60,13 +73,13 @@ endif
 	@cd $(ENGINE_DIRECTORY) && make clean
 	@printf "The engine has been cleaned.\n"
 
-version:
+version: variables
 	@awk '{sub("Version:.*$$","Version: $(VERSION)"); print $0}' $(MANIFEST_PATH) > $(MANIFEST_PATH).tmp && \
 	awk '{sub("/[^/]*: User$$", "/$(VERSION): User"); print $0}' $(MANIFEST_PATH).tmp > $(MANIFEST_PATH) && \
 	rm $(MANIFEST_PATH).tmp
 	@printf "Version changed to $(VERSION).\n"
 
-check-scripts:
+check-scripts: variables
 ifeq ("$(HAS_LUAC)","")
 	@printf "'luac' not found.\n" && exit 1
 endif

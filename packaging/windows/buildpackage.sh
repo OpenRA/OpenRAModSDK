@@ -4,6 +4,18 @@ set -e
 command -v curl >/dev/null 2>&1 || { echo >&2 "Windows packaging requires curl."; exit 1; }
 command -v makensis >/dev/null 2>&1 || { echo >&2 "Windows packaging requires makensis."; exit 1; }
 
+require_variables() {
+	missing=""
+	for i in "$@"; do
+		eval check="\$$i"
+		[ -z "${check}" ] && missing="${missing}   ${i}\n"
+	done
+	if [ ! -z "${missing}" ]; then
+		echo "Required mod.config variables are missing:\n${missing}Repair your mod.config (or user.config) and try again."
+		exit 1
+	fi
+}
+
 if [ $# -eq "0" ]; then
 	echo "Usage: `basename $0` version [outputdir]"
 	exit 1
@@ -19,6 +31,10 @@ if [ -f "${TEMPLATE_ROOT}/user.config" ]; then
 	# shellcheck source=user.config
 	. "${TEMPLATE_ROOT}/user.config"
 fi
+
+require_variables "MOD_ID" "ENGINE_DIRECTORY" "PACKAGING_DISPLAY_NAME" "PACKAGING_INSTALLER_NAME" \
+	"PACKAGING_WINDOWS_LAUNCHER_NAME" "PACKAGING_WINDOWS_REGISTRY_KEY" "PACKAGING_WINDOWS_INSTALL_DIR_NAME" \
+	"PACKAGING_FAQ_URL" "PACKAGING_WEBSITE_URL" "PACKAGING_AUTHORS"
 
 TAG="$1"
 if [ $# -eq "1" ]; then
