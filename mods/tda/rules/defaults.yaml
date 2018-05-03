@@ -520,8 +520,8 @@
 		RequiresCondition: Infantry.sandbag
 		ValidStances: Ally, Enemy, Neutral
 		RequiresSelection: False
-	DetectCloaked:
-		Range: 2c0
+	# DetectCloaked:
+		# Range: 2c0
 	DeathSounds@NORMAL:
 		DeathTypes: DefaultDeath, BulletDeath, SmallExplosionDeath, ExplosionDeath
 		VolumeMultiplier: 1
@@ -1019,14 +1019,14 @@
 	RequiresBuildableArea:
 		AreaTypes: building
 		Adjacent: 10
-	Selectable:
+	Interactable:
 
 ^Gate:
 	Inherits: ^BaseBuilding
 	Buildable:
 		BuildPaletteOrder: 40
 		Prerequisites: ~vehicleproduction
-		Queue: Defence.GDI, Defence.Nod
+		Queue: Defence.GDI, Defence.Nod, Defence.Nodda
 		Description: An Automated Gate.
 	Valued:
 		Cost: 250

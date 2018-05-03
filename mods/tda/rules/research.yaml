@@ -31,22 +31,23 @@ RESEARCH_ADV_NUKE:
 	BodyOrientation:
 		QuantizedFacings: 1
 	Buildable:
-		Queue: Research.Nod, Research.GDI
+		Queue: Research.Nod, Research.Nodda, Research.GDI
 		BuildPaletteOrder: 1
 		Prerequisites: anyhq
 		Description: Type:Research\nSubject:Power\nDescription: Allows the construction of advance power plants
 		BuildLimit: 1
 		IconPalette: ra2foricamos
 	Valued:
-		Cost: 1000
+		Cost: 2000
 	RenderSprites:
 		Image: re_advpower_icon_nod
 		FactionImages:
 			nod: re_advpower_icon_nod
+			nodda: re_advpower_icon_nod
 			gdi: re_advpower_icon_gdi
 	AlwaysVisible:
 	Interactable:
-	ProvidesPrerequisite@name:
+	ProvidesPrerequisite@research_adv_nuke:
 
 RESEARCH_STL_HARV:
 	Tooltip:
@@ -60,20 +61,21 @@ RESEARCH_STL_HARV:
 	Buildable:
 		Queue: Research.Nod
 		BuildPaletteOrder: 1
-		Prerequisites: anyhq, ~!research_heavy_weapons_nod, ~research_stlh_weapons_nod, !HarvesterTruce
+		Prerequisites: anyhq, !HarvesterTruce
 		Description:Type: Research.\nSubject: Stealth\nDescription: Allows the construction of stealth harversters\n Stealth harversters carry less tiberium
 		BuildLimit: 1
 		IconPalette: ra2foricamos
 	Valued:
-		Cost: 2000
+		Cost: 3000
 	RenderSprites:
 		Image: re_stlhharver_icon_nod
 		FactionImages:
 			nod: re_stlhharver_icon_nod
+			nodda: re_stlhharver_icon_nod
 			gdi: re_stlhharver_icon_nod
 	AlwaysVisible:
 	Interactable:
-	ProvidesPrerequisite@name:
+	ProvidesPrerequisite@research_stl_harv:
 
 RESEARCH_ARM_HARV:
 	Tooltip:
@@ -92,15 +94,16 @@ RESEARCH_ARM_HARV:
 		BuildLimit: 1
 		IconPalette: ra2foricamos
 	Valued:
-		Cost: 2000
+		Cost: 3000
 	RenderSprites:
 		Image: re_armorharver_icon_gdi
 		FactionImages:
 			nod: re_armorharver_icon_gdi
+			nodda: re_armorharver_icon_gdi
 			gdi: re_armorharver_icon_gdi
 	AlwaysVisible:
 	Interactable:
-	ProvidesPrerequisite@name:
+	ProvidesPrerequisite@research_arm_harv:
 
 RESEARCH_HUMVEE_TOW:
 	Tooltip:
@@ -119,66 +122,97 @@ RESEARCH_HUMVEE_TOW:
 		BuildLimit: 1
 		IconPalette: ra2foricamos
 	Valued:
-		Cost: 1500
+		Cost: 500
 	RenderSprites:
 		Image: re_tow_icon_gdi
 		FactionImages:
 			nod: re_tow_icon_gdi
+			nodda: re_tow_icon_gdi
 			gdi: re_tow_icon_gdi
 	AlwaysVisible:
 	Interactable:
-	ProvidesPrerequisite@name:
+	ProvidesPrerequisite@research_humvee_tow:
 
-RESEARCH_HEAVY_WEAPONS_NOD:
+# RESEARCH_HEAVY_WEAPONS_NOD:
+	# Tooltip:
+		# Name: Direct Assault
+	# EditorOnlyTooltip:
+		# Name: (upgrade nod heavy weapons)
+	# Immobile:
+		# OccupiesSpace: false
+	# BodyOrientation:
+		# QuantizedFacings: 1
+	# Buildable:
+		# Queue: Research.Nod
+		# BuildPaletteOrder: 1
+		# Prerequisites: anyhq, ~!research_stlh_weapons_nod
+		# Description:Type: Doctrine.\nSubject: Weapons\nDescription: Select this doctrine to authorize the use of\nHeavy Tanks, Demo Trucks and Artilery Strike.\n\nWARNING this will disable spies, vehicle airdrop and stealth technology!
+		# BuildLimit: 1
+		# IconPalette: ra2foricamos
+	# Valued:
+		# Cost: 1500
+	# RenderSprites:
+		# Image: re_mil_doctrine1_icon_nod
+		# FactionImages:
+			# nod: re_mil_doctrine1_icon_nod
+			# nodda: re_mil_doctrine1_icon_nod
+			# gdi: re_mil_doctrine1_icon_nod
+	# AlwaysVisible:
+	# Interactable:
+	# ProvidesPrerequisite@research_heavy_weapons_nod:
+
+# RESEARCH_STLH_WEAPONS_NOD:
+	# Tooltip:
+		# Name: Guerrilla Warfare
+	# EditorOnlyTooltip:
+		# Name: (upgrade nod stealth weapons)
+	# Immobile:
+		# OccupiesSpace: false
+	# BodyOrientation:
+		# QuantizedFacings: 1
+	# Buildable:
+		# Queue: Research.Nod
+		# BuildPaletteOrder: 1
+		# Prerequisites: anyhq, ~!research_heavy_weapons_nod
+		# Description:Type: Doctrine.\nSubject: Weapons\nDescription: Select this doctrine to authorize the use of\nStealth Tanks, Spies, Stealth harversters and vehicle airdrop.\n\nWARNING this will disable Heavy Tanks, Demo Trucks and Artilery Strike!
+		# BuildLimit: 1
+		# IconPalette: ra2foricamos
+	# Valued:
+		# Cost: 1500
+	# RenderSprites:
+		# Image: re_mil_doctrine2_icon_nod
+		# FactionImages:
+			# nod: re_mil_doctrine2_icon_nod
+			# nodda: re_mil_doctrine2_icon_nod
+			# gdi: re_mil_doctrine2_icon_nod
+	# AlwaysVisible:
+	# Interactable:
+	# ProvidesPrerequisite@research_stlh_weapons_nod:
+
+RESEARCH_BIO_NOD:
 	Tooltip:
-		Name: Direct Assault
+		Name: Biohazard Weaponry
 	EditorOnlyTooltip:
-		Name: (upgrade nod heavy weapons)
+		Name: (upgrade nod Biohazard weaponry)
 	Immobile:
 		OccupiesSpace: false
 	BodyOrientation:
 		QuantizedFacings: 1
 	Buildable:
-		Queue: Research.Nod
+		Queue: Research.Nod, Research.Nodda
 		BuildPaletteOrder: 1
-		Prerequisites: anyhq, ~!research_stlh_weapons_nod
-		Description:Type: Doctrine.\nSubject: Weapons\nDescription: Select this doctrine to authorize the use of\nHeavy Tanks, Demo Trucks and Artilery Strike.\n\nWARNING this will disable spies, vehicle airdrop and stealth technology!
+		Prerequisites: anyhq
+		Description:Type: Doctrine.\nSubject: Weapons\nDescription: Select this doctrine to authorize the use of\nChem Tanks, Chem troopers, Chem Tower .\n\nWARNING Chem Tower upgrade will only work with "Direct Assault" doctrine.
 		BuildLimit: 1
 		IconPalette: ra2foricamos
 	Valued:
-		Cost: 1500
+		Cost: 3000
 	RenderSprites:
-		Image: re_mil_doctrine1_icon_nod
+		Image: re_bio_icon_nod
 		FactionImages:
-			nod: re_mil_doctrine1_icon_nod
-			gdi: re_mil_doctrine1_icon_nod
+			nod: re_bio_icon_nod
+			nodda: re_bio_icon_nod
+			gdi: re_bio_icon_nod
 	AlwaysVisible:
 	Interactable:
-	ProvidesPrerequisite@name:
-
-RESEARCH_STLH_WEAPONS_NOD:
-	Tooltip:
-		Name: Guerrilla Warfare
-	EditorOnlyTooltip:
-		Name: (upgrade nod stealth weapons)
-	Immobile:
-		OccupiesSpace: false
-	BodyOrientation:
-		QuantizedFacings: 1
-	Buildable:
-		Queue: Research.Nod
-		BuildPaletteOrder: 1
-		Prerequisites: anyhq, ~!research_heavy_weapons_nod
-		Description:Type: Doctrine.\nSubject: Weapons\nDescription: Select this doctrine to authorize the use of\nStealth Tanks, Spies, Stealth harversters and vehicle airdrop.\n\nWARNING this will disable Heavy Tanks, Demo Trucks and Artilery Strike!
-		BuildLimit: 1
-		IconPalette: ra2foricamos
-	Valued:
-		Cost: 1500
-	RenderSprites:
-		Image: re_mil_doctrine2_icon_nod
-		FactionImages:
-			nod: re_mil_doctrine2_icon_nod
-			gdi: re_mil_doctrine2_icon_nod
-	AlwaysVisible:
-	Interactable:
-	ProvidesPrerequisite@name:
+	ProvidesPrerequisite@research_bio_nod:

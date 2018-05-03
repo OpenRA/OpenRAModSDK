@@ -181,7 +181,7 @@ PORT:
 		Produces: Ship.Nod, Ship.GDI
 	ProductionQueue@NodShip:
 		Type: Ship.Nod
-		Factions: nod
+		Factions: nod, nodda
 		Group: Ship
 		LowPowerSlowdown: 3
 	ProductionQueue@GDIShip:

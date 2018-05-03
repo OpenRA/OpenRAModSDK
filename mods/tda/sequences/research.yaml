@@ -39,3 +39,9 @@ re_mil_doctrine2_icon_nod:
 		Length: *
 	icon:
 		Nod: re_mil_doctrine2_icon_nod
+
+re_bio_icon_nod
+	idle:
+		Length: *
+	icon:
+		Nod: re_bio_icon_nod

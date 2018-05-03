@@ -2,6 +2,7 @@ Speech:
 	Prefixes:
 		gdi: gdi
 		nod: nod
+		nodda: nodda
 	Notifications:
 		AirstrikeReady: airredy1
 		BaseAttack: baseatk1

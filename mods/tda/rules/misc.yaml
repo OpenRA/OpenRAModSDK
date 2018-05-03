@@ -207,85 +207,85 @@ CRATEUNIT:
 	GiveUnitCrateAction@va1:
 		SelectionShares: 35
 		Units: bggy
-		ValidFactions: nod, gdi
+		ValidFactions: gdi, nod, nodda
 		TimeDelay: 3000
 	GiveUnitCrateAction@va2:
 		SelectionShares: 35
 		Units: jeep
-		ValidFactions: nod, gdi
+		ValidFactions: gdi, nod, nodda
 		TimeDelay: 3000
 	GiveUnitCrateAction@vb1:
 		SelectionShares: 30
 		Units: apc
-		ValidFactions: nod, gdi
+		ValidFactions: gdi, nod, nodda
 		TimeDelay: 7500
 	GiveUnitCrateAction@vb2:
 		SelectionShares: 30
 		Units: bike
-		ValidFactions: nod, gdi
+		ValidFactions: gdi, nod, nodda
 		TimeDelay: 7500
 	GiveUnitCrateAction@vb3:
 		SelectionShares: 30
 		Units: ltnk
-		ValidFactions: nod, gdi
+		ValidFactions: gdi, nod, nodda
 		TimeDelay: 7500
 	GiveUnitCrateAction@vc1:
 		SelectionShares: 25
 		Units: arty
-		ValidFactions: nod, gdi
+		ValidFactions: gdi, nod, nodda
 		TimeDelay: 15000
 	GiveUnitCrateAction@vc2:
 		SelectionShares: 25
 		Units: mlrs
-		ValidFactions: nod, gdi
+		ValidFactions: gdi, nod, nodda
 		TimeDelay: 15000
 	GiveUnitCrateAction@vc3:
 		SelectionShares: 25
 		Units: ftnk
-		ValidFactions: nod, gdi
+		ValidFactions: gdi, nod, nodda
 		TimeDelay: 15000
 	GiveUnitCrateAction@vc4:
 		SelectionShares: 25
 		Units: ctnk
-		ValidFactions: nod, gdi
+		ValidFactions: gdi, nod, nodda
 		TimeDelay: 15000
 	GiveUnitCrateAction@vd1:
 		SelectionShares: 20
 		Units: 3tnk
-		ValidFactions: nod, gdi
+		ValidFactions: gdi, nod, nodda
 		TimeDelay: 45000
 	GiveUnitCrateAction@vd2:
 		SelectionShares: 20
 		Units: mtnk
-		ValidFactions: nod, gdi
+		ValidFactions: gdi, nod, nodda
 		TimeDelay: 45000
 #Infantry
 	GiveUnitCrateAction@squadA1:
 		SelectionShares: 50
 		Units: e1,e1
-		ValidFactions: nod, gdi
+		ValidFactions: gdi, nod, nodda
 	GiveUnitCrateAction@squadA2:
 		SelectionShares: 50
 		Units: e1,e1,e1
-		ValidFactions: nod, gdi
+		ValidFactions: gdi, nod, nodda
 	GiveUnitCrateAction@squadA3:
 		SelectionShares: 50
 		Units: e1,e2,e1
-		ValidFactions: nod, gdi
+		ValidFactions: gdi, nod, nodda
 	GiveUnitCrateAction@squadB1:
 		SelectionShares: 50
 		Units: e1,e1,e1,e3,e3
-		ValidFactions: nod, gdi
+		ValidFactions: gdi, nod, nodda
 		TimeDelay: 3000
 	GiveUnitCrateAction@squadB2:
 		SelectionShares: 50
 		Units: e1,e1,e4,e4
-		ValidFactions: nod, gdi
+		ValidFactions: gdi, nod, nodda
 		TimeDelay: 3000
 	GiveUnitCrateAction@squadB3:
 		SelectionShares: 50
 		Units: e1,e1,e4,e4
-		ValidFactions: nod, gdi
+		ValidFactions: gdi, nod, nodda
 		TimeDelay: 3000
 #MCV
 	GiveMcvCrateAction:
@@ -297,7 +297,7 @@ CRATEUNIT:
 	GiveUnitCrateAction@sole1:
 		SelectionShares: 3
 		Units: e6
-		ValidFactions: nod, gdi
+		ValidFactions: gdi, nod, nodda
 		Prerequisites: solesurvivor
 
 CRATEWOOD:
@@ -311,19 +311,19 @@ CRATEWOOD:
 	GiveUnitCrateAction@dtrk:
 		SelectionShares: 1
 		Units: dtrk
-		ValidFactions: gdi, nod
+		ValidFactions: gdi, nod, nodda
 	GiveUnitCrateAction@htnk:
 		SelectionShares: 1
 		Units: htnk,htnk,htnk
-		ValidFactions: gdi, nod
+		ValidFactions: gdi, nod, nodda
 	GiveUnitCrateAction@blackops1:
 		SelectionShares: 1
 		Units: medi,medi,medi,rmbo,rmbo,rmbo,rmbo
-		ValidFactions: gdi, nod
+		ValidFactions: gdi, nod, nodda
 	GiveUnitCrateAction@blackops2:
 		SelectionShares: 1
 		Units: medi,medi,e6,e3,e3,e3,e3
-		ValidFactions: gdi, nod
+		ValidFactions: gdi, nod, nodda
 	GiveCashCrateAction:
 		Amount: 5000
 		SelectionShares: 1

@@ -30,6 +30,7 @@ MechanicVoice:
 GenericVoice:
 	Variants:
 		nod: .v01,.v03
+		nodda: .v01,.v03
 		gdi: .v01,.v03
 	Voices:
 		Select: await1,ready,report1,yessir1
@@ -43,6 +44,7 @@ GenericVoice:
 VehicleVoice:
 	Variants:
 		nod: .v00,.v02
+		nodda: .v00,.v02
 		gdi: .v00,.v02
 	Voices:
 		Select: vehic1,yessir1,report1,await1,unit1

@@ -67,7 +67,7 @@ ChemsprayL:
 		Damage: 95
 		Versus:
 			None: 100
-			Wood: 10
+			Wood: 100
 			Light: 100
 			Heavy: 100
 		DamageTypes: Prone50Percent, TriggerProne, TiberiumDeath
@@ -89,7 +89,7 @@ Chemspray:
 		Damage: 80
 		Versus:
 			None: 100
-			Wood: 10
+			Wood: 100
 			Light: 100
 			Heavy: 100
 		DamageTypes: Prone50Percent, TriggerProne, TiberiumDeath

@@ -1,4 +1,15 @@
 Added: harvester truce option to the lobby (not recomended with short game off)
+Fixed: tech centers vision
+Changed: weapons factory name to Vehicle Factory
+Balanced: Vehicle Factory and airstrip Build Duration timer now is 30 seconds
+Changed: Chemical Warrior name to Chemical trooper
+Balanced: Chem tank and trooper weapon to do more damage to buildings
+Balanced: stealth tank no longer be detectable by infantry units
+Added: new nod faction
+Removed: Direct Assault and Guerrilla Warfare Doctrine research, now you have to select a faction in order to use the tech they give
+
+
+
 
 
 

@@ -13,15 +13,16 @@ Player:
 			Silo: silo
 		UnitsCommonNames:
 			Mcv: mcv
-		BuildingQueues: Building.Nod, Building.GDI
-		DefenseQueues: Defence.Nod, Defence.GDI
-		UnitQueues: Vehicle.Nod, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.GDI
+		BuildingQueues: Building.Nod, Building.Nodda, Building.GDI
+		DefenseQueues: Defence.Nod, Defence.Nodda, Defence.GDI
+		UnitQueues: Vehicle.Nod, Vehicle.Nodda, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.GDI
 		BuildingLimits:
 			proc: 4
 			pyle: 3
 			hand: 3
 			hq: 1
 			hqnod: 1
+			hqnodda: 1
 			weap: 3
 			afld: 3
 			hpad: 0
@@ -39,6 +40,7 @@ Player:
 			hand: 5%
 			hq: 4%
 			hqnod: 4%
+			hqnodda: 4%
 			nuk2: 9%
 			weap: 9%
 			afld: 9%
@@ -82,8 +84,6 @@ Player:
 			research_stl_harv: 100%
 			research_arm_harv: 100%
 			research_humvee_tow: 100%
-			research_heavy_weapons_nod: 100%
-			research_stlh_weapons_nod: 100%
 		UnitLimits:
 			harv: 8
 		SquadSize: 15
@@ -183,15 +183,16 @@ Player:
 			Silo: silo
 		UnitsCommonNames:
 			Mcv: mcv
-		BuildingQueues: Building.Nod, Building.GDI
-		DefenseQueues: Defence.Nod, Defence.GDI
-		UnitQueues: Vehicle.Nod, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.GDI
+		BuildingQueues: Building.Nod, Building.Nodda, Building.GDI
+		DefenseQueues: Defence.Nod, Defence.Nodda, Defence.GDI
+		UnitQueues: Vehicle.Nod, Vehicle.Nodda, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.GDI
 		BuildingLimits:
 			proc: 4
 			pyle: 3
 			hand: 3
 			hq: 1
 			hqnod: 1
+			hqnodda: 1
 			weap: 3
 			afld: 3
 			hpad: 2
@@ -209,6 +210,7 @@ Player:
 			hand: 2%
 			hq: 1%
 			hqnod: %1
+			hqnodda: 1%
 			nuk2: 18%
 			weap: 5%
 			afld: 5%
@@ -252,8 +254,6 @@ Player:
 			research_stl_harv: 100%
 			research_arm_harv: 100%
 			research_humvee_tow: 100%
-			research_heavy_weapons_nod: 100%
-			research_stlh_weapons_nod: 100%
 		UnitLimits:
 			harv: 8
 		SquadSize: 15
@@ -353,15 +353,16 @@ Player:
 			Silo: silo
 		UnitsCommonNames:
 			Mcv: mcv
-		BuildingQueues: Building.Nod, Building.GDI
-		DefenseQueues: Defence.Nod, Defence.GDI
-		UnitQueues: Vehicle.Nod, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.GDI
+		BuildingQueues: Building.Nod, Building.Nodda, Building.GDI
+		DefenseQueues: Defence.Nod, Defence.Nodda, Defence.GDI
+		UnitQueues: Vehicle.Nod, Vehicle.Nodda, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.GDI
 		BuildingLimits:
 			proc: 4
 			pyle: 4
 			hand: 4
 			hq: 1
 			hqnod: 1
+			hqnodda: 1
 			weap: 4
 			afld: 4
 			hpad: 2
@@ -379,6 +380,7 @@ Player:
 			hand: 9%
 			hq: 1%
 			hqnod: 1%
+			hqnodda: 1%
 			nuk2: 18%
 			weap: 8%
 			afld: 6%
@@ -424,8 +426,6 @@ Player:
 			research_stl_harv: 100%
 			research_arm_harv: 100%
 			research_humvee_tow: 100%
-			research_heavy_weapons_nod: 100%
-			research_stlh_weapons_nod: 100%
 		UnitLimits:
 			harv: 8
 		SquadSize: 8
@@ -525,15 +525,16 @@ Player:
 			Silo: silo
 		UnitsCommonNames:
 			Mcv: mcv
-		BuildingQueues: Building.Nod, Building.GDI
-		DefenseQueues: Defence.Nod, Defence.GDI
-		UnitQueues: Vehicle.Nod, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.GDI
+		BuildingQueues: Building.Nod, Building.Nodda, Building.GDI
+		DefenseQueues: Defence.Nod, Defence.Nodda, Defence.GDI
+		UnitQueues: Vehicle.Nod, Vehicle.Nodda, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.GDI
 		BuildingLimits:
 			proc: 2
 			pyle: 1
 			hand: 1
 			hq: 1
 			hqnod: 1
+			hqnodda: 1
 			weap: 2
 			afld: 2
 			hpad: 0
@@ -557,6 +558,7 @@ Player:
 			hand: 1%
 			hq: 1%
 			hqnod: 1%
+			hqnodda: 1%
 			nuk2: 1%
 			weap: 50%
 			afld: 50%
@@ -586,7 +588,6 @@ Player:
 			research_stl_harv: 100%
 			research_arm_harv: 100%
 			research_humvee_tow: 100%
-			research_heavy_weapons_nod: 100%
 		UnitLimits:
 			harv: 8
 			mtnk: 15
@@ -728,15 +729,16 @@ Player:
 			Silo: silo
 		UnitsCommonNames:
 			Mcv: mcv
-		BuildingQueues: Building.Nod, Building.GDI
-		DefenseQueues: Defence.Nod, Defence.GDI
-		UnitQueues: Vehicle.Nod, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.GDI
+		BuildingQueues: Building.Nod, Building.Nodda, Building.GDI
+		DefenseQueues: Defence.Nod, Defence.Nodda, Defence.GDI
+		UnitQueues: Vehicle.Nod, Vehicle.Nodda, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.GDI
 		BuildingLimits:
 			proc: 1
 			pyle: 3
 			hand: 3
 			hq: 1
 			hqnod: 1
+			hqnodda: 1
 			weap: 1
 			afld: 1
 			hpad: 0
@@ -754,6 +756,7 @@ Player:
 			hand: 5%
 			hq: 4%
 			hqnod: 4%
+			hqnodda: 4%
 			nuk2: 9%
 			weap: 9%
 			afld: 9%
@@ -785,8 +788,6 @@ Player:
 			research_stl_harv: 100%
 			research_arm_harv: 100%
 			research_humvee_tow: 100%
-			research_heavy_weapons_nod: 100%
-			research_stlh_weapons_nod: 100%
 		UnitLimits:
 			harv: 2
 		SquadSize: 30
@@ -887,9 +888,9 @@ Player:
 			Silo: silo
 		UnitsCommonNames:
 			Mcv: mcv
-		BuildingQueues: Building.Nod, Building.GDI
-		DefenseQueues: Defence.Nod, Defence.GDI
-		UnitQueues: Vehicle.Nod, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.GDI
+		BuildingQueues: Building.Nod, Building.Nodda, Building.GDI
+		DefenseQueues: Defence.Nod, Defence.Nodda, Defence.GDI
+		UnitQueues: Vehicle.Nod, Vehicle.Nodda, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.GDI
 		BuildingLimits:
 			proc: 0
 			pyle: 0
@@ -956,8 +957,6 @@ Player:
 			research_stl_harv: 100%
 			research_arm_harv: 100%
 			research_humvee_tow: 100%
-			research_heavy_weapons_nod: 100%
-			research_stlh_weapons_nod: 100%
 		UnitLimits:
 			harv: 2
 		SquadSize: 15

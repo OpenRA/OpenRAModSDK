@@ -65,23 +65,42 @@ nuke:
 	icon: nukeicnh.tem
 		AddExtension: False
 
-airfield:
+afldra:
 	idle:
-		Length: 5
-		Tick: 1000
+		Length: 8
+		Tick: 400
+		ZOffset: -1023
+		Offset: 0,-4
 	damaged-idle:
-		Start: 6
-		Length: 2
-		Tick: 1000
+		Start: 8
+		Length: 8
+		Tick: 400
+		ZOffset: -1023
+		Offset: 0,-4
+	active:
+		Length: 8
+		Tick: 400
+		ZOffset: -1023
+		Offset: 0,-4
+	damaged-active:
+		Start: 8
+		Length: 8
+		Tick: 400
+		ZOffset: -1023
+		Offset: 0,-4
 	dead:
-		Start: 11
+		Start: 16
 		Tick: 800
-	make: airfieldmake
+		ZOffset: -1023
+		Offset: 0,-4
+	make: afldramake
 		Length: *
 		Tick: 80
+		Offset: 0,-4
 	bib: bib2
 		UseTilesetExtension: true
 		Length: *
+		Offset: 0,10
 	icon: nodairfieldinicnh.tem
 		AddExtension: False
 

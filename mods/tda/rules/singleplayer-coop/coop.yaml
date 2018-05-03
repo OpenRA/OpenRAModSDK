@@ -127,7 +127,7 @@ MHQCOOP:
 		ReadyAudio: ConstructionComplete
 	ProductionQueue@NodBuilding:
 		Type: Building.Nod
-		Factions: nod
+		Factions: nod, nodda
 		Group: Building
 		LowPowerSlowdown: 2
 		QueuedAudio: Building
@@ -141,7 +141,7 @@ MHQCOOP:
 		ReadyAudio: ConstructionComplete
 	ProductionQueue@NodDefense:
 		Type: Defence.Nod
-		Factions: nod
+		Factions: nod, nodda
 		Group: Defence
 		LowPowerSlowdown: 3
 		QueuedAudio: Building

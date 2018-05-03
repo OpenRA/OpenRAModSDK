@@ -8,7 +8,7 @@ MCV:
 	Buildable:
 		BuildPaletteOrder: 100
 		Prerequisites: ~anyfix, ~techlevel.medium
-		Queue: Vehicle.GDI, Vehicle.Nod
+		Queue: Vehicle.GDI, Vehicle.Nod, Vehicle.Nodda
 		Description: Deploys into another Construction Yard.\n  Unarmed
 	Selectable:
 		Priority: 4
@@ -49,7 +49,7 @@ TRUK:
 	Inherits: ^VehicleWithoutVeterancy
 	Inherits@CLOAK: ^AcceptsCloakCrate
 	Buildable:
-		Queue: Vehicle.GDI, Vehicle.Nod
+		Queue: Vehicle.GDI, Vehicle.Nod, Vehicle.Nodda
 		BuildPaletteOrder: 20
 		Prerequisites: ~techlevel.low
 		Description: Transports cash to other players.\n  Unarmed
@@ -87,8 +87,8 @@ DTRK:
 	Inherits@CLOAK: ^AcceptsCloakCrate
 	Buildable:
 		BuildPaletteOrder: 170
-		Prerequisites: ~miss_nod, ~techlevel.high, ~research_heavy_weapons_nod
-		Queue: Vehicle.Nod
+		Prerequisites: ~miss_nod, ~techlevel.high
+		Queue: Vehicle.Nodda
 		Description: Demolition Truck, actively armed with\nnuclear explosives. Has very weak armor.
 	Valued:
 		Cost: 2500
@@ -123,7 +123,7 @@ MNLYNOD:
 	Buildable:
 		BuildPaletteOrder: 100
 		Prerequisites: ~anyfix, ~techlevel.medium
-		Queue: Vehicle.Nod
+		Queue: Vehicle.Nod, Vehicle.Nodda
 		Description: Lays mines to destroy\nunwary enemy tanks.\nCan detect mines.\n  Unarmed
 	Valued:
 		Cost: 800
@@ -194,6 +194,7 @@ HARV:
 	RenderSprites:
 		FactionImages:
 			nod: harv.nod
+			nodda: harv.nod
 			gdi: harv.gdi
 		Image: harv
 	Cloak:
@@ -248,7 +249,7 @@ HARV:
 	Buildable:
 		BuildPaletteOrder: 10
 		Prerequisites: ~proc
-		Queue: Vehicle.GDI, Vehicle.Nod
+		Queue: Vehicle.GDI, Vehicle.Nod, Vehicle.Nodda
 		Description: Collects Tiberium for processing.\n Obtainable upgrades\n  Stealth Generators, Tiberium Armor\n  Unarmed
 		BuildDuration: 675
 		BuildDurationModifier: 100
@@ -258,7 +259,7 @@ HARV:
 	Harvester:
 		Resources: Tiberium, BlueTiberium, RedTiberium
 		PipCount: 8
-		Capacity: 8
+		Capacity: 16
 		BaleLoadDelay: 10
 		BaleUnloadDelay: 4
 		SearchFromProcRadius: 25
@@ -345,7 +346,7 @@ ARTY:
 	Buildable:
 		BuildPaletteOrder: 60
 		Prerequisites: ~anyhq, ~techlevel.medium
-		Queue: Vehicle.Nod
+		Queue: Vehicle.Nod, Vehicle.Nodda
 		Description: Long-range artillery.\n  Strong vs Infantry, Vehicles and Buildings
 	Mobile:
 		TurnSpeed: 4
@@ -387,7 +388,7 @@ FTNK:
 	Buildable:
 		BuildPaletteOrder: 50
 		Prerequisites: ~anyhq, ~techlevel.medium
-		Queue: Vehicle.Nod
+		Queue: Vehicle.Nod, Vehicle.Nodda
 		Description: Heavily armored flame-throwing vehicle.\n  Strong vs Infantry, Buildings and Vehicles\n  Weak vs Tanks
 	Mobile:
 		TurnSpeed: 7
@@ -420,8 +421,8 @@ CTNK:
 		Name: Chemical Tank
 	Buildable:
 		BuildPaletteOrder: 50
-		Prerequisites: ~anyhq, ~bio, ~techlevel.medium
-		Queue: Vehicle.Nod
+		Prerequisites: ~anytech, ~research_bio_nod, ~techlevel.medium
+		Queue: Vehicle.Nod, Vehicle.Nodda
 		Description: Heavily armored Chemical-throwing vehicle.\n  Strong vs Infantry, Buildings and Vehicles\n  Weak vs Tanks
 	Mobile:
 		TurnSpeed: 7
@@ -455,7 +456,7 @@ BGGY:
 	Buildable:
 		BuildPaletteOrder: 20
 		Prerequisites: ~afld
-		Queue: Vehicle.Nod
+		Queue: Vehicle.Nod, Vehicle.Nodda
 		Description: Fast scout and anti-infantry vehicle.\n Can carry 1 infantry\n  Strong vs Infantry\n  Weak vs Tanks
 	Mobile:
 		TurnSpeed: 10
@@ -496,7 +497,7 @@ BIKE:
 	Buildable:
 		BuildPaletteOrder: 30
 		Prerequisites: ~afld
-		Queue: Vehicle.Nod
+		Queue: Vehicle.Nod, Vehicle.Nodda
 		Description: Fast scout vehicle, armed with\nrockets.\nCan attack Aircraft.\n  Strong vs Vehicles, Tanks\n  Weak vs Infantry
 	Mobile:
 		TurnSpeed: 10
@@ -579,7 +580,7 @@ LTNK:
 	Buildable:
 		BuildPaletteOrder: 40
 		Prerequisites: ~anyhq, ~techlevel.medium
-		Queue: Vehicle.Nod
+		Queue: Vehicle.Nod, Vehicle.Nodda
 		Description: Fast, light tank.\n  Strong vs Vehicles, Tanks\n  Weak vs Infantry
 	Mobile:
 		TurnSpeed: 7
@@ -647,8 +648,8 @@ MTNK:
 	Inherits@CLOAK: ^AcceptsCloakCrate
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
-		Prerequisites: ~anyfix, ~techlevel.medium, ~research_heavy_weapons_nod
-		Queue: Vehicle.Nod
+		Prerequisites: ~anyfix, ~techlevel.medium
+		Queue: Vehicle.Nodda
 		BuildPaletteOrder: 130
 		Description: Nod Main Battle Tank, with dual cannons\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
 	Valued:
@@ -794,7 +795,7 @@ MLRS:
 	Buildable:
 		BuildPaletteOrder: 70
 		Prerequisites: ~anyhq, ~techlevel.medium
-		Queue: Vehicle.Nod
+		Queue: Vehicle.Nod, Vehicle.Nodda
 		Description: Powerful anti-air unit.\nCannot attack Ground units.
 	Mobile:
 		Speed: 99
@@ -839,9 +840,9 @@ STNK:
 		Name: Stealth Tank
 	Buildable:
 		BuildPaletteOrder: 90
-		Prerequisites: ~miss_nod, ~techlevel.high, ~!research_heavy_weapons_nod, ~research_stlh_weapons_nod
+		Prerequisites: ~miss_nod, ~techlevel.high
 		Queue: Vehicle.Nod
-		Description: Long-range missile tank that can cloak.\nCan attack Aircraft.\nHas weak armor. Can be spotted by infantry and defense structures.\n  Strong vs Vehicles, Tanks\n  Weak vs Infantry.
+		Description: Long-range missile tank that can cloak.\nCan attack Aircraft.\nHas weak armor. Can be spotted by defense structures.\n  Strong vs Vehicles, Infantry\n  Weak vs Tanks and defences.
 	Mobile:
 		TurnSpeed: 10
 		Speed: 142

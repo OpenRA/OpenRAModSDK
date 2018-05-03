@@ -381,10 +381,10 @@ E5:
 	Valued:
 		Cost: 300
 	Tooltip:
-		Name: Chemical Warrior
+		Name: Chemical trooper
 	Buildable:
 		BuildPaletteOrder: 50
-		Prerequisites: ~anytech, ~bio, ~techlevel.high
+		Prerequisites: ~anytech, ~research_bio_nod, ~techlevel.high
 		Queue: Infantry.Nod
 		Description: Advanced general-purpose infantry.\n  Strong vs all Ground units
 	Mobile:
@@ -498,6 +498,49 @@ RMBO:
 	Armament@GUARDTOWER:
 		Name: guardtower
 		Weapon: Sniper
+
+# RENEGATE:
+	# Inherits: ^Soldier
+	# Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	# Valued:
+		# Cost: 1000
+	# Tooltip:
+		# Name: Renegate
+	# Buildable:
+		# BuildPaletteOrder: 60
+		# Prerequisites: ~anytech, ~techlevel.high
+		# Queue: Infantry.GDI, Infantry.Nod
+		# Description: Uncontrollable Lethal Commando Unit.\n  It will wonder around Wreaking havoc\n  Crates will give him new weapons
+		# BuildLimit: 1
+	# Mobile:
+		# Speed: 71
+		# Voice: Move
+	# Health:
+		# HP: 80
+	# RevealsShroud:
+		# Range: 6c0
+	# AutoTarget:
+		# ScanRadius: 8
+	# Demolition:
+		# DetonationDelay: 45
+		# Voice: Demolish
+	# Armament@1:
+		# Weapon: Sniper
+	# Armament@2:
+		# Weapon: 
+	# AttackFrontal:
+		# Voice: Attack
+	# AttackMove:
+		# Voice: Attack
+	# WithInfantryBody:
+		# DefaultAttackSequence: shoot
+		# IdleSequences: idle1,idle2,idle3
+	# AnnounceOnBuild:
+	# AnnounceOnKill:
+	# Voiced:
+		# VoiceSet: CommandoVoice
+	# AttackWander:
+		# WanderMoveRadius: 30
 
 PVICE:
 	Inherits: ^Viceroid

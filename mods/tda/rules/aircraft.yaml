@@ -167,67 +167,72 @@ OSPREY.delivery:
 	-Targetable@AIRBORNE:
 	Interactable:
 
-# MIG:
-	# Inherits: ^Plane
-	# Buildable:
-		# BuildPaletteOrder: 20
-		# Prerequisites: ~airfield, ~anyhq, ~techlevel.medium
-		# Queue:
-		# Description: Description: Fast Air-Attack Plane.\n  Strong vs Aircraft\n  Weak vs Anti-air.
-	# Valued:
-		# Cost: 2000
-	# Tooltip:
-		# Name: Raptor
-	# Health:
-		# HP: 70
-	# Armor:
-		# Type: Light
-	# RevealsShroud:
-		# Range: 12c0
-		# Type: CenterPosition
-	# Armament:
-		# Weapon: R-33
-		# LocalOffset: 0,-640,0, 0,640,0
-		# LocalYaw: -40, 24
-	# AttackPlane:
-		# FacingTolerance: 20
-	# Aircraft:
-		# CruiseAltitude: 2560
-		# InitialFacing: 0
-		# TurnSpeed: 3
-		# Speed: 300
-		# RepulsionSpeed: 40
-		# MaximumPitch: 56
-		# RearmBuildings: airfield
-		# AirborneCondition: airborne
-	# Targetable@GROUND:
-		# TargetTypes: Ground, Vehicle
-		# RequiresCondition: !airborne
-	# Targetable@AIRBORNE:
-		# TargetTypes: Air
-		# RequiresCondition: airborne
-	# AutoTarget:
-		# EnableStances: false
-	# AmmoPool:
-		# Ammo: 4
-	# ReturnOnIdle:
-	# Selectable:
-		# Bounds: 36,28,0,2
-	# SelectionDecorations:
-		# VisualBounds: 40,29,0,1
-	# Contrail@1:
-		# Offset: -598,-683,0
-	# Contrail@2:
-		# Offset: -598,683,0
-	# SmokeTrailWhenDamaged:
-		# Offset: -853,0,171
-		# Interval: 2
-	# Voiced:
-		# VoiceSet: VehicleVoice
-	# RenderSprites:
-		# PlayerPalette: playerRA
-# #	-FlyAwayOnIdle:
-	# -RejectsOrders:
+F22:
+	Inherits: ^Plane
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Aircraft.Nod
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 50
+		Prerequisites: ~afldra, ~techlevel.high
+		BuildDuration: 1750
+		Description: Fast Ground-Attack Plane.\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: F-22
+	Health:
+		HP: 7500
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 13c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 11c0
+		Type: GroundPosition
+	Armament:
+		Weapon: MammothMissiles
+		LocalOffset: 0,-640,0, 0,640,0
+		LocalYaw: -40, 24
+		PauseOnCondition: !ammo
+	AttackPlane:
+		FacingTolerance: 20
+	Aircraft:
+		RearmBuildings: afldra
+		CruiseAltitude: 2560
+		InitialFacing: 192
+		TurnSpeed: 4
+		Speed: 223
+		RepulsionSpeed: 40
+		MaximumPitch: 56
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+	AmmoPool:
+		Ammo: 8
+		AmmoCondition: ammo
+	ReturnOnIdle:
+	Selectable:
+		Bounds: 36,28,0,2
+		DecorationBounds: 40,29,0,1
+	SelectionDecorations:
+	Contrail@1:
+		Offset: -598,-683,0
+	Contrail@2:
+		Offset: -598,683,0
+	# SpawnActorOnDeath:
+		# Actor: MIG.Husk
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2
+	-ProducibleWithLevel:
+		Prerequisites: aircraft.upgraded
+	RenderSprites:
+		PlayerPalette: playerRA
+	-Interactable:
+	-RejectsOrders:
 
 HELI:
 	Inherits: ^Helicopter

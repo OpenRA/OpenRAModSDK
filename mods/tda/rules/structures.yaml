@@ -17,7 +17,7 @@ FACT:
 		Range: 10c0
 	WithBuildingBib:
 	Production:
-		Produces: Building.GDI, Building.Nod, Defence.GDI, Defence.Nod
+		Produces: Building.GDI, Building.Nod, Building.Nodda, Defence.GDI, Defence.Nod, Defence.Nodda
 	Transforms:
 		IntoActor: mcv
 		Offset: 1,1
@@ -40,6 +40,13 @@ FACT:
 		LowPowerSlowdown: 2
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
+	ProductionQueue@NoddaBuilding:
+		Type: Building.Nodda
+		Factions: nodda
+		Group: Building
+		LowPowerSlowdown: 2
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
 	ProductionQueue@GDIDefense:
 		Type: Defence.GDI
 		Factions: gdi
@@ -54,15 +61,26 @@ FACT:
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
+	ProductionQueue@NoddaDefense:
+		Type: Defence.Nodda
+		Factions: nodda
+		Group: Defence
+		LowPowerSlowdown: 3
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
 	BaseBuilding:
 	ProductionBar@BuildingGDI:
 		ProductionType: Building.GDI
 	ProductionBar@BuildingNod:
 		ProductionType: Building.Nod
+	ProductionBar@BuildingNodda:
+		ProductionType: Building.Nodda
 	ProductionBar@DefenceGDI:
 		ProductionType: Defence.GDI
 	ProductionBar@DefenceNod:
 		ProductionType: Defence.Nod
+	ProductionBar@DefenceNodda:
+		ProductionType: Defence.Nodda
 	BaseProvider:
 		Cooldown: 75
 		Range: 14c0
@@ -80,7 +98,7 @@ FACT.GDI:
 	RenderSprites:
 		Image: fact
 	Buildable:
-		Queue: Building.GDI, Building.Nod
+		Queue: Building.GDI, Building.Nod, Building.Nodda
 		BuildPaletteOrder: 1000
 		Prerequisites: ~disabled
 		ForceFaction: gdi
@@ -92,52 +110,78 @@ FACT.NOD:
 	RenderSprites:
 		Image: fact
 	Buildable:
-		Queue: Building.GDI, Building.Nod
+		Queue: Building.GDI, Building.Nod, Building.Nodda
 		BuildPaletteOrder: 1000
 		Prerequisites: ~disabled
 		ForceFaction: nod
 	Tooltip:
-		Name: Construction Yard (Nod)
+		Name: Nod GW
 
-# AIRFIELD:
-	# Inherits: ^BaseBuilding
-	# Inherits@shape: ^3x2Shape
-	# HitShape:
-		# UseTargetableCellsOffsets: false
-		# TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
-	# Valued:
-		# Cost: 1000
-	# Tooltip:
-		# Name: Nod Airfield
-	# Buildable:
-		# BuildPaletteOrder: 300
-		# Prerequisites: ~anyhq, ~techlevel.high
-		# Queue:
-		# Description: Produces and reloads aircraft.
-	# Building:
-		# Footprint: xxx xxx
-		# Dimensions: 3,2
-	# Health:
-		# HP: 1000
-	# RevealsShroud:
-		# Range: 4c0
-	# WithBuildingBib:
-	# Power:
-		# Amount: -50
-	# Targetable:
-		# TargetTypes: Ground, C4, Structure, SpyInfiltrate
-	# Exit@1:
-		# ExitCell: 1,1
-		# Facing: 192
-		# MoveIntoWorld: false
-	# RallyPoint:
-	# ProductionFromMapEdge:
-		# Produces: Aircraft.Nod
-	# Reservable:
-	# Selectable:
-		# Bounds: 72,48
-	# WithRearmAnimation:
-	# WithDamageOverlay:
+FACT.NODDA:
+	Inherits: FACT
+	RenderSprites:
+		Image: fact
+	Buildable:
+		Queue: Building.GDI, Building.Nod, Building.Nodda
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		ForceFaction: nodda
+	Tooltip:
+		Name: Nod DA
+
+AFLDRA:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^3x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Nod Airfield
+	Buildable:
+		BuildPaletteOrder: 300
+		Prerequisites: ~anyhq, ~techlevel.high
+		Queue: Building.Nod, Building.Nodda
+		Description: Produces and reloads aircraft.
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 1000
+	RevealsShroud:
+		Range: 4c0
+	WithBuildingBib:
+	Power:
+		Amount: -50
+	Targetable:
+		TargetTypes: Ground, C4, Structure, SpyInfiltrate
+	Exit@1:
+		ExitCell: 1,1
+		Facing: 192
+		MoveIntoWorld: false
+	RallyPoint:
+	ProductionFromMapEdge:
+		Produces: Aircraft.GDI, Aircraft.Nod
+	Reservable:
+	Selectable:
+		Bounds: 72,48
+	WithRearmAnimation:
+	WithDamageOverlay:
+	ProductionQueue@GDI:
+		Type: Aircraft.GDI
+		Factions: gdi
+		Group: Aircraft
+		LowPowerSlowdown: 3
+	ProductionQueue@Nod:
+		Type: Aircraft.Nod
+		Factions: nod, nodda
+		Group: Aircraft
+		LowPowerSlowdown: 3
+	ProductionBar@GDI:
+		ProductionType: Aircraft.GDI
+	ProductionBar@Nod:
+		ProductionType: Aircraft.Nod
 
 NUKE:
 	Inherits: ^BaseBuilding
@@ -152,7 +196,7 @@ NUKE:
 	Buildable:
 		BuildPaletteOrder: 10
 		Prerequisites: fact
-		Queue: Building.GDI, Building.Nod
+		Queue: Building.GDI, Building.Nod, Building.Nodda
 		Description: Generates nuclear power.\nChance for fail-safe failure 15%
 	Building:
 		Footprint: xX xx ==
@@ -197,7 +241,7 @@ NUK2:
 	Buildable:
 		BuildPaletteOrder: 15
 		Prerequisites: ~anyhq, ~research_adv_nuke, ~techlevel.medium
-		Queue: Building.GDI, Building.Nod
+		Queue: Building.GDI, Building.Nod, Building.Nodda
 		Description: Provides extra nuclear power\nthan its predecessor model.\nChance for fail-safe failure 30%
 	Building:
 		Footprint: xX xx ==
@@ -247,7 +291,7 @@ PROC:
 	Buildable:
 		BuildPaletteOrder: 20
 		Prerequisites: ~anypower
-		Queue: Building.GDI, Building.Nod
+		Queue: Building.GDI, Building.Nod, Building.Nodda
 		Description: Processes raw Tiberium\ninto useable resources
 		BuildDuration: 850
 		BuildDurationModifier: 100
@@ -303,7 +347,7 @@ SILO:
 	Buildable:
 		BuildPaletteOrder: 45
 		Prerequisites: ~proc
-		Queue: Defence.GDI, Defence.Nod
+		Queue: Defence.GDI, Defence.Nod, Defence.Nodda
 		Description: Stores processed Tiberium
 	Building:
 		Footprint: xx
@@ -404,7 +448,7 @@ HAND:
 	Buildable:
 		BuildPaletteOrder: 30
 		Prerequisites: ~anypower
-		Queue: Building.Nod
+		Queue: Building.Nod, Building.Nodda
 		Description: Trains infantry
 	Building:
 		Footprint: xx xx ==
@@ -475,8 +519,10 @@ AFLD:
 	Buildable:
 		BuildPaletteOrder: 40
 		Prerequisites: ~barracks
-		Queue: Building.Nod
+		Queue: Building.Nod, Building.Nodda
 		Description: Provides a dropzone\nfor vehicle reinforcements
+		BuildDuration: 750
+		BuildDurationModifier: 100
 	Building:
 		Footprint: XXX_ xxxx ====
 		Dimensions: 4,3
@@ -494,14 +540,22 @@ AFLD:
 		SpawnOffset: -1024,0,0
 		ExitCell: 3,1
 	ProductionAirdrop:
-		Produces: Vehicle.Nod
+		Produces: Vehicle.Nod, Vehicle.Nodda
 	WithDeliveryAnimation:
-	ProductionQueue:
+	ProductionQueue@NodVehicle:
 		Type: Vehicle.Nod
 		Group: Vehicle
 		RequireOwner: false
 		LowPowerSlowdown: 3
 		ReadyAudio:
+		Factions: nod
+	ProductionQueue@NoddaVehicle:
+		Type: Vehicle.Nodda
+		Group: Vehicle
+		RequireOwner: false
+		LowPowerSlowdown: 3
+		ReadyAudio:
+		Factions: nodda
 	ProductionBar:
 	Power:
 		Amount: -30
@@ -526,7 +580,7 @@ WEAP:
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: Weapons Factory
+		Name: Vehicle Factory
 	ProvidesPrerequisite:
 		Prerequisite: vehicleproduction
 	Buildable:
@@ -534,6 +588,8 @@ WEAP:
 		Prerequisites: ~barracks
 		Queue: Building.GDI
 		Description: Produces vehicles
+		BuildDuration: 750
+		BuildDurationModifier: 100
 	Building:
 		Footprint: xxx === ===
 		Dimensions: 3,3
@@ -584,7 +640,7 @@ HPAD:
 	Buildable:
 		BuildPaletteOrder: 50
 		Prerequisites: ~anyhq
-		Queue: Building.GDI, Building.Nod
+		Queue: Building.GDI, Building.Nod, Building.Nodda
 		Description: Produces, rearms and\nrepairs helicopters
 	Building:
 		Footprint: xx xx ==
@@ -608,7 +664,7 @@ HPAD:
 		LowPowerSlowdown: 3
 	ProductionQueue@Nod:
 		Type: Aircraft.Nod
-		Factions: nod
+		Factions: nod, nodda
 		Group: Aircraft
 		LowPowerSlowdown: 3
 	ProductionBar@GDI:
@@ -770,7 +826,7 @@ HQNOD:
 	ParatroopersPower@paratroopers:
 		PauseOnCondition: disabled
 		OrderName: AirdropInfoOrder
-		Prerequisites: anyhq, ~techlevel.superweapons, ~!research_heavy_weapons_nod, ~research_stlh_weapons_nod
+		Prerequisites: anyhq, ~techlevel.superweapons
 		Icon: airdrop
 		ChargeInterval: 3500
 		Description: Airdrop
@@ -793,35 +849,6 @@ HQNOD:
 		ClockSequence: clock
 		DisplayTimerStances: Ally
 		Cursor: airdrop
-	AirstrikePower@ArtileryStrike:
-		PauseOnCondition: disabled
-		OrderName: ArtileryBarrageInfoOrder
-		Prerequisites: anyhq, ~techlevel.superweapons, ~research_heavy_weapons_nod, ~!research_stlh_weapons_nod
-		Icon: artystrike
-		ChargeInterval: 5250
-		SquadSize: 4
-		SquadOffset: -300,300,0
-		QuantizedFacings: 8
-		Description: Artilery Strike
-		LongDesc: Call in an artilery barrage.
-		EndChargeSpeechNotification:
-		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
-		IncomingSpeechNotification: EnemyArty
-		LaunchSpeechNotification: FriendlyArty
-		NotReady: noredy1
-		UnitType: artyfire
-		DisplayBeacon: True
-		BeaconPoster: artystrike
-		BeaconPosterPalette: beaconposter
-		DisplayRadarPing: True
-		CameraActor: camera
-		ArrowSequence: arrow
-		CircleSequence: circles
-		ClockSequence: clock
-		DisplayTimerStances: Ally
-		Cordon: 10c0
-		Cursor: artilerybarrage
 	Power:
 		Amount: -40
 	InfiltrateForExploration:
@@ -857,6 +884,62 @@ HQNOD:
 	PowerMultiplier@POWERDOWN:
 		RequiresCondition: powerdown
 		Modifier: 0
+
+HQNODDA:
+	Inherits: HQNOD
+	Buildable:
+		BuildPaletteOrder: 70
+		Prerequisites: ~vehicleproduction, ~techlevel.medium
+		Queue: Building.Nodda
+		Description: Provides radar and Artilery Strike support power.\nUnlocks higher-tech units and buildings.\nRequires power to operate.
+		BuildLimit: 1
+	-ParatroopersPower@paratroopers:
+	AirstrikePower@ArtileryStrike:
+		PauseOnCondition: disabled
+		OrderName: ArtileryBarrageInfoOrder
+		Prerequisites: anyhq, ~techlevel.superweapons
+		Icon: artystrike
+		ChargeInterval: 5250
+		SquadSize: 4
+		SquadOffset: -300,300,0
+		QuantizedFacings: 8
+		Description: Artilery Strike
+		LongDesc: Call in an artilery barrage.
+		EndChargeSpeechNotification:
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		IncomingSpeechNotification: EnemyArty
+		LaunchSpeechNotification: FriendlyArty
+		NotReady: noredy1
+		UnitType: artyfire
+		DisplayBeacon: True
+		BeaconPoster: artystrike
+		BeaconPosterPalette: beaconposter
+		DisplayRadarPing: True
+		CameraActor: camera
+		ArrowSequence: arrow
+		CircleSequence: circles
+		ClockSequence: clock
+		DisplayTimerStances: Ally
+		Cordon: 10c0
+		Cursor: artilerybarrage
+	ProductionQueue@NoddaResearch:
+		Type: Research.Nodda
+		Factions: nodda
+		Group: Research
+		LowPowerSlowdown: 3
+		ReadyAudio: ResearchC
+		BlockedAudio: ResearchW
+		QueuedAudio: ResearchST
+		OnHoldAudio: ResearchS
+		CancelledAudio: ResearchA
+	ProductionBar@ResearchNodda:
+		ProductionType: Research.Nodda
+	Production:
+		Produces: Research.Nodda
+		MoveIntoWorld: false
+	RenderSprites:
+		Image: HQNOD
 
 FIX:
 	Inherits: ^BaseBuilding
@@ -930,7 +1013,7 @@ FIX_NOD:
 	Buildable:
 		BuildPaletteOrder: 60
 		Prerequisites: ~vehicleproduction
-		Queue: Building.Nod
+		Queue: Building.Nod, Building.Nodda
 		Description: Repairs vehicles
 	Building:
 		Footprint: _X_ xxx _X_
@@ -978,7 +1061,7 @@ EYE:
 		BuildPaletteOrder: 100
 		Prerequisites: ~anytech, ~techlevel.high
 		Queue: Defence.GDI
-		Description: Provides radar and Orbital Ion Cannon support power.\nUnlocks Mammoth Tank and Commando.\nRequires power to operate.
+		Description: Provides radar and Orbital Ion Cannon support power.\nRequires power to operate.
 		BuildLimit: 1
 	Building:
 		Footprint: X_ xx ==
@@ -1058,8 +1141,8 @@ TMPL:
 	Buildable:
 		BuildPaletteOrder: 100
 		Prerequisites: ~anytech, ~techlevel.high
-		Queue: Defence.Nod
-		Description: Provides Nuclear Strike support power.\nUnlocks Stealth Tank,Demo Truck and Obelisk of Light.\nRequires power to operate.
+		Queue: Defence.Nod, Defence.Nodda
+		Description: Provides Nuclear Strike support power.\nRequires power to operate.
 		BuildLimit: 1
 	Building:
 		Footprint: Xx_ xxx ===
@@ -1139,7 +1222,7 @@ MISS_NOD:
 	Tooltip:
 		Name: Tech Center
 	Buildable:
-		Queue: Building.Nod
+		Queue: Building.Nod, Building.Nodda
 		BuildPaletteOrder: 80
 		Prerequisites: ~anyhq, ~techlevel.high
 		Description: Provides Nod advanced technologies.
@@ -1166,6 +1249,8 @@ MISS_NOD:
 	PowerMultiplier@POWERDOWN:
 		RequiresCondition: powerdown
 		Modifier: 0
+	RevealsShroud:
+		Range: 5c0
 
 MISS_GDI:
 	Inherits: ^BaseBuilding
@@ -1215,6 +1300,8 @@ MISS_GDI:
 	PowerMultiplier@POWERDOWN:
 		RequiresCondition: powerdown
 		Modifier: 0
+	RevealsShroud:
+		Range: 5c0
 
 GUN:
 	Inherits: ^Defense
@@ -1226,7 +1313,7 @@ GUN:
 	Buildable:
 		BuildPaletteOrder: 55
 		Prerequisites: ~barracks
-		Queue: Defence.Nod
+		Queue: Defence.Nod, Defence.Nodda
 		BuildDuration: 1440
 		BuildDurationModifier: 40
 		Description: Basic Anti-Tank base defense.\n  Strong vs Tanks, vehicles\n  Weak vs Infantry
@@ -1274,7 +1361,7 @@ SAM:
 	Buildable:
 		BuildPaletteOrder: 56
 		Prerequisites: ~anyhq
-		Queue: Defence.Nod
+		Queue: Defence.Nod, Defence.Nodda
 		BuildDuration: 1700
 		BuildDurationModifier: 40
 		Description: Anti-Aircraft base defense.\n  Strong vs Aircraft\n  Cannot target Ground units.
@@ -1325,7 +1412,7 @@ OBLI:
 	Buildable:
 		BuildPaletteOrder: 60
 		Prerequisites: ~miss_nod, ~techlevel.high
-		Queue: Defence.Nod
+		Queue: Defence.Nod, Defence.Nodda
 		BuildDuration: 3120
 		BuildDurationModifier: 40
 		Description: Advanced base defense.\nRequires power to operate.\n  Strong vs all Ground units\n  Cannot target Aircraft
@@ -1515,7 +1602,7 @@ SBAG:
 	Buildable:
 		BuildPaletteOrder: 20
 		Prerequisites: ~barracks
-		Queue: Defence.GDI, Defence.Nod
+		Queue: Defence.GDI, Defence.Nod, Defence.Nodda
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
 	Armor:
 		Type: Light
@@ -1542,7 +1629,7 @@ CYCL:
 	Buildable:
 		BuildPaletteOrder: 10
 		Prerequisites: ~fact
-		Queue: Defence.GDI, Defence.Nod
+		Queue: Defence.GDI, Defence.Nod, Defence.Nodda
 		Description: Stops infantry.\nCan be crushed by vehicles and tanks.
 	Armor:
 		Type: Light
@@ -1570,7 +1657,7 @@ BRIK:
 	Buildable:
 		BuildPaletteOrder: 30
 		Prerequisites: ~vehicleproduction
-		Queue: Defence.GDI, Defence.Nod
+		Queue: Defence.GDI, Defence.Nod, Defence.Nodda
 		Description: Stops infantry and most tanks.\nBlocks some projectiles.
 	Health:
 		HP: 250

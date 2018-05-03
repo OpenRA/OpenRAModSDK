@@ -1,6 +1,6 @@
-mig:
+f22:
 	idle:
-		Facings: 16
+		Facings: 32
 	icon: c17icnh
 
 c17:
