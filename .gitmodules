@@ -1,0 +1,4 @@
+[submodule "sp"]
+	path = mods/sp
+	url = https://github.com/ABrandau/Shattered-Paradise.git
+	branch = bleed

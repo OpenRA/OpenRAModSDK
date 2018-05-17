@@ -1,9 +1,0 @@
-Palettes:
-	cursor: template.pal
-
-Cursors:
-	mouse.shp: cursor
-		default:
-			Start: 0
-			X: -16
-			Y: -12
