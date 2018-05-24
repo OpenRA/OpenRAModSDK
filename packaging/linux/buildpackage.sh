@@ -7,6 +7,18 @@ command -v python >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template require
 command -v tar >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires tar."; exit 1; }
 command -v curl >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires curl."; exit 1; }
 
+require_variables() {
+	missing=""
+	for i in "$@"; do
+		eval check="\$$i"
+		[ -z "${check}" ] && missing="${missing}   ${i}\n"
+	done
+	if [ ! -z "${missing}" ]; then
+		echo "Required mod.config variables are missing:\n${missing}Repair your mod.config (or user.config) and try again."
+		exit 1
+	fi
+}
+
 if [ $# -eq "0" ]; then
 	echo "Usage: `basename $0` version [outputdir]"
 	exit 1
@@ -23,11 +35,9 @@ if [ -f "${TEMPLATE_ROOT}/user.config" ]; then
 	. "${TEMPLATE_ROOT}/user.config"
 fi
 
-if [ "${INCLUDE_DEFAULT_MODS}" = "True" ]; then
-	echo "Cannot generate installers while INCLUDE_DEFAULT_MODS is enabled."
-	echo "Make sure that this setting is disabled in both your mod.config and user.config."
-	exit 1
-fi
+require_variables "MOD_ID" "ENGINE_DIRECTORY" "PACKAGING_DISPLAY_NAME" "PACKAGING_INSTALLER_NAME" \
+	"PACKAGING_APPIMAGE_DEPENDENCIES_TAG" "PACKAGING_APPIMAGE_DEPENDENCIES_SOURCE" "PACKAGING_APPIMAGE_DEPENDENCIES_TEMP_ARCHIVE_NAME" \
+	"PACKAGING_FAQ_URL"
 
 TAG="$1"
 if [ $# -eq "1" ]; then
@@ -64,6 +74,11 @@ make core SDK="-sdk:4.5"
 make install-engine prefix="usr" DESTDIR="${BUILTDIR}/"
 make install-common-mod-files prefix="usr" DESTDIR="${BUILTDIR}/"
 
+for f in ${PACKAGING_COPY_ENGINE_FILES}; do
+  mkdir -p "${BUILTDIR}/usr/lib/openra/$(dirname "${f}")"
+  cp -r "${f}" "${BUILTDIR}/usr/lib/openra/${f}"
+done
+
 popd > /dev/null
 popd > /dev/null
 
@@ -78,7 +93,7 @@ chmod a+x appimagetool-x86_64.AppImage
 echo "Building AppImage"
 
 # Add mod files
-cp -r "${TEMPLATE_ROOT}/mods/"* "${BUILTDIR}/usr/lib/openra/mods"
+cp -Lr "${TEMPLATE_ROOT}/mods/"* "${BUILTDIR}/usr/lib/openra/mods"
 
 install -Dm 0755 libSDL2.so "${BUILTDIR}/usr/lib/openra/"
 install -Dm 0644 include/SDL2-CS.dll.config "${BUILTDIR}/usr/lib/openra/"

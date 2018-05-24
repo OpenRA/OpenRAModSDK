@@ -5,6 +5,18 @@
 command -v curl >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires curl."; exit 1; }
 command -v python >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires python."; exit 1; }
 
+require_variables() {
+	missing=""
+	for i in "$@"; do
+		eval check="\$$i"
+		[ -z "${check}" ] && missing="${missing}   ${i}\n"
+	done
+	if [ ! -z "${missing}" ]; then
+		echo "Required mod.config variables are missing:\n${missing}Repair your mod.config (or user.config) and try again."
+		exit 1
+	fi
+}
+
 TEMPLATE_LAUNCHER=$(python -c "import os; print(os.path.realpath('$0'))")
 TEMPLATE_ROOT=$(dirname "${TEMPLATE_LAUNCHER}")
 
@@ -16,6 +28,8 @@ if [ -f "${TEMPLATE_ROOT}/user.config" ]; then
 	. "${TEMPLATE_ROOT}/user.config"
 fi
 
+require_variables "MOD_ID" "ENGINE_VERSION" "ENGINE_DIRECTORY"
+
 CURRENT_ENGINE_VERSION=$(cat "${ENGINE_DIRECTORY}/VERSION" 2> /dev/null)
 
 if [ -f "${ENGINE_DIRECTORY}/VERSION" ] && [ "${CURRENT_ENGINE_VERSION}" = "${ENGINE_VERSION}" ]; then
@@ -23,6 +37,8 @@ if [ -f "${ENGINE_DIRECTORY}/VERSION" ] && [ "${CURRENT_ENGINE_VERSION}" = "${EN
 fi
 
 if [ "${AUTOMATIC_ENGINE_MANAGEMENT}" = "True" ]; then
+	require_variables "AUTOMATIC_ENGINE_SOURCE" "AUTOMATIC_ENGINE_EXTRACT_DIRECTORY" "AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME"
+
 	echo "OpenRA engine version ${ENGINE_VERSION} is required."
 
 	if [ -d "${ENGINE_DIRECTORY}" ]; then

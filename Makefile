@@ -25,12 +25,7 @@
 VERSION = $(shell git name-rev --name-only --tags --no-undefined HEAD 2>/dev/null || echo git-`git rev-parse --short HEAD`)
 MOD_ID = $(shell cat user.config mod.config 2> /dev/null | awk -F= '/MOD_ID/ { print $$2; exit }')
 ENGINE_DIRECTORY = $(shell cat user.config mod.config 2> /dev/null | awk -F= '/ENGINE_DIRECTORY/ { print $$2; exit }')
-INCLUDE_DEFAULT_MODS = $(shell cat user.config mod.config 2> /dev/null | awk -F= '/INCLUDE_DEFAULT_MODS/ { print $$2; exit }')
-
-MOD_SEARCH_PATHS = "$(shell python -c "import os; print(os.path.realpath('.'))")/mods"
-ifeq ($(INCLUDE_DEFAULT_MODS),"True")
-	MOD_SEARCH_PATHS := "$(MOD_SEARCH_PATHS),./mods"
-endif
+MOD_SEARCH_PATHS = "$(shell python -c "import os; print(os.path.realpath('.'))")/mods,./mods"
 
 MANIFEST_PATH = "mods/$(MOD_ID)/mod.yaml"
 
@@ -39,7 +34,20 @@ HAS_LUAC = $(shell command -v luac 2> /dev/null)
 LUA_FILES = $(shell find mods/*/maps/* -iname '*.lua')
 PROJECT_DIRS = $(shell dirname $$(find . -iname "*.csproj" -not -path "$(ENGINE_DIRECTORY)/*"))
 
-engine:
+variables:
+	@if [ -z "$(MOD_ID)" ] || [ -z "$(ENGINE_DIRECTORY)" ];then \
+			echo "Required mod.config variables are missing:"; \
+			if [ -z "$(MOD_ID)" ]; then \
+				echo "   MOD_ID"; \
+			fi; \
+			if [ -z "$(ENGINE_DIRECTORY)" ]; then \
+				echo "   ENGINE_DIRECTORY"; \
+			fi; \
+			echo "Repair your mod.config (or user.config) and try again."; \
+			exit 1; \
+		fi
+
+engine: variables
 	@./fetch-engine.sh || (printf "Unable to continue without engine files\n"; exit 1)
 	@cd $(ENGINE_DIRECTORY) && make core
 
@@ -65,13 +73,13 @@ endif
 	@cd $(ENGINE_DIRECTORY) && make clean
 	@printf "The engine has been cleaned.\n"
 
-version:
+version: variables
 	@awk '{sub("Version:.*$$","Version: $(VERSION)"); print $0}' $(MANIFEST_PATH) > $(MANIFEST_PATH).tmp && \
 	awk '{sub("/[^/]*: User$$", "/$(VERSION): User"); print $0}' $(MANIFEST_PATH).tmp > $(MANIFEST_PATH) && \
 	rm $(MANIFEST_PATH).tmp
 	@printf "Version changed to $(VERSION).\n"
 
-check-scripts:
+check-scripts: variables
 ifeq ("$(HAS_LUAC)","")
 	@printf "'luac' not found.\n" && exit 1
 endif
