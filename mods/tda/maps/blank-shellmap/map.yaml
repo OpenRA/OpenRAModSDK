@@ -33,3 +33,5 @@ Rules:
 		MusicPlaylist:
 			BackgroundMusic: mainmenumusic
 			DisableWorldSounds: true
+		LuaScript:
+			Scripts: intro.lua

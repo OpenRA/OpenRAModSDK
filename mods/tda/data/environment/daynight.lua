@@ -5,12 +5,18 @@ ColorB = 1.000
 TimeOfDay = 10.50
 
 WorldLoaded = function()
--- Pick the starting hour
+	neutral = Player.GetPlayer("Neutral")
+
+	-- Pick the starting hour
 	Hour10h()
--- The "Clock"
-	AddHour()
--- The Repeat script
-	Repeat()
+	
+	if neutral.HasPrerequisites( { "MapEffects" } ) then
+		-- The "Clock"
+		AddHour()
+
+		-- The Repeat script
+		Repeat()
+	end
 end
 
 AddHour = function()
@@ -64,7 +70,7 @@ Hour1 = function()
 		ColorR = (1.000)
 		ColorG = (1.000)
 		ColorB = (1.150)
-		Light = (0.350)
+		Light = (0.400)
 	end
 end
 
@@ -77,7 +83,7 @@ Hour1h = function()
 		ColorR = (1.000)
 		ColorG = (1.000)
 		ColorB = (1.200)
-		Light = (0.350)
+		Light = (0.400)
 	end
 end
 
@@ -91,7 +97,7 @@ Hour2 = function()
 		ColorR = (1.000)
 		ColorG = (1.000)
 		ColorB = (1.250)
-		Light = (0.350)
+		Light = (0.400)
 	end
 end
 
@@ -104,7 +110,7 @@ Hour2h = function()
 		ColorR = (1.000)
 		ColorG = (1.000)
 		ColorB = (1.300)
-		Light = (0.350)
+		Light = (0.400)
 	end
 end
 
@@ -118,7 +124,7 @@ Hour3 = function()
 		ColorR = (1.000)
 		ColorG = (1.000)
 		ColorB = (1.350)
-		Light = (0.350)
+		Light = (0.400)
 --		Lighting.Blue = 1.250
 	end
 end

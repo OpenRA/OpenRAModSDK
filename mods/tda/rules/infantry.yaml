@@ -2,7 +2,7 @@ SPY:
 	Inherits: ^Infantry
 	Buildable:
 		BuildPaletteOrder: 90
-		Prerequisites: ~anytech, ~techlevel.high, ~!research_heavy_weapons_nod, ~research_stlh_weapons_nod
+		Prerequisites: ~anytech, ~techlevel.high
 		Queue: Infantry.Nod
 		BuildDuration: 500
 		Description: Infiltrates enemy structures for intel or\nsabotage. Exact effect depends on the\nbuilding infiltrated.\nLoses disguise when attacking.\nCan detect cloaked units and spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n  Special Ability: Disguised
@@ -275,7 +275,7 @@ E2:
 		Name: Grenadier
 	Buildable:
 		BuildPaletteOrder: 40
-		Prerequisites: ~anyhq, ~techlevel.medium
+		Prerequisites: ~anyhq, ~techlevel.medium, ~disabled
 		Queue: Infantry.GDI
 		Description: Fast infantry armed with grenades. \n  Strong vs Buildings, slow-moving targets
 	Mobile:
@@ -313,7 +313,7 @@ E3:
 		Name: Rocket Soldier
 	Buildable:
 		BuildPaletteOrder: 20
-		Queue: Infantry.Nod
+		Queue: Infantry.Nod, Infantry.GDI
 		Description: Anti-tank/Anti-aircraft infantry. \n  Strong vs Tanks, Aircraft\n  Weak vs Infantry
 	Mobile:
 		Speed: 42

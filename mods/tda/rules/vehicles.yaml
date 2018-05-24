@@ -117,6 +117,7 @@ DTRK:
 		MinimumDamageState: Heavy
 		MaximumDamageState: Dead
 	-ProducibleWithLevel:
+	-Carryable:
 
 MNLYNOD:
 	Inherits: ^Tank
@@ -408,22 +409,20 @@ FTNK:
 	Explodes:
 		Weapon: FlametankExplode
 		EmptyWeapon: FlametankExplode
-	SpawnActorOnDeath:
-		Actor: FTNK.Husk
 
 CTNK:
 	Inherits: ^Tank
 	Inherits@CLOAK: ^AcceptsCloakCrate
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Valued:
-		Cost: 800
+		Cost: 1200
 	Tooltip:
 		Name: Chemical Tank
 	Buildable:
 		BuildPaletteOrder: 50
 		Prerequisites: ~anytech, ~research_bio_nod, ~techlevel.medium
 		Queue: Vehicle.Nod, Vehicle.Nodda
-		Description: Heavily armored Chemical-throwing vehicle.\n  Strong vs Infantry, Buildings and Vehicles\n  Weak vs Tanks
+		Description: Heavily armored Chemical-throwing vehicle.\n  Strong vs Infantry, Buildings and Vehicles\n  Weak vs Defence
 	Mobile:
 		TurnSpeed: 7
 		Speed: 99
@@ -442,8 +441,6 @@ CTNK:
 	Explodes:
 		Weapon: ChemtankExplode
 		EmptyWeapon: ChemtankExplode
-	SpawnActorOnDeath:
-		Actor: FTNK.Husk
 
 BGGY:
 	Inherits: ^Vehicle

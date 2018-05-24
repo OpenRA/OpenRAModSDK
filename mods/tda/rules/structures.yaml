@@ -141,7 +141,7 @@ AFLDRA:
 		Name: Nod Airfield
 	Buildable:
 		BuildPaletteOrder: 300
-		Prerequisites: ~anyhq, ~techlevel.high
+		Prerequisites: ~anyhq, ~techlevel.high, ~disabled
 		Queue: Building.Nod, Building.Nodda
 		Description: Produces and reloads aircraft.
 	Building:
@@ -556,7 +556,10 @@ AFLD:
 		LowPowerSlowdown: 3
 		ReadyAudio:
 		Factions: nodda
-	ProductionBar:
+	ProductionBar@Nod:
+		ProductionType: Vehicle.Nod
+	ProductionBar@Nodda:
+		ProductionType: Vehicle.Nodda
 	Power:
 		Amount: -30
 	ProvidesPrerequisite@buildingname:
@@ -652,7 +655,7 @@ HPAD:
 	RevealsShroud:
 		Range: 5c0
 	ProductionFromMapEdge:
-		Produces: Aircraft.GDI, Aircraft.Nod
+		Produces: Aircraft.GDI, Aircraft.Nod, Aircraft.Nodda
 	Reservable:
 	Exit@1:
 		SpawnOffset: 0,-256,0
@@ -664,13 +667,20 @@ HPAD:
 		LowPowerSlowdown: 3
 	ProductionQueue@Nod:
 		Type: Aircraft.Nod
-		Factions: nod, nodda
+		Factions: nod
+		Group: Aircraft
+		LowPowerSlowdown: 3
+	ProductionQueue@Nodda:
+		Type: Aircraft.Nodda
+		Factions: nodda
 		Group: Aircraft
 		LowPowerSlowdown: 3
 	ProductionBar@GDI:
 		ProductionType: Aircraft.GDI
 	ProductionBar@Nod:
 		ProductionType: Aircraft.Nod
+	ProductionBar@Nodda:
+		ProductionType: Aircraft.Nodda
 	Power:
 		Amount: -10
 	ProvidesPrerequisite@buildingname:
@@ -1270,7 +1280,7 @@ MISS_GDI:
 		Prerequisites: ~anyhq, ~techlevel.high
 		Description: Provides GDI advanced technologies.
 	Valued:
-		Cost: 600
+		Cost: 2000
 	WithBuildingBib:
 		HasMinibib: Yes
 	WithMakeAnimation:
@@ -1290,7 +1300,7 @@ MISS_GDI:
 	Power:
 		Amount: -200
 	Health:
-		HP: 1000
+		HP: 600
 	WithDecoration@POWERDOWN:
 		Image: poweroff
 		Sequence: offline
@@ -1540,6 +1550,111 @@ PBOX:
 	RenderSprites:
 		PlayerPalette: playerRA
 	IgnoresDisguise:
+
+FTUR:
+	Inherits: ^Defense
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Buildable:
+		BuildPaletteOrder: 50
+		Prerequisites: ~barracks, ~!research_bio_nod
+		Queue: Defence.Nodda
+		BuildDuration: 1440
+		BuildDurationModifier: 40
+		Description: Anti-Infantry base defense.\nCan detect cloaked units.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Flame Tower
+	Building:
+	Health:
+		HP: 600
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	WithBuildingBib:
+		HasMinibib: Yes
+	Turreted:
+		TurnSpeed: 255
+		Offset: 0,0,112
+	AttackTurreted:
+	-QuantizeFacingsFromSequence:
+	BodyOrientation:
+		QuantizedFacings: 8
+	Power:
+		Amount: -20
+	DetectCloaked:
+		Range: 5c0
+	GrantConditionOnPrerequisite:
+		Condition: bio_nod
+		Prerequisites: research_bio_nod
+	Armament@flame:
+		Weapon: FireballLauncher
+		LocalOffset: 512,0,0
+		RequiresCondition: !bio_nod
+	Armament@chem:
+		Weapon: ChemballLauncher
+		LocalOffset: 512,0,0
+		RequiresCondition: bio_nod
+	Explodes@ChemUpgradeOff:
+		Weapon: FlametankExplode
+		EmptyWeapon: FlametankExplode
+		RequiresCondition: !bio_nod
+	Explodes@ChemUpgradeOn:
+		Weapon: ChemtankExplode
+		EmptyWeapon: ChemtankExplode
+		RequiresCondition: bio_nod
+	WithIdleOverlay@ChemUpgradeOn:
+		RequiresCondition: bio_nod && !Damaged
+		Sequence: idle-chem
+		RenderBeforeBuildComplete: false
+	GrantConditionOnDamageState:
+		ValidDamageStates: Heavy, Critical
+		Condition: Damaged
+	WithIdleOverlay@ChemDamagedUpgradeOn:
+		Sequence: damaged-idle-chem
+		RequiresCondition: bio_nod && Damaged
+
+CTUR:
+	Inherits: ^Defense
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Buildable:
+		BuildPaletteOrder: 50
+		Prerequisites: ~barracks, ~research_bio_nod
+		Queue: Defence.Nodda
+		BuildDuration: 1440
+		BuildDurationModifier: 40
+		Description: Anti-Infantry base defense.\nCan detect cloaked units.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Chem Tower
+	Building:
+	Health:
+		HP: 600
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	WithBuildingBib:
+		HasMinibib: Yes
+	Turreted:
+		TurnSpeed: 255
+		Offset: 0,0,112
+	Armament:
+		Weapon: ChemballLauncher
+		LocalOffset: 512,0,0
+	AttackTurreted:
+	-QuantizeFacingsFromSequence:
+	BodyOrientation:
+		QuantizedFacings: 8
+	Power:
+		Amount: -20
+	DetectCloaked:
+		Range: 5c0
+	Explodes:
+		Weapon: ChemtankExplode
+		EmptyWeapon: ChemtankExplode
 
 ATWR:
 	Inherits: ^Defense

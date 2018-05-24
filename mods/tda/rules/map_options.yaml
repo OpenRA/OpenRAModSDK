@@ -30,6 +30,13 @@ Player:
 		Enabled: False
 		DisplayOrder: 10
 		Prerequisites: HarvesterTruce
+	LobbyPrerequisiteCheckbox@MAPEFFECTS:
+		ID: mapeffects
+		Label: Map Effects
+		Description: Show day/night cycle and weather effects on the maps.
+		Enabled: True
+		DisplayOrder: 10
+		Prerequisites: MapEffects
 
 World:
 	MapBuildRadius:

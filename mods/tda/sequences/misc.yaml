@@ -52,6 +52,28 @@ fb4:
 		Length: 4
 		ZOffset: 1023
 
+#RA fireball
+rafb1:
+	idle:
+		Length: *
+		ZOffset: 1023
+rafb2:
+	idle:
+		Length: *
+		ZOffset: 1023
+#RA fireball^
+
+#RA chemball
+racb1:
+	idle:
+		Length: *
+		ZOffset: 1023
+racb2:
+	idle:
+		Length: *
+		ZOffset: 1023
+#RA chemball^
+
 fire:
 	1: fire1
 		Length: *

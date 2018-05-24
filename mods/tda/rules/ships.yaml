@@ -36,34 +36,37 @@ BOAT:
 		Speed: 28
 		InitialFacing: 64
 
-# GUNBOAT:
-	# Inherits: ^Ship
-	# Valued:
-		# Cost: 300
-	# Tooltip:
-		# Name: Gunboat
-	# Health:
-		# HP: 700
-	# Armor:
-		# Type: Heavy
-	# Mobile:
-		# TurnSpeed: 3
-		# Speed: 42
-	# RevealsShroud:
-		# Range: 7c0
-	# Turreted:
-		# TurnSpeed: 7
-	# Armament
-		# Weapon: TurretGunBoatGun
-		# LocalOffset: 550,0,128
-		# MuzzleSequence: muzzle
-	# AttackTurreted:
-	# WithMuzzleOverlay:
-	# SelectionDecorations:
-	# WithSpriteTurret:
-	# AutoTarget:
-	# WithFacingSpriteBody:
-	# AttackMove:
+GUNBOAT:
+	Inherits: ^Ship
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Gunboat
+	Health:
+		HP: 700
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 3
+		Speed: 42
+	RevealsShroud:
+		Range: 7c0
+	Turreted:
+		TurnSpeed: 7
+		Offset: 2550,-30,600
+	Armament
+		Weapon: TurretGunBoatGun
+		LocalOffset: 550,0,0
+		MuzzleSequence: muzzle
+	AttackTurreted:
+	WithMuzzleOverlay:
+	SelectionDecorations:
+	WithSpriteTurret:
+	AutoTarget:
+	WithFacingSpriteBody:
+	AttackMove:
+	RenderSprites:
+		PlayerPalette: playerRA
 
 #[12:46] <+pchote> the center of the deck needs to match the center of rotation of the actor
 #[12:46] <+pchote> if the center moves with facing then you can't position anything properl

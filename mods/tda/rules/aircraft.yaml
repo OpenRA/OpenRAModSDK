@@ -8,7 +8,7 @@ TRAN:
 	Buildable:
 		BuildPaletteOrder: 10
 		Prerequisites: hpad
-		Queue: Aircraft.GDI, Aircraft.Nod
+		Queue: Aircraft.GDI, Aircraft.Nod, Aircraft.Nodda
 		Description: Infantry Transport Helicopter.\n  Unarmed
 	Aircraft:
 		LandWhenIdle: true
@@ -68,7 +68,7 @@ OSPREY:
 	Buildable:
 		BuildPaletteOrder: 10
 		Prerequisites: hpad
-		Queue: Aircraft.GDI, Aircraft.Nod
+		Queue: Aircraft.GDI, Aircraft.Nod, Aircraft.Nodda
 		Description: Vehicle And Infantry Transport Helicopter.\n  Unarmed
 	Aircraft:
 		LandWhenIdle: True
@@ -171,7 +171,7 @@ F22:
 	Inherits: ^Plane
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
-		Queue: Aircraft.Nod
+		Queue: Aircraft.Nod, Aircraft.Nodda
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 50
 		Prerequisites: ~afldra, ~techlevel.high
@@ -244,7 +244,7 @@ HELI:
 	Buildable:
 		BuildPaletteOrder: 20
 		Prerequisites: ~hpad, ~anyhq, ~techlevel.medium
-		Queue: Aircraft.Nod
+		Queue: Aircraft.Nod, Aircraft.Nodda
 		Description: Attack Helicopter.\n  Strong vs Infantry, Light Vehicles and\n  Aircraft\n  Weak vs Tanks
 	Aircraft:
 		RearmBuildings: hpad

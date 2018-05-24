@@ -45,6 +45,53 @@ pbox:
 		Start: 1
 		Tick: 800
 
+ftur:
+	idle:
+		Offset: 0,-2
+	idle-chem: ctur
+		Offset: 0,-2
+	damaged-idle-chem:
+		Start: 2
+		Offset: 0,-2
+	damaged-idle:
+		Start: 1
+		Offset: 0,-2
+	make: fturmake
+		Length: *
+		Offset: 0,-2
+	bib: mbGUN
+		TilesetOverrides:
+			WINTER: TEMPERAT
+		UseTilesetExtension: true
+		Length: *
+		Offset: -1,-1
+	icon: fcturicon
+		Start: 0
+	dead:
+		Start: 1
+		Tick: 800
+
+ctur:
+	idle:
+		Offset: 0,-2
+	damaged-idle:
+		Start: 1
+		Offset: 0,-2
+	make: cturmake
+		Length: *
+		Offset: 0,-2
+	bib: mbGUN
+		TilesetOverrides:
+			WINTER: TEMPERAT
+		UseTilesetExtension: true
+		Length: *
+		Offset: -1,-1
+	icon: fcturicon
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+
 nuke:
 	idle:
 		Length: 4

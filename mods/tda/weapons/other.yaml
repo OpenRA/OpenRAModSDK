@@ -1,3 +1,65 @@
+^FireWeaponRA:
+	ValidTargets: Ground, Water, Trees
+	ReloadDelay: 65
+	Range: 5c0
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: 75
+		InvalidTargets: Wall
+		ValidTargets: Ground, Trees
+		Versus:
+			None: 100
+			Wood: 100
+			Light: 100
+			Heavy: 25
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Structure, Wall
+	Warhead@3Eff: CreateEffect
+		Explosions: small_napalm
+		ImpactSounds: firebl3.aud
+		VictimScanRadius: 0
+
+^ChemWeaponRA:
+	ValidTargets: Ground, Water, Trees
+	ReloadDelay: 65
+	Range: 5c0
+	InvalidTargets: Wall
+	Warhead@1Dam: SpreadDamage
+		Spread: 256
+		Damage: 95
+		Versus:
+			None: 100
+			Wood: 100
+			Light: 100
+			Heavy: 100
+		DamageTypes: Prone50Percent, TriggerProne, TiberiumDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Structure, Wall
+	Warhead@3Eff: CreateEffect
+		Explosions: chemball
+		ImpactSounds: firebl3.aud
+		VictimScanRadius: 0
+
+FireballLauncher:
+	Inherits: ^FireWeaponRA
+	Burst: 2
+	BurstDelays: 20
+	Projectile: Bullet
+		Speed: 250
+		TrailImage: rafb2
+		Image: RAFB1
+
+ChemballLauncher:
+	Inherits: ^ChemWeaponRA
+	Burst: 2
+	BurstDelays: 20
+	Projectile: Bullet
+		Speed: 250
+		TrailImage: racb2
+		Image: RACB1
+	
 Flamethrower:
 	ValidTargets: Ground, Trees
 	ReloadDelay: 55

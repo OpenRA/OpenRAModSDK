@@ -52,7 +52,7 @@ Rockets:
 
 TOW:
 	Inherits: Rockets
-	ValidTargets: Air, Vehicle, Structure, Wall
+	ValidTargets: Air, Vehicle, Tank, Structure, Wall
 
 BikeRockets:
 	Inherits: ^RocketsBasic
