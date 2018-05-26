@@ -1,7 +1,8 @@
-Fixed: homvee missile to target tanks
-Added: new lobby option to disable day night cycle and weather effects, Contribution by MustaphaTR
-Changed: night time to be less dark
-Added: intro video
+Fixed: homvee missile to target tanks.
+Added: new lobby option to disable day night cycle and weather effects, Contribution by MustaphaTR.
+Changed: night time to be less dark.
+Added: intro video.
+Fixed: bright corpse at night time.
 
 
 

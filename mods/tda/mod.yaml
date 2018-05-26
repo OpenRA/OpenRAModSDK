@@ -9,6 +9,7 @@ Packages:
 	~^Content/cnc/movies
 	.
 	$tda: tda
+	$d2k: d2k
 	./mods/common: common
 	~speech.mix
 	~conquer.mix
@@ -28,6 +29,7 @@ Packages:
 	tda|data/icon
 	tda|data/palettes
 	tda|data/fonts
+	tda|data/videos
 	tda|data/sounds
 	tda|data/sounds/weapons/impact
 	tda|data/sounds/weapons/fire
@@ -112,7 +114,6 @@ Assemblies:
 	common|OpenRA.Mods.Common.dll
 	common|OpenRA.Mods.Cnc.dll
 	d2k|OpenRA.Mods.D2k.dll
-	# tda|OpenRA.Mods.yupgi_alert.dll
 
 ChromeLayout:
 	tda|chrome/mainmenu.yaml

@@ -464,6 +464,9 @@
 			FireDeath: 5
 			TiberiumDeath: 6
 		CrushedSequence: die-crushed
+		CrushedSequencePalette:	terrain
+		CrushedPaletteIsPlayerPalette: false
+#^ wtf is Multi0 palette any way?
 	AttackMove:
 	DrawLineToTarget:
 	Passenger:
