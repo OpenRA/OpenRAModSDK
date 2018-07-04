@@ -132,6 +132,8 @@ install -m 0755 openra-mod.temp "${BUILTDIR}/usr/bin/openra-${MOD_ID}"
 sed "s/{MODID}/${MOD_ID}/g" include/mod-server.in  > openra-mod-server.temp
 install -m 0755 openra-mod-server.temp "${BUILTDIR}/usr/bin/openra-${MOD_ID}-server"
 
+install -m 0755 include/gtk-dialog.py "${BUILTDIR}/usr/bin/gtk-dialog.py"
+
 # travis-ci doesn't support mounting FUSE filesystems so extract and run the contents manually
 ./appimagetool-x86_64.AppImage --appimage-extract
 ARCH=x86_64 ./squashfs-root/AppRun "${BUILTDIR}" "${OUTPUTDIR}/${PACKAGING_INSTALLER_NAME}-${TAG}.AppImage"
