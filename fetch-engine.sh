@@ -2,7 +2,7 @@
 # Helper script used to check and update engine dependencies
 # This should not be called manually
 
-command -v curl >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires curl."; exit 1; }
+command -v curl >/dev/null 2>&1 || command -v wget > /dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires curl or wget."; exit 1; }
 command -v python >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires python."; exit 1; }
 
 require_variables() {
@@ -52,7 +52,11 @@ if [ "${AUTOMATIC_ENGINE_MANAGEMENT}" = "True" ]; then
 	fi
 
 	echo "Downloading engine..."
-	curl -s -L -o "${AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME}" -O "${AUTOMATIC_ENGINE_SOURCE}" || exit 3
+	if command -v curl > /dev/null 2>&1; then
+		curl -s -L -o "${AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME}" -O "${AUTOMATIC_ENGINE_SOURCE}" || exit 3
+	else
+		wget -cq "${AUTOMATIC_ENGINE_SOURCE}" -O "${AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME}" || exit 3
+	fi
 
 	# Github zipballs package code with a top level directory named based on the refspec
 	# Extract to a temporary directory and then move the subdir to our target location
