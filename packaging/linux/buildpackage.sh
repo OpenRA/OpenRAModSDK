@@ -5,7 +5,7 @@ set -e
 command -v make >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires make."; exit 1; }
 command -v python >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires python."; exit 1; }
 command -v tar >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires tar."; exit 1; }
-command -v curl >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires curl."; exit 1; }
+command -v curl >/dev/null 2>&1 || command -v wget > /dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires curl or wget."; exit 1; }
 
 require_variables() {
 	missing=""
@@ -90,10 +90,14 @@ popd > /dev/null
 
 # Add native libraries
 echo "Downloading dependencies"
-curl -s -L -o "${PACKAGING_APPIMAGE_DEPENDENCIES_TEMP_ARCHIVE_NAME}" -O "${PACKAGING_APPIMAGE_DEPENDENCIES_SOURCE}" || exit 3
+if command -v curl >/dev/null 2>&1; then
+	curl -s -L -o "${PACKAGING_APPIMAGE_DEPENDENCIES_TEMP_ARCHIVE_NAME}" -O "${PACKAGING_APPIMAGE_DEPENDENCIES_SOURCE}" || exit 3
+	curl -s -L -O https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage || exit 3
+else
+	wget -cq "${PACKAGING_APPIMAGE_DEPENDENCIES_SOURCE}" -O "${PACKAGING_APPIMAGE_DEPENDENCIES_TEMP_ARCHIVE_NAME}" || exit 3
+	wget -cq https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage || exit 3
+fi
 tar xf "${PACKAGING_APPIMAGE_DEPENDENCIES_TEMP_ARCHIVE_NAME}"
-
-curl -s -L -O https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
 chmod a+x appimagetool-x86_64.AppImage
 
 echo "Building AppImage"
