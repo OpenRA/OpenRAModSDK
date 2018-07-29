@@ -1,8 +1,6 @@
 General:
 	Name: Template
 	Id: TEMPLATE
-	Palette: template.pal
-	PlayerPalette: template.pal
 
 Terrain:
 	TerrainType@Clear:

@@ -1,6 +1,4 @@
 World:
-	PaletteFromCurrentTileset:
-		Name: terrain
 	AlwaysVisible:
 	ActorMap:
 	ScreenMap:
@@ -10,14 +8,28 @@ World:
 		InternalName: example
 		Side: Example
 		Selectable: False
+	PaletteFromFile:
+		Name: terrain
+		Tileset: TEMPLATE
+		Filename: template.pal
+		ShadowIndex:
+
+DummyActor:
+	BodyOrientation:
+	HitShape:
+	AlwaysVisible:
+
 
 Player:
 	AlwaysVisible:
 	TechTree:
 	PlaceBuilding:
 	SupportPowerManager:
-	PowerManager:
 	PlayerResources:
 	DeveloperMode:
 	Shroud:
 	FrozenActorLayer:
+
+EditorPlayer:
+	AlwaysVisible:
+	Shroud:
