@@ -105,3 +105,18 @@
 		ExcludePalettes: flashyeffectra, flashyeffect, effect, effectra, staticterrain, staticdesert, staticplayer, chrome, alpha, ra2foricamos, playerRA
 		RotationBase: 32
 		RotationStep: 0.05
+	PaletteFromFile@depth:
+		Name: depth
+		Filename: depth.pal
+	VoxelNormalsPalette@normals:
+		Name: normals
+		Type: RedAlert2
+		# Type: RedAlert2 or TiberianSun
+	PaletteFromFile@playerTS:
+		Name: playerTS
+		Filename: TS.pal
+		ShadowIndex: 1
+	PlayerColorPalette@playerTS:
+		BasePalette: playerTS
+		BaseName: playerTS
+		RemapIndex: 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31

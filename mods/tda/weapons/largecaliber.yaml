@@ -1,5 +1,6 @@
 70mm:
 	Inherits: ^FireTrailL
+	Inherits: ^ImpactHitForceShellLight
 	ReloadDelay: 30
 	Range: 4c0
 	Report: tnkfire3.aud
@@ -25,11 +26,6 @@
 		ImpactSounds: xplos.aud
 		InvalidTargets: Water
 		ExplosionPalette: flashyeffect
-	# Warhead@4Eff: CreateEffect
-		# Explosions: sml_splash
-		# ImpactSounds: ssplash3.aud
-		# ExplosionPalette: effectra
-		# ValidTargets : Water
 	Warhead@5EffFlash: CreateEffect
 		Explosions: flash3small
 		ExplosionPalette: alpha
@@ -37,6 +33,7 @@
 
 105mm:
 	Inherits: ^FireTrailL
+	Inherits: ^ImpactHitForceShellLight
 	ReloadDelay: 50
 	Range: 4c768
 	Report: tnkfire4.aud
@@ -61,6 +58,7 @@
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
 		ExplosionPalette: flashyeffect
+		InvalidTargets: Water
 	Warhead@4EffFlash: CreateEffect
 		Explosions: flash3small
 		ExplosionPalette: alpha
@@ -68,6 +66,7 @@
 
 105mmRA:
 	Inherits: ^FireTrailL
+	Inherits: ^ImpactHitForceShellLight
 	ReloadDelay: 70
 	Range: 4c768
 	Report: cannon1.aud
@@ -102,6 +101,7 @@
 
 120mm:
 	Inherits: ^FireTrailL
+	Inherits: ^ImpactHitForceShellLight
 	ReloadDelay: 40
 	Range: 5c768
 	Report: tnkfire6.aud
@@ -126,6 +126,7 @@
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
 		ExplosionPalette: flashyeffect
+		InvalidTargets: Water
 	Warhead@4EffFlash: CreateEffect
 		Explosions: flash3small
 		ExplosionPalette: alpha
@@ -133,6 +134,7 @@
 
 120mmDual:
 	Inherits: ^FireTrailL
+	Inherits: ^ImpactHitForceShellLight
 	ReloadDelay: 40
 	Range: 4c768
 	Report: tnkfire6.aud
@@ -159,6 +161,7 @@
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
 		ExplosionPalette: flashyeffect
+		InvalidTargets: Water
 	Warhead@4EffFlash: CreateEffect
 		Explosions: flash3small
 		ExplosionPalette: alpha
@@ -166,6 +169,7 @@
 
 TurretGun:
 	Inherits: ^FireTrailL
+	Inherits: ^ImpactHitForceShellLight
 	ReloadDelay: 20
 	Range: 6c0
 	Report: tnkfire6.aud
@@ -190,6 +194,7 @@ TurretGun:
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
 		ExplosionPalette: flashyeffect
+		InvalidTargets: Water
 	Warhead@4EffFlash: CreateEffect
 		Explosions: flash3small
 		ExplosionPalette: alpha
@@ -197,6 +202,7 @@ TurretGun:
 
 TurretGunBoatGun:
 	Inherits: ^FireTrailL
+	Inherits: ^ImpactHitForceShellLight
 	ReloadDelay: 20
 	Range: 12c0
 	MinRange: 6c0
@@ -222,12 +228,15 @@ TurretGunBoatGun:
 		Explosions: small_frag
 		ImpactSounds: xplos.aud
 		ExplosionPalette: flashyeffect
+		InvalidTargets: Water
 	Warhead@4EffFlash: CreateEffect
 		Explosions: flash3small
 		ExplosionPalette: alpha
 		InvalidTargets: Water
 
 ArtilleryShell:
+	Inherits: ^ImpactSoundsShell
+	Inherits: ^ImpactHitForceShellMedium
 	ReloadDelay: 105
 	Range: 11c0
 	MinRange: 2c896
@@ -257,6 +266,7 @@ ArtilleryShell:
 		Explosions: poof
 		ImpactSounds: xplosml2.aud
 		ExplosionPalette: flashyeffect
+		InvalidTargets: Water
 	Warhead@4EffFlash: CreateEffect
 		Explosions: flash3
 		ExplosionPalette: alpha
@@ -264,6 +274,7 @@ ArtilleryShell:
 
 HeavyArtilleryShell:
 	Inherits: ^FireTrailL
+	Inherits: ^ImpactHitForceShellMedium
 	Range: 4c0
 	Burst: 2
 	BurstDelay: 3
@@ -293,6 +304,7 @@ HeavyArtilleryShell:
 		Explosions: poof
 		ImpactSounds: xplosml2.aud
 		ExplosionPalette: flashyeffect
+		InvalidTargets: Water
 	Warhead@4EffFlash: CreateEffect
 		Explosions: flash3
 		ExplosionPalette: alpha

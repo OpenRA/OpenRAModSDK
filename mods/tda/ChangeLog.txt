@@ -1,8 +1,10 @@
 Fixed: homvee missile to target tanks.
 Added: new lobby option to disable day night cycle and weather effects, Contribution by MustaphaTR.
 Changed: night time to be less dark.
-Added: intro video.
 Fixed: bright corpse at night time.
+Fixed: impact sounds of shells vs buildings to be more loud.
+Added: water impact visual and sound effect to bullets and shells.
+
 
 
 

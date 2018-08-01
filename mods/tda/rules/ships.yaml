@@ -2,7 +2,6 @@ BOAT:
 	Inherits: ^Ship
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAll
-	-Mobile:
 	Valued:
 		Cost: 300
 	Tooltip:
@@ -11,8 +10,11 @@ BOAT:
 		HP: 700
 	Armor:
 		Type: Heavy
+	TDGunboat:
+		Speed: 28
 	RevealsShroud:
 		Range: 7c0
+		Type: CenterPosition
 	Turreted:
 		TurnSpeed: 5
 		Offset: 0,896,171
@@ -32,9 +34,18 @@ BOAT:
 		AllowMovement: false
 	RejectsOrders:
 	SelectionDecorations:
-	TDGunboat:
-		Speed: 28
-		InitialFacing: 64
+	GrantConditionOnDamageState@HEAVY:
+		Condition: heavy-damage
+		ValidDamageStates: Heavy
+	GrantConditionOnDamageState@CRITICAL:
+		Condition: critical-damage
+		ValidDamageStates: Critical
+	SpeedMultiplier@HEAVYDAMAGE:
+		RequiresCondition: heavy-damage
+		Modifier: 75
+	SpeedMultiplier@CRITICALDAMAGE:
+		RequiresCondition: critical-damage
+		Modifier: 50
 
 GUNBOAT:
 	Inherits: ^Ship
@@ -47,14 +58,14 @@ GUNBOAT:
 	Armor:
 		Type: Heavy
 	Mobile:
-		TurnSpeed: 3
+		TurnSpeed: 2
 		Speed: 42
 	RevealsShroud:
 		Range: 7c0
 	Turreted:
 		TurnSpeed: 7
-		Offset: 2550,-30,600
-	Armament
+		Offset: 2550,0,0
+	Armament:
 		Weapon: TurretGunBoatGun
 		LocalOffset: 550,0,0
 		MuzzleSequence: muzzle
@@ -67,11 +78,52 @@ GUNBOAT:
 	AttackMove:
 	RenderSprites:
 		PlayerPalette: playerRA
+	Contrail@1:
+		Offset: -3500,-500,0
+		TrailLength: 50
+		Color: 3F7FBF
+		UsePlayerColor: False
+		TrailWidth: 0c128
+	Contrail@2:
+		Offset: -3500,-400,0
+		TrailLength: 50
+		Color: 3F7FBF
+		UsePlayerColor: False
+		TrailWidth: 0c128
+	Contrail@3:
+		Offset: -3500,400,0
+		TrailLength: 50
+		Color: 3F7FBF
+		UsePlayerColor: False
+		TrailWidth: 0c128
+	Contrail@4:
+		Offset: -3500,500,0
+		TrailLength: 50
+		Color: 3F7FBF
+		UsePlayerColor: False
+		TrailWidth: 0c128
+	# LeavesTrails:
+		# Image: ship_trail
+		# Sequences: idle
+		# Palette: terrain
+		# TerrainTypes: Water
+		# Type: CenterPosition 
+		# VisibleThroughFog: False
+		# TrailWhileStationary: False
+		# StationaryInterval: 0
+		# TrailWhileMoving: True
+		# MovingInterval: 0
+		# StartDelay: 0
+		# Offsets: -3000,0,0
+# # Collection of 3D World Vector	Trail spawn positions relative to actor position. (forward, right, up) triples
+		# SpawnAtLastPosition: True
+		# # RequiresCondition: 
 
 #[12:46] <+pchote> the center of the deck needs to match the center of rotation of the actor
 #[12:46] <+pchote> if the center moves with facing then you can't position anything properl
 #[12:46] <+pchote> y
 #[12:47] <+pchote> and your camera angles need to match the rules too
+#<Nolt_Phone> Look up for the coordinate of the camera aiming point, group your entire model, and align it to it (note: he talks about 3DsMax)
 
 LST:
 	Inherits: ^Ship

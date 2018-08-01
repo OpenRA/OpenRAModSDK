@@ -1,5 +1,6 @@
 Sniper:
 	Inherits: ^FireTrailS
+	Inherits: ^ImpactHitForceBulletLight
 	Report: ramgun2.aud
 	ValidTargets: Ground, Infantry
 	InvalidTargets: Vehicle, Water, Structure, Wall, Husk, Tank
@@ -14,6 +15,7 @@ Sniper:
 		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
 
 Sniper2:
+	Inherits: ^ImpactHitForceBulletLight
 	AfterFireSound: sniperreload.aud
 	AfterFireSoundDelay: 4
 	ValidTargets: Ground, Infantry
@@ -30,6 +32,7 @@ Sniper2:
 
 SilencedPPK:
 	Inherits: ^FireTrailS
+	Inherits: ^ImpactHitForceBulletLight
 	ReloadDelay: 40
 	Range: 8c0
 	Report: silencer.aud
@@ -44,7 +47,8 @@ SilencedPPK:
 		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
 
 HighV:
-	Inherits: ^ImpactSoundsBullet
+	Inherits: ^FireTrailS
+	Inherits: ^ImpactHitForceBulletsLight
 	ReloadDelay: 25
 	Range: 6c0
 	Report: gun8.aud
@@ -63,7 +67,8 @@ HighV:
 		Explosions: piffs
 
 HighVRA:
-	Inherits: ^ImpactSoundsBullet
+	Inherits: ^FireTrailS
+	Inherits: ^ImpactHitForceBulletsLight
 	ReloadDelay: 25
 	Range: 6c0
 	Report: gun13.aud
@@ -82,7 +87,8 @@ HighVRA:
 		Explosions: piffs
 
 HeliAGGun:
-	Inherits: ^ImpactSoundsBullet
+	Inherits: ^FireTrailS
+	Inherits: ^ImpactHitForceBulletsLight
 	ReloadDelay: 20
 	Burst: 2
 	BurstDelay: 0
@@ -133,6 +139,7 @@ HeliAAGun:
 
 Pistol:
 	Inherits: ^ImpactSoundsBullet
+	Inherits: ^ImpactHitForceBulletLight
 	ReloadDelay: 7
 	Range: 3c0
 	InvalidTargets: Wall
@@ -154,6 +161,7 @@ Pistol:
 
 M16:
 	Inherits: ^ImpactSoundsBullet
+	Inherits: ^ImpactHitForceBulletLight
 	ReloadDelay: 35
 	Range: 4c0
 	ValidTargets: Vehicle, Infantry, Ground
@@ -176,6 +184,7 @@ M16:
 
 MachineGun:
 	Inherits: ^ImpactSoundsBullet
+	Inherits: ^ImpactHitForceBulletsLight
 	ReloadDelay: 20
 	Burst: 5
 	InvalidTargets: Wall
@@ -198,6 +207,7 @@ MachineGun:
 
 Vulcan:
 	Inherits: ^FireTrailS
+	Inherits: ^ImpactHitForceBulletsLight
 	ValidTargets: Ground, Water
 	Range: 8c0
 	Burst: 9
@@ -222,6 +232,7 @@ Vulcan:
 
 APCGun:
 	Inherits: ^ImpactSoundsBullet
+	Inherits: ^ImpactHitForceBulletsLight
 	ReloadDelay: 18
 	Range: 5c0
 	Report: gun20.aud

@@ -101,5 +101,10 @@ Actors:
 	Actor7: mpspawn
 		Owner: Neutral
 		Location: 61,27
+	Actor8: gunboat
+		Owner: Nod
+		Location: 65,50
+		Facing: 92
+		TurretFacing: 92
 
 Rules: tda|rules/singleplayer-coop/coop.yaml, tda|rules/singleplayer-coop/singleplayer.yaml

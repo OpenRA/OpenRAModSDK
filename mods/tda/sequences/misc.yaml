@@ -1,3 +1,8 @@
+#trails
+ship_trail:
+	idle:
+		Length: *
+
 null:
 	idle:
 		Start: 1
@@ -202,6 +207,11 @@ explosion:
 	nuke_explosion_light: atomslightsfx
 	piff: piff
 	piffs: piffpiff
+	water_piff: wpiff
+	water_piffs: wpifpif
+	small_splash: h2o_exp3
+	med_splash: h2o_exp2
+	large_splash: h2o_exp1
 	chemball: chemball
 		BlendMode: Additive
 	small_napalm: napalm1

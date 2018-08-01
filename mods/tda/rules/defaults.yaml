@@ -13,6 +13,16 @@
 	QuantizeFacingsFromSequence:
 	RenderSprites:
 
+^VoxelActor:
+	BodyOrientation:
+		QuantizedFacings: 0
+		# CameraPitch: 
+	RenderVoxels:
+		Scale: 12
+		PlayerPalette: playerTS
+		# Palette: player
+	WithVoxelBody:
+
 ^1x1Shape:
 	HitShape:
 		UseTargetableCellsOffsets: true

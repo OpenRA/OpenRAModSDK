@@ -72,6 +72,7 @@ Rules:
 	tda|rules/compatibility.yaml
 	tda|rules/lights.yaml
 	tda|rules/map_options.yaml
+
 Sequences:
 	tda|sequences/structures.yaml
 	tda|sequences/vehicles.yaml
@@ -86,6 +87,10 @@ Sequences:
 	tda|sequences/destroyed.yaml
 	tda|sequences/research.yaml
 	tda|sequences/compatibility.yaml
+	tda|sequences/voxel_icons.yaml
+
+ModelSequences:
+	tda|sequences/voxels.yaml
 
 TileSets:
 	tda|tilesets/desert.yaml
@@ -243,7 +248,7 @@ SpriteSequenceFormat: TilesetSpecificSpriteSequence
 		DESERT: .des
 		JUNGLE: .jun
 
-ModelSequenceFormat: PlaceholderModelSequence
+ModelSequenceFormat: VoxelModelSequence
 
 GameSpeeds:
 	slower:

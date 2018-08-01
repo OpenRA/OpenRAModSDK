@@ -16,7 +16,7 @@
 		ValidTargets: Structure, Wall
 		InvalidTargets: Water, Vehicle, Husk, Infantry
 	Warhead@ShellToWater: CreateEffect
-		ImpactSounds:
+		ImpactSounds: ImpactShellWaterRA1.aud,ImpactShellWaterRA2.aud
 		ValidTargets: Water
 		InvalidTargets: Vehicle, Husk, Ground, Infantry, Structure, Wall
 	Warhead@ShellToGround: CreateEffect
@@ -64,6 +64,96 @@
 		ContrailZOffset: 1000
 		ContrailDelay: 0
 
+^ImpactHitForceBulletLight
+	Warhead@HitForceToFlesh: CreateEffect
+		ValidTargets: Infantry
+		InvalidTargets: Vehicle, Water, Structure, Wall, Husk
+	Warhead@HitForceToMetal: CreateEffect
+		ValidTargets: Vehicle, Husk, Tank
+		InvalidTargets: Water, Structure, Wall, Infantry
+	Warhead@HitForceToConcrete: CreateEffect
+		ValidTargets: Structure, Wall
+		InvalidTargets: Water, Vehicle, Husk, Infantry
+	Warhead@HitForceToWater: CreateEffect
+		ValidTargets: Water
+		InvalidTargets: Vehicle, Husk, Ground, Infantry, Structure, Wall
+		Explosions: water_piff
+	Warhead@HitForceToGround: CreateEffect
+		ValidTargets: Ground
+		InvalidTargets: Vehicle, Husk, Water, Infantry, Structure, Wall
+
+^ImpactHitForceBulletsLight
+	Warhead@HitForceToFlesh: CreateEffect
+		ValidTargets: Infantry
+		InvalidTargets: Vehicle, Water, Structure, Wall, Husk
+	Warhead@HitForceToMetal: CreateEffect
+		ValidTargets: Vehicle, Husk, Tank
+		InvalidTargets: Water, Structure, Wall, Infantry
+	Warhead@HitForceToConcrete: CreateEffect
+		ValidTargets: Structure, Wall
+		InvalidTargets: Water, Vehicle, Husk, Infantry
+	Warhead@HitForceToWater: CreateEffect
+		ValidTargets: Water
+		InvalidTargets: Vehicle, Husk, Ground, Infantry, Structure, Wall
+		Explosions: water_piffs
+	Warhead@HitForceToGround: CreateEffect
+		ValidTargets: Ground
+		InvalidTargets: Vehicle, Husk, Water, Infantry, Structure, Wall
+
+^ImpactHitForceShellLight
+	Warhead@HitForceToFlesh: CreateEffect
+		ValidTargets: Infantry
+		InvalidTargets: Vehicle, Water, Structure, Wall, Husk
+	Warhead@HitForceToMetal: CreateEffect
+		ValidTargets: Vehicle, Husk, Tank
+		InvalidTargets: Water, Structure, Wall, Infantry
+	Warhead@HitForceToConcrete: CreateEffect
+		ValidTargets: Structure, Wall
+		InvalidTargets: Water, Vehicle, Husk, Infantry
+	Warhead@HitForceToWater: CreateEffect
+		Explosions: small_splash
+		ValidTargets: Water
+		InvalidTargets: Vehicle, Husk, Ground, Infantry, Structure, Wall
+	Warhead@HitForceToGround: CreateEffect
+		ValidTargets: Ground
+		InvalidTargets: Vehicle, Husk, Water, Infantry, Structure, Wall
+
+^ImpactHitForceShellMedium
+	Warhead@HitForceToFlesh: CreateEffect
+		ValidTargets: Infantry
+		InvalidTargets: Vehicle, Water, Structure, Wall, Husk
+	Warhead@HitForceToMetal: CreateEffect
+		ValidTargets: Vehicle, Husk, Tank
+		InvalidTargets: Water, Structure, Wall, Infantry
+	Warhead@HitForceToConcrete: CreateEffect
+		ValidTargets: Structure, Wall
+		InvalidTargets: Water, Vehicle, Husk, Infantry
+	Warhead@HitForceToWater: CreateEffect
+		ValidTargets: Water
+		InvalidTargets: Vehicle, Husk, Ground, Infantry, Structure, Wall
+		Explosions: med_splash
+	Warhead@HitForceToGround: CreateEffect
+		ValidTargets: Ground
+		InvalidTargets: Vehicle, Husk, Water, Infantry, Structure, Wall
+
+^ImpactHitForceShellHeavy
+	Warhead@HitForceToFlesh: CreateEffect
+		ValidTargets: Infantry
+		InvalidTargets: Vehicle, Water, Structure, Wall, Husk
+	Warhead@HitForceToMetal: CreateEffect
+		ValidTargets: Vehicle, Husk, Tank
+		InvalidTargets: Water, Structure, Wall, Infantry
+	Warhead@HitForceToConcrete: CreateEffect
+		ValidTargets: Structure, Wall
+		InvalidTargets: Water, Vehicle, Husk, Infantry
+	Warhead@HitForceToWater: CreateEffect
+		ValidTargets: Water
+		InvalidTargets: Vehicle, Husk, Ground, Infantry, Structure, Wall
+		Explosions: large_splash
+	Warhead@HitForceToGround: CreateEffect
+		ValidTargets: Ground
+		InvalidTargets: Vehicle, Husk, Water, Infantry, Structure, Wall
+
 ^RocketsBasic:
 	ReloadDelay: 50
 	Range: 6c0
@@ -79,3 +169,5 @@
 		Explosions: flash3small
 		ExplosionPalette: alpha
 		InvalidTargets: Water
+
+#My lifes work^
