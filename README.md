@@ -29,7 +29,6 @@ Name          | Contribution
  | ---------------------- | 
  | Shpooky                | 
  | Abarrat                | 
- | CatGirls420(NerevarII) | 
  | memers.club            | 
  | Polemos                | 
 
