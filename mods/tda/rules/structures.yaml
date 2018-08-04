@@ -224,9 +224,9 @@ NUKE:
 		Ammo: 1
 		PipCount: 0
 # too mutch sounds blocking other sounds. i need ambient sounds with range
-#	AmbientSound:
-#		SoundFiles: power.aud
-#		Delay: 5
+	# AmbientSound:
+		# SoundFiles: power.aud
+		# Delay: 5
 
 NUK2:
 	Inherits: ^BaseBuilding
@@ -270,9 +270,9 @@ NUK2:
 		PipCount: 0
 
 # too mutch sounds blocking other sounds. i need ambient sounds with range
-#	AmbientSound:
-#		SoundFiles: power2.aud
-#		Delay: 5
+	# AmbientSound:
+		# SoundFiles: power2.aud
+		# Delay: 5
 
 PROC:
 	Inherits: ^BaseBuilding

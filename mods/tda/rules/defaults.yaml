@@ -320,8 +320,8 @@
 		ReferencePoint: Left, Top
 		RequiresCondition: machine_shop_repair
 #	WithShadow:
-#		Offset: 100,0,-100
-#		ZOffset: -5
+		# Offset: 100,0,-100
+		# ZOffset: -5
 	HitShape:
 	EditorTilesetFilter:
 		Categories: Vehicle
