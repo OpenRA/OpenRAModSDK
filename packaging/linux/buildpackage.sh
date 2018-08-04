@@ -70,7 +70,7 @@ MOD_VERSION=$(grep 'Version:' mods/${MOD_ID}/mod.yaml | awk '{print $2}')
 
 if [ "${PACKAGING_OVERWRITE_MOD_VERSION}" == "True" ]; then
     make version VERSION="${TAG}"
-else	
+else
 	echo "Mod version ${MOD_VERSION} will remain unchanged.";
 fi
 
