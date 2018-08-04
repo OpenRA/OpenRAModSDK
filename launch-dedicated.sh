@@ -37,7 +37,6 @@ require_variables "MOD_ID" "ENGINE_VERSION" "ENGINE_DIRECTORY"
 NAME="${Name:-"Dedicated Server"}"
 LAUNCH_MOD="${Mod:-"${MOD_ID}"}"
 LISTEN_PORT="${ListenPort:-"1234"}"
-EXTERNAL_PORT="${ExternalPort:-"1234"}"
 ADVERTISE_ONLINE="${AdvertiseOnline:-"True"}"
 ENABLE_SINGLE_PLAYER="${EnableSingleplayer:-"False"}"
 PASSWORD="${Password:-""}"
@@ -53,7 +52,7 @@ cd "${ENGINE_DIRECTORY}"
 
 while true; do
      MOD_SEARCH_PATHS="${MOD_SEARCH_PATHS}" mono --debug OpenRA.Server.exe Game.Mod="${LAUNCH_MOD}" \
-     Server.Name="${NAME}" Server.ListenPort="${LISTEN_PORT}" Server.ExternalPort="${EXTERNAL_PORT}" \
+     Server.Name="${NAME}" Server.ListenPort="${LISTEN_PORT}" \
      Server.AdvertiseOnline="${ADVERTISE_ONLINE}" \
      Server.EnableSingleplayer="${ENABLE_SINGLE_PLAYER}" Server.Password="${PASSWORD}"
 done

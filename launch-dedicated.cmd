@@ -4,7 +4,6 @@
 
 set Name="Dedicated Server"
 set ListenPort=1234
-set ExternalPort=1234
 set AdvertiseOnline=True
 set EnableSingleplayer=False
 set Password=""
@@ -26,7 +25,7 @@ if not exist %ENGINE_DIRECTORY%\OpenRA.Game.exe goto noengine
 cd %ENGINE_DIRECTORY%
 
 :loop
-OpenRA.Server.exe Game.Mod=%MOD_ID% Server.Name=%Name% Server.ListenPort=%ListenPort% Server.ExternalPort=%ExternalPort% Server.AdvertiseOnline=%AdvertiseOnline% Server.EnableSingleplayer=%EnableSingleplayer% Server.Password=%Password%
+OpenRA.Server.exe Game.Mod=%MOD_ID% Server.Name=%Name% Server.ListenPort=%ListenPort% Server.AdvertiseOnline=%AdvertiseOnline% Server.EnableSingleplayer=%EnableSingleplayer% Server.Password=%Password%
 goto loop
 
 :noengine
