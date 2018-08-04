@@ -1033,6 +1033,7 @@
 		AreaTypes: building
 		Adjacent: 10
 	Interactable:
+		Bounds: 24,24
 
 ^Gate:
 	Inherits: ^BaseBuilding
@@ -1323,6 +1324,8 @@
 	RequiresBuildableArea:
 		AreaTypes: building
 		Adjacent: 4
+	Selectable:
+		Bounds: 24,24
 
 ^BasicFlag:
 	Inherits@1: ^ExistsInWorld
@@ -1358,6 +1361,8 @@
 	FrozenUnderFog:
 	RequiresBuildableArea:
 		AreaTypes: building
+	EditorTilesetFilter:
+		Categories: System
 
 ^Mine:
 	Inherits: ^SpriteActor
@@ -1365,6 +1370,7 @@
 	WithSpriteBody:
 	HiddenUnderFog:
 	Interactable:
+		Bounds: 24,24  
 	Mine:
 		CrushClasses: mine
 		DetonateClasses: mine
@@ -1387,6 +1393,8 @@
 		TargetTypes: Ground
 	Immobile:
 		OccupiesSpace: true
+	EditorTilesetFilter:
+		Categories: System
 
 ^DisableOnLowPower:
 	WithColoredOverlay@IDISABLE:

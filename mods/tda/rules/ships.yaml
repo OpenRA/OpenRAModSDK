@@ -169,3 +169,5 @@ LST:
 	RenderSprites:
 		PlayerPalette: playerRA
 		Scale: 0.8
+	Selectable:
+		Bounds: 48,48
