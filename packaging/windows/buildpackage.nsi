@@ -29,7 +29,7 @@ SetCompressor lzma
 RequestExecutionLevel admin
 
 !insertmacro MUI_PAGE_WELCOME
-!insertmacro MUI_PAGE_LICENSE "${SRCDIR}\COPYING"
+!insertmacro MUI_PAGE_LICENSE "${PACKAGING_WINDOWS_LICENSE_FILE}"
 !insertmacro MUI_PAGE_DIRECTORY
 
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT "HKLM"
