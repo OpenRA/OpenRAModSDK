@@ -1,12 +1,5 @@
-^BasePlayer:
-	AlwaysVisible:
-	Shroud:
-
-EditorPlayer:
-	Inherits: ^BasePlayer
-
 Player:
-	Inherits: ^BasePlayer
+	AlwaysVisible:
 	PlaceBuilding:
 	TechTree:
 	SupportPowerManager:
@@ -15,9 +8,6 @@ Player:
 	ConquestVictoryConditions:
 	PowerManager:
 	AllyRepair:
-	PlayerResources:
-	DeveloperMode:
-		CheckboxDisplayOrder: 8
 	BaseAttackNotifier:
 	PlayerStatistics:
 	FrozenActorLayer:
@@ -39,5 +29,8 @@ Player:
 		Prerequisites: techlevel.low, techlevel.medium, techlevel.high, techlevel.superweapons
 		Id: unrestricted
 	GrantConditionOnPrerequisiteManager:
+	VeteranProductionIconOverlay:
+		Image: iconchevrons
+		Sequence: veteran
 	ResourceStorageWarning:
 	PlayerExperience:

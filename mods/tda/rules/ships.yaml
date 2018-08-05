@@ -115,9 +115,9 @@ GUNBOAT:
 		# MovingInterval: 0
 		# StartDelay: 0
 		# Offsets: -3000,0,0
-# Collection of 3D World Vector	Trail spawn positions relative to actor position. (forward, right, up) triples
+# # Collection of 3D World Vector	Trail spawn positions relative to actor position. (forward, right, up) triples
 		# SpawnAtLastPosition: True
-		# RequiresCondition: 
+		# # RequiresCondition: 
 
 #[12:46] <+pchote> the center of the deck needs to match the center of rotation of the actor
 #[12:46] <+pchote> if the center moves with facing then you can't position anything properl
