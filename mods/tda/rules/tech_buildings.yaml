@@ -88,8 +88,6 @@ MISS:
 		Actor: MISS_DES
 		OwnerType: InternalName
 		InternalOwner: Neutral
-	Selectable:
-		Bounds: 72,48 
 
 BARR:
 	Inherits: ^TechBuilding

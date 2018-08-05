@@ -92,8 +92,6 @@ FACT:
 		Description: Builds structures
 	Targetable:
 		TargetTypes: Ground, C4, Structure, DetonateAttack, AItagCONS
-	Selectable:  
-		Bounds: 72,48
 
 FACT.GDI:
 	Inherits: FACT
@@ -229,8 +227,6 @@ NUKE:
 	# AmbientSound:
 		# SoundFiles: power.aud
 		# Delay: 5
-	Selectable:  
-		Bounds: 48,48
 
 NUK2:
 	Inherits: ^BaseBuilding
@@ -258,7 +254,6 @@ NUK2:
 	WithBuildingBib:
 	Power:
 		Amount: 200
-# ive got the power ntun ntuuun ntuun ntuuun
 	ScalePowerWithHealth:
 	Targetable:
 		TargetTypes: Ground, C4, Structure, SpyInfiltrate, DetonateAttack, AItagPP
@@ -273,8 +268,7 @@ NUK2:
 		Name: FaultyFailSafe
 		Ammo: 1
 		PipCount: 0
-	Selectable:  
-		Bounds: 48,48
+
 # too mutch sounds blocking other sounds. i need ambient sounds with range
 	# AmbientSound:
 		# SoundFiles: power2.aud
@@ -321,8 +315,8 @@ PROC:
 		PipColor: Green
 		PipCount: 10
 		Capacity: 2800
-	Selectable: 
-		Bounds: 72,56
+	Selectable:
+		Bounds: 72,56,0,12
 		DecorationBounds: 73,72
 	CustomSellValue:
 		Value: 500
@@ -372,7 +366,6 @@ SILO:
 		PipCount: 10
 		PipColor: Green
 		Capacity: 2800
-# you are just full of the stuff arent you?
 	-EmitInfantryOnSell:
 	Power:
 		Amount: -10
@@ -382,7 +375,6 @@ SILO:
 	RequiresBuildableArea:
 		AreaTypes: building
 	Selectable:
-		Bounds: 48,24
 		DecorationBounds: 49,30
 
 PYLE:
@@ -579,8 +571,6 @@ AFLD:
 		Sequence: active-lights
 		Palette: PlayerColorLights
 		IsPlayerPalette: true
-	Selectable:
-		Bounds: 96,48
 
 WEAP:
 	Inherits: ^BaseBuilding
@@ -698,8 +688,6 @@ HPAD:
 		Proxy: aircraft.upgraded
 	Targetable:
 		TargetTypes: Ground, C4, Structure, DetonateAttack, SpyInfiltrate
-	Selectable:
-		Bounds: 48,48
 
 HQ:
 	Inherits: ^BaseBuilding
@@ -1273,8 +1261,6 @@ MISS_NOD:
 		Modifier: 0
 	RevealsShroud:
 		Range: 5c0
-	Selectable:
-		Bounds: 72,48 
 
 MISS_GDI:
 	Inherits: ^BaseBuilding
@@ -1326,8 +1312,6 @@ MISS_GDI:
 		Modifier: 0
 	RevealsShroud:
 		Range: 5c0
-	Selectable:
-		Bounds: 72,48 
 
 GUN:
 	Inherits: ^Defense
@@ -1370,8 +1354,6 @@ GUN:
 		Amount: -20
 	BodyOrientation:
 		UseClassicFacingFudge: True
-	Selectable:
-		Bounds: 24,24
 
 SAM:
 	Inherits: ^Defense
@@ -1428,8 +1410,6 @@ SAM:
 	ReloadAmmoPool@1:
 		Delay: 75
 		Count: 2
-	Selectable:
-		Bounds: 48,24
 
 OBLI:
 	Inherits: ^Defense
@@ -1521,8 +1501,6 @@ GTWR:
 		Amount: -10
 	IgnoresDisguise:
 	-QuantizeFacingsFromSequence:
-	Selectable:
-		Bounds: 24,24
 
 PBOX:
 	Inherits: ^Defense
