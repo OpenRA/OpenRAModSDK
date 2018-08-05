@@ -2,12 +2,15 @@ Metadata:
 	Title: Tiberian Dawn Apolyton
 	Version: TDA-156
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Website: https://www.moddb.com/mods/tiberian-dawn-apolyton
 	WebIcon32: https://raw.githubusercontent.com/KOYK/OpenRA-Tiberian-Dawn-Apolyton/master/mods/tda/icon.png
 
 # ModCredits:
 	# ModTabTitle: Tiberium Dawn Apolyton Credits
 	# ModCreditsFile: tda|AUTHORS
+=======
+>>>>>>> parent of cdecad4... Manual Update for the semi-automated mod updater
 =======
 >>>>>>> parent of cdecad4... Manual Update for the semi-automated mod updater
 
