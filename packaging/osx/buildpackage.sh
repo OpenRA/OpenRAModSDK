@@ -36,7 +36,7 @@ fi
 
 require_variables "MOD_ID" "ENGINE_DIRECTORY" "PACKAGING_DISPLAY_NAME" "PACKAGING_INSTALLER_NAME" \
 	"PACKAGING_OSX_LAUNCHER_TAG" "PACKAGING_OSX_LAUNCHER_SOURCE" "PACKAGING_OSX_LAUNCHER_TEMP_ARCHIVE_NAME" \
-	"PACKAGING_FAQ_URL" "PACKAGING_OVERWRITE_MOD_VERSION"
+	"PACKAGING_FAQ_URL"
 
 TAG="$1"
 if [ $# -eq "1" ]; then
@@ -78,13 +78,7 @@ if [ ! -d "${OUTPUTDIR}" ]; then
 	exit 1
 fi
 
-MOD_VERSION=$(grep 'Version:' mods/${MOD_ID}/mod.yaml | awk '{print $2}')
-
-if [ "${PACKAGING_OVERWRITE_MOD_VERSION}" == "True" ]; then
-    make version VERSION="${TAG}"
-else
-	echo "Mod version ${MOD_VERSION} will remain unchanged.";
-fi
+make version VERSION="${TAG}"
 
 pushd ${ENGINE_DIRECTORY} > /dev/null
 make osx-dependencies

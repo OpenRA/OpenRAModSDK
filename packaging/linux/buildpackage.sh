@@ -37,7 +37,7 @@ fi
 
 require_variables "MOD_ID" "ENGINE_DIRECTORY" "PACKAGING_DISPLAY_NAME" "PACKAGING_INSTALLER_NAME" \
 	"PACKAGING_APPIMAGE_DEPENDENCIES_TAG" "PACKAGING_APPIMAGE_DEPENDENCIES_SOURCE" "PACKAGING_APPIMAGE_DEPENDENCIES_TEMP_ARCHIVE_NAME" \
-	"PACKAGING_FAQ_URL" "PACKAGING_OVERWRITE_MOD_VERSION"
+	"PACKAGING_FAQ_URL"
 
 TAG="$1"
 if [ $# -eq "1" ]; then
@@ -66,13 +66,7 @@ fi
 
 echo "Building core files"
 
-MOD_VERSION=$(grep 'Version:' mods/${MOD_ID}/mod.yaml | awk '{print $2}')
-
-if [ "${PACKAGING_OVERWRITE_MOD_VERSION}" == "True" ]; then
-    make version VERSION="${TAG}"
-else
-	echo "Mod version ${MOD_VERSION} will remain unchanged.";
-fi
+make version VERSION="${TAG}"
 
 pushd "${ENGINE_DIRECTORY}" > /dev/null
 make linux-dependencies
@@ -137,8 +131,6 @@ install -m 0755 openra-mod.temp "${BUILTDIR}/usr/bin/openra-${MOD_ID}"
 
 sed "s/{MODID}/${MOD_ID}/g" include/mod-server.in  > openra-mod-server.temp
 install -m 0755 openra-mod-server.temp "${BUILTDIR}/usr/bin/openra-${MOD_ID}-server"
-
-install -m 0755 include/gtk-dialog.py "${BUILTDIR}/usr/bin/gtk-dialog.py"
 
 # travis-ci doesn't support mounting FUSE filesystems so extract and run the contents manually
 ./appimagetool-x86_64.AppImage --appimage-extract
