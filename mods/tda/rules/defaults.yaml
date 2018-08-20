@@ -16,11 +16,11 @@
 ^VoxelActor:
 	BodyOrientation:
 		QuantizedFacings: 0
-		# CameraPitch: 
+	#	CameraPitch: 
 	RenderVoxels:
 		Scale: 12
 		PlayerPalette: playerTS
-		# Palette: player
+	#	Palette: player
 	WithVoxelBody:
 
 ^1x1Shape:
@@ -211,15 +211,15 @@
 	AttackMove:
 		AssaultMoveScanCondition: assault-move
 
-# ^AutoTargetOpportunity:
-	# AutoTargetPriority:
-		# Priority: 100
-# ^AutoTargetFlesh:
-	# AutoTargetPriority:
-		# Priority: 10
-# ^AutoTargetMetal:
-	# AutoTargetPriority:
-		# Priority: 10
+	#^AutoTargetOpportunity:
+	#	AutoTargetPriority:
+	#	Priority: 100
+	#^AutoTargetFlesh:
+	#	AutoTargetPriority:
+	#	Priority: 10
+	#^AutoTargetMetal:
+	#	AutoTargetPriority:
+	#	Priority: 10
 
 ^AcceptsCloakCrate:
 	Cloak:
@@ -319,9 +319,6 @@
 		Sequence: pip-mech
 		ReferencePoint: Left, Top
 		RequiresCondition: machine_shop_repair
-#	WithShadow:
-#		Offset: 100,0,-100
-#		ZOffset: -5
 	HitShape:
 	EditorTilesetFilter:
 		Categories: Vehicle
@@ -476,7 +473,6 @@
 		CrushedSequence: die-crushed
 		CrushedSequencePalette:	terrain
 		CrushedPaletteIsPlayerPalette: false
-#^ wtf is Multi0 palette any way?
 	AttackMove:
 	DrawLineToTarget:
 	Passenger:
@@ -533,8 +529,6 @@
 		RequiresCondition: Infantry.sandbag
 		ValidStances: Ally, Enemy, Neutral
 		RequiresSelection: False
-	# DetectCloaked:
-		# Range: 2c0
 	DeathSounds@NORMAL:
 		DeathTypes: DefaultDeath, BulletDeath, SmallExplosionDeath, ExplosionDeath
 		VolumeMultiplier: 1
@@ -567,7 +561,7 @@
 	ProducibleWithLevel:
 		Prerequisites: barracks.upgraded
 	GivesBounty:
-# grenade magic curtesy of frame limiter
+	#grenade magic curtesy of frame limiter
 	ExternalCondition@FRAG:
 		Condition: Infantry.proximity
 	ProximityExternalCondition@FRAG:
@@ -771,7 +765,8 @@
 ^Plane:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
-#	Inherits@3: ^GainsExperience #reaperrr: most current planes don't use it, so it's better to add this to individual planes if needed
+	#Inherits@3: ^GainsExperience 
+	#reaperrr: most current planes don't use it, so it's better to add this to individual planes if needed
 	Inherits@bounty: ^GlobalBounty
 	Huntable:
 	AppearsOnRadar:
@@ -877,7 +872,7 @@
 	GivesBounty:
 	ProximityCaptor:
 		Types: Building
-#	BlocksProjectiles:
+	#BlocksProjectiles:
 	EditorTilesetFilter:
 		Categories: Building
 	RequiresBuildableArea:
@@ -1033,6 +1028,7 @@
 		AreaTypes: building
 		Adjacent: 10
 	Interactable:
+		Bounds: 24,24
 
 ^Gate:
 	Inherits: ^BaseBuilding
@@ -1323,6 +1319,8 @@
 	RequiresBuildableArea:
 		AreaTypes: building
 		Adjacent: 4
+	Selectable:
+		Bounds: 24,24
 
 ^BasicFlag:
 	Inherits@1: ^ExistsInWorld
@@ -1358,6 +1356,8 @@
 	FrozenUnderFog:
 	RequiresBuildableArea:
 		AreaTypes: building
+	EditorTilesetFilter:
+		Categories: System
 
 ^Mine:
 	Inherits: ^SpriteActor
@@ -1365,6 +1365,7 @@
 	WithSpriteBody:
 	HiddenUnderFog:
 	Interactable:
+		Bounds: 24,24  
 	Mine:
 		CrushClasses: mine
 		DetonateClasses: mine
@@ -1387,6 +1388,8 @@
 		TargetTypes: Ground
 	Immobile:
 		OccupiesSpace: true
+	EditorTilesetFilter:
+		Categories: System
 
 ^DisableOnLowPower:
 	WithColoredOverlay@IDISABLE:
@@ -1434,7 +1437,7 @@
 	Power:
 		RequiresCondition: !disabled
 
-#Special Tags
+	#Special Tags
 ^Doctor:
 	Passenger:
 		CargoType: Doctor

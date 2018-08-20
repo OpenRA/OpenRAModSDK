@@ -74,11 +74,11 @@ World:
 		Maximum: 200
 		SpawnInterval: 50
 		WormSignature: TibShimmering
-# WormSignature@1: TibShimmeringRed
-# WormSignature@2: TibShimmeringBlue
-# WormSignature@3: TibShimmeringGreen
 		WormSignNotification:
 		WormOwnerPlayer: Neutral
+	#	WormSignature@1: TibShimmeringRed
+	#	WormSignature@2: TibShimmeringBlue
+	#	WormSignature@3: TibShimmeringGreen
 	ChatCommands:
 	DevCommands:
 	DebugVisualizationCommands:

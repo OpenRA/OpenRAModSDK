@@ -619,12 +619,6 @@ Player:
 				Attractiveness: -10
 				TargetMetric: None
 				CheckRadius: 3c0
-			# Consideration@AItagAvoid:
-				# Against: Enemy
-				# Types: AItagAvoid
-				# Attractiveness: -10
-				# TargetMetric: None
-				# CheckRadius: 5c0
 		SupportPowerDecision@ArtileryStrike:
 			OrderName: ArtileryBarrageInfoOrder
 			MinimumAttractiveness: 1

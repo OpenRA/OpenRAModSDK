@@ -112,7 +112,6 @@ Cursors:
 			Start: 136
 		joystick-tl-blocked:
 			Start: 137
-# Cursors that need minimap variants
 		deploy:
 			Start: 53
 			Length: 9
@@ -140,7 +139,6 @@ Cursors:
 		sell-vehicle:
 			Start: 154
 			Length: 24
-# --------------------------------
 		default:
 			Start: 0
 			X: -16
@@ -244,8 +242,8 @@ Cursors:
 		airstrike:
 			Start: 12
 			Length: 14
-		# changeownernod:
-			# Start: 27
-# #-1 frame
-			# Length: 26
-# #-1 frame
+	#changeownernod:
+	#Start: 27
+	#-1 frame
+	#Length: 26
+	#-1 frame

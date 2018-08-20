@@ -1,42 +1,52 @@
-#truk: # TODO: unused
-#	idle:
+	#truk: 
+	#TODO: unused
+	#	idle:
 
-#truck2: # TODO: unused
-#	idle:
+	#truck2: 
+	#TODO: unused
+	#	idle:
 
-#utnk: # TODO: unused alternative version of Devil's Tongue
-#	idle:
+	#utnk: 
+	#TODO: unused alternative version of Devil's Tongue
+	#	idle:
 
-#mrj: # TODO: unused
-#	idle:
-#	turret: mrjtur
+	#mrj: 
+	#TODO: unused
+	#	idle:
+	#	turret: mrjtur
 
-#m113: # TODO: unused
-#	idle:
-#	turret: m113tur
+	#m113: 
+	#TODO: unused
+	#	idle:
+	#	turret: m113tur
 
-#mlrs: # TODO: unused
-#	idle:
-#	turret: mlrstur
+	#mlrs: 
+	#TODO: unused
+	#	idle:
+	#	turret: mlrstur
 
-#arty: # TODO: unused
-#	idle:
-#	barrel: artybarl
+	#arty: 
+	#TODO: unused
+	#	idle:
+	#	barrel: artybarl
 
-#1tnk: # TODO: unused
-#	idle:
-#	turret: 1tnktur
-#	barrel: 1tnkbarl
+	#1tnk: 
+	#TODO: unused
+	#	idle:
+	#	turret: 1tnktur
+	#	barrel: 1tnkbarl
 
-#2tnk: # TODO: unused
-#	idle:
-#	turret: 2tnktur
-#	barrel: 2tnkbarl
+	#2tnk: 
+	#TODO: unused
+	#	idle:
+	#	turret: 2tnktur
+	#	barrel: 2tnkbarl
 
-#3tnk: # TODO: unused
-#	idle:
-#	turret: 3tnktur
-#	barrel: 3tnkbarl
+	#3tnk: 
+	#TODO: unused
+	#	idle:
+	#	turret: 3tnktur
+	#	barrel: 3tnkbarl
 
 ftnkv:
 	idle:

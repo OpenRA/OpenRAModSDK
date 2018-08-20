@@ -1,9 +1,3 @@
-# CITY_1:
-
-# CITY_2:
-
-# CITY_3:
-
 CITY_4:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^3x2Shape
@@ -21,6 +15,9 @@ CITY_4:
 		Palette: playerRA
 	SpawnActorOnDeath:
 		Actor: city_4.husk
+	#CITY_1:
+	#CITY_2:
+	#CITY_3:
 
 CITY_4.Husk:
 	Inherits: ^CivBuildingHusk

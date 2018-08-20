@@ -9,12 +9,10 @@ e6a:
 		Length: 6
 		Facings: 8
 		Tick: 100
-	# stand -> prone transition
 	liedown:
 		Start: 66
 		Length: 2
 		Facings: 8
-	# prone -> stand transition
 	standup:
 		Start: 114
 		Length: 2
@@ -45,32 +43,26 @@ e6a:
 		Length: 3
 		Facings: 8
 		Tick: 120
-	# Shot
 	die1:
 		Start: 146
 		Length: 8
 		Tick: 80
-	# Explode
 	die2:
 		Start: 154
 		Length: 8
 		Tick: 80
-	# Fly and explode in air
 	die3:
 		Start: 162
 		Length: 8
 		Tick: 80
-	# Fly through air squish on ground
 	die4:
 		Start: 170
 		Length: 12
 		Tick: 80
-	# Burn
 	die5:
 		Start: 182
 		Length: 18
 		Tick: 80
-	# Tib
 	die6:
 		Start: 130
 		Length: 4

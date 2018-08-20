@@ -1,26 +1,3 @@
-# camoUpgrade:
-	# Inherits@1: ^ExistsInWorld
-	# Inherits@2: ^UpgradesGlobal
-	# Tooltip:
-		# Name: Upgrade Camo
-		# Description: Upgrade: Camo Net.\nAdd a camouflage net to this pillbox to hide it from enemy vision.
-	# Buildable:
-		# Queue: pillbox
-		# BuildPaletteOrder: 40
-		# Prerequisites: pbox
-	# RenderSprites:
-		# Image: ltnk
-
-# SHarvrUpgrade:
-
-# HardrHarvrUpgrade:
-
-# #AdvPowerUpgrade:
-
-# IonCanUpgrade:
-
-# TowMslHomveUpgrade:
-
 RESEARCH_ADV_NUKE:
 	Tooltip:
 		Name: Advance Reactors
@@ -48,6 +25,24 @@ RESEARCH_ADV_NUKE:
 	AlwaysVisible:
 	Interactable:
 	ProvidesPrerequisite@research_adv_nuke:
+
+	#camoUpgrade:
+	#	Inherits@1: ^ExistsInWorld
+	#	Inherits@2: ^UpgradesGlobal
+	#	Tooltip:
+	#		Name: Upgrade Camo
+	#		Description: Upgrade: Camo Net.\nAdd a camouflage net to this pillbox to hide it from enemy vision.
+	#	Buildable:
+	#		Queue: pillbox
+	#		BuildPaletteOrder: 40
+	#		Prerequisites: pbox
+	#	RenderSprites:
+	#		Image: ltnk
+	#SHarvrUpgrade:
+	#HardrHarvrUpgrade:
+	#AdvPowerUpgrade:
+	#IonCanUpgrade:
+	#TowMslHomveUpgrade:
 
 RESEARCH_STL_HARV:
 	Tooltip:
@@ -133,61 +128,61 @@ RESEARCH_HUMVEE_TOW:
 	Interactable:
 	ProvidesPrerequisite@research_humvee_tow:
 
-# RESEARCH_HEAVY_WEAPONS_NOD:
-	# Tooltip:
-		# Name: Direct Assault
-	# EditorOnlyTooltip:
-		# Name: (upgrade nod heavy weapons)
-	# Immobile:
-		# OccupiesSpace: false
-	# BodyOrientation:
-		# QuantizedFacings: 1
-	# Buildable:
-		# Queue: Research.Nod
-		# BuildPaletteOrder: 1
-		# Prerequisites: anyhq, ~!research_stlh_weapons_nod
-		# Description:Type: Doctrine.\nSubject: Weapons\nDescription: Select this doctrine to authorize the use of\nHeavy Tanks, Demo Trucks and Artilery Strike.\n\nWARNING this will disable spies, vehicle airdrop and stealth technology!
-		# BuildLimit: 1
-		# IconPalette: ra2foricamos
-	# Valued:
-		# Cost: 1500
-	# RenderSprites:
-		# Image: re_mil_doctrine1_icon_nod
-		# FactionImages:
-			# nod: re_mil_doctrine1_icon_nod
-			# nodda: re_mil_doctrine1_icon_nod
-			# gdi: re_mil_doctrine1_icon_nod
-	# AlwaysVisible:
-	# Interactable:
-	# ProvidesPrerequisite@research_heavy_weapons_nod:
+	#RESEARCH_HEAVY_WEAPONS_NOD:
+	#	Tooltip:
+	#		Name: Direct Assault
+	#	EditorOnlyTooltip:
+	#		Name: (upgrade nod heavy weapons)
+	#	Immobile:
+	#		OccupiesSpace: false
+	#	BodyOrientation:
+	#		QuantizedFacings: 1
+	#	Buildable:
+	#		Queue: Research.Nod
+	#		BuildPaletteOrder: 1
+	#		Prerequisites: anyhq, ~!research_stlh_weapons_nod
+	#		Description:Type: Doctrine.\nSubject: Weapons\nDescription: Select this doctrine to authorize the use of\nHeavy Tanks, Demo Trucks and Artilery Strike.\n\nWARNING this will disable spies, vehicle airdrop and stealth technology!
+	#		BuildLimit: 1
+	#		IconPalette: ra2foricamos
+	#	Valued:
+	#		Cost: 1500
+	#	RenderSprites:
+	#		Image: re_mil_doctrine1_icon_nod
+	#		FactionImages:
+	#			nod: re_mil_doctrine1_icon_nod
+	#			nodda: re_mil_doctrine1_icon_nod
+	#			gdi: re_mil_doctrine1_icon_nod
+	#	AlwaysVisible:
+	#	Interactable:
+	#	ProvidesPrerequisite@research_heavy_weapons_nod:
 
-# RESEARCH_STLH_WEAPONS_NOD:
-	# Tooltip:
-		# Name: Guerrilla Warfare
-	# EditorOnlyTooltip:
-		# Name: (upgrade nod stealth weapons)
-	# Immobile:
-		# OccupiesSpace: false
-	# BodyOrientation:
-		# QuantizedFacings: 1
-	# Buildable:
-		# Queue: Research.Nod
-		# BuildPaletteOrder: 1
-		# Prerequisites: anyhq, ~!research_heavy_weapons_nod
-		# Description:Type: Doctrine.\nSubject: Weapons\nDescription: Select this doctrine to authorize the use of\nStealth Tanks, Spies, Stealth harversters and vehicle airdrop.\n\nWARNING this will disable Heavy Tanks, Demo Trucks and Artilery Strike!
-		# BuildLimit: 1
-		# IconPalette: ra2foricamos
-	# Valued:
-		# Cost: 1500
-	# RenderSprites:
-		# Image: re_mil_doctrine2_icon_nod
-		# FactionImages:
-			# nod: re_mil_doctrine2_icon_nod
-			# nodda: re_mil_doctrine2_icon_nod
-			# gdi: re_mil_doctrine2_icon_nod
-	# AlwaysVisible:
-	# Interactable:
-	# ProvidesPrerequisite@research_stlh_weapons_nod:
+	#RESEARCH_STLH_WEAPONS_NOD:
+	#	Tooltip:
+	#		Name: Guerrilla Warfare
+	#	EditorOnlyTooltip:
+	#		Name: (upgrade nod stealth weapons)
+	#	Immobile:
+	#		OccupiesSpace: false
+	#	BodyOrientation:
+	#		QuantizedFacings: 1
+	#	Buildable:
+	#		Queue: Research.Nod
+	#		BuildPaletteOrder: 1
+	#		Prerequisites: anyhq, ~!research_heavy_weapons_nod
+	#		Description:Type: Doctrine.\nSubject: Weapons\nDescription: Select this doctrine to authorize the use of\nStealth Tanks, Spies, Stealth harversters and vehicle airdrop.\n\nWARNING this will disable Heavy Tanks, Demo Trucks and Artilery Strike!
+	#		BuildLimit: 1
+	#		IconPalette: ra2foricamos
+	#	Valued:
+	#		Cost: 1500
+	#	RenderSprites:
+	#		Image: re_mil_doctrine2_icon_nod
+	#		FactionImages:
+	#			nod: re_mil_doctrine2_icon_nod
+	#			nodda: re_mil_doctrine2_icon_nod
+	#			gdi: re_mil_doctrine2_icon_nod
+	#	AlwaysVisible:
+	#	Interactable:
+	#	ProvidesPrerequisite@research_stlh_weapons_nod:
 
 RESEARCH_BIO_NOD:
 	Tooltip:

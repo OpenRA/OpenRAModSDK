@@ -4,7 +4,6 @@ Metrics:
 	CheckboxPressedState: true
 	ColorPickerActorType: ^fact.colorpicker
 	ColorPickerRemapIndices: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
-#up is new version defaults
 	ButtonTextColor: 0eaf08
 	ButtonTextColorDisabled: 808080
 	ButtonTextContrast: false

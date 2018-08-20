@@ -146,9 +146,9 @@ BOAT:
 	RenderSprites:
 		PlayerPalette: PlayerColor
 
-# MIG:
-	# RenderSprites:
-		# PlayerPalette: playerRAunits
+	#MIG:
+	#	RenderSprites:
+	#		PlayerPalette: playerRAunits
 
 3TNK:
 	RenderSprites:
@@ -222,10 +222,9 @@ LST:
 	RenderSprites:
 		PlayerPalette: PlayerColor
 
-#OLDLST:
-	# RenderSprites:
-		# PlayerPalette: PlayerColor
-#####################################
+	#OLDLST:
+	#	RenderSprites:
+	#		PlayerPalette: PlayerColor
 
 ^Plane:
 	Tooltip:

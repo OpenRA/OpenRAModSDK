@@ -44,10 +44,10 @@ MCV:
 	SelectionDecorations:
 	Targetable:
 		TargetTypes: Ground, Tank, Repair, AItagCONS
-	# GrantConditionOnBotOwner:
-		# Condition: BotControl
-		# Bots: Shpooky
-#to limit the mcv to 1, but Buildable trait it dosnt accept conditions
+	#GrantConditionOnBotOwner:
+	#	Condition: BotControl
+	#	Bots: Shpooky
+	#to limit the mcv to 1, but Buildable trait it dosnt accept conditions
 
 TRUK:
 	Inherits: ^VehicleWithoutVeterancy
@@ -285,16 +285,16 @@ HARV:
 	WithDockingAnimation:
 	Explodes:
 		Weapon: TiberiumExplosion
-#Code below for when we can detect tiberium type thats being carried. Note to self: keep on dreaming
-	# Explodes@Green:
-		# Weapon: TiberiumExplosionGreen
-		# RequiresCondition: tibgreen
-	# Explodes@Blue:
-		# Weapon: TiberiumExplosionBlue
-		# RequiresCondition: tibblue
-	# Explodes@Red:
-		# Weapon: TiberiumExplosionRed
-		# RequiresCondition: tibred
+	#Code below for when we can detect tiberium type thats being carried. Note to self: keep on dreaming
+	#	Explodes@Green:
+	#		Weapon: TiberiumExplosionGreen
+	#		RequiresCondition: tibgreen
+	#	Explodes@Blue:
+	#		Weapon: TiberiumExplosionBlue
+	#		RequiresCondition: tibblue
+	#	Explodes@Red:
+	#		Weapon: TiberiumExplosionRed
+	#		RequiresCondition: tibred
 	SelectionDecorations:
 	Targetable:
 		TargetTypes: Ground, Tank, Repair, AItagHarv
@@ -460,9 +460,9 @@ FTNKV:
 	Armament@PRIMARY:
 		Weapon: 120mm
 		LocalOffset: 707,85,509, 707,-120,509
-	# Armament@SECONDARY:
-		# Weapon: MammothMissiles
-		# LocalOffset: 0,283,580, 0,-283,580
+	#Armament@SECONDARY:
+	#	Weapon: MammothMissiles
+	#	LocalOffset: 0,283,580, 0,-283,580
 	Turreted:
 		Offset: 1550,0,250
 		TurnSpeed: 3
@@ -995,5 +995,5 @@ MRJ:
 	RenderSprites:
 		Image: mhq
 	-ProducibleWithLevel:
-	# Guard:
-# reserved for fake weapon
+	#Guard:
+	#reserved for fake weapon

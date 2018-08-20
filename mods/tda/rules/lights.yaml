@@ -2,8 +2,8 @@
 	GlobalLightingPaletteEffect:
 		ExcludePalettes: ra2foricamos, flashyeffectra, flashyeffect, effect, effectra, alpha, chrome, lights_Red_Pal, lights_Red_50, lights_Red_05, lights_Blue_Pal, lights_Blue_50, lights_Blue_05, lights_Green_Pal, lights_Green_50, lights_Green_05, lights_Gray_Pal, lights_Gray_50, lights_Gray_05, PlayerColorLights, PlayerColorLights_RA
 	FlashPaletteEffect:
-# LIGHTS PALETTES-------------------------------------------------------------------------------------------------------------------------------------------------
-# GRAY
+	#LIGHTS PALETTES-------------------------------------------------------------------------------------------------------------------------------------------------
+	#GRAY
 	PaletteFromFile@lights_Gray_Pal:
 		Name: lights_Gray_Pal
 		Filename: lightsgray.pal
@@ -16,7 +16,7 @@
 		Name: lights_Gray_05
 		BasePalette: lights_Gray_Pal
 		Alpha: 0.05
-# RED
+	#RED
 	PaletteFromFile@lights_Red_Pal:
 		Name: lights_Red_Pal
 		Filename: lightsred.pal
@@ -29,7 +29,7 @@
 		Name: lights_Red_05
 		BasePalette: lights_Red_Pal
 		Alpha: 0.05
-# BLUE
+	#BLUE
 	PaletteFromFile@lights_Blue_Pal:
 		Name: lights_Blue_Pal
 		Filename: lightsblue.pal
@@ -42,7 +42,7 @@
 		Name: lights_Blue_05
 		BasePalette: lights_Blue_Pal
 		Alpha: 0.05
-# GREEN
+	#GREEN
 	PaletteFromFile@lights_Green_Pal:
 		Name: lights_Green_Pal
 		Filename: lightsgreen.pal
@@ -55,7 +55,7 @@
 		Name: lights_Green_05
 		BasePalette: lights_Green_Pal
 		Alpha: 0.05
-# PLAYER COLORED PALETTES***************************************************************************************************************************************
+	#PLAYER COLORED PALETTES***************************************************************************************************************************************
 	PlayerColorPalette@PlayerColorLights:
 		BaseName: PlayerColorLights
 		Name: PlayerColorLights
@@ -68,7 +68,7 @@
 		BasePalette: terrain
 		RemapIndex: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95
 		AllowModifiers: True
-# FLASH PALETTES-------------------------------------------------------------------------------------------------------------------------------------------------
+	#FLASH PALETTES-------------------------------------------------------------------------------------------------------------------------------------------------
 	PaletteFromFile@flashyeffect:
 		Name: flashyeffect
 		Filename: temperat.pal

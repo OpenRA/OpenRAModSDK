@@ -1,4 +1,4 @@
-#trails
+	#trails
 ship_trail:
 	idle:
 		Length: *
@@ -30,13 +30,13 @@ tibshimmering:
 	idle-shimmering:
 		BlendMode: Additive
 		Length: *
-		# None,
-		# Alpha,
-		# Additive,
-		# Subtractive,
-		# Multiply,
-		# Multiplicative,
-		# DoubleMultiplicative
+	#	None,
+	#	Alpha,
+	#	Additive,
+	#	Subtractive,
+	#	Multiply,
+	#	Multiplicative,
+	#	DoubleMultiplicative
 parach:
 	open:
 		Length: 5
@@ -57,7 +57,7 @@ fb4:
 		Length: 4
 		ZOffset: 1023
 
-#RA fireball
+	#RA fireball
 rafb1:
 	idle:
 		Length: *
@@ -66,9 +66,9 @@ rafb2:
 	idle:
 		Length: *
 		ZOffset: 1023
-#RA fireball^
+	#RA fireball^
 
-#RA chemball
+	#RA chemball
 racb1:
 	idle:
 		Length: *
@@ -77,7 +77,7 @@ racb2:
 	idle:
 		Length: *
 		ZOffset: 1023
-#RA chemball^
+	#RA chemball^
 
 fire:
 	1: fire1
@@ -272,14 +272,14 @@ rank:
 	rank-elite:
 		Start: 3
 
-# rallypoint:
-	# flag: flagfly
-		# Length: *
-		# Offset: 10,-5
-		# ZOffset: 2535
-	# circles: fpls
-		# Length: *
-		# ZOffset: 2047
+	#rallypoint:
+	#	flag: flagfly
+	#		Length: *
+	#		Offset: 10,-5
+	#		ZOffset: 2535
+	#	circles: fpls
+	#		Length: *
+	#		ZOffset: 2047
 rallypoint:
 	flag: rallypoint
 		Length: *
@@ -298,13 +298,13 @@ beacon:
 		Length: *
 		Tick: 100
 		BlendMode: Additive
-		# None,
-		# Alpha,
-		# Additive,
-		# Subtractive,
-		# Multiply,
-		# Multiplicative,
-		# DoubleMultiplicative
+	#	None,
+	#	Alpha,
+	#	Additive,
+	#	Subtractive,
+	#	Multiply,
+	#	Multiplicative,
+	#	DoubleMultiplicative
 	airstrike: bombicon
 		Offset: 0,-42
 	artystrike: artystrikeicon

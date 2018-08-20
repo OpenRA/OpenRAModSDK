@@ -1,9 +1,9 @@
 V19:
 	Inherits: ^TechBuilding
 	CashTrickler:
-	# CashTricklerBar:
-		# DisplayStances: Ally
-		# Color: c5c5c5
+	#CashTricklerBar:
+	#	DisplayStances: Ally
+	#	Color: c5c5c5
 	Building:
 		Footprint: x
 		Dimensions: 1,1
@@ -88,6 +88,8 @@ MISS:
 		Actor: MISS_DES
 		OwnerType: InternalName
 		InternalOwner: Neutral
+	Selectable:
+		Bounds: 72,48 
 
 BARR:
 	Inherits: ^TechBuilding

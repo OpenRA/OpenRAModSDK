@@ -343,12 +343,10 @@ e1:
 		Start: 692
 		Length: 12
 		Facings: 8
-	# stand -> prone transition
 	liedown:
 		Start: 128
 		Length: 2
 		Facings: 8
-	# prone -> stand transition
 	standup:
 		Start: 176
 		Length: 2
@@ -374,7 +372,6 @@ e1:
 		Length: 3
 		Facings: 8
 		Tick: 120
-	# Dancing
 	idle4:
 		Start: 517
 		Length: 9
@@ -383,32 +380,26 @@ e1:
 		Start: 788
 		Length: 13
 		Tick: 120
-	# Shot
 	die1:
 		Start: 381
 		Length: 9
 		Tick: 80
-	# Explode
 	die2:
 		Start: 390
 		Length: 8
 		Tick: 80
-	# Fly and explode in air
 	die3:
 		Start: 398
 		Length: 8
 		Tick: 80
-	# Fly through air squish on ground
 	die4:
 		Start: 406
 		Length: 12
 		Tick: 80
-	# Burn
 	die5:
 		Start: 418
 		Length: 18
 		Tick: 80
-	# Tib
 	die6:
 		Start: 366
 		Length: 11

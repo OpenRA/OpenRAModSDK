@@ -97,7 +97,7 @@ button-highlighted-disabled: chrome.png
 	corner-bl: 288,191,1,1
 	corner-br: 319,191,1,1
 
-# A copy of button
+	#A copy of button
 textfield: chrome.png
 	background: 2,194,60,60
 	border-r: 62,194,2,60
@@ -109,7 +109,7 @@ textfield: chrome.png
 	corner-bl: 0,254,2,2
 	corner-br: 62,254,2,2
 
-# A copy of button-hover
+	#A copy of button-hover
 textfield-hover: chrome.png
 	background: 2,130,60,60
 	border-r: 62,130,2,60
@@ -121,7 +121,7 @@ textfield-hover: chrome.png
 	corner-bl: 0,190,2,2
 	corner-br: 62,190,2,2
 
-# A copy of button-disabled
+	#A copy of button-disabled
 textfield-disabled: chrome.png
 	background: 66,130,60,60
 	border-r: 126,130,2,60
@@ -133,7 +133,7 @@ textfield-disabled: chrome.png
 	corner-bl: 64,190,2,2
 	corner-br: 126,190,2,2
 
-# A copy of button-pressed
+	#A copy of button-pressed
 textfield-focused: chrome.png
 	background: 66,194,60,60
 	border-r: 126,194,2,60
@@ -145,7 +145,7 @@ textfield-focused: chrome.png
 	corner-bl: 64,254,2,2
 	corner-br: 126,254,2,2
 
-# A copy of button
+	#A copy of button
 progressbar-bg: chrome.png
 	background: 2,194,60,60
 	border-r: 62,194,2,60
@@ -157,7 +157,7 @@ progressbar-bg: chrome.png
 	corner-bl: 0,254,2,2
 	corner-br: 62,254,2,2
 
-# A copy of button-hover
+	#A copy of button-hover
 progressbar-thumb: chrome.png
 	background: 2,130,60,60
 	border-r: 62,130,2,60
@@ -170,7 +170,7 @@ progressbar-thumb: chrome.png
 	corner-br: 62,190,2,2
 
 
-# A copy of panel-gray
+	#A copy of panel-gray
 scrollpanel-bg: chrome.png
 	background: 66,66,60,60
 	border-r: 126,66,2,60
@@ -226,7 +226,7 @@ scrollpanel-button-pressed: chrome.png
 	corner-bl: 64,254,2,2
 	corner-br: 126,254,2,2
 
-# A copy of button-hover
+	#A copy of button-hover
 scrollitem-hover: chrome.png
 	background: 2,130,60,60
 	border-r: 62,130,2,60
@@ -238,7 +238,7 @@ scrollitem-hover: chrome.png
 	corner-bl: 0,190,2,2
 	corner-br: 62,190,2,2
 
-# A copy of button-pressed
+	#A copy of button-pressed
 scrollitem-selected: chrome.png
 	background: 66,194,60,60
 	border-r: 126,194,2,60
@@ -253,7 +253,7 @@ scrollitem-selected: chrome.png
 slider: chrome.png
 	tick: 64,64,1,4
 
-# A copy of panel-gray
+	#A copy of panel-gray
 slider-track: chrome.png
 	background: 66,66,60,60
 	border-r: 126,66,2,60
@@ -309,7 +309,7 @@ slider-thumb-pressed: chrome.png
 	corner-bl: 64,254,2,2
 	corner-br: 126,254,2,2
 	
-# A copy of button
+	#A copy of button
 checkbox: chrome.png
 	background: 2,194,60,60
 	border-r: 62,194,2,60
@@ -321,7 +321,7 @@ checkbox: chrome.png
 	corner-bl: 0,254,2,2
 	corner-br: 62,254,2,2
 
-# A copy of button-hover
+	#A copy of button-hover
 checkbox-hover: chrome.png
 	background: 2,130,60,60
 	border-r: 62,130,2,60
@@ -333,7 +333,7 @@ checkbox-hover: chrome.png
 	corner-bl: 0,190,2,2
 	corner-br: 62,190,2,2
 
-# A copy of button-disabled
+	#A copy of button-disabled
 checkbox-disabled: chrome.png
 	background: 66,130,60,60
 	border-r: 126,130,2,60
@@ -345,7 +345,7 @@ checkbox-disabled: chrome.png
 	corner-bl: 64,190,2,2
 	corner-br: 126,190,2,2
 
-# A copy of button-pressed
+	#A copy of button-pressed
 checkbox-pressed: chrome.png
 	background: 66,194,60,60
 	border-r: 126,194,2,60
@@ -357,7 +357,7 @@ checkbox-pressed: chrome.png
 	corner-bl: 64,254,2,2
 	corner-br: 126,254,2,2
 
-# A copy of button-highlighted-pressed
+	#A copy of button-highlighted-pressed
 checkbox-highlighted: chrome.png
 	background: 257,161,30,30
 	border-r: 287,161,1,30
@@ -368,17 +368,6 @@ checkbox-highlighted: chrome.png
 	corner-tr: 287,160,1,1
 	corner-bl: 256,191,1,1
 	corner-br: 287,191,1,1
-
-# panel-black: chrome.png
-	# background: 66,2,60,60
-	# border-r: 126,2,2,60
-	# border-l: 64,2,2,60
-	# border-b: 66,62,60,2
-	# border-t: 66,0,60,2
-	# corner-tl: 64,0,2,2
-	# corner-tr: 126,0,2,2
-	# corner-bl: 64,62,2,2
-	# corner-br: 126,62,2,2
 
 panel-black: oldbackground.png
 	background: 1,1,510,510
@@ -533,11 +522,9 @@ production-icons: chrome.png
 	support-disabled: 464,16,16,16
 	support-alert: 464,32,16,16
 production-icons2: chrome2.png
-#navy
 	ship: 496,48,16,16
 	ship-disabled: 496,64,16,16
 	ship-alert: 496,80,16,16
-#Research
 	research: 496,144,16,16
 	research-disabled: 496,159,16,16
 	research-alert: 496,174,16,16

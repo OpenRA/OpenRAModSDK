@@ -1790,392 +1790,392 @@ Templates:
 		Tiles:
 			0: Rock
 			1: Rock
-# after this is buged, comment before release
-	# Template@590:
-		# Id: 590
-		# Images: wc01.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@600:
-		# Id: 600
-		# Images: wc02.tem
-		# Size: 2,3
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rough
-			# 2: Rock
-			# 3: Rock
-			# 4: Rock
-			# 5: Rock
-	# Template@610:
-		# Id: 610
-		# Images: wc03.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@620:
-		# Id: 620
-		# Images: wc04.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@630:
-		# Id: 630
-		# Images: wc05.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@640:
-		# Id: 640
-		# Images: wc06.tem
-		# Size: 2,3
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rough
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-			# 4: Rock
-	# Template@650:
-		# Id: 650
-		# Images: wc07.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@660:
-		# Id: 660
-		# Images: wc08.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@670:
-		# Id: 670
-		# Images: wc09.tem
-		# Size: 3,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: River
-			# 4: Rock
-			# 5: Rock
-	# Template@680:
-		# Id: 680
-		# Images: wc10.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@690:
-		# Id: 690
-		# Images: wc11.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@700:
-		# Id: 700
-		# Images: wc12.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@710:
-		# Id: 710
-		# Images: wc13.tem
-		# Size: 3,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rough
-			# 3: Rock
-			# 4: Rock
-			# 5: Clear
-	# Template@720:
-		# Id: 720
-		# Images: wc14.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Beach
-			# 2: Beach
-			# 3: Beach
-	# Template@730:
-		# Id: 730
-		# Images: wc15.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@740:
-		# Id: 740
-		# Images: wc16.tem
-		# Size: 2,3
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Water
-			# 2: Rock
-			# 3: Rock
-			# 5: Rock
-	# Template@750:
-		# Id: 750
-		# Images: wc17.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@760:
-		# Id: 760
-		# Images: wc18.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@770:
-		# Id: 770
-		# Images: wc19.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@780:
-		# Id: 780
-		# Images: wc20.tem
-		# Size: 2,3
-		# Categories: Water Cliffs
-		# Tiles:
-			# 1: River
-			# 2: Rock
-			# 3: Rock
-			# 4: Rock
-			# 5: Rough
-	# Template@790:
-		# Id: 790
-		# Images: wc21.tem
-		# Size: 1,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-	# Template@800:
-		# Id: 800
-		# Images: wc22.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@810:
-		# Id: 810
-		# Images: wc23.tem
-		# Size: 3,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: River
-			# 3: Rock
-			# 4: Rock
-			# 5: Water
-	# Template@820:
-		# Id: 820
-		# Images: wc24.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@830:
-		# Id: 830
-		# Images: wc25.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@840:
-		# Id: 840
-		# Images: wc26.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@850:
-		# Id: 850
-		# Images: wc27.tem
-		# Size: 3,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Water
-			# 3: Clear
-			# 4: Rock
-			# 5: Rock
-	# Template@860:
-		# Id: 860
-		# Images: wc28.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 3: Rock
-	# Template@870:
-		# Id: 870
-		# Images: wc29.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@880:
-		# Id: 880
-		# Images: wc30.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@890:
-		# Id: 890
-		# Images: wc31.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: River
-			# 2: Rock
-			# 3: Rock
-	# Template@900:
-		# Id: 900
-		# Images: wc32.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Water
-	# Template@910:
-		# Id: 910
-		# Images: wc33.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@920:
-		# Id: 920
-		# Images: wc34.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@930:
-		# Id: 930
-		# Images: wc35.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@940:
-		# Id: 940
-		# Images: wc36.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@950:
-		# Id: 950
-		# Images: wc37.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
-	# Template@960:
-		# Id: 960
-		# Images: wc38.tem
-		# Size: 2,2
-		# Categories: Water Cliffs
-		# Tiles:
-			# 0: Rock
-			# 1: Rock
-			# 2: Rock
-			# 3: Rock
+	#after this is buged, comment before release
+	#Template@590:
+	#	Id: 590
+	#	Images: wc01.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@600:
+	#	Id: 600
+	#	Images: wc02.tem
+	#	Size: 2,3
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rough
+	#		2: Rock
+	#		3: Rock
+	#		4: Rock
+	#		5: Rock
+	#Template@610:
+	#	Id: 610
+	#	Images: wc03.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@620:
+	#	Id: 620
+	#	Images: wc04.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@630:
+	#	Id: 630
+	#	Images: wc05.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@640:
+	#	Id: 640
+	#	Images: wc06.tem
+	#	Size: 2,3
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rough
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#		4: Rock
+	#Template@650:
+	#	Id: 650
+	#	Images: wc07.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@660:
+	#	Id: 660
+	#	Images: wc08.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@670:
+	#	Id: 670
+	#	Images: wc09.tem
+	#	Size: 3,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: River
+	#		4: Rock
+	#		5: Rock
+	#Template@680:
+	#	Id: 680
+	#	Images: wc10.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@690:
+	#	Id: 690
+	#	Images: wc11.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@700:
+	#	Id: 700
+	#	Images: wc12.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@710:
+	#	Id: 710
+	#	Images: wc13.tem
+	#	Size: 3,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rough
+	#		3: Rock
+	#		4: Rock
+	#		5: Clear
+	#Template@720:
+	#	Id: 720
+	#	Images: wc14.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Beach
+	#		2: Beach
+	#		3: Beach
+	#Template@730:
+	#	Id: 730
+	#	Images: wc15.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@740:
+	#	Id: 740
+	#	Images: wc16.tem
+	#	Size: 2,3
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Water
+	#		2: Rock
+	#		3: Rock
+	#		5: Rock
+	#Template@750:
+	#	Id: 750
+	#	Images: wc17.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@760:
+	#	Id: 760
+	#	Images: wc18.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@770:
+	#	Id: 770
+	#	Images: wc19.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@780:
+	#	Id: 780
+	#	Images: wc20.tem
+	#	Size: 2,3
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		1: River
+	#		2: Rock
+	#		3: Rock
+	#		4: Rock
+	#		5: Rough
+	#Template@790:
+	#	Id: 790
+	#	Images: wc21.tem
+	#	Size: 1,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#Template@800:
+	#	Id: 800
+	#	Images: wc22.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@810:
+	#	Id: 810
+	#	Images: wc23.tem
+	#	Size: 3,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: River
+	#		3: Rock
+	#		4: Rock
+	#		5: Water
+	#Template@820:
+	#	Id: 820
+	#	Images: wc24.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@830:
+	#	Id: 830
+	#	Images: wc25.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@840:
+	#	Id: 840
+	#	Images: wc26.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@850:
+	#	Id: 850
+	#	Images: wc27.tem
+	#	Size: 3,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Water
+	#		3: Clear
+	#		4: Rock
+	#		5: Rock
+	#Template@860:
+	#	Id: 860
+	#	Images: wc28.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		3: Rock
+	#Template@870:
+	#	Id: 870
+	#	Images: wc29.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@880:
+	#	Id: 880
+	#	Images: wc30.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@890:
+	#	Id: 890
+	#	Images: wc31.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: River
+	#		2: Rock
+	#		3: Rock
+	#Template@900:
+	#	Id: 900
+	#	Images: wc32.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Water
+	#Template@910:
+	#	Id: 910
+	#	Images: wc33.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@920:
+	#	Id: 920
+	#	Images: wc34.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@930:
+	#	Id: 930
+	#	Images: wc35.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@940:
+	#	Id: 940
+	#	Images: wc36.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@950:
+	#	Id: 950
+	#	Images: wc37.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock
+	#Template@960:
+	#	Id: 960
+	#	Images: wc38.tem
+	#	Size: 2,2
+	#	Categories: Water Cliffs
+	#	Tiles:
+	#		0: Rock
+	#		1: Rock
+	#		2: Rock
+	#		3: Rock

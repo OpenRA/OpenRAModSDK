@@ -18,8 +18,8 @@ TRAN:
 		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Tiberium,BlueTiberium,RedTiberium
 		AltitudeVelocity: 0c100
 		TurnToLand: true
-#so if the player use deploy on empty transport it will return to the barracks, its kinda hacky logic
 		RearmBuildings: barracks
+	#so if the player use deploy on empty transport it will return to the barracks, its kinda hacky logic
 	Health:
 		HP: 90
 	Armor:
@@ -81,7 +81,6 @@ OSPREY:
 		Repulsable: true
 		CruiseAltitude: 2160
 		CanHover: true
-#so if the player use deploy on empty transport it will return to the vehicle production building, its kinda hacky logic
 		RearmBuildings: vehicleproduction
 		ReturnOnIdle: True
 		AirborneCondition: airborne
@@ -101,9 +100,9 @@ OSPREY:
 		Type: CenterPosition
 	WithIdleOverlay@ROTOR1AIR:
 		Offset: 0,847,50
-# ^forward, right, up^
 		Sequence: rotor
 		RequiresCondition: airborne
+	#Offset ^forward, right, up^
 	WithIdleOverlay@ROTOR1GROUND:
 		Offset: 0,847,50
 		Sequence: slow-rotor
@@ -222,8 +221,8 @@ F22:
 		Offset: -598,-683,0
 	Contrail@2:
 		Offset: -598,683,0
-	# SpawnActorOnDeath:
-		# Actor: MIG.Husk
+	#SpawnActorOnDeath:
+	#	Actor: MIG.Husk
 	SmokeTrailWhenDamaged:
 		Offset: -853,0,171
 		Interval: 2

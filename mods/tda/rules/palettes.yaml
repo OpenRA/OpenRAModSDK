@@ -111,7 +111,7 @@
 	VoxelNormalsPalette@normals:
 		Name: normals
 		Type: RedAlert2
-		# Type: RedAlert2 or TiberianSun
+	#Type: RedAlert2 or TiberianSun
 	PaletteFromFile@playerTS:
 		Name: playerTS
 		Filename: TS.pal

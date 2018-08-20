@@ -102,29 +102,27 @@ GUNBOAT:
 		Color: 3F7FBF
 		UsePlayerColor: False
 		TrailWidth: 0c128
-	# LeavesTrails:
-		# Image: ship_trail
-		# Sequences: idle
-		# Palette: terrain
-		# TerrainTypes: Water
-		# Type: CenterPosition 
-		# VisibleThroughFog: False
-		# TrailWhileStationary: False
-		# StationaryInterval: 0
-		# TrailWhileMoving: True
-		# MovingInterval: 0
-		# StartDelay: 0
-		# Offsets: -3000,0,0
-# # Collection of 3D World Vector	Trail spawn positions relative to actor position. (forward, right, up) triples
-		# SpawnAtLastPosition: True
-		# # RequiresCondition: 
-
-#[12:46] <+pchote> the center of the deck needs to match the center of rotation of the actor
-#[12:46] <+pchote> if the center moves with facing then you can't position anything properl
-#[12:46] <+pchote> y
-#[12:47] <+pchote> and your camera angles need to match the rules too
-#<Nolt_Phone> Look up for the coordinate of the camera aiming point, group your entire model, and align it to it (note: he talks about 3DsMax)
-
+	#LeavesTrails:
+	#	Image: ship_trail
+	#	Sequences: idle
+	#	Palette: terrain
+	#	TerrainTypes: Water
+	#	Type: CenterPosition 
+	#	VisibleThroughFog: False
+	#	TrailWhileStationary: False
+	#	StationaryInterval: 0
+	#	TrailWhileMoving: True
+	#	MovingInterval: 0
+	#	StartDelay: 0
+	#	Offsets: -3000,0,0
+	#Collection of 3D World Vector	Trail spawn positions relative to actor position. (forward, right, up) triples
+	#	SpawnAtLastPosition: True
+	#	RequiresCondition: 
+	#[12:46] <+pchote> the center of the deck needs to match the center of rotation of the actor
+	#[12:46] <+pchote> if the center moves with facing then you can't position anything properl
+	#[12:46] <+pchote> y
+	#[12:47] <+pchote> and your camera angles need to match the rules too
+	#<Nolt_Phone> Look up for the coordinate of the camera aiming point, group your entire model, and align it to it (note: he talks about 3DsMax)
 LST:
 	Inherits: ^Ship
 	Valued:
@@ -169,3 +167,5 @@ LST:
 	RenderSprites:
 		PlayerPalette: playerRA
 		Scale: 0.8
+	Selectable:
+		Bounds: 48,48

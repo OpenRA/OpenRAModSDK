@@ -43,113 +43,23 @@ TibShimmering:
 	-AppearsOnRadar:
 	EditorTilesetFilter:
 		Categories: Critter
-#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# condition nightmare starts below
-#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-	# GrantConditionOnTerrain@RED:
-		# Condition: OnRedTib
-		# TerrainTypes: RedTiberium
-	# GrantConditionOnTerrain@BLUE:
-		# Condition: OnBlueTib
-		# TerrainTypes: BlueTiberium
-	# GrantConditionOnTerrain@GREEN:
-		# Condition: OnGreenTib
-		# TerrainTypes: Tiberium
-	# WithIdleOverlay@SHIMMERING_RED:
-		# Sequence: idle-shimmering
-		# Palette: lights_Red_50
-		# IsPlayerPalette: False
-		# RequiresCondition: OnRedTib && !OnBlueTib && !OnGreenTib
-	# WithIdleOverlay@SHIMMERING_BLUE:
-		# Sequence: idle-shimmering
-		# Palette: lights_Blue_50
-		# IsPlayerPalette: False
-		# RequiresCondition: OnBlueTib && !OnRedTib && !OnGreenTib
-	WithIdleOverlay@SHIMMERING_GREEN:
-		Sequence: idle-shimmering
-		Palette: lights_Green_50
-		IsPlayerPalette: False
-		# RequiresCondition: OnGreenTib && !OnRedTib && !OnBlueTib
-	# DamagedByTerrain@RED:
-		# Damage: 10
-		# DamageInterval: 4
-		# Terrain: Clear, Rough, Road, Beach, BlueTiberium, Tiberium
-		# RequiresCondition: OnRedTib && !OnBlueTib && !OnGreenTib
-	# DamagedByTerrain@BLUE:
-		# Damage: 10
-		# DamageInterval: 4
-		# Terrain: Clear, Rough, Road, Beach, RedTiberium, Tiberium
-		# RequiresCondition: OnBlueTib && !OnRedTib && !OnGreenTib
 	DamagedByTerrain@GREEN:
 		Damage: 10
 		DamageInterval: 4
 		Terrain: Clear, Rough, Road, Beach, BlueTiberium, RedTiberium
-		# RequiresCondition: OnGreenTib && !OnRedTib && !OnBlueTib
 	Mobile:
 		Speed: 99999
 		Crushes: byall
 		SharesCell: True
+		Locomotor:
 		TerrainSpeeds:
 			RedTiberium: 100
 			BlueTiberium: 100
 			Tiberium: 100
-
-# TibShimmeringRed:
-	# Inherits: ^TibShimmering
-	# WithIdleOverlay@SHIMMERING:
-		# Sequence: idle-shimmering
-		# Palette: lights_Red_50
-		# IsPlayerPalette: False
-	# DamagedByTerrain:
-		# Damage: 10
-		# DamageInterval: 4
-		# Terrain: Clear, Rough, Road, Beach, BlueTiberium, Tiberium
-	# Mobile:
-		# Speed: 99999
-		# Crushes: byall
-		# SharesCell: True
-		# TerrainSpeeds:
-			# RedTiberium: 100
-	# RenderSprites:
-		# Image: tibshimmering
-
-# TibShimmeringGreen:
-	# Inherits: ^TibShimmering
-	# WithIdleOverlay@SHIMMERING:
-		# Sequence: idle-shimmering
-		# Palette: lights_Green_50
-		# IsPlayerPalette: False
-	# DamagedByTerrain:
-		# Damage: 10
-		# DamageInterval: 4
-		# Terrain: Clear, Rough, Road, Beach, BlueTiberium, RedTiberium
-	# Mobile:
-		# Speed: 99999
-		# Crushes: byall
-		# SharesCell: True
-		# TerrainSpeeds:
-			# Tiberium: 100
-	# RenderSprites:
-		# Image: tibshimmering
-
-# TibShimmeringBlue:
-	# Inherits: ^TibShimmering
-	# WithIdleOverlay@SHIMMERING:
-		# Sequence: idle-shimmering
-		# Palette: lights_Blue_50
-		# IsPlayerPalette: False
-	# DamagedByTerrain:
-		# Damage: 10
-		# DamageInterval: 4
-		# Terrain: Clear, Rough, Road, Beach, RedTiberium, Tiberium
-	# Mobile:
-		# Speed: 99999
-		# Crushes: byall
-		# SharesCell: True
-		# TerrainSpeeds:
-			# BlueTiberium: 100
-	# RenderSprites:
-		# Image: tibshimmering
+			Clear: 0
+			Rough: 0
+			Road: 0
+			Beach: 0
 
 CRATEHEAL:
 	Inherits: ^Crate
@@ -181,7 +91,7 @@ MINP:
 		Weapon: APMine
 
 CRATEUNIT:
-#TimeDelay 1 hour = 90000, 30 min = 45000, 10 min=15000, 5 min=is=7500, 2 min = 3000, 1 min = 1500.
+	#TimeDelay 1 hour = 90000, 30 min = 45000, 10 min=15000, 5 min=is=7500, 2 min = 3000, 1 min = 1500.
 	Inherits: ^Crate
 	Crate:
 		Lifetime: 60
@@ -189,7 +99,7 @@ CRATEUNIT:
 		Name: Unit Crate
 	RenderSprites:
 		Image: crateunit
-#Duplicate
+	#Duplicate
 	DuplicateUnitCrateAction:
 		SelectionShares: 3
 		MaxAmount: 1
@@ -203,7 +113,7 @@ CRATEUNIT:
 		MaxDuplicateValue: 1500
 		MaxRadius: 2
 		Owner: Creeps
-#Vehicles
+	#Vehicles
 	GiveUnitCrateAction@va1:
 		SelectionShares: 35
 		Units: bggy
@@ -259,7 +169,7 @@ CRATEUNIT:
 		Units: mtnk
 		ValidFactions: gdi, nod, nodda
 		TimeDelay: 45000
-#Infantry
+	#Infantry
 	GiveUnitCrateAction@squadA1:
 		SelectionShares: 50
 		Units: e1,e1
@@ -287,13 +197,13 @@ CRATEUNIT:
 		Units: e1,e1,e4,e4
 		ValidFactions: gdi, nod, nodda
 		TimeDelay: 3000
-#MCV
+	#MCV
 	GiveMcvCrateAction:
 		SelectionShares: 0
 		NoBaseSelectionShares: 120
 		Units: mcv
 		ExcludedActorTypes: solesurvivor
-#Sole Survivor	
+	#Sole Survivor	
 	GiveUnitCrateAction@sole1:
 		SelectionShares: 3
 		Units: e6
