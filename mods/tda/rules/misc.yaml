@@ -320,8 +320,10 @@ waypoint:
 		Categories: System
 	Interactable:
 
-^fact.colorpicker:
+fact.colorpicker:
 	Inherits: FACT
+	-Buildable:
+	-EditorTilesetFilter:
 	RenderSprites:
 		Image: fact
 		Palette: colorpicker
