@@ -51,15 +51,11 @@ TibShimmering:
 		Speed: 99999
 		Crushes: byall
 		SharesCell: True
-		Locomotor:
+		Locomotor: foot
 		TerrainSpeeds:
 			RedTiberium: 100
 			BlueTiberium: 100
 			Tiberium: 100
-			Clear: 0
-			Rough: 0
-			Road: 0
-			Beach: 0
 
 CRATEHEAL:
 	Inherits: ^Crate
@@ -439,7 +435,7 @@ FLAG_STARTING_UNITS:
 		CircleSequence: circles
 		ClockSequence: clock
 		DisplayTimerStances: Ally, Enemy
-	ProximityCapturable
+	ProximityCapturable:
 		Range: 5c0
 		CaptorTypes: Vehicle, Tank, Infantry
 		MustBeClear: true

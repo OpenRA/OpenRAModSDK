@@ -92,7 +92,7 @@ FACT:
 		Description: Builds structures
 	Targetable:
 		TargetTypes: Ground, C4, Structure, DetonateAttack, AItagCONS
-	Selectable:  
+	Selectable:
 		Bounds: 72,48
 
 FACT.GDI:
@@ -225,7 +225,7 @@ NUKE:
 		Name: FaultyFailSafe
 		Ammo: 1
 		PipCount: 0
-	Selectable:  
+	Selectable:
 		Bounds: 48,48
 	#too mutch sounds blocking other sounds. i need ambient sounds with range
 	#	AmbientSound:
@@ -273,7 +273,7 @@ NUK2:
 		Name: FaultyFailSafe
 		Ammo: 1
 		PipCount: 0
-	Selectable:  
+	Selectable:
 		Bounds: 48,48
 	#too mutch sounds blocking other sounds. i need ambient sounds with range
 	#	AmbientSound:
@@ -321,7 +321,7 @@ PROC:
 		PipColor: Green
 		PipCount: 10
 		Capacity: 2800
-	Selectable: 
+	Selectable:
 		Bounds: 72,56
 		DecorationBounds: 73,72
 	CustomSellValue:
@@ -373,7 +373,8 @@ SILO:
 		PipColor: Green
 		Capacity: 2800
 	#you are just full of the stuff arent you?
-	-EmitInfantryOnSell:
+	-SpawnActorsOnSell:
+		ActorTypes: e1
 	Power:
 		Amount: -10
 	MustBeDestroyed:
@@ -1124,7 +1125,7 @@ EYE:
 		Range: 3c0
 		ValidStances: Ally, Enemy
 	HiddenUnderFog:
-		AlwaysVisibleStances: Ally, Enemy 
+		AlwaysVisibleStances: Ally, Enemy
 		Type: CenterPosition
 	-FrozenUnderFog:
 	SupportPowerChargeBar:
@@ -1209,7 +1210,7 @@ TMPL:
 		Range: 4c0
 		ValidStances: Ally, Enemy
 	HiddenUnderFog:
-		AlwaysVisibleStances: Ally, Enemy 
+		AlwaysVisibleStances: Ally, Enemy
 		Type: CenterPosition
 	-FrozenUnderFog:
 	SupportPowerChargeBar:
@@ -1274,7 +1275,7 @@ MISS_NOD:
 	RevealsShroud:
 		Range: 5c0
 	Selectable:
-		Bounds: 72,48 
+		Bounds: 72,48
 
 MISS_GDI:
 	Inherits: ^BaseBuilding
@@ -1327,7 +1328,7 @@ MISS_GDI:
 	RevealsShroud:
 		Range: 5c0
 	Selectable:
-		Bounds: 72,48 
+		Bounds: 72,48
 
 GUN:
 	Inherits: ^Defense
@@ -1468,7 +1469,8 @@ OBLI:
 		ReloadDelay: 40
 		InitialChargeDelay: 50
 		PauseOnCondition: disabled
-	-EmitInfantryOnSell:
+	-SpawnActorsOnSell:
+		ActorTypes: e1
 	DetectCloaked:
 		Range: 5c0
 		RequiresCondition: !disabled
@@ -1557,7 +1559,8 @@ PBOX:
 		MaxWeight: 1
 		PipCount: 1
 		InitialUnits: e1
-	-EmitInfantryOnSell:
+	-SpawnActorsOnSell:
+		ActorTypes: e1
 	AttackGarrisoned:
 		Armaments: pillbox
 		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128

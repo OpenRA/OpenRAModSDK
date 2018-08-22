@@ -836,11 +836,12 @@ MSAM:
 		LocalOffset: 213,-128,0, 213,128,0
 	AttackFrontal:
 	WithSpriteTurret:
-		AimSequence: aim
 	SpawnActorOnDeath:
 		Actor: MSAM.Husk
 	Targetable:
 		TargetTypes: Ground, Tank, Repair, AItagArtyType
+	WithTurretAimAnimation:
+		Sequence: aim
 
 MLRS:
 	Inherits: ^Tank
@@ -875,7 +876,7 @@ MLRS:
 		Ammo: 2
 		PipCount: 0
 	AttackTurreted:
-	WithReloadingSpriteTurret:
+	WithSpriteTurret:
 		AmmoPoolName: primary
 		InitialStanceAI: Defend
 	RenderRangeCircle:

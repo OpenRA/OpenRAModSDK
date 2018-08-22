@@ -1,7 +1,6 @@
 General:
 	Name: Snow
 	Id: SNOW
-	Palette: snow.pal
 	EditorTemplateOrder: Terrain, Debris, Road, Cliffs, Beach, River, Bridge
 	HeightDebugColors: 880000
 
@@ -64,7 +63,6 @@ Terrain:
 	TerrainType@Water:
 		Type: Water
 		TargetTypes: Water
-		IsWater: True
 		Color: 5C74A4
 		RestrictPlayerColor: true
 

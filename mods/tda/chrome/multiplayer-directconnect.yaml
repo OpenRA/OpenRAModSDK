@@ -41,6 +41,7 @@ Container@DIRECTCONNECT_PANEL:
 					Y: 50
 					Width: 200
 					Height: 25
+					Type: Integer
 		Button@BACK_BUTTON:
 			Key: escape
 			X: 0
@@ -55,4 +56,3 @@ Container@DIRECTCONNECT_PANEL:
 			Width: 140
 			Height: 35
 			Text: Join
-

@@ -64,7 +64,7 @@
 		ContrailZOffset: 1000
 		ContrailDelay: 0
 
-^ImpactHitForceBulletLight
+^ImpactHitForceBulletLight:
 	Warhead@HitForceToFlesh: CreateEffect
 		ValidTargets: Infantry
 		InvalidTargets: Vehicle, Water, Structure, Wall, Husk
@@ -82,7 +82,7 @@
 		ValidTargets: Ground
 		InvalidTargets: Vehicle, Husk, Water, Infantry, Structure, Wall
 
-^ImpactHitForceBulletsLight
+^ImpactHitForceBulletsLight:
 	Warhead@HitForceToFlesh: CreateEffect
 		ValidTargets: Infantry
 		InvalidTargets: Vehicle, Water, Structure, Wall, Husk
@@ -100,7 +100,7 @@
 		ValidTargets: Ground
 		InvalidTargets: Vehicle, Husk, Water, Infantry, Structure, Wall
 
-^ImpactHitForceShellLight
+^ImpactHitForceShellLight:
 	Warhead@HitForceToFlesh: CreateEffect
 		ValidTargets: Infantry
 		InvalidTargets: Vehicle, Water, Structure, Wall, Husk
@@ -118,7 +118,7 @@
 		ValidTargets: Ground
 		InvalidTargets: Vehicle, Husk, Water, Infantry, Structure, Wall
 
-^ImpactHitForceShellMedium
+^ImpactHitForceShellMedium:
 	Warhead@HitForceToFlesh: CreateEffect
 		ValidTargets: Infantry
 		InvalidTargets: Vehicle, Water, Structure, Wall, Husk
@@ -136,7 +136,7 @@
 		ValidTargets: Ground
 		InvalidTargets: Vehicle, Husk, Water, Infantry, Structure, Wall
 
-^ImpactHitForceShellHeavy
+^ImpactHitForceShellHeavy:
 	Warhead@HitForceToFlesh: CreateEffect
 		ValidTargets: Infantry
 		InvalidTargets: Vehicle, Water, Structure, Wall, Husk

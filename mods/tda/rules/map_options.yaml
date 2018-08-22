@@ -23,7 +23,7 @@ Player:
 		ExploredMapCheckboxEnabled: False
 		FogCheckboxDisplayOrder: 4
 		ExploredMapCheckboxDisplayOrder: 0
-	LobbyPrerequisiteCheckbox@HarvesterTruce:	
+	LobbyPrerequisiteCheckbox@HarvesterTruce:
 		ID: HarvesterTruce
 		Label: Harvester Truce
 		Description: Harvesters Won't die (Do Not Use with Short Game Off)

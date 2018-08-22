@@ -590,6 +590,9 @@ BRIDGE1:
 		SpawnOffset: 0,2
 	Interactable:
 		Bounds: 96,96
+	ShakeOnDeath:
+		Duration: 15
+		Intensity: 6
 
 BRIDGE2:
 	Inherits: ^Bridge
@@ -607,6 +610,9 @@ BRIDGE2:
 		SpawnOffset: 2,2
 	Interactable:
 		Bounds: 120,120
+	ShakeOnDeath:
+		Duration: 15
+		Intensity: 6
 
 BRIDGE3:
 	Inherits: ^Bridge
@@ -624,6 +630,9 @@ BRIDGE3:
 		SpawnOffset: 1,2
 	Interactable:
 		Bounds: 144,120
+	ShakeOnDeath:
+		Duration: 15
+		Intensity: 6
 
 BRIDGE4:
 	Inherits: ^Bridge
@@ -641,6 +650,9 @@ BRIDGE4:
 		SpawnOffset: 3,2
 	Interactable:
 		Bounds: 144,96
+	ShakeOnDeath:
+		Duration: 15
+		Intensity: 6
 
 BRIDGEHUT:
 	AlwaysVisible:

@@ -145,10 +145,10 @@ airstrike.proxy:
 BOAT:
 	RenderSprites:
 		PlayerPalette: PlayerColor
-
 	#MIG:
 	#	RenderSprites:
 	#		PlayerPalette: playerRAunits
+
 
 3TNK:
 	RenderSprites:
@@ -221,10 +221,10 @@ MCV.Husk:
 LST:
 	RenderSprites:
 		PlayerPalette: PlayerColor
-
 	#OLDLST:
 	#	RenderSprites:
 	#		PlayerPalette: PlayerColor
+
 
 ^Plane:
 	Tooltip:

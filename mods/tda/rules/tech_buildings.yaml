@@ -89,7 +89,7 @@ MISS:
 		OwnerType: InternalName
 		InternalOwner: Neutral
 	Selectable:
-		Bounds: 72,48 
+		Bounds: 72,48
 
 BARR:
 	Inherits: ^TechBuilding
@@ -217,7 +217,8 @@ PORT:
 	-Sellable:
 	-Capturable:
 	-GivesBuildableArea:
-	-EmitInfantryOnSell:
+	-SpawnActorsOnSell:
+		ActorTypes: e1
 	-WithDeathAnimation:
 	-RepairableBuilding:
 	-Targetable:
@@ -228,3 +229,9 @@ PORT:
 		MustBeClear: true
 		Sticky: true
 		Permanent: false
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		ReferencePoint: Center
+		Palette: player
+		IsPlayerPalette: True

@@ -25,7 +25,6 @@ RESEARCH_ADV_NUKE:
 	AlwaysVisible:
 	Interactable:
 	ProvidesPrerequisite@research_adv_nuke:
-
 	#camoUpgrade:
 	#	Inherits@1: ^ExistsInWorld
 	#	Inherits@2: ^UpgradesGlobal
@@ -44,6 +43,7 @@ RESEARCH_ADV_NUKE:
 	#IonCanUpgrade:
 	#TowMslHomveUpgrade:
 
+
 RESEARCH_STL_HARV:
 	Tooltip:
 		Name: Stealth Generators
@@ -57,7 +57,7 @@ RESEARCH_STL_HARV:
 		Queue: Research.Nod
 		BuildPaletteOrder: 1
 		Prerequisites: anyhq, !HarvesterTruce
-		Description:Type: Research.\nSubject: Stealth\nDescription: Allows the construction of stealth harversters\n Stealth harversters carry less tiberium
+		Description: Type: Research.\nSubject: Stealth\nDescription: Allows the construction of stealth harversters\n Stealth harversters carry less tiberium
 		BuildLimit: 1
 		IconPalette: ra2foricamos
 	Valued:
@@ -85,7 +85,7 @@ RESEARCH_ARM_HARV:
 		Queue: Research.GDI
 		BuildPaletteOrder: 1
 		Prerequisites: anyhq, !HarvesterTruce
-		Description:Type: Research.\nSubject: Armor\nDescription: A reactive armor powered by tiberium\nThat Allows the construction of heavy harversters\n Armored harversters move slower
+		Description: Type: Research.\nSubject: Armor\nDescription: A reactive armor powered by tiberium\nThat Allows the construction of heavy harversters\n Armored harversters move slower
 		BuildLimit: 1
 		IconPalette: ra2foricamos
 	Valued:
@@ -113,7 +113,7 @@ RESEARCH_HUMVEE_TOW:
 		Queue: Research.GDI
 		BuildPaletteOrder: 1
 		Prerequisites: anyhq
-		Description:Type: Upgrade.\nSubject: Weapon System\nDescription: Equips humvees with tow missile system\nThat Allows humvees to fire missiles against tanks and vehicles
+		Description: Type: Upgrade.\nSubject: Weapon System\nDescription: Equips humvees with tow missile system\nThat Allows humvees to fire missiles against tanks and vehicles
 		BuildLimit: 1
 		IconPalette: ra2foricamos
 	Valued:
@@ -127,7 +127,6 @@ RESEARCH_HUMVEE_TOW:
 	AlwaysVisible:
 	Interactable:
 	ProvidesPrerequisite@research_humvee_tow:
-
 	#RESEARCH_HEAVY_WEAPONS_NOD:
 	#	Tooltip:
 	#		Name: Direct Assault
@@ -155,7 +154,6 @@ RESEARCH_HUMVEE_TOW:
 	#	AlwaysVisible:
 	#	Interactable:
 	#	ProvidesPrerequisite@research_heavy_weapons_nod:
-
 	#RESEARCH_STLH_WEAPONS_NOD:
 	#	Tooltip:
 	#		Name: Guerrilla Warfare
@@ -184,6 +182,8 @@ RESEARCH_HUMVEE_TOW:
 	#	Interactable:
 	#	ProvidesPrerequisite@research_stlh_weapons_nod:
 
+
+
 RESEARCH_BIO_NOD:
 	Tooltip:
 		Name: Biohazard Weaponry
@@ -197,7 +197,7 @@ RESEARCH_BIO_NOD:
 		Queue: Research.Nod, Research.Nodda
 		BuildPaletteOrder: 1
 		Prerequisites: anyhq
-		Description:Type: Doctrine.\nSubject: Weapons\nDescription: Select this doctrine to authorize the use of\nChem Tanks, Chem troopers, Chem Tower .\n\nWARNING Chem Tower upgrade will only work with "Direct Assault" doctrine.
+		Description: Type: Doctrine.\nSubject: Weapons\nDescription: Select this doctrine to authorize the use of\nChem Tanks, Chem troopers, Chem Tower .\n\nWARNING Chem Tower upgrade will only work with "Direct Assault" doctrine.
 		BuildLimit: 1
 		IconPalette: ra2foricamos
 	Valued:

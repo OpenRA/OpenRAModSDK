@@ -89,88 +89,89 @@ Player:
 		UnitLimits:
 			harv: 8
 		SquadSize: 15
-		SupportPowerDecision@Airstrike:
-			OrderName: AirstrikePowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@ArtileryStrike:
-			OrderName: ArtileryBarrageInfoOrder
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: AItagPP, AItagREF, AItagRAX, AItagWF, AItagHQ, AItagFIX, AItagAvoid, AItagArtyType
-				Attractiveness: 5
-				TargetMetric: None
-				CheckRadius: 2c0
-			Consideration@Ally: 
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 4c0
-		SupportPowerDecision@ParatroopersPower:
-			OrderName: Airdrop
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Tank
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@IonCannonPower:
-			OrderName: IonCannonPowerInfoOrder
-			MinimumAttractiveness: 1000
-			FineScanRadius: 2
-			Consideration@1:
-				Against: Enemy
-				Types: Air, Tank, Vehicle, Infantry, Water
-				Attractiveness: 2
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@3:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 3c0
-		SupportPowerDecision@NukePower:
-			OrderName: NukePowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
+		SupportPowerDecisions:
+			Airstrike:
+				OrderName: AirstrikePowerInfoOrder
+				MinimumAttractiveness: 2000
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Infantry
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			ArtileryStrike:
+				OrderName: ArtileryBarrageInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: AItagPP, AItagREF, AItagRAX, AItagWF, AItagHQ, AItagFIX, AItagAvoid, AItagArtyType
+					Attractiveness: 5
+					TargetMetric: None
+					CheckRadius: 2c0
+				Consideration@Ally:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 4c0
+			ParatroopersPower:
+				OrderName: Airdrop
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Tank
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			IonCannonPower:
+				OrderName: IonCannonPowerInfoOrder
+				MinimumAttractiveness: 1000
+				FineScanRadius: 2
+				Consideration@1:
+					Against: Enemy
+					Types: Air, Tank, Vehicle, Infantry, Water
+					Attractiveness: 2
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@3:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 3c0
+			NukePower:
+				OrderName: NukePowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
 	HackyAI@Watson:
 		Name: Watson
 		Type: watson
@@ -261,88 +262,89 @@ Player:
 		UnitLimits:
 			harv: 8
 		SquadSize: 15
-		SupportPowerDecision@Airstrike:
-			OrderName: AirstrikePowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@ArtileryStrike:
-			OrderName: ArtileryBarrageInfoOrder
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: AItagPP, AItagREF, AItagRAX, AItagWF, AItagHQ, AItagFIX, AItagAvoid, AItagArtyType
-				Attractiveness: 5
-				TargetMetric: None
-				CheckRadius: 2c0
-			Consideration@Ally: 
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 4c0
-		SupportPowerDecision@ParatroopersPower:
-			OrderName: Airdrop
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Tank
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@IonCannonPower:
-			OrderName: IonCannonPowerInfoOrder
-			MinimumAttractiveness: 1000
-			FineScanRadius: 2
-			Consideration@1:
-				Against: Enemy
-				Types: Air, Tank, Vehicle, Infantry, Water
-				Attractiveness: 2
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@3:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 3c0
-		SupportPowerDecision@NukePower:
-			OrderName: NukePowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
+		SupportPowerDecisions:
+			Airstrike:
+				OrderName: AirstrikePowerInfoOrder
+				MinimumAttractiveness: 2000
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Infantry
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			ArtileryStrike:
+				OrderName: ArtileryBarrageInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: AItagPP, AItagREF, AItagRAX, AItagWF, AItagHQ, AItagFIX, AItagAvoid, AItagArtyType
+					Attractiveness: 5
+					TargetMetric: None
+					CheckRadius: 2c0
+				Consideration@Ally:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 4c0
+			ParatroopersPower:
+				OrderName: Airdrop
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Tank
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			IonCannonPower:
+				OrderName: IonCannonPowerInfoOrder
+				MinimumAttractiveness: 1000
+				FineScanRadius: 2
+				Consideration@1:
+					Against: Enemy
+					Types: Air, Tank, Vehicle, Infantry, Water
+					Attractiveness: 2
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@3:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 3c0
+			NukePower:
+				OrderName: NukePowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
 	HackyAI@HAL9001:
 		Name: HAL 9001
 		Type: hal9001
@@ -435,88 +437,89 @@ Player:
 		UnitLimits:
 			harv: 8
 		SquadSize: 8
-		SupportPowerDecision@Airstrike:
-			OrderName: AirstrikePowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@ArtileryStrike:
-			OrderName: ArtileryBarrageInfoOrder
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: AItagPP, AItagREF, AItagRAX, AItagWF, AItagHQ, AItagFIX, AItagAvoid, AItagArtyType
-				Attractiveness: 5
-				TargetMetric: None
-				CheckRadius: 2c0
-			Consideration@Ally: 
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 4c0
-		SupportPowerDecision@ParatroopersPower:
-			OrderName: Airdrop
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Tank
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@IonCannonPower:
-			OrderName: IonCannonPowerInfoOrder
-			MinimumAttractiveness: 1000
-			FineScanRadius: 2
-			Consideration@1:
-				Against: Enemy
-				Types: Air, Tank, Vehicle, Infantry, Water
-				Attractiveness: 2
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@3:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 3c0
-		SupportPowerDecision@NukePower:
-			OrderName: NukePowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
+		SupportPowerDecisions:
+			Airstrike:
+				OrderName: AirstrikePowerInfoOrder
+				MinimumAttractiveness: 2000
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Infantry
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			ArtileryStrike:
+				OrderName: ArtileryBarrageInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: AItagPP, AItagREF, AItagRAX, AItagWF, AItagHQ, AItagFIX, AItagAvoid, AItagArtyType
+					Attractiveness: 5
+					TargetMetric: None
+					CheckRadius: 2c0
+				Consideration@Ally:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 4c0
+			ParatroopersPower:
+				OrderName: Airdrop
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Tank
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			IonCannonPower:
+				OrderName: IonCannonPowerInfoOrder
+				MinimumAttractiveness: 1000
+				FineScanRadius: 2
+				Consideration@1:
+					Against: Enemy
+					Types: Air, Tank, Vehicle, Infantry, Water
+					Attractiveness: 2
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@3:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 3c0
+			NukePower:
+				OrderName: NukePowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
 	HackyAI@blitzkrieg:
 		Name: Blitzkrieg
 		Type: blitzkrieg
@@ -604,118 +607,119 @@ Player:
 			e2: 15
 			e4: 5
 		SquadSize: 50
-		SupportPowerDecision@Airstrike:
-			OrderName: AirstrikePowerInfoOrder
-			MinimumAttractiveness: 1
-			Consideration@AItagSuperWeapon:
-				Against: Enemy
-				Types: AItagSuperWeapon
-				Attractiveness: 5
-				TargetMetric: None
-				CheckRadius: 1c0
-			Consideration@Ally:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: None
-				CheckRadius: 3c0
-		SupportPowerDecision@ArtileryStrike:
-			OrderName: ArtileryBarrageInfoOrder
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: AItagPP, AItagREF, AItagRAX, AItagWF, AItagHQ, AItagFIX, AItagAvoid, AItagArtyType
-				Attractiveness: 5
-				TargetMetric: None
-				CheckRadius: 2c0
-			Consideration@Ally: 
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 4c0
-		SupportPowerDecision@ParatroopersPower:
-			OrderName: AirdropInfoOrder
-			MinimumAttractiveness: 10
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Tank
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: AItagAvoid
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 6c0
-		SupportPowerDecision@IonCannonPower:
-			OrderName: IonCannonPowerInfoOrder
-			MinimumAttractiveness: 100
-			FineScanRadius: 2
-			Consideration@1:
-				Against: Enemy
-				Types: AItagSuperWeapon
-				Attractiveness: 100
-				TargetMetric: None
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Enemy
-				Types: AItagCONS
-				Attractiveness: 90
-				TargetMetric: None
-				CheckRadius: 2c0
-			Consideration@3:
-				Against: Enemy
-				Types: AItagFIX
-				Attractiveness: 80
-				TargetMetric: None
-				CheckRadius: 2c0
-			Consideration@4:
-				Against: Enemy
-				Types: AItagWF
-				Attractiveness: 70
-				TargetMetric: None
-				CheckRadius: 2c0
-			Consideration@5:
-				Against: Enemy
-				Types: AItagREF
-				Attractiveness: 60
-				TargetMetric: None
-				CheckRadius: 2c0
-			Consideration@6:
-				Against: Enemy
-				Types: AItagRAX
-				Attractiveness: 50
-				TargetMetric: None
-				CheckRadius: 2c0
-			Consideration@7:
-				Against: Enemy
-				Types: AItagPP
-				Attractiveness: 40
-				TargetMetric: None
-				CheckRadius: 2c0
-			Consideration@Ally:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -100
-				TargetMetric: None
-				CheckRadius: 2c0
-		SupportPowerDecision@NukePower:
-			OrderName: NukePowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 3c0
-			Consideration@Ally:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 10c0
+		SupportPowerDecisions:
+			Airstrike:
+				OrderName: AirstrikePowerInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@AItagSuperWeapon:
+					Against: Enemy
+					Types: AItagSuperWeapon
+					Attractiveness: 5
+					TargetMetric: None
+					CheckRadius: 1c0
+				Consideration@Ally:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: None
+					CheckRadius: 3c0
+			ArtileryStrike:
+				OrderName: ArtileryBarrageInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: AItagPP, AItagREF, AItagRAX, AItagWF, AItagHQ, AItagFIX, AItagAvoid, AItagArtyType
+					Attractiveness: 5
+					TargetMetric: None
+					CheckRadius: 2c0
+				Consideration@Ally:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 4c0
+			ParatroopersPower:
+				OrderName: AirdropInfoOrder
+				MinimumAttractiveness: 10
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Tank
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: AItagAvoid
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 6c0
+			IonCannonPower:
+				OrderName: IonCannonPowerInfoOrder
+				MinimumAttractiveness: 100
+				FineScanRadius: 2
+				Consideration@1:
+					Against: Enemy
+					Types: AItagSuperWeapon
+					Attractiveness: 100
+					TargetMetric: None
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Enemy
+					Types: AItagCONS
+					Attractiveness: 90
+					TargetMetric: None
+					CheckRadius: 2c0
+				Consideration@3:
+					Against: Enemy
+					Types: AItagFIX
+					Attractiveness: 80
+					TargetMetric: None
+					CheckRadius: 2c0
+				Consideration@4:
+					Against: Enemy
+					Types: AItagWF
+					Attractiveness: 70
+					TargetMetric: None
+					CheckRadius: 2c0
+				Consideration@5:
+					Against: Enemy
+					Types: AItagREF
+					Attractiveness: 60
+					TargetMetric: None
+					CheckRadius: 2c0
+				Consideration@6:
+					Against: Enemy
+					Types: AItagRAX
+					Attractiveness: 50
+					TargetMetric: None
+					CheckRadius: 2c0
+				Consideration@7:
+					Against: Enemy
+					Types: AItagPP
+					Attractiveness: 40
+					TargetMetric: None
+					CheckRadius: 2c0
+				Consideration@Ally:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -100
+					TargetMetric: None
+					CheckRadius: 2c0
+			NukePower:
+				OrderName: NukePowerInfoOrder
+				MinimumAttractiveness: 2000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 3c0
+				Consideration@Ally:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 10c0
 	HackyAI@MeatGrinder:
 		Name: Meat Grinder
 		Type: MeatGrinder
@@ -793,88 +797,89 @@ Player:
 		UnitLimits:
 			harv: 2
 		SquadSize: 30
-		SupportPowerDecision@Airstrike:
-			OrderName: AirstrikePowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@ArtileryStrike:
-			OrderName: ArtileryBarrageInfoOrder
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: AItagPP, AItagREF, AItagRAX, AItagWF, AItagHQ, AItagFIX, AItagAvoid, AItagArtyType
-				Attractiveness: 5
-				TargetMetric: None
-				CheckRadius: 2c0
-			Consideration@Ally: 
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 4c0
-		SupportPowerDecision@ParatroopersPower:
-			OrderName: Airdrop
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Tank
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@IonCannonPower:
-			OrderName: IonCannonPowerInfoOrder
-			MinimumAttractiveness: 1000
-			FineScanRadius: 2
-			Consideration@1:
-				Against: Enemy
-				Types: Air, Tank, Vehicle, Infantry, Water
-				Attractiveness: 2
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@3:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 3c0
-		SupportPowerDecision@NukePower:
-			OrderName: NukePowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
+		SupportPowerDecisions:
+			Airstrike:
+				OrderName: AirstrikePowerInfoOrder
+				MinimumAttractiveness: 2000
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Infantry
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			ArtileryStrike:
+				OrderName: ArtileryBarrageInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: AItagPP, AItagREF, AItagRAX, AItagWF, AItagHQ, AItagFIX, AItagAvoid, AItagArtyType
+					Attractiveness: 5
+					TargetMetric: None
+					CheckRadius: 2c0
+				Consideration@Ally:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 4c0
+			ParatroopersPower:
+				OrderName: Airdrop
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Tank
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			IonCannonPower:
+				OrderName: IonCannonPowerInfoOrder
+				MinimumAttractiveness: 1000
+				FineScanRadius: 2
+				Consideration@1:
+					Against: Enemy
+					Types: Air, Tank, Vehicle, Infantry, Water
+					Attractiveness: 2
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@3:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 3c0
+			NukePower:
+				OrderName: NukePowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
 	HackyAI@Shpooky:
 		Name: Shpooky
 		Type: Shpooky
@@ -954,88 +959,89 @@ Player:
 		UnitLimits:
 			mcv: 1
 		SquadSize: 10
-		SupportPowerDecision@Airstrike:
-			OrderName: AirstrikePowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@ArtileryStrike:
-			OrderName: ArtileryBarrageInfoOrder
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: AItagPP, AItagREF, AItagRAX, AItagWF, AItagHQ, AItagFIX, AItagAvoid, AItagArtyType
-				Attractiveness: 5
-				TargetMetric: None
-				CheckRadius: 2c0
-			Consideration@Ally: 
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 4c0
-		SupportPowerDecision@ParatroopersPower:
-			OrderName: Airdrop
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Tank
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@IonCannonPower:
-			OrderName: IonCannonPowerInfoOrder
-			MinimumAttractiveness: 1000
-			FineScanRadius: 2
-			Consideration@1:
-				Against: Enemy
-				Types: Air, Tank, Vehicle, Infantry, Water
-				Attractiveness: 2
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@3:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 3c0
-		SupportPowerDecision@NukePower:
-			OrderName: NukePowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
+		SupportPowerDecisions:
+			Airstrike:
+				OrderName: AirstrikePowerInfoOrder
+				MinimumAttractiveness: 2000
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Infantry
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			ArtileryStrike:
+				OrderName: ArtileryBarrageInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: AItagPP, AItagREF, AItagRAX, AItagWF, AItagHQ, AItagFIX, AItagAvoid, AItagArtyType
+					Attractiveness: 5
+					TargetMetric: None
+					CheckRadius: 2c0
+				Consideration@Ally:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 4c0
+			ParatroopersPower:
+				OrderName: Airdrop
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Tank
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			IonCannonPower:
+				OrderName: IonCannonPowerInfoOrder
+				MinimumAttractiveness: 1000
+				FineScanRadius: 2
+				Consideration@1:
+					Against: Enemy
+					Types: Air, Tank, Vehicle, Infantry, Water
+					Attractiveness: 2
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@3:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 3c0
+			NukePower:
+				OrderName: NukePowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
 Player:
 	HackyAI@testdonotuse:
 		Name: Test Do Not Use
@@ -1123,85 +1129,86 @@ Player:
 		UnitLimits:
 			harv: 2
 		SquadSize: 15
-		SupportPowerDecision@Airstrike:
-			OrderName: AirstrikePowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@ArtileryStrike:
-			OrderName: ArtileryBarrageInfoOrder
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: AItagPP, AItagREF, AItagRAX, AItagWF, AItagHQ, AItagFIX, AItagAvoid, AItagArtyType
-				Attractiveness: 5
-				TargetMetric: None
-				CheckRadius: 2c0
-			Consideration@Ally: 
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 4c0
-		SupportPowerDecision@ParatroopersPower:
-			OrderName: Airdrop
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Tank
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@IonCannonPower:
-			OrderName: IonCannonPowerInfoOrder
-			MinimumAttractiveness: 1000
-			FineScanRadius: 2
-			Consideration@1:
-				Against: Enemy
-				Types: Air, Tank, Vehicle, Infantry, Water
-				Attractiveness: 2
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@3:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 3c0
-		SupportPowerDecision@NukePower:
-			OrderName: NukePowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
+		SupportPowerDecisions:
+			Airstrike:
+				OrderName: AirstrikePowerInfoOrder
+				MinimumAttractiveness: 2000
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Infantry
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			ArtileryStrike:
+				OrderName: ArtileryBarrageInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: AItagPP, AItagREF, AItagRAX, AItagWF, AItagHQ, AItagFIX, AItagAvoid, AItagArtyType
+					Attractiveness: 5
+					TargetMetric: None
+					CheckRadius: 2c0
+				Consideration@Ally:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 4c0
+			ParatroopersPower:
+				OrderName: Airdrop
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Tank
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			IonCannonPower:
+				OrderName: IonCannonPowerInfoOrder
+				MinimumAttractiveness: 1000
+				FineScanRadius: 2
+				Consideration@1:
+					Against: Enemy
+					Types: Air, Tank, Vehicle, Infantry, Water
+					Attractiveness: 2
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@3:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 3c0
+			NukePower:
+				OrderName: NukePowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0

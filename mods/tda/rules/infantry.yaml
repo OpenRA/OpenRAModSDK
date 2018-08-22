@@ -247,7 +247,7 @@ E1:
 	AttackFrontal:
 	WithInfantryBody:
 		IdleSequences: idle1,idle2,idle3,idle4,idle5
-		AttackSequences: 
+		AttackSequences:
 			primary: shoot
 			secondary: throw
 	Armament@PILLBOX:
@@ -498,7 +498,6 @@ RMBO:
 	Armament@GUARDTOWER:
 		Name: guardtower
 		Weapon: Sniper
-
 	#RENEGATE:
 	#	Inherits: ^Soldier
 	#	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -541,6 +540,7 @@ RMBO:
 	#	VoiceSet: CommandoVoice
 	#AttackWander:
 	#	WanderMoveRadius: 30
+
 
 PVICE:
 	Inherits: ^Viceroid

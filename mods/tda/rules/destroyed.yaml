@@ -11,7 +11,7 @@ V19_DES:
 		Name: Destroyed Oil Derrick
 	TransformOnCapture:
 		IntoActor: v19
-		ForceHealthPercentage: 10	
+		ForceHealthPercentage: 10
 		SkipMakeAnims: True
 	Capturable:
 		CaptureThreshold: 100
@@ -34,7 +34,7 @@ HOSP_DES:
 	ProvidesPrerequisite@buildingname:
 	TransformOnCapture:
 		IntoActor: hosp
-		ForceHealthPercentage: 10	
+		ForceHealthPercentage: 10
 		SkipMakeAnims: True
 	Capturable:
 		CaptureThreshold: 100
@@ -54,7 +54,7 @@ BIO_DES:
 		Name: Destroyed Biological Lab
 	TransformOnCapture:
 		IntoActor: bio
-		ForceHealthPercentage: 10	
+		ForceHealthPercentage: 10
 		SkipMakeAnims: True
 	Capturable:
 		CaptureThreshold: 100
@@ -76,7 +76,7 @@ MISS_DES:
 		HasMinibib: Yes
 	TransformOnCapture:
 		IntoActor: miss
-		ForceHealthPercentage: 10	
+		ForceHealthPercentage: 10
 		SkipMakeAnims: True
 	Capturable:
 		CaptureThreshold: 100
@@ -100,7 +100,7 @@ BARR_DES:
 	SelectionDecorations:
 	TransformOnCapture:
 		IntoActor: barr
-		ForceHealthPercentage: 10	
+		ForceHealthPercentage: 10
 		SkipMakeAnims: True
 	Capturable:
 		CaptureThreshold: 100
@@ -129,7 +129,7 @@ FIXN_DES:
 	SelectionDecorations:
 	TransformOnCapture:
 		IntoActor: fixn
-		ForceHealthPercentage: 10	
+		ForceHealthPercentage: 10
 		SkipMakeAnims: True
 	Selectable:
 		Bounds: 48,42,0,-5

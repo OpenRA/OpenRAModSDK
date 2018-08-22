@@ -210,7 +210,6 @@
 		RequiresCondition: stance-attackanything || assault-move
 	AttackMove:
 		AssaultMoveScanCondition: assault-move
-
 	#^AutoTargetOpportunity:
 	#	AutoTargetPriority:
 	#	Priority: 100
@@ -220,6 +219,7 @@
 	#^AutoTargetMetal:
 	#	AutoTargetPriority:
 	#	Priority: 10
+
 
 ^AcceptsCloakCrate:
 	Cloak:
@@ -241,6 +241,7 @@
 	Huntable:
 	Mobile:
 		Crushes: crate, mine, lightwall, byall
+		Locomotor: foot
 		TerrainSpeeds:
 			Clear: 80
 			Rough: 50
@@ -441,6 +442,7 @@
 	Mobile:
 		Crushes: mine, crate, byall
 		SharesCell: true
+		Locomotor: foot
 		TerrainSpeeds:
 			Clear: 90
 			Rough: 80
@@ -471,7 +473,7 @@
 			FireDeath: 5
 			TiberiumDeath: 6
 		CrushedSequence: die-crushed
-		CrushedSequencePalette:	terrain
+		CrushedSequencePalette: terrain
 		CrushedPaletteIsPlayerPalette: false
 	AttackMove:
 	DrawLineToTarget:
@@ -655,6 +657,7 @@
 		Range: 6c0
 	Mobile:
 		Crushes: crate
+		Locomotor: foot
 		Speed: 113
 		TerrainSpeeds:
 			Clear: 90
@@ -710,6 +713,7 @@
 		Range: 6c0
 	Mobile:
 		Voice: Move
+		Locomotor: foot
 		Speed: 71
 		TerrainSpeeds:
 			Clear: 70
@@ -802,6 +806,7 @@
 	Huntable:
 	Mobile:
 		Crushes: crate
+		Locomotor: foot
 		TerrainSpeeds:
 			Water: 100
 	SelectionDecorations:
@@ -895,7 +900,7 @@
 		UseDeathTypeSuffix: false
 	GivesBuildableArea:
 		AreaTypes: building
-	EmitInfantryOnSell:
+	SpawnActorsOnSell:
 		ActorTypes: e6,e1,e1,e1
 	EngineerRepairable:
 	Sellable:
@@ -905,6 +910,12 @@
 	RequiresBuildableArea:
 		AreaTypes: building
 		Adjacent: 2
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		ReferencePoint: Center
+		Palette: player
+		IsPlayerPalette: True
 
 ^CivBuilding:
 	Inherits: ^Building
@@ -1048,7 +1059,8 @@
 	-Building:
 	-WithSpriteBody:
 	WithGateSpriteBody:
-	-EmitInfantryOnSell:
+	-SpawnActorsOnSell:
+		ActorTypes: e1
 	Tooltip:
 		Name: Gate
 	Building:
@@ -1365,7 +1377,7 @@
 	WithSpriteBody:
 	HiddenUnderFog:
 	Interactable:
-		Bounds: 24,24  
+		Bounds: 24,24
 	Mine:
 		CrushClasses: mine
 		DetonateClasses: mine
@@ -1436,8 +1448,8 @@
 		Types: SpyInfiltrate
 	Power:
 		RequiresCondition: !disabled
-
 	#Special Tags
+
 ^Doctor:
 	Passenger:
 		CargoType: Doctor

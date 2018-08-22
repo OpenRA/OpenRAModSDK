@@ -18,7 +18,7 @@
 	Warhead@3Eff: CreateEffect
 		Explosions: small_napalm
 		ImpactSounds: firebl3.aud
-		VictimScanRadius: 0
+		ImpactActors: false
 
 ^ChemWeaponRA:
 	ValidTargets: Ground, Water, Trees
@@ -40,7 +40,7 @@
 	Warhead@3Eff: CreateEffect
 		Explosions: chemball
 		ImpactSounds: firebl3.aud
-		VictimScanRadius: 0
+		ImpactActors: false
 
 FireballLauncher:
 	Inherits: ^FireWeaponRA
@@ -395,7 +395,6 @@ TiberiumExplosion:
 	Warhead@3Eff: CreateEffect
 		Explosions: chemball
 		ImpactSounds: xplosml2.aud
-
 	#TiberiumExplosionGreen:
 	#Warhead@1Dam: SpreadDamage
 	#	Spread: 9
@@ -412,7 +411,6 @@ TiberiumExplosion:
 	#Warhead@3Eff: CreateEffect
 	#	Explosions: chemball
 	#	ImpactSounds: xplosml2.aud
-
 	#TiberiumExplosionBlue:
 	#Warhead@1Dam: SpreadDamage
 	#	Spread: 9
@@ -429,7 +427,6 @@ TiberiumExplosion:
 	#Warhead@3Eff: CreateEffect
 	#	Explosions: chemball
 	#	ImpactSounds: xplosml2.aud
-
 	#TiberiumExplosionRed:
 	#Warhead@1Dam: SpreadDamage
 	#	Spread: 9
@@ -446,6 +443,9 @@ TiberiumExplosion:
 	#Warhead@3Eff: CreateEffect
 	#	Explosions: chemball
 	#	ImpactSounds: xplosml2.aud
+
+
+
 
 Tail:
 	ReloadDelay: 30

@@ -8,7 +8,7 @@ SPLIT2:
 		Sequence: idle-lightsg
 		Palette: lights_Green_05
 		IsPlayerPalette: False
-	WormSpawner:
+	ActorSpawner:
 SPLIT3:
 	Inherits: ^TibTree
 	RenderSprites:
@@ -22,7 +22,7 @@ SPLIT3:
 		Sequence: idle-lightsg
 		Palette: lights_Green_05
 		IsPlayerPalette: False
-	WormSpawner:
+	ActorSpawner:
 SPLITBLUE:
 	Inherits: ^TibTree
 	RenderSprites:
@@ -40,7 +40,7 @@ SPLITBLUE:
 		Sequence: idle-lightsb
 		Palette: lights_Blue_05
 		IsPlayerPalette: False
-	WormSpawner:
+	ActorSpawner:
 SPLITRED:
 	Inherits: ^TibTree
 	RenderSprites:
@@ -58,7 +58,7 @@ SPLITRED:
 		Sequence: idle-lightsr
 		Palette: lights_Red_05
 		IsPlayerPalette: False
-	WormSpawner:
+	ActorSpawner:
 
 ROCK1:
 	Inherits: ^Rock

@@ -1,3 +1,17 @@
+lobby-bits: chrome.png
+	spawn-claimed: 458,55,19,19
+	spawn-unclaimed: 435,55,19,19
+	admin: 340,39,7,5
+	colorpicker: 257,33,14,14
+	huepicker: 388,96,7,15
+	kick: 386,115,11,11
+	protected: 403,97,10,13
+	protected-disabled: 403,113,10,13
+	admin-registered: 448,112,16,16
+	admin-anonymous: 464,112,16,16
+	player-registered: 480,112,16,16
+	player-anonymous: 496,112,16,16
+
 shellmap: reticle.png
 	reticle: 0,0,512,512
 
@@ -441,16 +455,6 @@ music: chrome.png
 	prev: 272,16,16,16
 	fastforward: 416,64,16,16
 	slowmo: 416,80,16,16
-
-lobby-bits: chrome.png
-	spawn-claimed: 458,55,19,19
-	spawn-unclaimed: 435,55,19,19
-	admin: 340,39,7,5
-	colorpicker: 257,33,14,14
-	huepicker: 388,96,7,15
-	kick: 386,115,11,11
-	protected: 403,97,10,13
-	protected-disabled: 403,113,10,13
 
 reload-icon: chrome.png
 	enabled: 256,192,16,16
