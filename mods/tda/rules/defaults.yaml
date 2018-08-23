@@ -240,16 +240,7 @@
 	Inherits@bounty: ^GlobalBounty
 	Huntable:
 	Mobile:
-		Crushes: crate, mine, lightwall, byall
-		Locomotor: foot
-		TerrainSpeeds:
-			Clear: 80
-			Rough: 50
-			Road: 100
-			Tiberium: 50
-			BlueTiberium: 50
-			RedTiberium: 50
-			Beach: 40
+		Locomotor: wheeled
 		TurnSpeed: 5
 		RequiresCondition: !notmobile
 	SelectionDecorations:
@@ -332,16 +323,8 @@
 	Inherits: ^VehicleWithoutVeterancy
 	Inherits@bounty: ^GlobalBounty
 	Mobile:
-		Crushes: wall, crate, infantry, mine, lightwall, byall
-		TerrainSpeeds:
-			Clear: 80
-			Rough: 70
-			Road: 100
-			Tiberium: 70
-			BlueTiberium: 70
-			RedTiberium: 70
-			Beach: 70
 		TurnSpeed: 5
+		Locomotor: tracked
 	Tooltip:
 		GenericName: Tank
 	Parachutable:
@@ -440,20 +423,8 @@
 	RevealsShroud:
 		Range: 5c0
 	Mobile:
-		Crushes: mine, crate, byall
 		SharesCell: true
 		Locomotor: foot
-		TerrainSpeeds:
-			Clear: 90
-			Rough: 80
-			Road: 100
-			Tiberium: 70
-				PathingCost: 300
-			BlueTiberium: 70
-				PathingCost: 300
-			RedTiberium: 70
-				PathingCost: 300
-			Beach: 80
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
@@ -656,17 +627,8 @@
 	RevealsShroud:
 		Range: 6c0
 	Mobile:
-		Crushes: crate
-		Locomotor: foot
+		Locomotor: critter
 		Speed: 113
-		TerrainSpeeds:
-			Clear: 90
-			Rough: 80
-			Road: 100
-			Tiberium: 70
-			BlueTiberium: 70
-			RedTiberium: 70
-			Beach: 80
 		Voice: Move
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
@@ -713,16 +675,8 @@
 		Range: 6c0
 	Mobile:
 		Voice: Move
-		Locomotor: foot
+		Locomotor: chem
 		Speed: 71
-		TerrainSpeeds:
-			Clear: 70
-			Rough: 60
-			Road: 70
-			Tiberium: 100
-			BlueTiberium: 100
-			RedTiberium: 100
-			Beach: 60
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
@@ -805,10 +759,7 @@
 	Inherits@bounty: ^GlobalBounty
 	Huntable:
 	Mobile:
-		Crushes: crate
-		Locomotor: foot
-		TerrainSpeeds:
-			Water: 100
+		Locomotor: naval
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:

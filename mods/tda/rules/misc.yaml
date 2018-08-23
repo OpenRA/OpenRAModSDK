@@ -19,7 +19,6 @@ TibShimmering:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
 	Interactable:
-	ConditionManager:
 	Armor:
 		Type: Wood
 	HiddenUnderFog:
@@ -36,7 +35,8 @@ TibShimmering:
 	AttackFrontal:
 	Crushable:
 		WarnProbability: 0
-		CrushClasses: byall
+		CrushClasses: TibShimmeringEffect
+		CrushedByFriendlies: True
 	HitShape:
 		Type: Circle
 			Radius: 1
@@ -49,13 +49,7 @@ TibShimmering:
 		Terrain: Clear, Rough, Road, Beach, BlueTiberium, RedTiberium
 	Mobile:
 		Speed: 99999
-		Crushes: byall
-		SharesCell: True
-		Locomotor: foot
-		TerrainSpeeds:
-			RedTiberium: 100
-			BlueTiberium: 100
-			Tiberium: 100
+		Locomotor: TibShimmeringEffectLocomotor
 
 CRATEHEAL:
 	Inherits: ^Crate

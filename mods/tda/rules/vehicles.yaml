@@ -15,7 +15,7 @@ MCV:
 		DecorationBounds: 36,36
 	Mobile:
 		Speed: 71
-		Crushes: wall, crate, infantry, mine, lightwall, byall
+		Crushes: wall, crate, infantry, mine, lightwall, TibShimmeringEffect
 	Health:
 		HP: 1200
 	Armor:
@@ -140,7 +140,7 @@ MNLYNOD:
 		Type: Heavy
 	Mobile:
 		Speed: 128
-		Crushes: wall, crate, infantry, mine, lightwall, byall
+		Crushes: wall, crate, infantry, mine, lightwall, TibShimmeringEffect
 	RevealsShroud:
 		Range: 5c0
 	Minelayer:
@@ -175,7 +175,7 @@ MNLYGDI:
 		Type: Heavy
 	Mobile:
 		Speed: 128
-		Crushes: wall, crate, infantry, mine, lightwall, byall
+		Crushes: wall, crate, infantry, mine, lightwall, TibShimmeringEffect
 	RevealsShroud:
 		Range: 5c0
 	Minelayer:
@@ -427,7 +427,7 @@ FTNKV:
 	Inherits@Voxel: ^VoxelActor
 	-WithFacingSpriteBody:
 	Mobile:
-		Crushes: wall, crate, infantry, mine, lightwall, byall
+		Crushes: wall, crate, infantry, mine, lightwall, TibShimmeringEffect
 		TerrainSpeeds:
 			Clear: 80
 			Rough: 70
@@ -764,7 +764,7 @@ HTNK:
 		Queue: Vehicle.GDI
 		Description: Heavily armored GDI Tank.\nCan attack Aircraft.\n  Strong vs Everything
 	Mobile:
-		Crushes: wall, heavywall, lightwall, crate, infantry, byall, mine
+		Crushes: wall, heavywall, lightwall, crate, infantry, TibShimmeringEffect, mine
 		Speed: 56
 		TurnSpeed: 3
 		-RequiresCondition:
@@ -905,7 +905,6 @@ STNK:
 	Mobile:
 		TurnSpeed: 10
 		Speed: 142
-		Crushes: wall, crate, infantry, mine, lightwall, byall
 	Health:
 		HP: 150
 	Armor:

@@ -226,66 +226,106 @@ World:
 		Ambient: 1.000
 	Locomotor@FOOT:
 		Name: foot
-		Crushes: crate
+		Crushes: mine, crate, TibShimmeringEffect
 		SharesCell: true
 		TerrainSpeeds:
 			Clear: 90
+				PathingCost: 20
 			Rough: 80
+				PathingCost: 30
 			Road: 100
+				PathingCost: 10
 			Bridge: 100
+				PathingCost: 0
 			Tiberium: 70
 				PathingCost: 300
 			BlueTiberium: 70
 				PathingCost: 300
-			Beach: 80
+			RedTiberium: 70
+				PathingCost: 300
+			Beach: 75
+				PathingCost: 35
 	Locomotor@CHEM:
 		Name: chem
-		Crushes: crate
+		Crushes: crate, TibShimmeringEffect
 		SharesCell: true
 		TerrainSpeeds:
 			Clear: 90
+				PathingCost: 20
 			Rough: 80
+				PathingCost: 30
 			Road: 100
+				PathingCost: 10
 			Bridge: 100
-			Tiberium: 90
-			BlueTiberium: 90
-			Beach: 80
-	Locomotor@WHEELED:
-		Name: wheeled
-		Crushes: crate
+				PathingCost: 0
+			Tiberium: 80
+				PathingCost: 30
+			BlueTiberium: 80
+				PathingCost: 30
+			RedTiberium: 80
+				PathingCost: 30
+			Beach: 75
+				PathingCost: 35
+	Locomotor@TIBSHIMMERINGEFFECTLOCOMOTOR:
+		Name: TibShimmeringEffectLocomotor
+		Crushes: TibShimmeringEffect
+		SharesCell: true
 		TerrainSpeeds:
-			Clear: 80
-			Rough: 50
-			Road: 100
-			Bridge: 100
-			Tiberium: 50
-			BlueTiberium: 50
-			Beach: 50
+			Clear: 0
+				PathingCost: 1000
+			Rough: 0
+				PathingCost: 1000
+			Road: 0
+				PathingCost: 1000
+			Bridge: 0
+				PathingCost: 1000
+			Tiberium: 100
+				PathingCost: 0
+			BlueTiberium: 100
+				PathingCost: 0
+			RedTiberium: 100
+				PathingCost: 0
+			Beach: 0
+				PathingCost: 1000
 	Locomotor@BIKE:
 		Name: bike
-		Crushes: crate
+		Crushes: crate, TibShimmeringEffect
 		TerrainSpeeds:
-			Clear: 70
+			Bridge: 100
+			Clear: 80
 			Rough: 35
 			Road: 100
-			Bridge: 100
 			Tiberium: 35
 			BlueTiberium: 35
+			RedTiberium: 35
 			Beach: 35
-	Locomotor@HEAVYWHEELED:
-		Name: heavywheeled
-		Crushes: crate, infantry
+	Locomotor@WHEELED:
+		Name: wheeled
+		Crushes: crate, TibShimmeringEffect
 		TerrainSpeeds:
+			Bridge: 100
 			Clear: 80
 			Rough: 50
 			Road: 100
-			Bridge: 100
 			Tiberium: 50
 			BlueTiberium: 50
-			Beach: 50
+			RedTiberium: 50
+			Beach: 40
+	Locomotor@HEAVYWHEELED:
+		Name: heavywheeled
+		Crushes: wall, crate, infantry, mine, lightwall, TibShimmeringEffect
+		TerrainSpeeds:
+			Bridge: 100
+			Clear: 80
+			Rough: 50
+			Road: 100
+			Tiberium: 50
+			BlueTiberium: 50
+			RedTiberium: 50
+			Beach: 40
 	Locomotor@TRACKED:
 		Name: tracked
-		Crushes: wall, crate, infantry
+		Crushes: wall, crate, infantry, TibShimmeringEffect
 		TerrainSpeeds:
 			Clear: 80
 			Rough: 70
@@ -293,10 +333,11 @@ World:
 			Bridge: 100
 			Tiberium: 70
 			BlueTiberium: 70
+			RedTiberium: 70
 			Beach: 70
 	Locomotor@HEAVYTRACKED:
 		Name: heavytracked
-		Crushes: wall, heavywall, crate, infantry
+		Crushes: wall, heavywall, lightwall, crate, infantry, TibShimmeringEffect, mine
 		TerrainSpeeds:
 			Clear: 80
 			Rough: 70
@@ -304,27 +345,29 @@ World:
 			Bridge: 100
 			Tiberium: 70
 			BlueTiberium: 70
+			RedTiberium: 70
 			Beach: 70
 	Locomotor@NAVAL:
 		Name: naval
-		Crushes: crate
+		Crushes: crate, TibShimmeringEffect
 		TerrainSpeeds:
 			Water: 100
 	Locomotor@LANDINGCRAFT:
 		Name: lcraft
-		Crushes: crate
+		Crushes: crate, TibShimmeringEffect
 		TerrainSpeeds:
-			Clear: 100
-			Rough: 100
-			Road: 100
 			Water: 100
-			Tiberium: 100
-			BlueTiberium: 100
-			Beach: 100
-			River: 100
+			Beach: 50
+			Rough: 50
+			Clear: 50
+			Road: 50
+			Bridge: 50
+			Tiberium: 20
+			BlueTiberium: 20
+			RedTiberium: 20
 	Locomotor@CRITTER:
 		Name: critter
-		Crushes: crate
+		Crushes: crate, TibShimmeringEffect
 		TerrainSpeeds:
 			Clear: 90
 			Rough: 80
@@ -333,6 +376,7 @@ World:
 			Tiberium: 70
 			BlueTiberium: 70
 			Beach: 80
+			RedTiberium: 70
 
 EditorWorld:
 	Inherits: ^BaseWorld

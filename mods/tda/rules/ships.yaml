@@ -133,16 +133,6 @@ LST:
 		Queue: Ship.Nod, Ship.GDI
 		BuildPaletteOrder: 1000
 	Mobile:
-		Crushes: crate
-		TerrainSpeeds:
-			Water: 100
-			Beach: 50
-			Rough: 20
-			Clear: 40
-			Road: 50
-			Tiberium: 20
-			BlueTiberium: 20
-			RedTiberium: 20
 		InitialFacing: 0
 		TurnSpeed: 4
 		Speed: 142

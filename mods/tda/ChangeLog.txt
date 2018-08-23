@@ -4,6 +4,8 @@ Changed: night time to be less dark.
 Fixed: bright corpse at night time.
 Fixed: impact sounds of shells vs buildings to be more loud.
 Added: water impact visual and sound effect to bullets and shells.
+Updated: Game engine to the latest playtest engine. Thanks to abcdefg30!!!!
+Added: updates from the new engine like the new colorvalidator, the new login system and other stuff
 
 
 

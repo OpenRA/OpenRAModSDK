@@ -108,6 +108,7 @@ MECH:
 		HP: 25
 	Mobile:
 		Voice: Move
+		Speed: 56
 	RevealsShroud:
 		Range: 3c0
 	Passenger:
@@ -130,8 +131,6 @@ MECH:
 		StandSequences: stand
 	Voiced:
 		VoiceSet: MechanicVoice
-	Mobile:
-		Speed: 56
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 	MustBeDestroyed:
@@ -389,13 +388,6 @@ E5:
 		Description: Advanced general-purpose infantry.\n  Strong vs all Ground units
 	Mobile:
 		Speed: 56
-		TerrainSpeeds:
-			Tiberium: 90
-				PathingCost: 90
-			BlueTiberium: 90
-				PathingCost: 90
-			RedTiberium: 90
-				PathingCost: 90
 	Health:
 		HP: 90
 	Armament:
@@ -545,7 +537,6 @@ RMBO:
 PVICE:
 	Inherits: ^Viceroid
 	Mobile:
-		Crushes: crate
 	Tooltip:
 	ActorLostNotification:
 	Buildable:
