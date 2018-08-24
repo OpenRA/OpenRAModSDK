@@ -34,8 +34,11 @@ HAS_LUAC = $(shell command -v luac 2> /dev/null)
 LUA_FILES = $(shell find mods/*/maps/* -iname '*.lua')
 PROJECT_DIRS = $(shell dirname $$(find . -iname "*.csproj" -not -path "$(ENGINE_DIRECTORY)/*"))
 
+scripts:
+	@awk '/\r$$/ { exit(1); }' mod.config || (printf "Invalid mod.config format: file must be saved using unix-style (CR, not CRLF) line endings.\n"; exit 1)
+
 variables:
-	@if [ -z "$(MOD_ID)" ] || [ -z "$(ENGINE_DIRECTORY)" ];then \
+	@if [ -z "$(MOD_ID)" ] || [ -z "$(ENGINE_DIRECTORY)" ]; then \
 			echo "Required mod.config variables are missing:"; \
 			if [ -z "$(MOD_ID)" ]; then \
 				echo "   MOD_ID"; \
@@ -47,7 +50,7 @@ variables:
 			exit 1; \
 		fi
 
-engine: variables
+engine: variables scripts
 	@./fetch-engine.sh || (printf "Unable to continue without engine files\n"; exit 1)
 	@cd $(ENGINE_DIRECTORY) && make core
 
