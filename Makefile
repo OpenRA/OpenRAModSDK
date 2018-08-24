@@ -36,6 +36,26 @@ PROJECT_DIRS = $(shell dirname $$(find . -iname "*.csproj" -not -path "$(ENGINE_
 
 scripts:
 	@awk '/\r$$/ { exit(1); }' mod.config || (printf "Invalid mod.config format: file must be saved using unix-style (CR, not CRLF) line endings.\n"; exit 1)
+	@if [ ! -x "fetch-engine.sh" ] || [ ! -x "launch-dedicated.sh" ] || [ ! -x "launch-game.sh" ] || [ ! -x "utility.sh" ]; then \
+		echo "Required SDK scripts are not executable:"; \
+		if [ ! -x "fetch-engine.sh" ]; then \
+			echo "   fetch-engine.sh"; \
+		fi; \
+		if [ ! -x "launch-dedicated.sh" ]; then \
+			echo "   launch-dedicated.sh"; \
+		fi; \
+		if [ ! -x "launch-game.sh" ]; then \
+			echo "   launch-game.sh"; \
+		fi; \
+		if [ ! -x "utility.sh" ]; then \
+			echo "   utility.sh"; \
+		fi; \
+		echo "Repair their permissions and try again."; \
+		echo "If you are using git you can repair these permissions by running"; \
+		echo "   git update-index --chmod=+x *.sh"; \
+		echo "and commiting the changed files to your repository."; \
+		exit 1; \
+	fi
 
 variables:
 	@if [ -z "$(MOD_ID)" ] || [ -z "$(ENGINE_DIRECTORY)" ]; then \
