@@ -4,7 +4,7 @@ set -e
 
 command -v make >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires make."; exit 1; }
 command -v python >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires python."; exit 1; }
-command -v curl >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires curl."; exit 1; }
+command -v curl >/dev/null 2>&1 || command -v wget > /dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires curl or wget."; exit 1; }
 
 require_variables() {
 	missing=""
@@ -56,7 +56,12 @@ modify_plist() {
 }
 
 echo "Building launcher"
-curl -s -L  -o "${PACKAGING_OSX_LAUNCHER_TEMP_ARCHIVE_NAME}" -O "${PACKAGING_OSX_LAUNCHER_SOURCE}" || exit 3
+
+if command -v curl >/dev/null 2>&1; then
+	curl -s -L -o "${PACKAGING_OSX_LAUNCHER_TEMP_ARCHIVE_NAME}" -O "${PACKAGING_OSX_LAUNCHER_SOURCE}" || exit 3
+else
+	wget -cq "${PACKAGING_OSX_LAUNCHER_SOURCE}" -O "${PACKAGING_OSX_LAUNCHER_TEMP_ARCHIVE_NAME}" || exit 3
+fi
 
 unzip -qq -d "${BUILTDIR}" "${PACKAGING_OSX_LAUNCHER_TEMP_ARCHIVE_NAME}"
 rm "${PACKAGING_OSX_LAUNCHER_TEMP_ARCHIVE_NAME}"
