@@ -66,7 +66,7 @@ fi
 MOD_VERSION=$(grep 'Version:' mods/${MOD_ID}/mod.yaml | awk '{print $2}')
 
 if [ "${PACKAGING_OVERWRITE_MOD_VERSION}" == "True" ]; then
-    make version VERSION="${TAG}"
+	make version VERSION="${TAG}"
 else
 	echo "Mod version ${MOD_VERSION} will remain unchanged.";
 fi
@@ -79,8 +79,8 @@ make install-engine gameinstalldir="" DESTDIR="${BUILTDIR}"
 make install-common-mod-files gameinstalldir="" DESTDIR="${BUILTDIR}"
 
 for f in ${PACKAGING_COPY_ENGINE_FILES}; do
-  mkdir -p "${BUILTDIR}/$(dirname "${f}")"
-  cp -r "${f}" "${BUILTDIR}/${f}"
+	mkdir -p "${BUILTDIR}/$(dirname "${f}")"
+	cp -r "${f}" "${BUILTDIR}/${f}"
 done
 
 popd > /dev/null
