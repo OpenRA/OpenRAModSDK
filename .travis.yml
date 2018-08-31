@@ -15,7 +15,7 @@ addons:
 script:
  - make
  - . mod.config;
-   awk '/\r$$/ { exit(1); }' mod.config || (printf "Invalid mod.config format: file must be saved using unix-style (CR, not CRLF) line endings.\n"; travis_terminate 1);
+   awk '/\r$$/ { exit(1); }' mod.config || (printf "Invalid mod.config format. File must be saved using unix-style (CR, not CRLF) line endings.\n"; travis_terminate 1);
    if [ "${TRAVIS_TEST_MOD}" == "True" ]; then make test || travis_terminate 1; fi;
    if [ "${TRAVIS_TEST_PACKAGING}" == "True" ]; then ./packaging/package-all.sh test-0 || travis_terminate 1; fi
 
