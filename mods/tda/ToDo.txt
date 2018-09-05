@@ -1,0 +1,39 @@
+add landing sound to f22
+add take off sound to f22
+add take off sound to all helis
+add minigun to f22 to target helis
+make all missiles explode on impact
+add repair anmation to nod arifield (crew that gets out and repairs)
+add rearm animation to nod airfiled (crane that lands missiles)
+exploit stances to be used as special abilities
+make new window for research
+make command center to build UAV and radar planes from out side the map
+remove research from command centers
+fix f22 trail to fit the engine position
+add cranes to service depots that come from the ground and repair
+make new Drowning animation for infantry in the water, make new dummy unit that will replace infantry in the water after impact death, dummy unit will use the new animation and die over time (2 secs)(edited)
+add animals: underwater shadow of shark (when dummy infantry in the water, nearby shark will attack) sheep, cow, eagle, seagull
+add selection sounds to buildings
+finish outpost vehicle model
+edit sov barracks to look like an armory,  add a gdi version of allied tent with red cross on it (this will be the equevelent of nod armory)
+add fence crushing sound
+make engineers to be able to crush fences
+make fences electro kill infantry
+add power off\on button
+add new overlays for offline power
+enlarge the minimap and menu ingame
+make vehicles be able to be sold when on top of service depot (use conditions)
+add kanes wrath stats(health, damage, armor,weapon types, ect)
+add some music tracks from retaliation
+add land building to build neval units from outside the map OR make the building look like is half inside the water cliffs (fuck this is very hard)
+wait for the openra team to fix the problem with the navy turret AND add some temporary nvy units.
+add break of sound visual and audio effect to f22 when it gets at CruiseAltitude also speed bonus.
+make engineers repair slowly buildings and disable abbility to enter for repair.
+add small bomb to f22 to hit ground targets.
+fix create shadow.
+add tooltip to creates.
+add "area" building, this building will shoot at the center of it allied units,and then change owner to the owner of the building.
+add background image of doctrine in the prudaction menu of each faction.
+add radar background of each faction (red nod logo, purple nod color ect)
+fix city buildings geting behind other units instead of front of them.
+add comand line to f22

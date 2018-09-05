@@ -1,7 +1,9 @@
 f22:
 	idle:
 		Facings: 32
-	icon: c17icnh
+		UseClassicFacingFudge: True
+	icon: f22icon.shp
+		AddExtension: False
 
 c17:
 	idle:

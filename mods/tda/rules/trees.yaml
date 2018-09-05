@@ -9,6 +9,7 @@ SPLIT2:
 		Palette: lights_Green_05
 		IsPlayerPalette: False
 	ActorSpawner:
+		Types: a
 SPLIT3:
 	Inherits: ^TibTree
 	RenderSprites:
@@ -23,6 +24,7 @@ SPLIT3:
 		Palette: lights_Green_05
 		IsPlayerPalette: False
 	ActorSpawner:
+		Types: a
 SPLITBLUE:
 	Inherits: ^TibTree
 	RenderSprites:
@@ -41,6 +43,7 @@ SPLITBLUE:
 		Palette: lights_Blue_05
 		IsPlayerPalette: False
 	ActorSpawner:
+		Types: a
 SPLITRED:
 	Inherits: ^TibTree
 	RenderSprites:
@@ -59,6 +62,7 @@ SPLITRED:
 		Palette: lights_Red_05
 		IsPlayerPalette: False
 	ActorSpawner:
+		Types: a
 
 ROCK1:
 	Inherits: ^Rock

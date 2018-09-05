@@ -287,3 +287,28 @@ LightNuke:
 	Warhead@6Eff_areanuke1: CreateEffect
 		ImpactSounds: kaboom22.aud
 		Delay: 5
+
+ArtilleryShellExplode:
+	Inherits: ^ImpactSoundsShell
+	Inherits: ^ImpactHitForceShellMedium
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Damage: 150
+		Versus:
+			None: 100
+			Wood: 80
+			Light: 75
+			Heavy: 50
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+	Warhead@3Eff: CreateEffect
+		Explosions: poof
+		ImpactSounds: xplosml2.aud
+		ExplosionPalette: flashyeffect
+		InvalidTargets: Water
+	Warhead@4EffFlash: CreateEffect
+		Explosions: flash3
+		ExplosionPalette: alpha
+		InvalidTargets: Water

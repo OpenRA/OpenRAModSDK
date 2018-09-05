@@ -226,7 +226,7 @@ LST:
 	#		PlayerPalette: PlayerColor
 
 
-^Plane:
+^PlaneUnControled:
 	Tooltip:
 		GenericVisibility: Enemy
 		ShowOwnerRow: false

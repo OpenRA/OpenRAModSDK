@@ -14,10 +14,10 @@ CRATE.plain:
 	Inherits: ^Crate
 	ScriptTriggers:
 
-
 TibShimmering:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
+	ConditionManager:
 	Interactable:
 	Armor:
 		Type: Wood
@@ -30,23 +30,50 @@ TibShimmering:
 		QuantizedFacings: 8
 	Health:
 		HP: 30
-	Sandworm:
+	Wanders:
 		WanderMoveRadius: 2
 	AttackFrontal:
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: TibShimmeringEffect
 		CrushedByFriendlies: True
+	WithDeathAnimation:
+		CrushedSequence: die-crushed
 	HitShape:
 		Type: Circle
 			Radius: 1
 	-AppearsOnRadar:
 	EditorTilesetFilter:
 		Categories: Critter
-	DamagedByTerrain@GREEN:
-		Damage: 10
-		DamageInterval: 4
-		Terrain: Clear, Rough, Road, Beach, BlueTiberium, RedTiberium
+	GrantConditionOnTerrain@RED:
+		Condition: OnRedTib
+		TerrainTypes: RedTiberium
+	GrantConditionOnTerrain@BLUE:
+		Condition: OnBlueTib
+		TerrainTypes: BlueTiberium
+	GrantConditionOnTerrain@GREEN:
+		Condition: OnGreenTib
+		TerrainTypes: Tiberium
+	WithIdleOverlay@SHIMMERING_RED:
+		Sequence: idle-shimmering
+		Palette: lights_Red_50
+		IsPlayerPalette: False
+		RequiresCondition: OnRedTib && !OnBlueTib && !OnGreenTib
+	WithIdleOverlay@SHIMMERING_BLUE:
+		Sequence: idle-shimmering
+		Palette: lights_Blue_50
+		IsPlayerPalette: False
+		RequiresCondition: OnBlueTib && !OnRedTib && !OnGreenTib
+	WithIdleOverlay@SHIMMERING_GREEN:
+		Sequence: idle-shimmering
+		Palette: lights_Green_50
+		IsPlayerPalette: False
+		RequiresCondition: OnGreenTib && !OnRedTib && !OnBlueTib
+	DamagedByTerrain:
+		Damage: 1
+		DamageInterval: 10
+		DamageThreshold: 0
+		Terrain: Clear, Rough, Road, Beach, BlueTiberium, RedTiberium, Tiberium
 	Mobile:
 		Speed: 99999
 		Locomotor: TibShimmeringEffectLocomotor

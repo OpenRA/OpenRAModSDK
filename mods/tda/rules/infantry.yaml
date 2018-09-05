@@ -1,16 +1,16 @@
-SPY:
+SPECOPS:
 	Inherits: ^Infantry
 	Buildable:
 		BuildPaletteOrder: 90
 		Prerequisites: ~anytech, ~techlevel.high
 		Queue: Infantry.Nod
 		BuildDuration: 500
-		Description: Infiltrates enemy structures for intel or\nsabotage. Exact effect depends on the\nbuilding infiltrated.\nLoses disguise when attacking.\nCan detect cloaked units and spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n  Special Ability: Disguised
+		Description: Infiltrates enemy structures for intel or\nsabotage. Exact effect depends on the\nbuilding infiltrated.\nLoses disguise when attacking.\nCan detect cloaked units and other SpecOps.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n  Special Ability: Disguised
 	Valued:
 		Cost: 1000
 	DisguiseTooltip:
-		Name: Spy
-		GenericName: Soldier
+		Name: SpecOps
+		GenericName: SpecOps
 	RevealsShroud:
 		Range: 5c0
 	Passenger:
@@ -25,9 +25,13 @@ SPY:
 		ValidStances: Enemy, Neutral
 		Types: SpyInfiltrate
 		Notification:
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+		ScanRadius: 5
 	-WithInfantryBody:
 	WithDisguisingInfantryBody:
-		AttackSequence: shoot
+		DefaultAttackSequence: shoot
 		IdleSequences: idle1,idle2
 		StandSequences: stand,stand2
 	WithDecoration@disguise:
@@ -45,7 +49,7 @@ SPY:
 	AttackMove:
 		Voice: Move
 	Voiced:
-		VoiceSet: SpyVoice
+		VoiceSet: SpecOpsVoice
 	Mobile:
 		Speed: 56
 	Health:

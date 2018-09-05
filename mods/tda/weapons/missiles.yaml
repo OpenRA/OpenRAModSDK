@@ -205,6 +205,43 @@ MammothMissiles:
 		ImpactSounds: xplos.aud
 		ValidTargets: Air, AirHit
 
+F22Missiles:
+	ReloadDelay: 45
+	Range: 20c0
+	Report: rocket1.aud
+	ValidTargets: Air
+	Burst: 2
+	BurstDelay: 15
+	Projectile: Missile
+		Arm: 25
+		Blockable: false
+		Inaccuracy: 128
+		LockOnProbability: 80
+		HorizontalRateOfTurn:  3
+		VerticalRateOfTurn: 4
+		Image: DRAGON
+		TrailImage: smokey
+		ContrailLength: 8
+		Speed: 360
+		Acceleration: 0c10
+		RangeLimit: 30c0
+		ExplodeWhenEmpty: True
+		CloseEnough: 0c298
+		HomingActivationDelay: 3
+	Warhead@1Dam: SpreadDamage
+		Spread: 298
+		Damage: 45
+		ValidTargets: Air
+		Versus:
+			None: 100
+			Wood: 100
+			Light: 100
+			Heavy: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@3Eff: CreateEffect
+		Explosions: small_building
+		ImpactSounds: xplos.aud
+
 227mm:
 	ReloadDelay: 200
 	Range: 12c0

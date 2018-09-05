@@ -25,7 +25,7 @@
 	Faction@nod:
 		Name: Nod (GW)
 		InternalName: nod
-		Description: Brotherhood of Nod |Guerrilla Warfare|\n-Doctrine: stealth technology and guerilla tactics.\n-Special: Stealth Tank, Spy, Stealth Harverster, Vehicle Airdrop.\n\n-Background: The Brotherhood is a terrorist group centered around their leader Kane\nand the Unknown substance Tiberium.
+		Description: Brotherhood of Nod |Guerrilla Warfare|\n-Doctrine: stealth technology and guerilla tactics.\n-Special: Stealth Tank, SpecOps, Stealth Harverster, Vehicle Airdrop.\n\n-Background: The Brotherhood is a terrorist group centered around their leader Kane\nand the Unknown substance Tiberium.
 	Faction@nodda:
 		Name: Nod (DA)
 		InternalName: nodda
@@ -69,16 +69,13 @@
 
 World:
 	Inherits: ^BaseWorld
-	ActorSpawnManager:
-		Minimum: 30
-		Maximum: 200
-		SpawnInterval: 50
+	ActorSpawnManager@SHIM:
+		Minimum: 1
+		Maximum: 10000000
+		SpawnInterval: 1
 		Actors: TibShimmering
-		WormSignNotification:
-		WormOwnerPlayer: Neutral
-	#	WormSignature@1: TibShimmeringRed
-	#	WormSignature@2: TibShimmeringBlue
-	#	WormSignature@3: TibShimmeringGreen
+		Owner: Neutral
+		Types: a
 	ChatCommands:
 	DevCommands:
 	DebugVisualizationCommands:
@@ -198,7 +195,7 @@ World:
 		ClassName: Special Ops
 		Factions: gdi, nod, nodda
 		BaseActor: flag_starting_units
-		SupportActors: e6,rmbo,e3,medi,spy,e6,rmbo,e3,medi,spy,tran
+		SupportActors: e6,rmbo,e3,medi,specops,e6,rmbo,e3,medi,specops,tran
 	MPStartUnits@Barracksnod:
 		Class: barracks
 		ClassName: Only barracks
@@ -271,22 +268,12 @@ World:
 		Crushes: TibShimmeringEffect
 		SharesCell: true
 		TerrainSpeeds:
-			Clear: 0
-				PathingCost: 1000
-			Rough: 0
-				PathingCost: 1000
-			Road: 0
-				PathingCost: 1000
-			Bridge: 0
-				PathingCost: 1000
 			Tiberium: 100
 				PathingCost: 0
 			BlueTiberium: 100
 				PathingCost: 0
 			RedTiberium: 100
 				PathingCost: 0
-			Beach: 0
-				PathingCost: 1000
 	Locomotor@BIKE:
 		Name: bike
 		Crushes: crate, TibShimmeringEffect

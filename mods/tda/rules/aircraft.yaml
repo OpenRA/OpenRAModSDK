@@ -8,7 +8,7 @@ TRAN:
 	Buildable:
 		BuildPaletteOrder: 10
 		Prerequisites: hpad
-		Queue: Aircraft.GDI, Aircraft.Nod, Aircraft.Nodda
+		Queue: Aircraft.GDI, Aircraft.Nod
 		Description: Infantry Transport Helicopter.\n  Unarmed
 	Aircraft:
 		LandWhenIdle: true
@@ -18,8 +18,7 @@ TRAN:
 		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Tiberium,BlueTiberium,RedTiberium
 		AltitudeVelocity: 0c100
 		TurnToLand: true
-		RearmBuildings: barracks
-	#so if the player use deploy on empty transport it will return to the barracks, its kinda hacky logic
+		Repulsable: true
 	Health:
 		HP: 90
 	Armor:
@@ -77,19 +76,14 @@ OSPREY:
 		InitialFacing: 0
 		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Tiberium,BlueTiberium,RedTiberium
 		AltitudeVelocity: 0c100
-		TurnToLand: false
 		Repulsable: true
 		CruiseAltitude: 2160
-		CanHover: true
-		RearmBuildings: vehicleproduction
-		ReturnOnIdle: True
+		TurnToLand: true
 		AirborneCondition: airborne
-		TakeOffOnResupply: true
-		VTOL: true
 	Carryall:
 		LoadingDelay: 10
 		UnloadingDelay: 10
-		LocalOffset: -70, -60, -670
+		LocalOffset: -10, -60, -70
 		DropRange: 3c0
 	Health:
 		HP: 90
@@ -99,20 +93,20 @@ OSPREY:
 		Range: 10c0
 		Type: CenterPosition
 	WithIdleOverlay@ROTOR1AIR:
-		Offset: 0,847,50
+		Offset: 0,845,650
 		Sequence: rotor
 		RequiresCondition: airborne
 	#Offset ^forward, right, up^
 	WithIdleOverlay@ROTOR1GROUND:
-		Offset: 0,847,50
+		Offset: 0,845,650
 		Sequence: slow-rotor
 		RequiresCondition: !airborne
 	WithIdleOverlay@ROTOR2AIR:
-		Offset: 0,-847,50
+		Offset: 0,-845,650
 		Sequence: rotor2
 		RequiresCondition: airborne
 	WithIdleOverlay@ROTOR2GROUND:
-		Offset: 0,-847,50
+		Offset: 0,-845,650
 		Sequence: slow-rotor2
 		RequiresCondition: !airborne
 	SpawnActorOnDeath:
@@ -128,9 +122,9 @@ OSPREY:
 		Types: Infantry, Doctor
 		MaxWeight: 5
 		PipCount: 5
-		PassengerFacing: 224
+		PassengerFacing: 128
 	Selectable:
-		DecorationBounds: 41,41
+		DecorationBounds: 66,52
 
 OSPREY.delivery:
 	Inherits: OSPREY
@@ -148,8 +142,6 @@ OSPREY.delivery:
 		CruiseAltitude: 2160
 		CanHover: true
 		AirborneCondition: airborne
-		TakeOffOnResupply: true
-		VTOL: true
 	FlyAwayOnIdle:
 	RenderSprites:
 		PlayerPalette: playerRA
@@ -167,13 +159,12 @@ OSPREY.delivery:
 	Interactable:
 
 F22:
-	Inherits: ^Plane
+	Inherits@1: ^Plane
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
-		Queue: Aircraft.Nod, Aircraft.Nodda
-		BuildAtProductionType: Plane
+		Queue: Aircraft.Nodda
 		BuildPaletteOrder: 50
-		Prerequisites: ~afldra, ~techlevel.high
+		Prerequisites: ~afldra, ~anytech, ~techlevel.high
 		BuildDuration: 1750
 		Description: Fast Ground-Attack Plane.\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
 	Valued:
@@ -181,57 +172,49 @@ F22:
 	Tooltip:
 		Name: F-22
 	Health:
-		HP: 7500
+		HP: 100
 	Armor:
 		Type: Light
 	RevealsShroud:
-		Range: 13c0
-		Type: GroundPosition
-		RevealGeneratedShroud: False
-	RevealsShroud@GAPGEN:
-		Range: 11c0
-		Type: GroundPosition
+		Range: 10c0
+		Type: CenterPosition
 	Armament:
-		Weapon: MammothMissiles
+		Weapon: F22Missiles
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
 		PauseOnCondition: !ammo
 	AttackPlane:
 		FacingTolerance: 20
 	Aircraft:
-		RearmBuildings: afldra
-		CruiseAltitude: 2560
 		InitialFacing: 192
-		TurnSpeed: 4
-		Speed: 223
+		TurnSpeed: 5
+		Speed: 280
 		RepulsionSpeed: 40
 		MaximumPitch: 56
-	AutoTarget:
-		InitialStance: HoldFire
-		InitialStanceAI: HoldFire
 	AmmoPool:
 		Ammo: 8
 		AmmoCondition: ammo
-	ReturnOnIdle:
 	Selectable:
 		Bounds: 36,28,0,2
 		DecorationBounds: 40,29,0,1
-	SelectionDecorations:
 	Contrail@1:
 		Offset: -598,-683,0
 	Contrail@2:
 		Offset: -598,683,0
-	#SpawnActorOnDeath:
-	#	Actor: MIG.Husk
+	SpawnActorOnDeath:
+		Actor: F22.Husk
 	SmokeTrailWhenDamaged:
 		Offset: -853,0,171
 		Interval: 2
-	-ProducibleWithLevel:
-		Prerequisites: aircraft.upgraded
 	RenderSprites:
 		PlayerPalette: playerRA
-	-Interactable:
-	-RejectsOrders:
+	JamsMissiles:
+		Range: 2c0
+		DeflectionStances: Neutral, Enemy
+		Chance: 50
+	AppearsOnRadar:
+		UseLocation: yes
+		ValidStances: Neutral, Ally
 
 HELI:
 	Inherits: ^Helicopter
@@ -243,7 +226,7 @@ HELI:
 	Buildable:
 		BuildPaletteOrder: 20
 		Prerequisites: ~hpad, ~anyhq, ~techlevel.medium
-		Queue: Aircraft.Nod, Aircraft.Nodda
+		Queue: Aircraft.Nod
 		Description: Attack Helicopter.\n  Strong vs Infantry, Light Vehicles and\n  Aircraft\n  Weak vs Tanks
 	Aircraft:
 		RearmBuildings: hpad
@@ -252,7 +235,6 @@ HELI:
 		Speed: 180
 		TurnToLand: True
 		LandWhenIdle: False
-		ReturnOnIdle: True
 	Health:
 		HP: 130
 	Armor:
@@ -325,10 +307,9 @@ ORCA:
 		RearmBuildings: hpad
 		InitialFacing: 224
 		TurnSpeed: 4
-		Speed: 200
+		Speed: 240
 		TurnToLand: True
 		LandWhenIdle: False
-		ReturnOnIdle: True
 	Health:
 		HP: 100
 	Armor:
@@ -366,7 +347,7 @@ ORCA:
 		DecorationBounds: 30,24
 
 C17:
-	Inherits: ^Plane
+	Inherits: ^PlaneUnControled
 	Tooltip:
 		Name: Supply Aircraft
 	Valued:
@@ -454,7 +435,7 @@ C17D:
 		Modifier: 0
 
 C130:
-	Inherits: ^Plane
+	Inherits: ^PlaneUnControled
 	Inherits@2: ^GainsExperience
 	ParaDrop:
 		DropRange: 4c0
@@ -489,7 +470,7 @@ C130:
 		PlayerPalette: playerRA
 
 ARTYFIRE:
-	Inherits: ^Plane
+	Inherits: ^PlaneUnControled
 	RenderSprites:
 		Image: null
 	Tooltip:
@@ -526,7 +507,7 @@ ARTYFIRE:
 	-AppearsOnRadar:
 
 A10:
-	Inherits: ^Plane
+	Inherits: ^PlaneUnControled
 	Tooltip:
 		Name: A10 Bomber
 	Valued:
@@ -536,7 +517,7 @@ A10:
 		Speed: 280
 		Repulsable: False
 	Health:
-		HP: 120
+		HP: 150
 	Armor:
 		Type: Heavy
 	AttackBomber:
@@ -650,10 +631,32 @@ OSPREY.Husk:
 		Sequence: rotor2
 	RenderSprites:
 		Image: osprey
-	RenderSprites:
 		PlayerPalette: playerRA
 	FallsToEarth:
 		Velocity: 0c100
+
+F22.Husk
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: F22
+		GenericName: Destroyed Plane
+	Contrail@1:
+		Offset: -598,-683,0
+	Contrail@2:
+		Offset: -598,683,0
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 180
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2
+		MinDamage: Undamaged
+	RevealsShroud:
+		Range: 13c0
+		Type: GroundPosition
+	RenderSprites:
+		Image: F22
+		PlayerPalette: playerRA
 
 HELI.Husk:
 	Inherits: ^HelicopterHusk

@@ -5,9 +5,20 @@ Fixed: bright corpse at night time.
 Fixed: impact sounds of shells vs buildings to be more loud.
 Added: water impact visual and sound effect to bullets and shells.
 Updated: Game engine to the latest playtest engine. Thanks to abcdefg30!!!!
-Added: updates from the new engine like the new colorvalidator, the new login system and other stuff
-
-
+Added: updates from the new engine like the new colorvalidator, the new login system, locomotor trait and other stuff.
+Reworked: some menu items.
+Added: red and blue Shimmering effect thanks to the new trait by Voidwalker!!! He did a huge work for this!
+Added: f-22 to nod DA faction. the f22 wont show up in the enemy radar, and it has the ability to avoid missiles in a small area around the craft but it is not invureable.
+Removed: the helipad from nod DA faction. But it can still get the osprey from the new airfield.
+Added: an airfield for nod DA faction.
+Changed: orca speed to 240 from 200 (apache has 180, f22 has 280, a10 airstrike has 280).
+Added: a transparent observer window for specators, you can also click through it.
+Reworked: pip icons of biohazard hospital and machine shop, and also made them show up at the warfactory nod airstrip baracks and hand of nod only if the player selects them.
+Fixed: machine shop bounds.
+Reworked: osprey "code" and canvas size, also some traits.
+Changed: orca and apache to stay landed after they reload, like it used to be in the original game.
+Added: rally point for hellipad.
+Changed: spy name to specops. also edited the unit art and added some eyekandys and finally edited the unit's icon.
 
 
 

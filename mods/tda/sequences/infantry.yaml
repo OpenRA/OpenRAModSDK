@@ -1,4 +1,4 @@
-spy:
+specops:
 	stand:
 		Facings: 8
 	stand2:
@@ -61,7 +61,7 @@ spy:
 		Start: 192
 		Length: 8
 		Facings: 8
-	icon: spyicon
+	icon: specopsicon
 
 medi:
 	stand:

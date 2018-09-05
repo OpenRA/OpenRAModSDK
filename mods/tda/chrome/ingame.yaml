@@ -540,9 +540,9 @@ Container@PLAYER_WIDGETS:
 							ImageName: hold-fire
 		Background@SIDEBAR_BACKGROUND:
 			Logic: MenuButtonsChromeLogic
-			X: WINDOW_RIGHT - 204
+			X: WINDOW_RIGHT - 258
 			Y: 30
-			Width: 194
+			Width: 258
 			Height: 595
 			Background: panel-black
 			Children:
@@ -772,16 +772,16 @@ Container@PLAYER_WIDGETS:
 									Y: 7
 									ImageCollection: production-icons2
 		Container@PRODUCTION_BACKGROUND:
-			X: WINDOW_RIGHT - 204
-			Y: 287
+			X: WINDOW_RIGHT - 258
+			Y: 297
 			Children:
 				Background@ICON_TEMPLATE:
 					Width: 66
 					Height: 50
 					Background: panel-black
 		ProductionPalette@PRODUCTION_PALETTE:
-			X: WINDOW_RIGHT - 203
-			Y: 288
+			X: WINDOW_RIGHT - 257
+			Y: 298
 			TooltipContainer: TOOLTIP_CONTAINER
 			ReadyText: Ready
 			HoldText: On Hold
@@ -794,11 +794,10 @@ Container@PLAYER_WIDGETS:
 			BackgroundContainer: PRODUCTION_BACKGROUND
 			PreviousProductionTabKey: PreviousProductionTab
 			NextProductionTabKey: NextProductionTab
-			X: WINDOW_RIGHT - 204
+			X: WINDOW_RIGHT - 258
 			Y: 268
-			Width: 194
-			Height: 20
-
+			Width: 258
+			Height: 30
 Background@FMVPLAYER:
 	Width: WINDOW_RIGHT
 	Height: WINDOW_BOTTOM

@@ -146,7 +146,7 @@ FIXN:
 	Tooltip:
 		Name: Machine Shop
 	Building:
-		Footprint: __x xxx x__
+		Footprint: __x xxx x==
 		Dimensions: 3,3
 	Health:
 		HP: 500
@@ -156,8 +156,8 @@ FIXN:
 		Amount: 0
 	SelectionDecorations:
 	Selectable:
-		Bounds: 48,42,0,-5
-		DecorationBounds: 48,42,0,-5
+		Bounds: 72,48
+		DecorationBounds: 72,72,0,0
 	WithIdleOverlay@ROOF:
 		Sequence: idle-roof
 	BodyOrientation:

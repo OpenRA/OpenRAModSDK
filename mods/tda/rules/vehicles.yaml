@@ -245,10 +245,10 @@ HARV:
 	WithDecoration@TIB_ARMOR:
 		Image: pips
 		Sequence: pip-tib_armor
-		ReferencePoint: Center, Left
+		ReferencePoint: Top, Left
 		RequiresCondition: arm_harv
 		ValidStances: Ally
-		RequiresSelection: False
+		RequiresSelection: True
 	Valued:
 		Cost: 1400
 	Buildable:
@@ -382,7 +382,7 @@ ARTY:
 	SpawnActorOnDeath:
 		Actor: ARTY.Husk
 	Explodes:
-		Weapon: ArtilleryShell
+		Weapon: ArtilleryShellExplode
 		EmptyWeapon: UnitExplode
 		LoadedChance: 75
 	Targetable:
@@ -441,10 +441,10 @@ FTNKV:
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Flame Tank voxel
+		Name: NEVAL SHIP FOR TESTING voxel <><><><><><>
 	Buildable:
 		BuildPaletteOrder: 50
-		Prerequisites: ~anyhq, ~techlevel.medium
+		Prerequisites: ~anyhq, ~techlevel.medium ~disabled
 		Queue: Vehicle.Nod, Vehicle.Nodda
 		Description: Heavily armored flame-throwing vehicle.\n  Strong vs Infantry, Buildings and Vehicles\n  Weak vs Tanks
 	Mobile:

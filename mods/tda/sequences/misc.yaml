@@ -26,6 +26,8 @@ tibshimmering:
 	UseTilesetCode: false
 	idle:
 		Length: *
+	die-crushed: null
+		Start: 1
 	idle-shimmering:
 		BlendMode: Additive
 		Length: *
@@ -434,11 +436,13 @@ pips:
 		Start: 5
 	pip-heal: pip-heal
 		Length: *
+		Offset: 0, 6
 	groups: pdigits
 		Length: *
 		Offset: 9, 5
 	pip-hazmat: pip-hazmat
 		Length: *
+		Offset: 0, 6
 	pip-disguise: pip-disguise
 		Length: *
 		Tick: 300

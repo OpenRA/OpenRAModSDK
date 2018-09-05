@@ -12,6 +12,54 @@ lobby-bits: chrome.png
 	player-registered: 480,112,16,16
 	player-anonymous: 496,112,16,16
 
+panel-logotransparent: observer.png
+	background: 0,0,1024,512
+
+flags: flags.png
+	nod: 0,0,32,16
+	nodda: 33,0,32,16
+	gdi: 0,17,32,16
+	Random: 66,34,32,16
+
+production-icons: chrome.png
+	building: 384,0,16,16
+	building-disabled: 384,16,16,16
+	building-alert: 384,32,16,16
+	defence: 400,0,16,16
+	defence-disabled: 400,16,16,16
+	defence-alert: 400,32,16,16
+	infantry: 416,0,16,16
+	infantry-disabled: 416,16,16,16
+	infantry-alert: 416,32,16,16
+	vehicle: 432,0,16,16
+	vehicle-disabled: 432,16,16,16
+	vehicle-alert: 432,32,16,16
+	aircraft: 448,0,16,16
+	aircraft-disabled: 448,16,16,16
+	aircraft-alert: 448,32,16,16
+	support: 464,0,16,16
+	support-disabled: 464,16,16,16
+	support-alert: 464,32,16,16
+
+production-icons2: chrome2.png
+	ship: 496,48,16,16
+	ship-disabled: 496,64,16,16
+	ship-alert: 496,80,16,16
+	research: 496,144,16,16
+	research-disabled: 496,159,16,16
+	research-alert: 496,174,16,16
+
+panel-black: oldbackground.png
+	background: 1,1,510,510
+	border-r: 0,1,1,511
+	border-l: 0,1,1,511
+	border-b: 1,511,511,1
+	border-t: 1,0,511,1
+	corner-tl: 0,0,1,1
+	corner-tr: 1,0,1,1
+	corner-bl: 0,511,1,1
+	corner-br: 1,511,1,1
+#TDA Edits Above
 shellmap: reticle.png
 	reticle: 0,0,512,512
 
@@ -383,17 +431,6 @@ checkbox-highlighted: chrome.png
 	corner-bl: 256,191,1,1
 	corner-br: 287,191,1,1
 
-panel-black: oldbackground.png
-	background: 1,1,510,510
-	border-r: 0,1,1,511
-	border-l: 0,1,1,511
-	border-b: 1,511,511,1
-	border-t: 1,0,511,1
-	corner-tl: 0,0,1,1
-	corner-tr: 1,0,1,1
-	corner-bl: 0,511,1,1
-	corner-br: 1,511,1,1
-
 panel-darkred: chrome.png
 	background: 2,66,60,60
 	border-r: 62,66,2,60
@@ -487,12 +524,6 @@ scrollbar: chrome.png
 	left_arrow: 352,48,16,16
 	left_pressed: 368,48,16,16
 
-flags: flags.png
-	nod: 0,0,32,16
-	nodda: 33,0,32,16
-	gdi: 0,17,32,16
-	Random: 66,34,32,16
-
 strategic: strategic.png
 	unowned: 0,0,32,32
 	critical_unowned: 0,32,32,32
@@ -505,33 +536,6 @@ sidebar-bits: chrome.png
 	production-tooltip-time: 432, 80, 16, 16
 	production-tooltip-power: 448, 80, 16, 16
 	production-tooltip-cost: 464, 80, 16, 16
-
-production-icons: chrome.png
-	building: 384,0,16,16
-	building-disabled: 384,16,16,16
-	building-alert: 384,32,16,16
-	defence: 400,0,16,16
-	defence-disabled: 400,16,16,16
-	defence-alert: 400,32,16,16
-	infantry: 416,0,16,16
-	infantry-disabled: 416,16,16,16
-	infantry-alert: 416,32,16,16
-	vehicle: 432,0,16,16
-	vehicle-disabled: 432,16,16,16
-	vehicle-alert: 432,32,16,16
-	aircraft: 448,0,16,16
-	aircraft-disabled: 448,16,16,16
-	aircraft-alert: 448,32,16,16
-	support: 464,0,16,16
-	support-disabled: 464,16,16,16
-	support-alert: 464,32,16,16
-production-icons2: chrome2.png
-	ship: 496,48,16,16
-	ship-disabled: 496,64,16,16
-	ship-alert: 496,80,16,16
-	research: 496,144,16,16
-	research-disabled: 496,159,16,16
-	research-alert: 496,174,16,16
 
 order-icons: chrome.png
 	options: 480,0,16,16

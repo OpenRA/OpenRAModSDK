@@ -131,60 +131,6 @@ FACT.NODDA:
 	Tooltip:
 		Name: Nod DA
 
-AFLDRA:
-	Inherits: ^BaseBuilding
-	Inherits@shape: ^3x2Shape
-	HitShape:
-		UseTargetableCellsOffsets: false
-		TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
-	Valued:
-		Cost: 1000
-	Tooltip:
-		Name: Nod Airfield
-	Buildable:
-		BuildPaletteOrder: 300
-		Prerequisites: ~anyhq, ~techlevel.high, ~disabled
-		Queue: Building.Nod, Building.Nodda
-		Description: Produces and reloads aircraft.
-	Building:
-		Footprint: xxx xxx
-		Dimensions: 3,2
-	Health:
-		HP: 1000
-	RevealsShroud:
-		Range: 4c0
-	WithBuildingBib:
-	Power:
-		Amount: -50
-	Targetable:
-		TargetTypes: Ground, C4, Structure, SpyInfiltrate
-	Exit@1:
-		ExitCell: 1,1
-		Facing: 192
-		MoveIntoWorld: false
-	RallyPoint:
-	ProductionFromMapEdge:
-		Produces: Aircraft.GDI, Aircraft.Nod
-	Reservable:
-	Selectable:
-		Bounds: 72,48
-	WithRearmAnimation:
-	WithDamageOverlay:
-	ProductionQueue@GDI:
-		Type: Aircraft.GDI
-		Factions: gdi
-		Group: Aircraft
-		LowPowerSlowdown: 3
-	ProductionQueue@Nod:
-		Type: Aircraft.Nod
-		Factions: nod, nodda
-		Group: Aircraft
-		LowPowerSlowdown: 3
-	ProductionBar@GDI:
-		ProductionType: Aircraft.GDI
-	ProductionBar@Nod:
-		ProductionType: Aircraft.Nod
-
 NUKE:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
@@ -441,6 +387,26 @@ PYLE:
 	AmbientSound:
 		SoundFiles: barracks.aud
 		Delay: 5
+	GrantConditionOnPrerequisite@HOSPITAL:
+		Condition: hospitalheal
+		Prerequisites: hosp
+	WithDecoration@REDCROSS:
+		Image: pips
+		Sequence: pip-heal
+		ReferencePoint: Top, Right
+		RequiresCondition: hospitalheal
+		ValidStances: Ally, Neutral
+		RequiresSelection: True
+	GrantConditionOnPrerequisite@BIO:
+		Condition: hazmatsuits
+		Prerequisites: bio
+	WithDecoration@HAZMAT:
+		Image: pips
+		Sequence: pip-hazmat
+		ReferencePoint: Top, Right
+		RequiresCondition: hazmatsuits
+		ValidStances: Ally, Neutral
+		RequiresSelection: True
 
 HAND:
 	Inherits: ^BaseBuilding
@@ -495,6 +461,26 @@ HAND:
 	AmbientSound:
 		SoundFiles: barracks.aud
 		Delay: 5
+	GrantConditionOnPrerequisite@HOSPITAL:
+		Condition: hospitalheal
+		Prerequisites: hosp
+	WithDecoration@REDCROSS:
+		Image: pips
+		Sequence: pip-heal
+		ReferencePoint: Top, Right
+		RequiresCondition: hospitalheal
+		ValidStances: Ally, Neutral
+		RequiresSelection: True
+	GrantConditionOnPrerequisite@BIO:
+		Condition: hazmatsuits
+		Prerequisites: bio
+	WithDecoration@HAZMAT:
+		Image: pips
+		Sequence: pip-hazmat
+		ReferencePoint: Top, Right
+		RequiresCondition: hazmatsuits
+		ValidStances: Ally, Neutral
+		RequiresSelection: True
 
 PYLESOLE:
 	Inherits: PYLE
@@ -582,6 +568,15 @@ AFLD:
 		IsPlayerPalette: true
 	Selectable:
 		Bounds: 96,48
+	GrantConditionOnPrerequisite@MACHINE_SHOP:
+		Condition: machine_shop_repair
+		Prerequisites: fixn
+	WithDecoration@MECH:
+		Image: pips
+		Sequence: pip-mech
+		ReferencePoint: Right, Top
+		RequiresCondition: machine_shop_repair
+		RequiresSelection: True
 
 WEAP:
 	Inherits: ^BaseBuilding
@@ -640,7 +635,82 @@ WEAP:
 		Proxy: vehicles.upgraded
 	Targetable:
 		TargetTypes: Ground, C4, Structure, SpyInfiltrate, DetonateAttack, AItagWF
+	GrantConditionOnPrerequisite@MACHINE_SHOP:
+		Condition: machine_shop_repair
+		Prerequisites: fixn
+	WithDecoration@MECH:
+		Image: pips
+		Sequence: pip-mech
+		ReferencePoint: Right, Top
+		RequiresCondition: machine_shop_repair
+		RequiresSelection: True
 
+AFLDRA:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^3x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Nod Airfield
+	Buildable:
+		BuildPaletteOrder: 50
+		Prerequisites: ~anyhq, ~techlevel.high
+		Queue: Building.Nodda
+		Description: Produces and reloads aircraft.
+	ProvidesPrerequisite@buildingname:
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 1000
+	RevealsShroud:
+		Range: 4c0
+	WithBuildingBib:
+	Power:
+		Amount: -50
+	Targetable:
+		TargetTypes: Ground, C4, Structure, DetonateAttack, SpyInfiltrate
+	Exit@1:
+		ExitCell: 1,1
+		Facing: 192
+		MoveIntoWorld: false
+	RallyPoint:
+	ProductionFromMapEdge:
+		Produces: Aircraft.Nodda
+	Reservable:
+	Selectable:
+		Bounds: 72,48
+	WithRearmAnimation:
+	RepairsUnits:
+		Interval: 15
+		PlayerExperience: 0
+	WithDamageOverlay:
+	ProductionQueue@GDI:
+		Type: Aircraft.GDI
+		Factions: gdi
+		Group: Aircraft
+		LowPowerSlowdown: 3
+	ProductionQueue@Nod:
+		Type: Aircraft.Nod
+		Factions: nod
+		Group: Aircraft
+		LowPowerSlowdown: 3
+	ProductionQueue@Nodda:
+		Type: Aircraft.Nodda
+		Factions: nodda
+		Group: Aircraft
+		LowPowerSlowdown: 3
+	ProductionBar@GDI:
+		ProductionType: Aircraft.GDI
+	ProductionBar@Nod:
+		ProductionType: Aircraft.Nod
+	ProductionBar@Nodda:
+		ProductionType: Aircraft.Nodda
+	InfiltrateForSupportPower:
+		Proxy: aircraft.upgraded
 HPAD:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
@@ -654,7 +724,7 @@ HPAD:
 	Buildable:
 		BuildPaletteOrder: 50
 		Prerequisites: ~anyhq
-		Queue: Building.GDI, Building.Nod, Building.Nodda
+		Queue: Building.GDI, Building.Nod
 		Description: Produces, rearms and\nrepairs helicopters
 	Building:
 		Footprint: xx xx ==
@@ -668,8 +738,10 @@ HPAD:
 	ProductionFromMapEdge:
 		Produces: Aircraft.GDI, Aircraft.Nod, Aircraft.Nodda
 	Reservable:
-	Exit@1:
+	Exit:
 		SpawnOffset: 0,-256,0
+		MoveIntoWorld: False
+	RallyPoint:
 	WithRearmAnimation:
 	ProductionQueue@GDI:
 		Type: Aircraft.GDI
@@ -1002,7 +1074,7 @@ FIX:
 	Reservable:
 	RepairsUnits:
 		Interval: 15
-		PlayerExperience: 25
+		PlayerExperience: 0
 	RallyPoint:
 	WithRepairAnimation:
 	Power:
@@ -1054,7 +1126,7 @@ FIX_NOD:
 	Reservable:
 	RepairsUnits:
 		Interval: 15
-		PlayerExperience: 25
+		PlayerExperience: 0
 	RallyPoint:
 	WithRepairAnimation:
 	Power:

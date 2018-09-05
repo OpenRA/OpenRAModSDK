@@ -7,6 +7,9 @@
 	ScriptTriggers:
 	ConditionManager:
 	RenderDebugState:
+	OwnerLostAction:
+		Action: Kill
+		Owner: Neutral
 
 ^SpriteActor:
 	BodyOrientation:
@@ -306,11 +309,6 @@
 	GrantConditionOnPrerequisite@MACHINE_SHOP:
 		Condition: machine_shop_repair
 		Prerequisites: fixn
-	WithDecoration@MECH:
-		Image: pips
-		Sequence: pip-mech
-		ReferencePoint: Left, Top
-		RequiresCondition: machine_shop_repair
 	HitShape:
 	EditorTilesetFilter:
 		Categories: Vehicle
@@ -350,6 +348,87 @@
 	Inherits: ^TankWithoutVeterancy
 	Inherits@2: ^GainsExperience
 
+^Plane
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Inherits@3: ^GainsExperience 
+	Inherits@4: ^GlobalBounty
+	Huntable:
+	AppearsOnRadar:
+		UseLocation: yes
+	HiddenUnderFog:
+		AlwaysVisibleStances: Ally, Neutral
+		Type: CenterPosition
+	ActorLostNotification:
+	AttackMove:
+	WithShadow:
+		Offset: 43, 128, 0
+		ZOffset: -129
+	WithFacingSpriteBody:
+	Aircraft:
+		CruiseAltitude: 2560
+		AirborneCondition: airborne
+		CruisingCondition: cruising
+		RearmBuildings: afldra
+		RepairBuildings: afldra
+		TakeOffOnCreation: False
+		TakeOffOnResupply: False
+		AbortOnResupply: False
+	WithSpriteControlGroupDecoration:
+	ProducibleWithLevel:
+		Prerequisites: aircraft.upgraded
+	GivesBounty:
+	ProximityCaptor:
+		Types: Plane
+	HitShape:
+	Targetable@GROUND:
+		TargetTypes: Ground, Vehicle, Repair
+		RequiresCondition: !airborne
+	Targetable@AIRBORNE:
+		TargetTypes: Air
+		RequiresCondition: airborne
+	Voiced:
+		VoiceSet: VehicleVoice
+	SelectionDecorations:
+	ReturnOnIdle:
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+	EditorTilesetFilter:
+		Categories: Aircraft
+
+^PlaneUnControled:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	#Inherits@3: ^GainsExperience 
+	#reaperrr: most current planes don't use it, so it's better to add this to individual planes if needed
+	Inherits@bounty: ^GlobalBounty
+	Huntable:
+	AppearsOnRadar:
+		UseLocation: yes
+	HiddenUnderFog:
+		AlwaysVisibleStances: Ally, Neutral
+		Type: CenterPosition
+	ActorLostNotification:
+	AttackMove:
+	WithShadow:
+		Offset: 43, 128, 0
+		ZOffset: -129
+	WithFacingSpriteBody:
+	FlyAwayOnIdle:
+	RejectsOrders:
+	Aircraft:
+		CruiseAltitude: 2560
+	ProducibleWithLevel:
+		Prerequisites: aircraft.upgraded
+	GivesBounty:
+	ProximityCaptor:
+		Types: PlaneUnControled
+	HitShape:
+	Interactable:
+	EditorTilesetFilter:
+		Categories: Aircraft
+
 ^Helicopter:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^GainsExperience
@@ -373,8 +452,8 @@
 		AirborneCondition: airborne
 		CruisingCondition: cruising
 		CanHover: True
-		TakeOffOnResupply: true
-		VTOL: true
+		TakeOffOnResupply: False
+		VTOL: True
 	HiddenUnderFog:
 		Type: GroundPosition
 	ActorLostNotification:
@@ -460,13 +539,6 @@
 	GrantConditionOnPrerequisite@BIO:
 		Condition: hazmatsuits
 		Prerequisites: bio
-	WithDecoration@HAZMAT:
-		Image: pips
-		Sequence: pip-hazmat
-		ReferencePoint: Top, Left
-		RequiresCondition: hazmatsuits
-		ValidStances: Ally, Neutral
-		RequiresSelection: True
 	ActorLostNotification:
 	SpawnActorOnDeath:
 		Probability: 10
@@ -488,13 +560,6 @@
 	GrantConditionOnPrerequisite@HOSPITAL:
 		Condition: hospitalheal
 		Prerequisites: hosp
-	WithDecoration@REDCROSS:
-		Image: pips
-		Sequence: pip-heal
-		ReferencePoint: Top, Left
-		RequiresCondition: hospitalheal
-		ValidStances: Ally, Neutral
-		RequiresSelection: True
 	WithDecoration@DEFENCE:
 		Image: pips
 		Sequence: pip-defence
@@ -720,38 +785,6 @@
 	EditorTilesetFilter:
 		Categories: Critter
 
-^Plane:
-	Inherits@1: ^ExistsInWorld
-	Inherits@2: ^SpriteActor
-	#Inherits@3: ^GainsExperience 
-	#reaperrr: most current planes don't use it, so it's better to add this to individual planes if needed
-	Inherits@bounty: ^GlobalBounty
-	Huntable:
-	AppearsOnRadar:
-		UseLocation: yes
-	HiddenUnderFog:
-		AlwaysVisibleStances: Ally, Neutral
-		Type: CenterPosition
-	ActorLostNotification:
-	AttackMove:
-	WithShadow:
-		Offset: 43, 128, 0
-		ZOffset: -129
-	WithFacingSpriteBody:
-	FlyAwayOnIdle:
-	RejectsOrders:
-	Aircraft:
-		CruiseAltitude: 2560
-	ProducibleWithLevel:
-		Prerequisites: aircraft.upgraded
-	GivesBounty:
-	ProximityCaptor:
-		Types: Plane
-	HitShape:
-	Interactable:
-	EditorTilesetFilter:
-		Categories: Aircraft
-
 ^Ship:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^GainsExperience
@@ -918,6 +951,8 @@
 		Categories: Tech building
 	RenderSprites:
 		-Palette: terrain
+	OwnerLostAction:
+		Action: ChangeOwner
 
 ^CivField:
 	Inherits: ^CivBuilding
@@ -1353,6 +1388,9 @@
 		OccupiesSpace: true
 	EditorTilesetFilter:
 		Categories: System
+	OwnerLostAction
+		Action: ChangeOwner
+		Owner: Creeps
 
 ^DisableOnLowPower:
 	WithColoredOverlay@IDISABLE:

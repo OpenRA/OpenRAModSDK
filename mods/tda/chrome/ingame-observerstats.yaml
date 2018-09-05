@@ -5,24 +5,27 @@ Background@INGAME_OBSERVERSTATS_BG:
 		StatisticsProductionKey: StatisticsProduction
 		StatisticsCombatKey: StatisticsCombat
 		StatisticsGraphKey: StatisticsGraph
-	X: (WINDOW_RIGHT - WIDTH) / 2
-	Y: (WINDOW_BOTTOM - HEIGHT) / 2
-	Width: 1005
-	Height: 500
+	X: 30
+	Y: 30
+	Width: 1024
+	Height: 512
+	ClickThrough: true
+	Background: panel-logotransparent
 	Children:
 		Background@BACKGROUND:
 			Width: PARENT_RIGHT
-			Background: panel-black
 			Height: PARENT_BOTTOM - 35
+			ClickThrough: true
+			Background: panel-transparent
 			Children:
 				Label@TITLE:
 					X: 0
-					Y: 0 - 25
+					Y: 10 - 0
 					Width: PARENT_RIGHT
 					Font: BigBold
 					Align: Center
 					Contrast: True
-					Text: Statistics
+					Text: SoScaredron Spec-o-meter 2000
 				DropDownButton@STATS_DROPDOWN:
 					X: PARENT_RIGHT - 200
 					Y: 15
@@ -283,6 +286,7 @@ Background@INGAME_OBSERVERSTATS_BG:
 					Height: PARENT_BOTTOM - 35 - 50
 					TopBottomSpacing: 5
 					ItemSpacing: 5
+					Background: panel-transparent
 					Children:
 						ScrollItem@TEAM_TEMPLATE:
 							X: 0
