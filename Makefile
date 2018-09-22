@@ -19,7 +19,7 @@
 #   make check
 #
 
-.PHONY: utility stylecheck build clean engine version check-scripts check test
+.PHONY: utility stylecheck build clean engine version check check-scripts check-sdk-scripts check-packaging-scripts check-variables
 .DEFAULT_GOAL := build
 
 VERSION = $(shell git name-rev --name-only --tags --no-undefined HEAD 2>/dev/null || echo git-`git rev-parse --short HEAD`)
