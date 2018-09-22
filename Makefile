@@ -34,7 +34,7 @@ HAS_LUAC = $(shell command -v luac 2> /dev/null)
 LUA_FILES = $(shell find mods/*/maps/* -iname '*.lua')
 PROJECT_DIRS = $(shell dirname $$(find . -iname "*.csproj" -not -path "$(ENGINE_DIRECTORY)/*"))
 
-scripts:
+check-sdk-scripts:
 	@awk '/\r$$/ { exit(1); }' mod.config || (printf "Invalid mod.config format: file must be saved using unix-style (CR, not CRLF) line endings.\n"; exit 1)
 	@if [ ! -x "fetch-engine.sh" ] || [ ! -x "launch-dedicated.sh" ] || [ ! -x "launch-game.sh" ] || [ ! -x "utility.sh" ]; then \
 		echo "Required SDK scripts are not executable:"; \
@@ -80,7 +80,7 @@ check-packaging-scripts:
 		exit 1; \
 	fi
 
-variables:
+check-variables:
 	@if [ -z "$(MOD_ID)" ] || [ -z "$(ENGINE_DIRECTORY)" ]; then \
 		echo "Required mod.config variables are missing:"; \
 		if [ -z "$(MOD_ID)" ]; then \
@@ -93,7 +93,7 @@ variables:
 		exit 1; \
 	fi
 
-engine: variables scripts
+engine: check-variables check-sdk-scripts
 	@./fetch-engine.sh || (printf "Unable to continue without engine files\n"; exit 1)
 	@cd $(ENGINE_DIRECTORY) && make core
 
@@ -119,13 +119,13 @@ endif
 	@cd $(ENGINE_DIRECTORY) && make clean
 	@printf "The engine has been cleaned.\n"
 
-version: variables
+version: check-variables
 	@awk '{sub("Version:.*$$","Version: $(VERSION)"); print $0}' $(MANIFEST_PATH) > $(MANIFEST_PATH).tmp && \
 	awk '{sub("/[^/]*: User$$", "/$(VERSION): User"); print $0}' $(MANIFEST_PATH).tmp > $(MANIFEST_PATH) && \
 	rm $(MANIFEST_PATH).tmp
 	@printf "Version changed to $(VERSION).\n"
 
-check-scripts: variables
+check-scripts: check-variables
 ifeq ("$(HAS_LUAC)","")
 	@printf "'luac' not found.\n" && exit 1
 endif
