@@ -12,12 +12,13 @@
 # to check lua scripts for syntax errors, run:
 #   make check-scripts
 #
-# to check the official mods for erroneous yaml files, run:
-#   make test
-#
-# to check the official mod dlls for StyleCop violations, run:
+# to check the engine and your mod dlls for StyleCop violations, run:
 #   make check
 #
+# the following are internal sdk helpers that are not intended to be run directly:
+#   make check-variables
+#   make check-sdk-scripts
+#   make check-packaging-scripts
 
 .PHONY: utility stylecheck build clean engine version check check-scripts check-sdk-scripts check-packaging-scripts check-variables
 .DEFAULT_GOAL := build
