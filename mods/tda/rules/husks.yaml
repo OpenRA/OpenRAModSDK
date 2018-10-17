@@ -7,8 +7,18 @@ MCV.Husk:
 	RenderSprites:
 		Image: mcv.destroyed
 
+MOV.Husk:
+	Inherits: ^HuskRApalette
+	Tooltip:
+		Name: Mobile Outpost Vehicle (Destroyed)
+	TransformOnCapture:
+		IntoActor: mov
+	RenderSprites:
+		Image: mov.destroyed
+		PlayerPalette: playerRA
+
 3TNK.Husk:
-	Inherits: ^Husk
+	Inherits: ^HuskRApalette
 	Tooltip:
 		Name: Husk (Heavy Tank)
 	ThrowsParticle@turret:
@@ -28,21 +38,21 @@ HARV.Husk:
 	RenderSprites:
 		Image: harv.destroyed
 
-STEALTH_HARV_NOD.Husk:
+HARV_BOOST_OFF.Husk:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Harvester (Destroyed)
+		Name: Harvester OFF(Destroyed)
 	TransformOnCapture:
-		IntoActor: harv
+		IntoActor: harv_boost_off
 	RenderSprites:
-		Image: stealth_harv_nod.destroyed
+		Image: harv.destroyed
 
-HEAVY_HARV_GDI.Husk:
+HARV_BOOST_ON.Husk:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Harvester (Destroyed)
+		Name: Harvester ON(Destroyed)
 	TransformOnCapture:
-		IntoActor: heavy_harv_gdi
+		IntoActor: harv_boost_on
 	RenderSprites:
 		Image: harv.destroyed
 

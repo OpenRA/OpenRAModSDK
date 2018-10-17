@@ -354,6 +354,35 @@ NapalmB:
 		ImpactSounds: flamer2.aud
 		ExplosionPalette: flashyeffect
 
+AirBomb:
+	ValidTargets: Ground, Water, Trees
+	ReloadDelay: 4
+	Range: 2c0
+	Report: bombfall.wav
+	Projectile: GravityBomb
+		Image: BOMBLET
+		Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 200
+		Damage: 50
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		ValidTargets: Ground, Water, Trees
+		Versus:
+			None: 100
+			Wood: 100
+			Light: 100
+			Heavy: 100
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@3Eff: CreateEffect
+		Explosions: poof
+		ImpactSounds: xplosml2.aud
+		ExplosionPalette: flashyeffect
+		InvalidTargets: Water
+	Warhead@4EffFlash: CreateEffect
+		Explosions: flash3
+		ExplosionPalette: alpha
+		InvalidTargets: Water
+
 Laser:
 	ReloadDelay: 1
 	Range: 10c0

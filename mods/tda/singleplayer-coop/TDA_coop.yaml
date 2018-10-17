@@ -7,9 +7,23 @@ World:
 	MapBuildRadius:
 		AllyBuildRadiusLocked: True
 		AllyBuildRadiusEnabled: True
+		AllyBuildRadiusCheckboxVisible: False
+		AllyBuildRadiusCheckboxDisplayOrder: 4
+		BuildRadiusCheckboxDisplayOrder: 5
+		BuildRadiusCheckboxEnabled: False
+		BuildRadiusCheckboxVisible: False
+		BuildRadiusCheckboxLocked: True
 	MapOptions:
+		ShortGameCheckboxDisplayOrder: 3
+		TechLevelDropdownDisplayOrder: 2
+		GameSpeedDropdownDisplayOrder: 3
 		ShortGameLocked: True
-		ShortGameEnabled: True
+		ShortGameEnabled: False
+	MapCreeps:
+		CheckboxEnabled: True
+		CheckboxLocked: True
+		CheckboxDisplayOrder: 9
+		CheckboxVisible: False
 
 Player:
 	-ConquestVictoryConditions:
@@ -22,7 +36,77 @@ Player:
 		ExploredMapEnabled: False
 	PlayerResources:
 		DefaultCashLocked: True
+		SelectableCash: 2500
 		DefaultCash: 2500
+	LobbyPrerequisiteCheckbox@GLOBALFACTUNDEPLOY:
+		ID: factundeploy
+		Label: Redeployable MCVs
+		Description: Allow undeploying Construction Yard.
+		DisplayOrder: 7
+		Prerequisites: global-factundeploy
+		Enabled: False
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@GLOBALBOUNTY:
+		ID: bounty
+		Label: Kill Bounties
+		Description: Players receive cash bonuses when killing enemy units
+		DisplayOrder: 6
+		Prerequisites: global-bounty
+		Enabled: False
+		Locked: True
+		Visible: False
+	DeveloperMode:
+		CheckboxDisplayOrder: 8
+		CheckboxEnabled: False
+		CheckboxLocked: False
+		CheckboxVisible: True
+	LobbyPrerequisiteCheckbox@HarvesterTruce:
+		ID: HarvesterTruce
+		Label: Harvester Truce
+		Description: Harvesters Won't die (Do Not Use with Short Game Off)
+		DisplayOrder: 10
+		Prerequisites: HarvesterTruce
+		Enabled: False
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@MAPEFFECTS:
+		ID: mapeffects
+		Label: Map Effects
+		Description: Show day/night cycle and weather effects on the maps
+		DisplayOrder: 10
+		Prerequisites: MapEffects
+		Enabled: False
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@OUTPOST:
+		ID: outpost
+		Label: Outpost
+		Description: Enables the Outpost unit, best used with "Limit Build Area" ON
+		DisplayOrder: 10
+		Prerequisites: outpost_on
+		Enabled: False
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@TURBO_TIBERIUM:
+		ID: turbo_tiberium
+		Label: Turbo Tiberium
+		Description: Boost tiberium growth and also enables the Tiberium Growth Decelerator building
+		DisplayOrder: 10
+		Prerequisites: turbo_tiberium
+		Enabled: False
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@ORIGINAL_RULES_OR_COOP:
+		ID: turbo_tiberium
+		Label: Original rules or coop
+		Description: This must be enabled for any single\coop mission that use the original rules
+		DisplayOrder: 10
+		Prerequisites: original_rules_or_coop
+		Visible: False
+		Enabled: False
+		Locked: True
+		Visible: False
 
 ^Palettes:
 	-PlayerColorPalette:

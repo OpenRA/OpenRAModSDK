@@ -36,7 +36,7 @@
 		TerrainType: Tiberium
 		Sequences: ti1,ti2,ti3,ti4,ti5,ti6,ti7,ti8,ti9,ti10,ti11,ti12
 		MaxDensity: 12
-		ValuePerUnit: 25
+		ValuePerUnit: 9
 		Name: Tiberium
 		PipColor: Green
 		AllowedTerrainTypes: Clear
@@ -48,7 +48,7 @@
 		TerrainType: BlueTiberium
 		Sequences: bti1,bti2,bti3,bti4,bti5,bti6,bti7,bti8,bti9,bti10,bti11,bti12
 		MaxDensity: 12
-		ValuePerUnit: 32
+		ValuePerUnit: 15
 		Name: Blue Tiberium
 		PipColor: Blue
 		AllowedTerrainTypes: Clear
@@ -60,7 +60,7 @@
 		TerrainType: RedTiberium
 		Sequences: bti1,bti2,bti3,bti4,bti5,bti6,bti7,bti8,bti9,bti10,bti11,bti12
 		MaxDensity: 12
-		ValuePerUnit: 36
+		ValuePerUnit: 19
 		Name: Red Tiberium
 		PipColor: Red
 		AllowedTerrainTypes: Clear
@@ -75,7 +75,9 @@ World:
 		SpawnInterval: 1
 		Actors: TibShimmering
 		Owner: Neutral
-		Types: a
+		Types: TibShimmeringType
+	BuildableTerrainLayer:
+		Palette: terrain
 	ChatCommands:
 	DevCommands:
 	DebugVisualizationCommands:

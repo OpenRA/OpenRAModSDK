@@ -74,9 +74,29 @@ TibShimmering:
 		DamageInterval: 10
 		DamageThreshold: 0
 		Terrain: Clear, Rough, Road, Beach, BlueTiberium, RedTiberium, Tiberium
+	ExternalCondition@SPIKE
+		Condition: Spike.proximity
+	GrantConditionOnPrerequisite:
+		Condition: TurboTiberiumOn
+		Prerequisites: turbo_tiberium
 	Mobile:
 		Speed: 99999
 		Locomotor: TibShimmeringEffectLocomotor
+	SeedsResource@RED:
+		ResourceType: RedTiberium
+		Interval: 300
+		MaxRange: 900
+		RequiresCondition: OnRedTib && !OnBlueTib && !OnGreenTib && !Spike.proximity && TurboTiberiumOn
+	SeedsResource@BLUE:
+		ResourceType: BlueTiberium
+		Interval: 200
+		MaxRange: 900
+		RequiresCondition: OnBlueTib && !OnRedTib && !OnGreenTib && !Spike.proximity && TurboTiberiumOn
+	SeedsResource@GREEN:
+		ResourceType: Tiberium
+		Interval: 100
+		MaxRange: 900
+		RequiresCondition: OnGreenTib && !OnRedTib && !OnBlueTib && !Spike.proximity && TurboTiberiumOn
 
 CRATEHEAL:
 	Inherits: ^Crate

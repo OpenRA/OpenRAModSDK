@@ -66,7 +66,7 @@ OSPREY:
 		Name: V-22 Osprey
 	Buildable:
 		BuildPaletteOrder: 10
-		Prerequisites: hpad
+		Prerequisites: vehicleproduction
 		Queue: Aircraft.GDI, Aircraft.Nod, Aircraft.Nodda
 		Description: Vehicle And Infantry Transport Helicopter.\n  Unarmed
 	Aircraft:
@@ -178,8 +178,18 @@ F22:
 	RevealsShroud:
 		Range: 10c0
 		Type: CenterPosition
-	Armament:
+	Armament@1:
+		Weapon: AirBomb
+		LocalOffset: 0,-640,0, 0,640,0
+		LocalYaw: -40, 24
+		PauseOnCondition: !ammo
+	Armament@2:
 		Weapon: F22Missiles
+		LocalOffset: 0,-640,0, 0,640,0
+		LocalYaw: -40, 24
+		PauseOnCondition: !ammo
+	Armament@3:
+		Weapon: AirBomb
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
 		PauseOnCondition: !ammo
@@ -191,9 +201,16 @@ F22:
 		Speed: 280
 		RepulsionSpeed: 40
 		MaximumPitch: 56
-	AmmoPool:
+	AmmoPool@1:
 		Ammo: 8
 		AmmoCondition: ammo
+	AmmoPool@2:
+		Ammo: 8
+		AmmoCondition: ammo
+	AmmoPool@3:
+		Ammo: 2
+		AmmoCondition: ammo
+		PipType: Red
 	Selectable:
 		Bounds: 36,28,0,2
 		DecorationBounds: 40,29,0,1

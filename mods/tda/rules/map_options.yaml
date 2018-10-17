@@ -33,10 +33,35 @@ Player:
 	LobbyPrerequisiteCheckbox@MAPEFFECTS:
 		ID: mapeffects
 		Label: Map Effects
-		Description: Show day/night cycle and weather effects on the maps.
+		Description: Show day/night cycle and weather effects on the maps
 		Enabled: True
 		DisplayOrder: 10
 		Prerequisites: MapEffects
+	LobbyPrerequisiteCheckbox@OUTPOST:
+		ID: outpost
+		Label: Outpost
+		Description: Enables the Outpost unit, best used with "Limit Build Area" ON
+		Enabled: False
+		DisplayOrder: 10
+		Prerequisites: outpost_on
+	LobbyPrerequisiteCheckbox@TURBO_TIBERIUM:
+		ID: turbo_tiberium
+		Label: Turbo Tiberium
+		Description: Boost tiberium growth and also enables the Tiberium Growth Decelerator building
+		Enabled: True
+		Visible: True
+		Locked: False
+		DisplayOrder: 10
+		Prerequisites: turbo_tiberium
+	LobbyPrerequisiteCheckbox@ORIGINAL_RULES_OR_COOP:
+		ID: original_rules_or_coop
+		Label: Original rules or coop
+		Description: This must be enabled for any single\coop mission that use the original rules
+		Enabled: False
+		DisplayOrder: 10
+		Prerequisites: original_rules_or_coop
+		Visible: False
+		Locked: True
 
 World:
 	MapBuildRadius:

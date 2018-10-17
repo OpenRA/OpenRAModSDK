@@ -5,6 +5,7 @@ ship_trail:
 null:
 	idle:
 		Start: 1
+	bib:
 
 minp:
 	idle:
@@ -86,6 +87,10 @@ fire:
 		Offset: 0,-3
 		ZOffset: 1023
 	2: fire2
+		Length: *
+		Offset: 0,-3
+		ZOffset: 1023
+	ra: fire1ra
 		Length: *
 		Offset: 0,-3
 		ZOffset: 1023

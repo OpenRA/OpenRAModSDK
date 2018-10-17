@@ -21,3 +21,14 @@ Repair:
 		Damage: -20
 		ValidTargets: Repair
 		DebugOverlayColor: 00FF00
+
+Dummy:
+	ReloadDelay: 10000
+	Range: 10c0
+	ValidTargets: Ground
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Spread: 0
+		Damage: 0
+		ValidTargets: Ground
+		DebugOverlayColor: 00FF00

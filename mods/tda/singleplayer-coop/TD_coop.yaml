@@ -1,0 +1,324 @@
+World:
+	-SpawnMPUnits:
+	-MPStartLocations:
+	-CrateSpawner:
+	ObjectivesPanel:
+		PanelName: MISSION_OBJECTIVES
+	MapBuildRadius:
+		AllyBuildRadiusLocked: True
+		AllyBuildRadiusEnabled: True
+		AllyBuildRadiusCheckboxVisible: False
+		AllyBuildRadiusCheckboxDisplayOrder: 4
+		BuildRadiusCheckboxDisplayOrder: 5
+		BuildRadiusCheckboxEnabled: False
+		BuildRadiusCheckboxVisible: False
+		BuildRadiusCheckboxLocked: True
+	MapOptions:
+		ShortGameCheckboxDisplayOrder: 3
+		TechLevelDropdownDisplayOrder: 2
+		GameSpeedDropdownDisplayOrder: 3
+		ShortGameLocked: True
+		ShortGameEnabled: False
+	MapCreeps:
+		CheckboxEnabled: True
+		CheckboxLocked: True
+		CheckboxDisplayOrder: 9
+		CheckboxVisible: False
+
+Player:
+	-ConquestVictoryConditions:
+	MissionObjectives:
+		EarlyGameOver: False
+	Shroud:
+		FogLocked: True
+		FogEnabled: False
+		ExploredMapLocked: True
+		ExploredMapEnabled: False
+	PlayerResources:
+		DefaultCashLocked: True
+		SelectableCash: 2500
+		DefaultCash: 2500
+	LobbyPrerequisiteCheckbox@GLOBALFACTUNDEPLOY:
+		ID: factundeploy
+		Label: Redeployable MCVs
+		Description: Allow undeploying Construction Yard.
+		DisplayOrder: 7
+		Prerequisites: global-factundeploy
+		Enabled: False
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@GLOBALBOUNTY:
+		ID: bounty
+		Label: Kill Bounties
+		Description: Players receive cash bonuses when killing enemy units
+		DisplayOrder: 6
+		Prerequisites: global-bounty
+		Enabled: False
+		Locked: True
+		Visible: False
+	DeveloperMode:
+		CheckboxDisplayOrder: 8
+		CheckboxEnabled: False
+		CheckboxLocked: False
+		CheckboxVisible: True
+	LobbyPrerequisiteCheckbox@HarvesterTruce:
+		ID: HarvesterTruce
+		Label: Harvester Truce
+		Description: Harvesters Won't die (Do Not Use with Short Game Off)
+		DisplayOrder: 10
+		Prerequisites: HarvesterTruce
+		Enabled: False
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@MAPEFFECTS:
+		ID: mapeffects
+		Label: Map Effects
+		Description: Show day/night cycle and weather effects on the maps
+		DisplayOrder: 10
+		Prerequisites: MapEffects
+		Enabled: False
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@OUTPOST:
+		ID: outpost
+		Label: Outpost
+		Description: Enables the Outpost unit, best used with "Limit Build Area" ON
+		DisplayOrder: 10
+		Prerequisites: outpost_on
+		Enabled: False
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@TURBO_TIBERIUM:
+		ID: turbo_tiberium
+		Label: Turbo Tiberium
+		Description: Boost tiberium growth and also enables the Tiberium Growth Decelerator building
+		DisplayOrder: 10
+		Prerequisites: turbo_tiberium
+		Enabled: False
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@ORIGINAL_RULES_OR_COOP:
+		ID: turbo_tiberium
+		Label: Original rules or coop
+		Description: This must be enabled for any single\coop mission that use the original rules
+		DisplayOrder: 10
+		Prerequisites: original_rules_or_coop
+		Visible: False
+		Enabled: True
+		Locked: True
+		Visible: False
+
+^Palettes:
+	-PlayerColorPalette:
+	IndexedPlayerPalette:
+		BasePalette: terrain
+		RemapIndex: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+		PlayerIndex:
+			GDI: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+			Nod: 127, 126, 125, 124, 122, 46, 120, 47, 125, 124, 123, 122, 42, 121, 120, 120
+			Neutral: 192, 164, 132, 155, 133, 197, 112, 12, 163, 132, 155, 133, 134, 197, 154, 198
+	IndexedPlayerPalette@units:
+		BasePalette: terrain
+		BaseName: player-units
+		RemapIndex: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+		PlayerIndex:
+			GDI: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+			Nod: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
+			Nod1: 119, 118, 117, 116, 115, 114, 113, 12, 117, 118, 119, 204, 205, 115, 198, 114
+			Neutral: 192, 164, 132, 155, 133, 197, 112, 12, 163, 132, 155, 133, 134, 197, 154, 198
+	PaletteFromFile@playerRA:
+		Name: playerRA
+		Filename: temperatRA.pal
+		ShadowIndex: 4
+	IndexedPlayerPalette@playerRAunits:
+		BasePalette: playerRA
+		BaseName: playerRAunits
+		RemapIndex: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95
+		PlayerIndex:
+			Nod: 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143
+			Nod1: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+	PaletteFromFile@PlayerColor:
+		Name: PlayerColor
+		Filename: temperat.pal
+		ShadowIndex: 4
+		AllowModifiers: false
+	PlayerColorPalette@PlayerColor:
+		BasePalette: terrain
+		BaseName: PlayerColor
+		RemapIndex: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+		PlayerIndex:
+			GDI: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+			Nod: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+			Nod1: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+			Neutral: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+
+^BaseBuilding:
+	ExternalCapturable:
+		AllowAllies: True
+		AllowNeutral: False
+		AllowEnemies: False
+		CaptureCompleteTime: 10
+	ExternalCapturableBar:
+	Capturable:
+		CaptureThreshold: 100
+
+^Vehicle:
+	ExternalCapturable:
+		AllowAllies: True
+		AllowNeutral: False
+		AllowEnemies: False
+		CaptureCompleteTime: 5
+	ExternalCapturableBar:
+	RenderSprites:
+		PlayerPalette: player-units
+	Tooltip:
+		GenericVisibility: Enemy
+		ShowOwnerRow: false
+
+MHQCOOP:
+	Inherits: ^Vehicle
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Mobile HQ
+	Health:
+		HP: 200
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 85
+	RevealsShroud:
+		Range: 6c0
+	WithIdleOverlay@SPINNER:
+		Sequence: spinner
+		Offset: -256,0,256
+	Passenger:
+		Weight: 10
+	Buildable:
+		BuildPaletteOrder: 60
+		Prerequisites: ~disabled
+		Queue: Vehicle.GDI, Vehicle.Nod
+		BuildDurationModifier: 40
+	Production:
+		Produces: Building.GDI, Building.Nod, Defence.GDI, Defence.Nod
+	ProductionQueue@GDIBuilding:
+		Type: Building.GDI
+		Factions: gdi
+		Group: Building
+		LowPowerSlowdown: 2
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
+	ProductionQueue@NodBuilding:
+		Type: Building.Nod
+		Factions: nod, nodda
+		Group: Building
+		LowPowerSlowdown: 2
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
+	ProductionQueue@GDIDefense:
+		Type: Defence.GDI
+		Factions: gdi
+		Group: Defence
+		LowPowerSlowdown: 3
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
+	ProductionQueue@NodDefense:
+		Type: Defence.Nod
+		Factions: nod, nodda
+		Group: Defence
+		LowPowerSlowdown: 3
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
+	BaseBuilding:
+	ProductionBar@BuildingGDI:
+		ProductionType: Building.GDI
+	ProductionBar@BuildingNod:
+		ProductionType: Building.Nod
+	ProductionBar@DefenceGDI:
+		ProductionType: Defence.GDI
+	ProductionBar@DefenceNod:
+		ProductionType: Defence.Nod
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite:
+		Prerequisite: fact
+	RenderSprites:
+		Image: mhq
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	Selectable:
+		Priority: 4
+
+E6A:
+	Inherits: ^Soldier
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Allied Engineer
+	Buildable:
+		BuildPaletteOrder: 99
+		Queue: Infantry.GDI, Infantry.Nod
+		Description: Captures ally structures and vehicles.\n  Unarmed
+	Mobile:
+		Speed: 56
+	Health:
+		HP: 50
+	Passenger:
+		PipType: Blue
+	ExternalCaptures:
+		CaptureTypes: building
+	-AutoTarget:
+	Sellable:
+		SellSounds: cashturn.aud
+		RefundPercent: 90
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	Selectable:
+		Priority: 5
+
+TRUK:
+	Inherits: ^Vehicle
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Buildable:
+		Queue: Vehicle.GDI, Vehicle.Nod
+		BuildPaletteOrder: 20
+		Prerequisites: ~techlevel.low
+		Description: Transports cash to other players.\n  Unarmed
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Supply Truck
+	Health:
+		HP: 110
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 128
+	RevealsShroud:
+		Range: 4c0
+	DeliversCash:
+		Payload: 500
+		PlayerExperience: 50
+	SpawnActorOnDeath:
+		Actor: moneycratemp
+	RenderSprites:
+		PlayerPalette: playerRAunits
+		Scale: 0.9
+	WithDamageOverlay:
+		Image: smoke2_m
+		IdleSequence: idle
+		LoopSequence: loop
+		EndSequence: end
+		MinimumDamageState: Heavy
+		MaximumDamageState: Dead
+
+MONEYCRATEMP:
+	Inherits: ^Crate
+	Tooltip:
+		Name: Money Crate
+	GiveCashCrateAction:
+		Amount: 500
+		SelectionShares: 1
+		UseCashTick: true
+	RenderSprites:
+		Image: crate

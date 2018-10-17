@@ -25,6 +25,21 @@ fact:
 		Length: *
 	icon: facticnh
 
+outpost:
+	idle:
+		Length: 8
+		Tick: 100
+	damaged-idle:
+		Start: 8
+		Length: 1
+	dead:
+		Start: 9
+		Tick: 800
+	make: outpostmake
+		Length: *
+		Tick: 80
+	icon: outposticon
+
 pbox:
 	idle:
 	damaged-idle:
@@ -44,6 +59,40 @@ pbox:
 	dead:
 		Start: 1
 		Tick: 800
+
+spikedummy:
+	idle:
+		Start: 22
+		Offset: 11, -15
+	damaged-idle:
+		Start: 22
+		Offset: 11, -15
+	make:
+		Start: 1
+		Length: *
+		Offset: 11, -15
+	icon: spikeicon
+	dead:
+		Start: 1
+		Length: 1
+		Offset: 11, -15
+
+spike:
+	idle:
+		Start: 22
+		Offset: 11, -15
+	damaged-idle:
+		Start: 23
+		Offset: 11, -15
+	make: spike
+		Length: 22
+		Tick: 800
+		Offset: 11, -15
+	dead:
+		Start: 24
+		Offset: 11, -15
+		Tick: 800
+	icon: spikeicon
 
 ftur:
 	idle:
@@ -214,9 +263,7 @@ silo:
 
 port:
 	idle:
-		Offset: 0,-1
-	idle-roof: port2
-		Offset: 0,-1
+		Offset: 0,0
 
 hand:
 	Defaults:

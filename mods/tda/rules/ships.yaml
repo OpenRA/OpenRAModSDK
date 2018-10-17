@@ -130,13 +130,14 @@ LST:
 	Tooltip:
 		Name: Landing Craft
 	Buildable:
-		Queue: Ship.Nod, Ship.GDI
+		Queue: Ship.Nod, Ship.Nodda, Ship.GDI
 		BuildPaletteOrder: 1000
 	Mobile:
 		InitialFacing: 0
 		TurnSpeed: 4
 		Speed: 142
 		RequiresCondition: !notmobile
+		Locomotor: lcraft
 	Health:
 		HP: 400
 	Armor:
@@ -152,7 +153,7 @@ LST:
 		Types: Infantry, Vehicle
 		MaxWeight: 5
 		PipCount: 5
-		PassengerFacing: 0
+		PassengerFacing: 2
 		LoadingCondition: notmobile
 	RenderSprites:
 		PlayerPalette: playerRA

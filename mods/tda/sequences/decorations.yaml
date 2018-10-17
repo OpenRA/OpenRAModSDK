@@ -44,6 +44,54 @@ split3:
 		BlendMode: Additive
 		Length: *
 
+split2fake:
+	Defaults:
+		Offset: 11, -15
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+	make: split2
+		Start: 29
+		Length: *
+	active: split2
+		Start: 30
+		Length: 24
+	idle: split2
+		Start: 54
+	idle-lightsg: tib_glow_green
+		Offset: 0, 0
+		UseTilesetExtension: false
+		BlendMode: Additive
+		Length: *
+
+split3fake:
+	Defaults:
+		Offset: 7, -13
+		UseTilesetExtension: true
+	make: split3
+		Start: 29
+		Length: *
+	active: split3
+		Start: 30
+		Length: 24
+	idle: split3
+		Start: 54
+	idle-lightsg: tib_glow_green
+		Offset: 0, 0
+		UseTilesetExtension: false
+		BlendMode: Additive
+		Length: *
+	idle-lightsb: tib_glow_blue
+		Offset: 0, 0
+		UseTilesetExtension: false
+		BlendMode: Additive
+		Length: *
+	idle-lightsr: tib_glow_red
+		Offset: 0, 0
+		UseTilesetExtension: false
+		BlendMode: Additive
+		Length: *
+
 rock1:
 	idle: rock1.des
 		AddExtension: false

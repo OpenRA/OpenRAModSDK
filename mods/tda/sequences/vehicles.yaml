@@ -1,3 +1,9 @@
+mov:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	icon: outposticon
+
 mnlynod:
 	idle:
 		Facings: 32
@@ -437,6 +443,12 @@ apc:
 
 apc.destroyed:
 	idle: apc
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+
+mov.destroyed:
+	idle: mov
 		Facings: 32
 		UseClassicFacingFudge: True
 		ZOffset: -512

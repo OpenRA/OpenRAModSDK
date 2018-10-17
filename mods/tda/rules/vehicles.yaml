@@ -49,9 +49,50 @@ MCV:
 	#	Bots: Shpooky
 	#to limit the mcv to 1, but Buildable trait it dosnt accept conditions
 
+MOV:
+	Inherits: ^VehicleWithoutVeterancy
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@RA: ^PlayerRApaletteVehicle
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Mobile Outpost Vehicle
+	Buildable:
+		BuildPaletteOrder: 101
+		Prerequisites: ~outpost_on, ~anyfix, ~techlevel.medium
+		Queue: Vehicle.GDI, Vehicle.Nod, Vehicle.Nodda
+		Description: Deploys into an Outpost.\n  Unarmed
+	Selectable:
+		Priority: 4
+		DecorationBounds: 36,36
+	Mobile:
+		Speed: 71
+		Crushes: wall, crate, infantry, mine, lightwall, TibShimmeringEffect
+	Health:
+		HP: 200
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 8c0
+	Transforms:
+		IntoActor: outpost
+		Facing: 108
+		TransformSounds: constru2.aud, hvydoor1.aud
+		NoTransformNotification: BuildingCannotPlaceAudio
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	BaseBuilding:
+	SpawnActorOnDeath:
+		Actor: MOV.Husk
+	-ProducibleWithLevel:
+	SelectionDecorations:
+	Targetable:
+		TargetTypes: Ground, Tank, Repair, AItagCONS
+
 TRUK:
 	Inherits: ^VehicleWithoutVeterancy
 	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@RA: ^PlayerRApaletteVehicle
 	Buildable:
 		Queue: Vehicle.GDI, Vehicle.Nod, Vehicle.Nodda
 		BuildPaletteOrder: 20
@@ -75,20 +116,13 @@ TRUK:
 	SpawnActorOnDeath:
 		Actor: moneycratemp
 	RenderSprites:
-		PlayerPalette: playerRA
 		Scale: 0.9
-	WithDamageOverlay:
-		Image: smoke2_m
-		IdleSequence: idle
-		LoopSequence: loop
-		EndSequence: end
-		MinimumDamageState: Heavy
-		MaximumDamageState: Dead
 	-ProducibleWithLevel:
 
 DTRK:
 	Inherits: ^VehicleWithoutVeterancy
 	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@RA: ^PlayerRApaletteVehicle
 	Buildable:
 		BuildPaletteOrder: 170
 		Prerequisites: ~miss_nod, ~techlevel.high
@@ -111,20 +145,13 @@ DTRK:
 		EmptyWeapon: MiniNuke
 	AttackSuicides:
 	RenderSprites:
-		PlayerPalette: playerRA
 		Scale: 0.9
-	WithDamageOverlay:
-		Image: smoke2_m
-		IdleSequence: idle
-		LoopSequence: loop
-		EndSequence: end
-		MinimumDamageState: Heavy
-		MaximumDamageState: Dead
 	-ProducibleWithLevel:
 	-Carryable:
 
 MNLYNOD:
 	Inherits: ^Tank
+	Inherits@RA: ^PlayerRApaletteVehicle
 	Buildable:
 		BuildPaletteOrder: 100
 		Prerequisites: ~anyfix, ~techlevel.medium
@@ -155,11 +182,10 @@ MNLYNOD:
 	RenderDetectionCircle:
 	Explodes:
 		Weapon: ATMine
-	RenderSprites:
-		PlayerPalette: playerRA
 
 MNLYGDI:
 	Inherits: ^Tank
+	Inherits@RA: ^PlayerRApaletteVehicle
 	Buildable:
 		BuildPaletteOrder: 100
 		Prerequisites: ~anyfix, ~techlevel.medium
@@ -190,8 +216,6 @@ MNLYGDI:
 	RenderDetectionCircle:
 	Explodes:
 		Weapon: APMine
-	RenderSprites:
-		PlayerPalette: playerRA
 
 HARV:
 	Inherits: ^Tank
@@ -251,25 +275,9 @@ HARV:
 		RequiresSelection: True
 	Valued:
 		Cost: 1400
-	Buildable:
-		BuildPaletteOrder: 10
-		Prerequisites: ~proc
-		Queue: Vehicle.GDI, Vehicle.Nod, Vehicle.Nodda
-		Description: Collects Tiberium for processing.\n Obtainable upgrades\n  Stealth Generators, Tiberium Armor\n  Unarmed
-		BuildDuration: 675
-		BuildDurationModifier: 100
 	Selectable:
 		Priority: 7
 		DecorationBounds: 36,36
-	Harvester:
-		Resources: Tiberium, BlueTiberium, RedTiberium
-		PipCount: 8
-		Capacity: 16
-		BaleLoadDelay: 10
-		BaleUnloadDelay: 4
-		SearchFromProcRadius: 25
-		SearchFromOrderRadius: 15
-		MaxUnloadQueue: 2
 	Mobile:
 		Speed: 85
 	Health:
@@ -278,11 +286,7 @@ HARV:
 		Type: Heavy
 	RevealsShroud:
 		Range: 4c0
-	SpawnActorOnDeath:
-		Actor: HARV.Husk
 	-ProducibleWithLevel:
-	WithHarvestAnimation:
-	WithDockingAnimation:
 	Explodes:
 		Weapon: TiberiumExplosion
 	#Code below for when we can detect tiberium type thats being carried. Note to self: keep on dreaming
@@ -308,6 +312,80 @@ HARV:
 	CashTrickler:
 		ShowTicks: false
 		RequiresCondition: BotControl
+	WithHarvestAnimation:
+	WithDockingAnimation:
+	Harvester:
+		Resources: Tiberium, BlueTiberium, RedTiberium
+		PipCount: 7
+		Capacity: 20
+		BaleLoadDelay: 12
+		BaleUnloadDelay: 6
+		SearchFromProcRadius: 25
+		SearchFromOrderRadius: 15
+	Buildable:
+		BuildPaletteOrder: 10
+		Prerequisites: ~proc, ~original_rules_or_coop
+		Queue: Vehicle.GDI, Vehicle.Nod, Vehicle.Nodda
+		Description: Collects Tiberium for processing.\n Obtainable upgrades\n  Stealth Generators, Tiberium Armor\n  Unarmed
+		BuildDuration: 675
+		BuildDurationModifier: 100
+	SpawnActorOnDeath:
+		Actor: HARV.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+
+HARV_BOOST_ON:
+	Inherits: HARV
+	WithHarvestAnimation:
+	WithDockingAnimation:
+	RenderSprites:
+		Image: harv
+	Harvester:
+		Resources: Tiberium, BlueTiberium, RedTiberium
+		PipCount: 8
+		Capacity: 96
+		BaleLoadDelay: 2
+		BaleUnloadDelay: 1
+		SearchFromProcRadius: 25
+		SearchFromOrderRadius: 15
+		MaxUnloadQueue: 2
+	Buildable:
+		BuildPaletteOrder: 10
+		Prerequisites: ~proc, ~turbo_tiberium
+		Queue: Vehicle.GDI, Vehicle.Nod, Vehicle.Nodda
+		Description: Collects Tiberium for processing.\n Obtainable upgrades\n  Stealth Generators, Tiberium Armor\n  Unarmed
+		BuildDuration: 675
+		BuildDurationModifier: 100
+	SpawnActorOnDeath:
+		Actor: HARV_BOOST_ON.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+
+HARV_BOOST_OFF:
+	Inherits: HARV
+	WithHarvestAnimation:
+	WithDockingAnimation:
+	RenderSprites:
+		Image: harv
+	Harvester:
+		Resources: Tiberium, BlueTiberium, RedTiberium
+		PipCount: 7
+		Capacity: 20
+		BaleLoadDelay: 12
+		BaleUnloadDelay: 6
+		SearchFromProcRadius: 25
+		SearchFromOrderRadius: 15
+	Buildable:
+		BuildPaletteOrder: 10
+		Prerequisites: ~proc, ~!turbo_tiberium
+		Queue: Vehicle.GDI, Vehicle.Nod, Vehicle.Nodda
+		Description: Collects Tiberium for processing.\n Obtainable upgrades\n  Stealth Generators, Tiberium Armor\n  Unarmed
+		BuildDuration: 675
+		BuildDurationModifier: 100
+	SpawnActorOnDeath:
+		Actor: HARV_BOOST_OFF.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
 
 APC:
 	Inherits: ^Tank
@@ -705,6 +783,7 @@ MTNK:
 	Inherits: ^Tank
 	Inherits@CLOAK: ^AcceptsCloakCrate
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@RA: ^PlayerRApaletteVehicle
 	Buildable:
 		Prerequisites: ~anyfix, ~techlevel.medium
 		Queue: Vehicle.Nodda
@@ -738,15 +817,6 @@ MTNK:
 	SelectionDecorations:
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
-	RenderSprites:
-		PlayerPalette: playerRA
-	WithDamageOverlay:
-		Image: smoke2_m
-		IdleSequence: idle
-		LoopSequence: loop
-		EndSequence: end
-		MinimumDamageState: Heavy
-		MaximumDamageState: Dead
 	Selectable:
 		DecorationBounds: 28,28
 

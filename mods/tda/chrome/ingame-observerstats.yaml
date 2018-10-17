@@ -1,8 +1,8 @@
 Background@INGAME_OBSERVERSTATS_BG:
 	Logic: ObserverStatsLogic
+		StatisticsProductionKey: StatisticsProduction
 		StatisticsBasicKey: StatisticsBasic
 		StatisticsEconomyKey: StatisticsEconomy
-		StatisticsProductionKey: StatisticsProduction
 		StatisticsCombatKey: StatisticsCombat
 		StatisticsGraphKey: StatisticsGraph
 	X: 30
@@ -34,6 +34,33 @@ Background@INGAME_OBSERVERSTATS_BG:
 					Font: Bold
 					Children:
 						LogicKeyListener@STATS_DROPDOWN_KEYHANDLER:
+				Container@PRODUCTION_STATS_HEADERS:
+					X: 0
+					Y: 0
+					Width: PARENT_RIGHT
+					Height: PARENT_BOTTOM
+					Children:
+						Label@PLAYER_HEADER:
+							X: 75
+							Y: 40
+							Width: 160
+							Height: 25
+							Font: Bold
+							Text: Player
+						Label@PRODUCTION_HEADER:
+							X: 235
+							Y: 40
+							Width: 320
+							Height: 25
+							Font: Bold
+							Text: Production
+						Label@SUPPORT_POWERS_HEADER:
+							X: 555
+							Y: 40
+							Width: 320
+							Height: 25
+							Font: Bold
+							Text: Support Powers
 				Container@BASIC_STATS_HEADERS:
 					X: 0
 					Y: 0
@@ -179,33 +206,6 @@ Background@INGAME_OBSERVERSTATS_BG:
 							Font: Bold
 							Text: Harvesters
 							Align: Right
-				Container@PRODUCTION_STATS_HEADERS:
-					X: 0
-					Y: 0
-					Width: PARENT_RIGHT
-					Height: PARENT_BOTTOM
-					Children:
-						Label@PLAYER_HEADER:
-							X: 75
-							Y: 40
-							Width: 160
-							Height: 25
-							Font: Bold
-							Text: Player
-						Label@PRODUCTION_HEADER:
-							X: 235
-							Y: 40
-							Width: 320
-							Height: 25
-							Font: Bold
-							Text: Production
-						Label@SUPPORT_POWERS_HEADER:
-							X: 555
-							Y: 40
-							Width: 320
-							Height: 25
-							Font: Bold
-							Text: Support Powers
 				Container@COMBAT_STATS_HEADERS:
 					X: 0
 					Y: 0
@@ -288,6 +288,37 @@ Background@INGAME_OBSERVERSTATS_BG:
 					ItemSpacing: 5
 					Background: panel-transparent
 					Children:
+						ScrollItem@PRODUCTION_PLAYER_TEMPLATE:
+							X: 0
+							Y: 0
+							Width: PARENT_RIGHT - 35
+							Height: 25
+							Children:
+								Image@FLAG:
+									X: 20
+									Y: 5
+									Width: 35
+									Height: PARENT_BOTTOM - 5
+									ImageName: random
+									ImageCollection: flags
+								Label@PLAYER:
+									X: 55
+									Y: 0
+									Width: 160
+									Height: PARENT_BOTTOM
+									Font: Bold
+									Shadow: True
+								ObserverProductionIcons@PRODUCTION_ICONS:
+									X: 215
+									Y: 0
+									Width: 320
+									Height: PARENT_BOTTOM
+									TooltipContainer: TOOLTIP_CONTAINER
+								ObserverSupportPowerIcons@SUPPORT_POWER_ICONS:
+									X: 535
+									Y: 0
+									Width: 320
+									Height: PARENT_BOTTOM
 						ScrollItem@TEAM_TEMPLATE:
 							X: 0
 							Y: 0
@@ -443,37 +474,6 @@ Background@INGAME_OBSERVERSTATS_BG:
 									Height: PARENT_BOTTOM
 									Align: Right
 									Shadow: True
-						ScrollItem@PRODUCTION_PLAYER_TEMPLATE:
-							X: 0
-							Y: 0
-							Width: PARENT_RIGHT - 35
-							Height: 25
-							Children:
-								Image@FLAG:
-									X: 20
-									Y: 5
-									Width: 35
-									Height: PARENT_BOTTOM - 5
-									ImageName: random
-									ImageCollection: flags
-								Label@PLAYER:
-									X: 55
-									Y: 0
-									Width: 160
-									Height: PARENT_BOTTOM
-									Font: Bold
-									Shadow: True
-								ObserverProductionIcons@PRODUCTION_ICONS:
-									X: 215
-									Y: 0
-									Width: 320
-									Height: PARENT_BOTTOM
-									TooltipContainer: TOOLTIP_CONTAINER
-								ObserverSupportPowerIcons@SUPPORT_POWER_ICONS:
-									X: 535
-									Y: 0
-									Width: 320
-									Height: PARENT_BOTTOM
 						ScrollItem@COMBAT_PLAYER_TEMPLATE:
 							X: 0
 							Y: 0

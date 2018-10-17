@@ -25,8 +25,7 @@ enlarge the minimap and menu ingame
 make vehicles be able to be sold when on top of service depot (use conditions)
 add kanes wrath stats(health, damage, armor,weapon types, ect)
 add some music tracks from retaliation
-add land building to build neval units from outside the map OR make the building look like is half inside the water cliffs (fuck this is very hard)
-wait for the openra team to fix the problem with the navy turret AND add some temporary nvy units.
+wait for the openra team to fix the problem with the navy turret AND add some temporary navy units.
 add break of sound visual and audio effect to f22 when it gets at CruiseAltitude also speed bonus.
 make engineers repair slowly buildings and disable abbility to enter for repair.
 add small bomb to f22 to hit ground targets.
@@ -36,4 +35,11 @@ add "area" building, this building will shoot at the center of it allied units,a
 add background image of doctrine in the prudaction menu of each faction.
 add radar background of each faction (red nod logo, purple nod color ect)
 fix city buildings geting behind other units instead of front of them.
-add comand line to f22
+add voice of flamewhel
+
+add light effect for each type of tiberium TGD is above it
+add damage and dead animation to TGD
+add overlayidle animation to port
+add mouse over scqare show up in port building
+add renegate
+ 

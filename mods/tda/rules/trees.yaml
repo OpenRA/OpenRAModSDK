@@ -2,37 +2,40 @@ SPLIT2:
 	Inherits: ^TibTree
 	SeedsResource:
 		ResourceType: Tiberium
-		Interval: 25
+		Interval: 55
 		MaxRange: 900
 	WithIdleOverlay@lightsg:
 		Sequence: idle-lightsg
 		Palette: lights_Green_05
 		IsPlayerPalette: False
-	ActorSpawner:
-		Types: a
+	LaysTerrain:
+		TerrainTypes: Clear, BlueTibTreeTerrain, GreenTibTreeTerrain, RedTibTreeTerrain
+		Template: 5001
 SPLIT3:
 	Inherits: ^TibTree
 	RenderSprites:
 		Image: split2
 	SeedsResource:
 		ResourceType: Tiberium
-		Interval: 25
+		Interval: 55
 		MaxRange: 900
 	WithIdleAnimation:
 	WithIdleOverlay@lightsg:
 		Sequence: idle-lightsg
 		Palette: lights_Green_05
 		IsPlayerPalette: False
-	ActorSpawner:
-		Types: a
+	LaysTerrain:
+		TerrainTypes: Clear, BlueTibTreeTerrain, GreenTibTreeTerrain, RedTibTreeTerrain
+		Template: 5001
 SPLITBLUE:
 	Inherits: ^TibTree
 	RenderSprites:
 		Image: split3
 	SeedsResource:
 		ResourceType: BlueTiberium
-		Interval: 40
+		Interval: 110
 		MaxRange: 10
+		RequiresCondition: !Spike.proximity
 	WithIdleAnimation:
 	Tooltip:
 		Name: Blossom Tree (blue)
@@ -42,15 +45,16 @@ SPLITBLUE:
 		Sequence: idle-lightsb
 		Palette: lights_Blue_05
 		IsPlayerPalette: False
-	ActorSpawner:
-		Types: a
+	LaysTerrain:
+		TerrainTypes: Clear, BlueTibTreeTerrain, GreenTibTreeTerrain, RedTibTreeTerrain
+		Template: 5002
 SPLITRED:
 	Inherits: ^TibTree
 	RenderSprites:
 		Image: split3
 	SeedsResource:
 		ResourceType: RedTiberium
-		Interval: 65
+		Interval: 220
 		MaxRange: 5
 	WithIdleAnimation:
 	Tooltip:
@@ -61,8 +65,43 @@ SPLITRED:
 		Sequence: idle-lightsr
 		Palette: lights_Red_05
 		IsPlayerPalette: False
-	ActorSpawner:
-		Types: a
+	LaysTerrain:
+		TerrainTypes: Clear, BlueTibTreeTerrain, GreenTibTreeTerrain, RedTibTreeTerrain
+		Template: 5003
+
+DUMMY_GREEN_TIB_TREE:
+	Inherits: SPLIT3
+	RenderSprites:
+		Image: split2fake
+	-ActorSpawner:
+	-SeedsResource:
+	Replaceable:
+		Types: Spike
+	LaysTerrain:
+		TerrainTypes: Clear, BlueTibTreeTerrain, GreenTibTreeTerrain, RedTibTreeTerrain
+		Template: 5001
+DUMMY_BLUE_TIB_TREE:
+	Inherits: SPLITBLUE
+	RenderSprites:
+		Image: split3fake
+	-ActorSpawner:
+	-SeedsResource:
+	Replaceable:
+		Types: Spike
+	LaysTerrain:
+		TerrainTypes: Clear, BlueTibTreeTerrain, GreenTibTreeTerrain, RedTibTreeTerrain
+		Template: 5002
+DUMMY_RED_TIB_TREE:
+	Inherits: SPLITRED
+	RenderSprites:
+		Image: split3fake
+	-ActorSpawner:
+	-SeedsResource:
+	Replaceable:
+		Types: Spike
+	LaysTerrain:
+		TerrainTypes: Clear, BlueTibTreeTerrain, GreenTibTreeTerrain, RedTibTreeTerrain
+		Template: 5003
 
 ROCK1:
 	Inherits: ^Rock

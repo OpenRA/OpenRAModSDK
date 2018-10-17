@@ -131,6 +131,36 @@ FACT.NODDA:
 	Tooltip:
 		Name: Nod DA
 
+OUTPOST:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^1x1Shape
+	Inherits@RA: ^PlayerRApaletteBuilding
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Outpost
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+		LocalCenterOffset: 0,0,0
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 10c0
+	BaseBuilding:
+	BaseProvider:
+		Cooldown: 35
+		Range: 7c0
+	Power:
+		Amount: 0
+	Buildable:
+		Description: just an other outpost, off you go now
+	Targetable:
+		TargetTypes: Ground, C4, Structure, DetonateAttack
+	Selectable:
+
 NUKE:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
@@ -240,13 +270,6 @@ PROC:
 		Cost: 2000
 	Tooltip:
 		Name: Tiberium Refinery
-	Buildable:
-		BuildPaletteOrder: 20
-		Prerequisites: ~anypower
-		Queue: Building.GDI, Building.Nod, Building.Nodda
-		Description: Processes raw Tiberium\ninto useable resources
-		BuildDuration: 850
-		BuildDurationModifier: 100
 	Building:
 		Footprint: _x_ xxx === ===
 		Dimensions: 3,4
@@ -272,15 +295,12 @@ PROC:
 		DecorationBounds: 73,72
 	CustomSellValue:
 		Value: 500
-	FreeActorWithDelivery:
-		Actor: HARV
-		DeliveryOffset: 1,2
-		DeliveringActor: osprey.delivery
-		Facing: 160
 	WithResources:
 	Power:
 		Amount: -30
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite:
+		Prerequisite: proc
 	SelectionDecorations:
 	InfiltrateForCash:
 		Percentage: 60
@@ -288,6 +308,54 @@ PROC:
 		Maximum: 2147483647
 	Targetable:
 		TargetTypes: Ground, C4, Structure, SpyInfiltrate, DetonateAttack, AItagREF
+	Buildable:
+		BuildPaletteOrder: 20
+		Prerequisites: ~anypower, ~original_rules_or_coop
+		Queue: Building.GDI, Building.Nod, Building.Nodda
+		Description: Processes raw Tiberium\ninto useable resources
+		BuildDuration: 850
+		BuildDurationModifier: 100
+	FreeActorWithDelivery:
+		Actor: HARV
+		DeliveryOffset: 1,2
+		DeliveringActor: osprey.delivery
+		Facing: 160
+
+REF_TURBO_ON:
+	Inherits: PROC
+	ProvidesPrerequisite@buildingname:
+	Buildable:
+		BuildPaletteOrder: 20
+		Prerequisites: ~anypower, ~turbo_tiberium
+		Queue: Building.GDI, Building.Nod, Building.Nodda
+		Description: Processes raw Tiberium\ninto useable resources
+		BuildDuration: 850
+		BuildDurationModifier: 100
+	FreeActorWithDelivery:
+		Actor: HARV_BOOST_ON
+		DeliveryOffset: 1,2
+		DeliveringActor: osprey.delivery
+		Facing: 160
+	RenderSprites:
+		Image: proc
+
+REF_TURBO_OFF:
+	Inherits: PROC
+	ProvidesPrerequisite@buildingname:
+	Buildable:
+		BuildPaletteOrder: 20
+		Prerequisites: ~anypower, ~!turbo_tiberium
+		Queue: Building.GDI, Building.Nod, Building.Nodda
+		Description: Processes raw Tiberium\ninto useable resources
+		BuildDuration: 850
+		BuildDurationModifier: 100
+	FreeActorWithDelivery:
+		Actor: HARV_BOOST_OFF
+		DeliveryOffset: 1,2
+		DeliveringActor: osprey.delivery
+		Facing: 160
+	RenderSprites:
+		Image: proc
 
 SILO:
 	Inherits: ^BaseBuilding
@@ -440,13 +508,24 @@ HAND:
 		SpawnOffset: 512,1024,0
 		ExitCell: 1,2
 	Production:
-		Produces: Infantry.Nod
-	ProductionQueue:
+		Produces: Infantry.Nod, Infantry.Nodda
+	WithDeliveryAnimation:
+	ProductionQueue@NodInfantry:
 		Type: Infantry.Nod
 		Group: Infantry
 		RequireOwner: false
 		LowPowerSlowdown: 3
-	ProductionBar:
+		Factions: nod
+	ProductionQueue@NoddaInfantry:
+		Type: Infantry.Nodda
+		Group: Infantry
+		RequireOwner: false
+		LowPowerSlowdown: 3
+		Factions: nodda
+	ProductionBar@Nod:
+		ProductionType: Infantry.Nod
+	ProductionBar@Nodda:
+		ProductionType: Infantry.Nodda
 	Power:
 		Amount: -20
 	ProvidesPrerequisite@buildingname:
@@ -489,6 +568,11 @@ PYLESOLE:
 	RenderSprites:
 		Image: pyle
 	-Buildable:
+	CashTrickler:
+		InitialDelay: 6000
+		Interval: 6000
+		Amount: 1000
+		ShowTicks: False
 
 HANDSOLE:
 	Inherits: HAND
@@ -497,6 +581,11 @@ HANDSOLE:
 	RenderSprites:
 		Image: hand
 	-Buildable:
+	CashTrickler:
+		InitialDelay: 6000
+		Interval: 6000
+		Amount: 1000
+		ShowTicks: False
 
 AFLD:
 	Inherits: ^BaseBuilding
@@ -711,6 +800,7 @@ AFLDRA:
 		ProductionType: Aircraft.Nodda
 	InfiltrateForSupportPower:
 		Proxy: aircraft.upgraded
+
 HPAD:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
@@ -1601,6 +1691,7 @@ GTWR:
 PBOX:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@RA: ^PlayerRApaletteBuilding
 	Tooltip:
 		Name: Pillbox
 	Building:
@@ -1644,9 +1735,197 @@ PBOX:
 		Amount: -10
 	DetectCloaked:
 		Range: 6c0
-	RenderSprites:
-		PlayerPalette: playerRA
 	IgnoresDisguise:
+
+TGD:
+	Inherits: ^BaseBuilding
+	Tooltip:
+		Name: Tiberium Growth Decelerator
+	Building:
+		TerrainTypes: BlueTibTreeTerrain, GreenTibTreeTerrain, RedTibTreeTerrain
+		AllowInvalidPlacement: False
+	Buildable:
+		BuildPaletteOrder: 50
+		Prerequisites: ~proc, ~turbo_tiberium
+		Queue: Defence.GDI, Defence.Nod, Defence.Nodda
+		BuildDuration: 1440
+		BuildDurationModifier: 40
+		Description: Large chamber made for housing a\nsingle tiberium tree.\nDecelerates tiberium growth.\nCollects the surplus tiberium inside the chamber and\ngives a small percentage to the owner.\n Can't be sold
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 6
+	OwnerLostAction:
+		Action: ChangeOwner
+		Owner: Neutral
+	GrantConditionOnTerrain@RED:
+		Condition: OnRedTib
+		TerrainTypes: RedTibTreeTerrain
+	GrantConditionOnTerrain@BLUE:
+		Condition: OnBlueTib
+		TerrainTypes: BlueTibTreeTerrain
+	GrantConditionOnTerrain@GREEN:
+		Condition: OnGreenTib
+		TerrainTypes: GreenTibTreeTerrain
+	-Sellable:
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 240000
+	RevealsShroud:
+		Range: 6c0
+	-QuantizeFacingsFromSequence:
+	BodyOrientation:
+		QuantizedFacings: 8
+	Power:
+		Amount: 0
+	RenderSprites:
+		Image: spikedummy
+	Replacement:
+		ReplaceableTypes: Spike
+	ProximityExternalCondition@SPIKE:
+		ValidStances: Ally, Neutral, Enemy
+		Condition: Spike.proximity
+		Range: 10c0
+		AffectsParent: True
+	SpawnActorOnDeath@RED:
+		Actor: tgdred
+		Probability: 100
+		OwnerType: Victim
+		InternalOwner: Neutral
+		SkipMakeAnimations: True
+		RequiresLobbyCreeps: False
+		SpawnAfterDefeat: True
+		RequiresCondition: OnRedTib
+	SpawnActorOnDeath@GREEN:
+		Actor: tgdgreen
+		Probability: 100
+		OwnerType: Victim
+		InternalOwner: Neutral
+		SkipMakeAnimations: True
+		RequiresLobbyCreeps: False
+		SpawnAfterDefeat: True
+		RequiresCondition: OnGreenTib
+	SpawnActorOnDeath@BLUE:
+		Actor: tgdblue
+		Probability: 100
+		OwnerType: Victim
+		InternalOwner: Neutral
+		SkipMakeAnimations: True
+		RequiresLobbyCreeps: False
+		SpawnAfterDefeat: True
+		RequiresCondition: OnBlueTib
+	DamagedByTerrain:
+		Damage: 10000
+		DamageTypes: Tiberium
+		DamageInterval: 1
+		Terrain: BlueTibTreeTerrain, GreenTibTreeTerrain, RedTibTreeTerrain
+	-Explodes:
+	-ActorLostNotification:
+	-ShakeOnDeath:
+	-SoundOnDamageTransition:
+	WithRangeCircle:
+		Range: 10c0
+		Color: D46F6F
+	-GivesBounty:
+	SelectionDecorations:
+		RenderSelectionBars: False
+
+^TGD_AFTER_DEATH_BASE:
+	Inherits@bounty: ^GlobalBounty
+	Explodes:
+		Sequences: building, building_napalm, med_frag, poof, small_building
+		Delay: 1
+		Type: Footprint
+		Weapon: UnitExplodeSmall
+	ActorLostNotification:
+		Notification: BuildingLost
+	ShakeOnDeath:
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	Targetable:
+		TargetTypes: Ground, C4, Structure, DetonateAttack
+	Health:
+		HP: 500
+	SoundOnDamageTransition:
+		DamagedSounds: xplos.aud
+		DestroyedSounds: crumble.aud
+	CashTrickler:
+		Interval: 1500
+		InitialDelay: 1500
+	RenderSprites:
+		Image: spike
+	SelectionDecorations:
+		RenderSelectionBars: True
+
+TGDRED:
+	Inherits@1: TGD
+	Inherits@2: ^TGD_AFTER_DEATH_BASE
+	Tooltip:
+		Name: Red Tiberium Growth Decelerator
+	Building:
+		TerrainTypes: RedTibTreeTerrain
+	GrantConditionOnTerrain@RED:
+		Condition: OnRedTib
+		TerrainTypes: RedTibTreeTerrain
+	SpawnActorOnDeath@RED:
+		Actor: dummy_red_tib_tree
+		Probability: 100
+		OwnerType: InternalName
+		InternalOwner: Neutral
+		SkipMakeAnimations: True
+		RequiresLobbyCreeps: False
+		SpawnAfterDefeat: True
+		RequiresCondition: OnRedTib
+	-Buildable:
+	-DamagedByTerrain:
+	CashTrickler:
+		Amount: 1800
+TGDGREEN:
+	Inherits@1: TGD
+	Inherits@2: ^TGD_AFTER_DEATH_BASE
+	Tooltip:
+		Name: Green Tiberium Growth Decelerator
+	Building:
+		TerrainTypes: GreenTibTreeTerrain
+	GrantConditionOnTerrain@GREEN:
+		Condition: OnGreenTib
+		TerrainTypes: GreenTibTreeTerrain
+	SpawnActorOnDeath@GREEN:
+		Actor: dummy_green_tib_tree
+		Probability: 100
+		OwnerType: InternalName
+		InternalOwner: Neutral
+		SkipMakeAnimations: True
+		RequiresLobbyCreeps: False
+		SpawnAfterDefeat: True
+		RequiresCondition: OnGreenTib
+	-Buildable:
+	-DamagedByTerrain:
+	CashTrickler:
+		Amount: 800
+TGDBLUE:
+	Inherits@1: TGD
+	Inherits@2: ^TGD_AFTER_DEATH_BASE
+	Tooltip:
+		Name: Blue Tiberium Growth Decelerator
+	Building:
+		TerrainTypes: BlueTibTreeTerrain
+	GrantConditionOnTerrain@BLUE:
+		Condition: OnBlueTib
+		TerrainTypes: BlueTibTreeTerrain
+	SpawnActorOnDeath@BLUE:
+		Actor: dummy_blue_tib_tree
+		Probability: 100
+		OwnerType: InternalName
+		InternalOwner: Neutral
+		SkipMakeAnimations: True
+		RequiresLobbyCreeps: False
+		SpawnAfterDefeat: True
+		RequiresCondition: OnBlueTib
+	-Buildable:
+	-DamagedByTerrain:
+	CashTrickler:
+		Amount: 1400
 
 FTUR:
 	Inherits: ^Defense
@@ -1660,8 +1939,12 @@ FTUR:
 		Description: Anti-Infantry base defense.\nCan detect cloaked units.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
 	Valued:
 		Cost: 800
-	Tooltip:
+	Tooltip@CHEM:
+		Name: Chem Tower
+		RequiresCondition: bio_nod
+	Tooltip@FLAME:
 		Name: Flame Tower
+		RequiresCondition: !bio_nod
 	Building:
 	Health:
 		HP: 600

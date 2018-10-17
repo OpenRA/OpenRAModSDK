@@ -170,20 +170,25 @@ FIXN:
 	ProvidesPrerequisite@buildingname:
 
 PORT:
-	Inherits: ^BaseBuilding
+	Inherits: ^TechBuilding
 	Inherits@shape: ^2x1Shape
 	Valued:
 		Cost: 6000
 	Tooltip:
 		Name: Shipyard
 	Building:
-		Footprint: xxxxxxx xxxxxxx xxxxxxx xxxxxxx xxx=xxx xxx=xxx xxx=xxx
-		Dimensions: 7,7
-	Production:
-		Produces: Ship.Nod, Ship.GDI
+		Footprint: xxxx xxxx xxxx xxxx
+		Dimensions: 4,4
+	ProductionFromMapEdge:
+		Produces: Ship.Nod, Ship.Nodda, Ship.GDI
 	ProductionQueue@NodShip:
 		Type: Ship.Nod
-		Factions: nod, nodda
+		Factions: nod
+		Group: Ship
+		LowPowerSlowdown: 3
+	ProductionQueue@NoddaShip:
+		Type: Ship.Nodda
+		Factions: nodda
 		Group: Ship
 		LowPowerSlowdown: 3
 	ProductionQueue@GDIShip:
@@ -195,43 +200,31 @@ PORT:
 		ProductionType: Ship.GDI
 	ProductionBar@ShipNod:
 		ProductionType: Ship.Nod
-	WithIdleOverlay@ROOF:
-		Sequence: idle-roof
+	ProductionBar@ShipNod:
+		ProductionType: Ship.Nodda
+	Exit:
+		ProductionTypes: Ship.Nod, Ship.Nodda, Ship.GDI
+		ExitDelay: 5
+		MoveIntoWorld: True
 	RallyPoint:
-		Offset: 3,5
-	Exit@1:
-		SpawnOffset: 0,0,0
-		ExitCell: 3,5
-		ExitDelay: 1
+		Offset	1,5
 	Health:
 		HP: 5000
 	RevealsShroud:
 		Range: 7c0
 	RenderSprites:
+		PlayerPalette: playerRA
 	WithSpriteBody:
 	Power:
 		Amount: 0
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	-EngineerRepairable:
-	-Sellable:
 	-Capturable:
-	-GivesBuildableArea:
-	-SpawnActorsOnSell:
-		ActorTypes: e1
-	-WithDeathAnimation:
-	-RepairableBuilding:
 	-Targetable:
-	-WithMakeAnimation:
 	ProximityCapturable:
 		Range: 10c0
 		CaptorTypes: Vehicle, Tank, Infantry
 		MustBeClear: true
 		Sticky: true
 		Permanent: false
-	WithBuildingRepairDecoration:
-		Image: allyrepair
-		Sequence: repair
-		ReferencePoint: Center
-		Palette: player
-		IsPlayerPalette: True

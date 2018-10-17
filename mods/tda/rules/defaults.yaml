@@ -26,6 +26,31 @@
 	#	Palette: player
 	WithVoxelBody:
 
+^PlayerRApaletteVehicle:
+	RenderSprites:
+		PlayerPalette: playerRA
+	WithDamageOverlay:
+		Image: smoke2_m
+		IdleSequence: idle
+		LoopSequence: loop
+		EndSequence: end
+		MinimumDamageState: Heavy
+		MaximumDamageState: Dead
+	WithDeathAnimation:
+		DeathSequence: idle
+		UseDeathTypeSuffix: false
+		DeathSequencePalette: playerRA
+		DeathPaletteIsPlayerPalette: True
+
+^PlayerRApaletteBuilding:
+	RenderSprites:
+		PlayerPalette: playerRA
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+		DeathSequencePalette: playerRA
+		DeathPaletteIsPlayerPalette: True
+
 ^1x1Shape:
 	HitShape:
 		UseTargetableCellsOffsets: true
@@ -354,6 +379,7 @@
 	Inherits@3: ^GainsExperience 
 	Inherits@4: ^GlobalBounty
 	Huntable:
+	DrawLineToTarget:
 	AppearsOnRadar:
 		UseLocation: yes
 	HiddenUnderFog:
@@ -1141,6 +1167,15 @@
 		Terrain: Tiberium
 	HiddenUnderShroud:
 	WithMakeAnimation:
+	ActorSpawner:
+		Types: TibShimmeringType
+	Replaceable:
+		Types: Spike
+	ExternalCondition@SPIKE
+		Condition: Spike.proximity
+	ConditionManager:
+	Valued:
+		Cost: 750
 	EditorTilesetFilter:
 		Categories: Resource spawn
 
@@ -1221,6 +1256,12 @@
 		EmptyWeapon: UnitExplodeSmall
 	BodyOrientation:
 		UseClassicFacingFudge: True
+
+^HuskRApalette:
+	Inherits: ^Husk
+	Burns:
+		Interval: 5
+		Anim: ra
 
 ^HelicopterHusk:
 	Inherits: ^CommonHuskDefaults

@@ -6,10 +6,24 @@ World:
 		PanelName: MISSION_OBJECTIVES
 	MapBuildRadius:
 		AllyBuildRadiusLocked: True
-		AllyBuildRadiusEnabled: False
+		AllyBuildRadiusEnabled: True
+		AllyBuildRadiusCheckboxVisible: False
+		AllyBuildRadiusCheckboxDisplayOrder: 4
+		BuildRadiusCheckboxDisplayOrder: 5
+		BuildRadiusCheckboxEnabled: False
+		BuildRadiusCheckboxVisible: False
+		BuildRadiusCheckboxLocked: True
 	MapOptions:
+		ShortGameCheckboxDisplayOrder: 3
+		TechLevelDropdownDisplayOrder: 2
+		GameSpeedDropdownDisplayOrder: 3
 		ShortGameLocked: True
-		ShortGameEnabled: True
+		ShortGameEnabled: False
+	MapCreeps:
+		CheckboxEnabled: True
+		CheckboxLocked: True
+		CheckboxDisplayOrder: 9
+		CheckboxVisible: False
 
 Player:
 	-ConquestVictoryConditions:
@@ -22,7 +36,77 @@ Player:
 		ExploredMapEnabled: False
 	PlayerResources:
 		DefaultCashLocked: True
+		SelectableCash: 5000
 		DefaultCash: 5000
+	LobbyPrerequisiteCheckbox@GLOBALFACTUNDEPLOY:
+		ID: factundeploy
+		Label: Redeployable MCVs
+		Description: Allow undeploying Construction Yard.
+		DisplayOrder: 7
+		Prerequisites: global-factundeploy
+		Enabled: False
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@GLOBALBOUNTY:
+		ID: bounty
+		Label: Kill Bounties
+		Description: Players receive cash bonuses when killing enemy units
+		DisplayOrder: 6
+		Prerequisites: global-bounty
+		Enabled: False
+		Locked: True
+		Visible: False
+	DeveloperMode:
+		CheckboxDisplayOrder: 8
+		CheckboxEnabled: False
+		CheckboxLocked: False
+		CheckboxVisible: True
+	LobbyPrerequisiteCheckbox@HarvesterTruce:
+		ID: HarvesterTruce
+		Label: Harvester Truce
+		Description: Harvesters Won't die (Do Not Use with Short Game Off)
+		DisplayOrder: 10
+		Prerequisites: HarvesterTruce
+		Enabled: False
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@MAPEFFECTS:
+		ID: mapeffects
+		Label: Map Effects
+		Description: Show day/night cycle and weather effects on the maps
+		DisplayOrder: 10
+		Prerequisites: MapEffects
+		Enabled: False
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@OUTPOST:
+		ID: outpost
+		Label: Outpost
+		Description: Enables the Outpost unit, best used with "Limit Build Area" ON
+		DisplayOrder: 10
+		Prerequisites: outpost_on
+		Enabled: False
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@TURBO_TIBERIUM:
+		ID: turbo_tiberium
+		Label: Turbo Tiberium
+		Description: Boost tiberium growth and also enables the Tiberium Growth Decelerator building
+		DisplayOrder: 10
+		Prerequisites: turbo_tiberium
+		Enabled: False
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@ORIGINAL_RULES_OR_COOP:
+		ID: turbo_tiberium
+		Label: Original rules or coop
+		Description: This must be enabled for any single\coop mission that use the original rules
+		DisplayOrder: 10
+		Prerequisites: original_rules_or_coop
+		Visible: False
+		Enabled: True
+		Locked: True
+		Visible: False
 
 airstrike.proxy:
 	AlwaysVisible:
@@ -63,19 +147,7 @@ airstrike.proxy:
 		PlayerIndex:
 			GDI: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
 			Nod: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
-			Nod1: 119, 118, 117, 116, 115, 114, 113, 12, 117, 118, 119, 204, 205, 115, 198, 114
-			Nod2: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
-			Nod3: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
 			Neutral: 192, 164, 132, 155, 133, 197, 112, 12, 163, 132, 155, 133, 134, 197, 154, 198
-	IndexedPlayerPalette@playerRAunits:
-		BasePalette: playerRA
-		BaseName: playerRAunits
-		RemapIndex: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95
-		PlayerIndex:
-			Nod: 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143
-			Nod1: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
-			Nod2: 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143
-			Nod3: 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143
 	PaletteFromFile@PlayerColor:
 		Name: PlayerColor
 		Filename: temperat.pal
@@ -88,9 +160,6 @@ airstrike.proxy:
 		PlayerIndex:
 			GDI: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
 			Nod: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
-			Nod1: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
-			Nod2: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
-			Nod3: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
 			Neutral: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
 
 ^Building:
@@ -145,18 +214,18 @@ airstrike.proxy:
 BOAT:
 	RenderSprites:
 		PlayerPalette: PlayerColor
-	#MIG:
-	#	RenderSprites:
-	#		PlayerPalette: playerRAunits
-
 
 3TNK:
 	RenderSprites:
 		PlayerPalette: playerRAunits
+	Buildable:
+		Prerequisites: ~disabled
 
 DTRK:
 	RenderSprites:
 		PlayerPalette: playerRAunits
+	Buildable:
+		Prerequisites: ~disabled
 
 FTNK:
 	RenderSprites:
@@ -178,30 +247,6 @@ HARV:
 	RenderSprites:
 		PlayerPalette: PlayerColor
 
-HARVGDI:
-	RenderSprites:
-		PlayerPalette: PlayerColor
-
-HARVNOD:
-	RenderSprites:
-		PlayerPalette: PlayerColor
-
-HEAVY_HARV_GDI:
-	RenderSprites:
-		PlayerPalette: PlayerColor
-
-STEALTH_HARV_NOD:
-	RenderSprites:
-		PlayerPalette: PlayerColor
-
-STEALTH_HARV_NOD.Husk:
-	RenderSprites:
-		PlayerPalette: PlayerColor
-
-HEAVY_HARV_GDI.Husk:
-	RenderSprites:
-		PlayerPalette: PlayerColor
-
 MCV:
 	RenderSprites:
 		PlayerPalette: PlayerColor
@@ -209,10 +254,6 @@ MCV:
 HARV.Husk:
 	RenderSprites:
 		PlayerPalette: PlayerColor
-
-3TNK.Husk:
-	RenderSprites:
-		PlayerPalette: playerRAunits
 
 MCV.Husk:
 	RenderSprites:

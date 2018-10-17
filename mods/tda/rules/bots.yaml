@@ -4,20 +4,23 @@ Player:
 		Type: cabal
 		MinimumExcessPower: 60
 		BuildingCommonNames:
-			ConstructionYard: fact
-			Refinery: proc
+			ConstructionYard: fact,pylesole,handsole
+			Refinery: proc, ref_turbo_on, ref_turbo_off
 			Power: nuke,nuk2
-			Barracks: pyle,hand
+			Barracks: pyle,hand,pylesole,handsole
 			VehiclesFactory: weap,afld
-			Production: pyle,hand,weap,afld,hpad
+			Production: pyle,hand,weap,afld,hpad,afldra
 			Silo: silo
 		UnitsCommonNames:
 			Mcv: mcv
+			ExcludeFromSquads: mcv, harv, harv_boost_on, harv_boost_off
 		BuildingQueues: Building.Nod, Building.Nodda, Building.GDI
 		DefenseQueues: Defence.Nod, Defence.Nodda, Defence.GDI
-		UnitQueues: Vehicle.Nod, Vehicle.Nodda, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.GDI
+		UnitQueues: Vehicle.Nod, Vehicle.Nodda, Vehicle.GDI, Infantry.Nod, Infantry.Nodda Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Aircraft.Nodda, Research.Nod, Research.GDI
 		BuildingLimits:
 			proc: 4
+			ref_turbo_on: 4
+			ref_turbo_off: 4
 			pyle: 3
 			hand: 3
 			hq: 1
@@ -26,6 +29,7 @@ Player:
 			weap: 3
 			afld: 3
 			hpad: 0
+			afldra: 0
 			eye: 1
 			tmpl: 1
 			fix: 1
@@ -35,6 +39,8 @@ Player:
 			miss_nod: 1
 		BuildingFractions:
 			proc: 20%
+			ref_turbo_on: 20%
+			ref_turbo_off: 20%
 			nuke: 9%
 			pyle: 5%
 			hand: 5%
@@ -55,9 +61,13 @@ Player:
 			fix: 1%
 			fix_nod: 1%
 			hpad: 2%
+			afldra: 2%
 			pbox: 5%
+			ftur: 5%
+			ctur: 5%
 			miss_gdi: 1%
 			miss_nod: 1%
+			tgd: 1%
 		UnitsToBuild:
 			e1: 65%
 			e2: 25%
@@ -68,6 +78,8 @@ Player:
 			mech: 15%
 			sniper: 10%
 			harv: 10%
+			harv_boost_on: 10%
+			harv_boost_off: 10%
 			bggy: 5%
 			bike: 40%
 			ltnk: 25%
@@ -88,6 +100,8 @@ Player:
 			research_bio_nod: 100%
 		UnitLimits:
 			harv: 8
+			harv_boost_on: 8
+			harv_boost_off: 8
 		SquadSize: 15
 		SupportPowerDecisions:
 			Airstrike:
@@ -177,20 +191,23 @@ Player:
 		Type: watson
 		MinimumExcessPower: 60
 		BuildingCommonNames:
-			ConstructionYard: fact
-			Refinery: proc
+			ConstructionYard: fact,pylesole,handsole
+			Refinery: proc, ref_turbo_on, ref_turbo_off
 			Power: nuke,nuk2
-			Barracks: pyle,hand
+			Barracks: pyle,hand,pylesole,handsole
 			VehiclesFactory: weap,afld
-			Production: pyle,hand,weap,afld,hpad
+			Production: pyle,hand,weap,afld,hpad,afldra
 			Silo: silo
 		UnitsCommonNames:
 			Mcv: mcv
+			ExcludeFromSquads: mcv, harv, harv_boost_on, harv_boost_off
 		BuildingQueues: Building.Nod, Building.Nodda, Building.GDI
 		DefenseQueues: Defence.Nod, Defence.Nodda, Defence.GDI
-		UnitQueues: Vehicle.Nod, Vehicle.Nodda, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.GDI
+		UnitQueues: Vehicle.Nod, Vehicle.Nodda, Vehicle.GDI, Infantry.Nod, Infantry.Nodda Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Aircraft.Nodda, Research.Nod, Research.GDI
 		BuildingLimits:
 			proc: 4
+			ref_turbo_on: 4
+			ref_turbo_off: 4
 			pyle: 3
 			hand: 3
 			hq: 1
@@ -199,6 +216,7 @@ Player:
 			weap: 3
 			afld: 3
 			hpad: 2
+			afldra: 2
 			eye: 1
 			tmpl: 1
 			fix: 1
@@ -208,6 +226,8 @@ Player:
 			miss_nod: 1
 		BuildingFractions:
 			proc: 17%
+			ref_turbo_on: 17%
+			ref_turbo_off: 17%
 			nuke: 1%
 			pyle: 2%
 			hand: 2%
@@ -218,6 +238,7 @@ Player:
 			weap: 5%
 			afld: 5%
 			hpad: 4%
+			afldra: 4%
 			gtwr: 5%
 			gun: 5%
 			atwr: 9%
@@ -228,9 +249,12 @@ Player:
 			silo: 0%
 			fix: 1%
 			fix_nod: 1%
-			pbox: 5%
+			pbox: 5%			
+			ftur: 5%			
+			ctur: 5%
 			miss_gdi: 1%
 			miss_nod: 1%
+			tgd: 1%
 		UnitsToBuild:
 			e1: 65%
 			e2: 30%
@@ -241,6 +265,8 @@ Player:
 			mech: 15%
 			sniper: 10%
 			harv: 10%
+			harv_boost_on: 10%
+			harv_boost_off: 10%
 			bggy: 10%
 			ftnk: 10%
 			ctnk: 50%
@@ -261,6 +287,8 @@ Player:
 			research_bio_nod: 100%
 		UnitLimits:
 			harv: 8
+			harv_boost_on: 8
+			harv_boost_off: 8
 		SquadSize: 15
 		SupportPowerDecisions:
 			Airstrike:
@@ -350,19 +378,22 @@ Player:
 		Type: hal9001
 		MinimumExcessPower: 60
 		BuildingCommonNames:
-			ConstructionYard: fact
-			Refinery: proc
+			ConstructionYard: fact,pylesole,handsole
+			Refinery: proc, ref_turbo_on, ref_turbo_off
 			Power: nuke,nuk2
-			Barracks: pyle,hand
+			Barracks: pyle,hand,pylesole,handsole
 			VehiclesFactory: weap,afld
-			Production: pyle,hand,weap,afld,hpad
+			Production: pyle,hand,weap,afld,hpad,afldra
 			Silo: silo
 		UnitsCommonNames:
 			Mcv: mcv
+			ExcludeFromSquads: mcv, harv, harv_boost_on, harv_boost_off
 		BuildingQueues: Building.Nod, Building.Nodda, Building.GDI
 		DefenseQueues: Defence.Nod, Defence.Nodda, Defence.GDI
-		UnitQueues: Vehicle.Nod, Vehicle.Nodda, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.GDI
+		UnitQueues: Vehicle.Nod, Vehicle.Nodda, Vehicle.GDI, Infantry.Nod, Infantry.Nodda Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Aircraft.Nodda, Research.Nod, Research.GDI
 		BuildingLimits:
+			ref_turbo_on: 4
+			ref_turbo_off: 4
 			proc: 4
 			pyle: 4
 			hand: 4
@@ -372,6 +403,7 @@ Player:
 			weap: 4
 			afld: 4
 			hpad: 2
+			afldra: 2
 			eye: 1
 			tmpl: 1
 			fix: 1
@@ -381,6 +413,8 @@ Player:
 			miss_nod: 1
 		BuildingFractions:
 			proc: 17%
+			ref_turbo_on: 17%
+			ref_turbo_off: 17%
 			nuke: 10%
 			pyle: 7%
 			hand: 9%
@@ -391,6 +425,7 @@ Player:
 			weap: 8%
 			afld: 6%
 			hpad: 4%
+			afldra: 4%
 			gtwr: 5%
 			gun: 5%
 			atwr: 9%
@@ -401,9 +436,12 @@ Player:
 			silo: 0%
 			fix: 1%
 			fix_nod: 1%
-			pbox: 5%
+			pbox: 5%			
+			ftur: 5%			
+			ctur: 5%
 			miss_gdi: 1%
 			miss_nod: 1%
+			tgd: 1%
 		UnitsToBuild:
 			e1: 65%
 			e2: 30%
@@ -414,6 +452,8 @@ Player:
 			mech: 15%
 			sniper: 10%
 			harv: 16%
+			harv_boost_on: 16%
+			harv_boost_off: 16%
 			bggy: 10%
 			bike: 10%
 			ltnk: 40%
@@ -436,6 +476,8 @@ Player:
 			research_bio_nod: 100%
 		UnitLimits:
 			harv: 8
+			harv_boost_on: 8
+			harv_boost_off: 8
 		SquadSize: 8
 		SupportPowerDecisions:
 			Airstrike:
@@ -525,20 +567,23 @@ Player:
 		Type: blitzkrieg
 		MinimumExcessPower: 30
 		BuildingCommonNames:
-			ConstructionYard: fact
-			Refinery: proc
+			ConstructionYard: fact,pylesole,handsole
+			Refinery: proc, ref_turbo_on, ref_turbo_off
 			Power: nuke,nuk2
-			Barracks: pyle,hand
+			Barracks: pyle,hand,pylesole,handsole
 			VehiclesFactory: weap,afld
-			Production: pyle,hand,weap,afld,hpad
+			Production: pyle,hand,weap,afld,hpad,afldra
 			Silo: silo
 		UnitsCommonNames:
 			Mcv: mcv
+			ExcludeFromSquads: mcv, harv, harv_boost_on, harv_boost_off
 		BuildingQueues: Building.Nod, Building.Nodda, Building.GDI
 		DefenseQueues: Defence.Nod, Defence.Nodda, Defence.GDI
-		UnitQueues: Vehicle.Nod, Vehicle.Nodda, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.GDI
+		UnitQueues: Vehicle.Nod, Vehicle.Nodda, Vehicle.GDI, Infantry.Nod, Infantry.Nodda Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Aircraft.Nodda, Research.Nod, Research.GDI
 		BuildingLimits:
 			proc: 2
+			ref_turbo_on: 2
+			ref_turbo_off: 2
 			pyle: 1
 			hand: 1
 			hq: 1
@@ -547,6 +592,7 @@ Player:
 			weap: 2
 			afld: 2
 			hpad: 0
+			afldra: 0
 			eye: 2
 			tmpl: 2
 			fix: 1
@@ -562,6 +608,8 @@ Player:
 			miss_nod: 1
 		BuildingFractions:
 			proc: 30%
+			ref_turbo_on: 30%
+			ref_turbo_off: 30%
 			nuke: 1%
 			pyle: 1%
 			hand: 1%
@@ -572,6 +620,7 @@ Player:
 			weap: 50%
 			afld: 50%
 			hpad: 0%
+			afldra: 0%
 			eye: 10%
 			tmpl: 10%
 			silo: 0%
@@ -583,10 +632,15 @@ Player:
 			gtwr: 20%
 			gun: 20%
 			pbox: 20%
+			ftur: 20%
+			ctur: 20%
 			miss_gdi: 1%
 			miss_nod: 1%
+			tgd: 1%
 		UnitsToBuild:
 			harv: 50%
+			harv_boost_on: 50%
+			harv_boost_off: 50%
 			mtnk: 50%
 			3tnk: 50%
 			e1: 90%
@@ -600,6 +654,8 @@ Player:
 			research_bio_nod: 100%
 		UnitLimits:
 			harv: 8
+			harv_boost_on: 8
+			harv_boost_off: 8
 			mtnk: 15
 			3tnk: 15
 			e1: 25
@@ -725,20 +781,23 @@ Player:
 		Type: MeatGrinder
 		MinimumExcessPower: 60
 		BuildingCommonNames:
-			ConstructionYard: fact
-			Refinery: proc
+			ConstructionYard: fact,pylesole,handsole
+			Refinery: proc, ref_turbo_on, ref_turbo_off
 			Power: nuke,nuk2
-			Barracks: pyle,hand
+			Barracks: pyle,hand,pylesole,handsole
 			VehiclesFactory: weap,afld
-			Production: pyle,hand,weap,afld
+			Production: pyle,hand,weap,afld,hpad,afldra
 			Silo: silo
 		UnitsCommonNames:
 			Mcv: mcv
+			ExcludeFromSquads: mcv, harv, harv_boost_on, harv_boost_off
 		BuildingQueues: Building.Nod, Building.Nodda, Building.GDI
 		DefenseQueues: Defence.Nod, Defence.Nodda, Defence.GDI
-		UnitQueues: Vehicle.Nod, Vehicle.Nodda, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.GDI
+		UnitQueues: Vehicle.Nod, Vehicle.Nodda, Vehicle.GDI, Infantry.Nod, Infantry.Nodda Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Aircraft.Nodda, Research.Nod, Research.GDI
 		BuildingLimits:
 			proc: 1
+			ref_turbo_on: 1
+			ref_turbo_off: 1
 			pyle: 3
 			hand: 3
 			hq: 1
@@ -747,6 +806,7 @@ Player:
 			weap: 1
 			afld: 1
 			hpad: 0
+			afldra: 0
 			eye: 1
 			tmpl: 1
 			fix: 1
@@ -756,6 +816,8 @@ Player:
 			miss_nod: 1
 		BuildingFractions:
 			proc: 20%
+			ref_turbo_on: 20%
+			ref_turbo_off: 20%
 			nuke: 9%
 			pyle: 5%
 			hand: 5%
@@ -776,9 +838,13 @@ Player:
 			fix: 1%
 			fix_nod: 1%
 			hpad: 2%
-			pbox: 5%
+			afldra: 2%
+			pbox: 5%			
+			ftur: 5%			
+			ctur: 5%
 			miss_gdi: 1%
 			miss_nod: 1%
+			tgd: 1%
 		UnitsToBuild:
 			e1: 65%
 			e2: 25%
@@ -789,6 +855,8 @@ Player:
 			mech: 15%
 			sniper: 10%
 			harv: 10%
+			harv_boost_on: 10%
+			harv_boost_off: 10%
 			research_adv_nuke: 100%
 			research_stl_harv: 100%
 			research_arm_harv: 100%
@@ -796,6 +864,8 @@ Player:
 			research_bio_nod: 100%
 		UnitLimits:
 			harv: 2
+			harv_boost_on: 2
+			harv_boost_off: 2
 		SquadSize: 30
 		SupportPowerDecisions:
 			Airstrike:
@@ -885,18 +955,19 @@ Player:
 		Type: Shpooky
 		MinimumExcessPower: 60
 		BuildingCommonNames:
-			ConstructionYard: fact
-			Refinery: proc
+			ConstructionYard: fact,pylesole,handsole
+			Refinery: proc, ref_turbo_on, ref_turbo_off
 			Power: nuke,nuk2
-			Barracks: pyle,hand
+			Barracks: pyle,hand,pylesole,handsole
 			VehiclesFactory: weap,afld
-			Production: pyle,hand,weap,afld
+			Production: pyle,hand,weap,afld,hpad,afldra
 			Silo: silo
 		UnitsCommonNames:
 			Mcv: mcv
+			ExcludeFromSquads: mcv, harv, harv_boost_on, harv_boost_off
 		BuildingQueues: Building.Nod, Building.Nodda, Building.GDI
 		DefenseQueues: Defence.Nod, Defence.Nodda, Defence.GDI
-		UnitQueues: Vehicle.Nod, Vehicle.Nodda, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.Nodda, Research.GDI
+		UnitQueues: Vehicle.Nod, Vehicle.Nodda, Vehicle.GDI, Infantry.Nod, Infantry.Nodda Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Aircraft.Nodda, Research.Nod, Research.GDI
 		BuildingLimits:
 			fix: 1
 			fix_nod: 1
@@ -904,6 +975,8 @@ Player:
 			miss_nod: 1
 		BuildingFractions:
 			proc: 17%
+			ref_turbo_on: 17%
+			ref_turbo_off: 17%
 			nuke: 10%
 			pyle: 7%
 			hand: 9%
@@ -914,6 +987,7 @@ Player:
 			weap: 8%
 			afld: 6%
 			hpad: 4%
+			afldra: 4%
 			gtwr: 5%
 			gun: 5%
 			atwr: 9%
@@ -924,9 +998,12 @@ Player:
 			silo: 0%
 			fix: 1%
 			fix_nod: 1%
-			pbox: 5%
+			pbox: 5%			
+			ftur: 5%			
+			ctur: 5%
 			miss_gdi: 1%
 			miss_nod: 1%
+			tgd: 1%
 		UnitsToBuild:
 			mcv: 0%
 			e1: 65%
@@ -936,6 +1013,8 @@ Player:
 			e5: 50%
 			sniper: 10%
 			harv: 16%
+			harv_boost_on: 16%
+			harv_boost_off: 16%
 			bggy: 10%
 			bike: 10%
 			ltnk: 40%
@@ -959,176 +1038,6 @@ Player:
 		UnitLimits:
 			mcv: 1
 		SquadSize: 10
-		SupportPowerDecisions:
-			Airstrike:
-				OrderName: AirstrikePowerInfoOrder
-				MinimumAttractiveness: 2000
-				Consideration@1:
-					Against: Enemy
-					Types: Vehicle, Infantry
-					Attractiveness: 1
-					TargetMetric: Value
-					CheckRadius: 2c0
-				Consideration@2:
-					Against: Ally
-					Types: Ground, Water
-					Attractiveness: -10
-					TargetMetric: Value
-					CheckRadius: 2c0
-			ArtileryStrike:
-				OrderName: ArtileryBarrageInfoOrder
-				MinimumAttractiveness: 1
-				Consideration@1:
-					Against: Enemy
-					Types: AItagPP, AItagREF, AItagRAX, AItagWF, AItagHQ, AItagFIX, AItagAvoid, AItagArtyType
-					Attractiveness: 5
-					TargetMetric: None
-					CheckRadius: 2c0
-				Consideration@Ally:
-					Against: Ally
-					Types: Ground, Water
-					Attractiveness: -10
-					TargetMetric: Value
-					CheckRadius: 4c0
-			ParatroopersPower:
-				OrderName: Airdrop
-				MinimumAttractiveness: 5
-				Consideration@1:
-					Against: Enemy
-					Types: Vehicle, Tank
-					Attractiveness: 1
-					TargetMetric: None
-					CheckRadius: 8c0
-				Consideration@2:
-					Against: Ally
-					Types: Ground
-					Attractiveness: -10
-					TargetMetric: Value
-					CheckRadius: 2c0
-			IonCannonPower:
-				OrderName: IonCannonPowerInfoOrder
-				MinimumAttractiveness: 1000
-				FineScanRadius: 2
-				Consideration@1:
-					Against: Enemy
-					Types: Air, Tank, Vehicle, Infantry, Water
-					Attractiveness: 2
-					TargetMetric: Value
-					CheckRadius: 2c0
-				Consideration@2:
-					Against: Enemy
-					Types: Structure
-					Attractiveness: 1
-					TargetMetric: Value
-					CheckRadius: 2c0
-				Consideration@3:
-					Against: Ally
-					Types: Ground, Water
-					Attractiveness: -10
-					TargetMetric: Value
-					CheckRadius: 3c0
-			NukePower:
-				OrderName: NukePowerInfoOrder
-				MinimumAttractiveness: 3000
-				Consideration@1:
-					Against: Enemy
-					Types: Structure
-					Attractiveness: 1
-					TargetMetric: Value
-					CheckRadius: 5c0
-				Consideration@2:
-					Against: Ally
-					Types: Air, Ground, Water
-					Attractiveness: -10
-					TargetMetric: Value
-					CheckRadius: 7c0
-Player:
-	HackyAI@testdonotuse:
-		Name: Test Do Not Use
-		Type: testdonotuse
-		MinimumExcessPower: 0
-		BuildingCommonNames:
-			ConstructionYard: fact
-			Refinery: proc
-			Power:
-			Barracks:
-			VehiclesFactory:
-			Production:
-			Silo: silo
-		UnitsCommonNames:
-			Mcv: mcv
-		BuildingQueues: Building.Nod, Building.Nodda, Building.GDI
-		DefenseQueues: Defence.Nod, Defence.Nodda, Defence.GDI
-		UnitQueues: Vehicle.Nod, Vehicle.Nodda, Vehicle.GDI, Infantry.Nod, Infantry.GDI, Aircraft.Nod, Aircraft.GDI, Research.Nod, Research.GDI
-		BuildingLimits:
-			proc: 0
-			pyle: 0
-			hand: 0
-			hq: 0
-			hqnod: 0
-			weap: 0
-			afld: 0
-			hpad: 0
-			eye: 0
-			tmpl: 0
-			fix: 0
-			fix_nod: 0
-			silo: 0
-			miss_gdi: 0
-			miss_nod: 0
-		BuildingFractions:
-			proc: 0%
-			nuke: 0%
-			pyle: 0%
-			hand: 0%
-			hq: 0%
-			hqnod: 0%
-			nuk2: 0%
-			weap: 0%
-			afld: 0%
-			gtwr: 0%
-			gun: 0%
-			atwr: 0%
-			obli: 0%
-			sam: 0%
-			eye: 0%
-			tmpl: 0%
-			silo: 0%
-			fix: 0%
-			fix_nod: 0%
-			hpad: 0%
-			pbox: 0%
-			miss_gdi: 0%
-			miss_nod: 0%
-		UnitsToBuild:
-			e1: 65%
-			e2: 25%
-			e3: 40%
-			e4: 15%
-			e5: 15%
-			medi: 15%
-			mech: 15%
-			sniper: 10%
-			harv: 10%
-			bggy: 5%
-			bike: 40%
-			ltnk: 25%
-			ftnk: 10%
-			arty: 60%
-			stnk: 40%
-			jeep: 5%
-			mtnk: 20%
-			msam: 40%
-			htnk: 50%
-			heli: 5%
-			orca: 5%
-			research_adv_nuke: 100%
-			research_stl_harv: 100%
-			research_arm_harv: 100%
-			research_humvee_tow: 100%
-		UnitLimits:
-			harv: 2
-		SquadSize: 15
 		SupportPowerDecisions:
 			Airstrike:
 				OrderName: AirstrikePowerInfoOrder

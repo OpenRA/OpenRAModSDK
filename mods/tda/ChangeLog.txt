@@ -1,24 +1,68 @@
 Fixed: homvee missile to target tanks.
+
 Added: new lobby option to disable day night cycle and weather effects, Contribution by MustaphaTR.
+
 Changed: night time to be less dark.
+
 Fixed: bright corpse at night time.
+
 Fixed: impact sounds of shells vs buildings to be more loud.
+
 Added: water impact visual and sound effect to bullets and shells.
+
 Updated: Game engine to the latest playtest engine. Thanks to abcdefg30!!!!
+
 Added: updates from the new engine like the new colorvalidator, the new login system, locomotor trait and other stuff.
+
 Reworked: some menu items.
-Added: red and blue Shimmering effect thanks to the new trait by Voidwalker!!! He did a huge work for this!
+
+Added: red and blue Shimmering effect thanks to the new engine trait added by Voidwalker!!! He did a huge work for this!
+
 Added: f-22 to nod DA faction. the f22 wont show up in the enemy radar, and it has the ability to avoid missiles in a small area around the craft but it is not invureable.
+
 Removed: the helipad from nod DA faction. But it can still get the osprey from the new airfield.
+
 Added: an airfield for nod DA faction.
+
 Changed: orca speed to 240 from 200 (apache has 180, f22 has 280, a10 airstrike has 280).
+
 Added: a transparent observer window for specators, you can also click through it.
+
 Reworked: pip icons of biohazard hospital and machine shop, and also made them show up at the warfactory nod airstrip baracks and hand of nod only if the player selects them.
+
 Fixed: machine shop bounds.
+
 Reworked: osprey "code" and canvas size, also some traits.
+
 Changed: orca and apache to stay landed after they reload, like it used to be in the original game.
+
 Added: rally point for hellipad.
-Changed: spy name to specops. also edited the unit art and added some eyekandys and finally edited the unit's icon.
+
+Changed: spy name to specops, also edited the unit art and added some eyekandys and finally edited the unit's icon.
+
+Fixed: chem tower wrong tooltip after upgrade.
+
+Added: new Dummy terrain in order for the Tiberium Growth Decelerator to work (tiberium trees change the terrain they stand on (1 square) in to dammy terrain automaticly, so the Tiberium Growth Decelerator can be placed on them by the player) Duct tape any one?
+
+Added: New Building named Tiberium Growth Decelerator TGD for short, also known as Tiberium Spike. This new building will cover tiberium trees in order to Decelerate tiberium growth and give to the player a small money percentage of the tiberium. In order to enable it you will need to have "Turbo Tiberium" lobby otion set to ON.
+
+Fixed: some palette problems of units that use RA palettes.
+
+Added: new vehicle named mobile outpost vehicle, it can deploy in to an outpost, and only shows up in-game if lobby option "Outpost" is set to ON. Best used if "Limit Build Area" is set to ON aswell.
+
+Added: new building named outpost, it gives buildable area.
+
+Reworked: Some files and general infastracture of code (nothing worth explaining or in-game related), it was just a lot of work for me, so i had to mention it so i can feel better XD.
+
+Reworked: tiberium economy! Now you can select in the lobby options what type of economy the game will be played. The lobby option is called "Turbo Tiberium" if you enable it you will also get the new TGD building (mentioned above) and also the tiberium will spreed faster in the map, and the harvesters are balanced for that too! If in the other hand you want the old way, you can just disable "Turbo Tiberium". And every one is happy!
+oh boy all that work I put in this just to keep every one happy, the least you can do if you want to thank me, is to join my discord and tell me about any bugs you find. I am only one person, naturally ill miss some stuff.
+
+Updated: the AI\Bots building\unit production list. (silly AI wont learn by it self)
+
+Added: AI\Bots to build units when "only barracks" setting is on in the lobby. Some times tho they just wont build any thing.
+
+Added: in "only barracks" mode an income of $1000 every 4 min to hand of nod and barracks (Like oils do).
+
 
 
 
