@@ -547,12 +547,15 @@ sidebar-bits: chrome.png
 	production-tooltip-cost: 464, 80, 16, 16
 
 order-icons: chrome.png
-	options: 480,0,16,16
+	options: 467,0,31,16
 	options-disabled: 480,16,16,16
 	options-active: 480,32,16,16
-	sell: 496,0,16,16
+	sell: 497,0,16,16
 	sell-disabled: 496,16,16,16
 	sell-active: 496,32,16,16
+	power: 480,48,16,16
+	power-disabled: 480,64,16,16
+	power-active: 480,80,16,16
 	repair: 384,48,16,16
 	repair-disabled: 384,64,16,16
 	repair-active: 384,80,16,16

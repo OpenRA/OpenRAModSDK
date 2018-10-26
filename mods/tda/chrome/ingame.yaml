@@ -547,10 +547,11 @@ Container@PLAYER_WIDGETS:
 			Background: panel-buildmenu
 			Children:
 				MenuButton@OPTIONS_BUTTON:
-					X: 34
-					Y: 320
-					Width: 35
-					Height: 38
+					X: 0
+					Y: 1
+					Width: 32
+					Height: 32
+					Background: transparent
 					Font: Bold
 					Key: escape
 					TooltipText: Menu
@@ -562,15 +563,15 @@ Container@PLAYER_WIDGETS:
 							Y: 12
 							ImageCollection: order-icons
 							ImageName: options
-				Button@BEACON_BUTTON:
-					Logic: BeaconOrderButtonLogic
-					X: 98
+				Button@REPAIR_BUTTON:
+					Logic: RepairOrderButtonLogic
+					X: 34
 					Y: 320
 					Width: 35
 					Height: 38
 					Font: Bold
-					Key: PlaceBeacon
-					TooltipText: Place Signal Flare
+					Key: Repair
+					TooltipText: Repair
 					TooltipContainer: TOOLTIP_CONTAINER
 					Children:
 						Image@ICON:
@@ -579,7 +580,7 @@ Container@PLAYER_WIDGETS:
 							ImageCollection: order-icons
 				Button@SELL_BUTTON:
 					Logic: SellOrderButtonLogic
-					X: 162
+					X: 98
 					Y: 320
 					Width: 35
 					Height: 38
@@ -592,15 +593,29 @@ Container@PLAYER_WIDGETS:
 							X: 10
 							Y: 12
 							ImageCollection: order-icons
-				Button@REPAIR_BUTTON:
-					Logic: RepairOrderButtonLogic
+				Button@POWER_BUTTON:
+					Logic: PowerdownOrderButtonLogic
+					X: 162
+					Y: 320
+					Width: 35
+					Height: 38
+					Key: PowerDown
+					TooltipText: Power Down
+					TooltipContainer: TOOLTIP_CONTAINER
+					Children:
+						Image@ICON:
+							X: 10
+							Y: 12
+							ImageCollection: order-icons
+				Button@BEACON_BUTTON:
+					Logic: BeaconOrderButtonLogic
 					X: 226
 					Y: 320
 					Width: 35
 					Height: 38
 					Font: Bold
-					Key: Repair
-					TooltipText: Repair
+					Key: PlaceBeacon
+					TooltipText: Place Signal Flare
 					TooltipContainer: TOOLTIP_CONTAINER
 					Children:
 						Image@ICON:
@@ -662,114 +677,115 @@ Container@PLAYER_WIDGETS:
 							TooltipTemplate: SIMPLE_TOOLTIP
 							IndicatorImage: indicator-right
 				Container@PRODUCTION_TYPES:
-					X: 3
-					Y: 175
 					Width: 170
 					Height: 30
 					Children:
 						LabelWithTooltip@CASH:
 							Logic: IngameCashCounterLogic
-							Y: 0
-							X: 102
+							Y: 4
+							X: 122
 							Width: PARENT_RIGHT
 							Height: 17
 							TextColor: D4F461
 							Font: CashSmall
 							Text: $ {0}
 						ProductionTypeButton@BUILDING:
-							Width: 30
-							Height: 30
+							X: 34
+							Y: 368
+							Width: 35
+							Height: 38
 							TooltipText: Buildings
 							TooltipContainer: TOOLTIP_CONTAINER
 							ProductionGroup: Building
 							Key: ProductionTypeBuilding
 							Children:
 								Image@ICON:
-									X: 7
-									Y: 7
+									X: 10
+									Y: 12
 									ImageCollection: production-icons
 						ProductionTypeButton@DEFENCE:
-							X: 32
-							Width: 30
-							Height: 30
+							X: 34
+							Y: 416
+							Width: 35
+							Height: 38
 							TooltipText: Support
 							TooltipContainer: TOOLTIP_CONTAINER
 							ProductionGroup: Defence
 							Key: ProductionTypeDefense
 							Children:
 								Image@ICON:
-									X: 7
-									Y: 7
+									X: 10
+									Y: 12
 									ImageCollection: production-icons
 						ProductionTypeButton@INFANTRY:
-							X: 0
-							Y: 32
-							Width: 30
-							Height: 30
+							X: 34
+							Y: 464
+							Width: 35
+							Height: 38
 							TooltipText: Infantry
 							TooltipContainer: TOOLTIP_CONTAINER
 							ProductionGroup: Infantry
 							Key: ProductionTypeInfantry
 							Children:
 								Image@ICON:
-									X: 7
-									Y: 7
+									X: 10
+									Y: 12
 									ImageCollection: production-icons
 						ProductionTypeButton@VEHICLE:
-							X: 32
-							Y: 32
-							Width: 30
-							Height: 30
+							X: 34
+							Y: 512
+							Width: 35
+							Height: 38
 							TooltipText: Vehicles
 							TooltipContainer: TOOLTIP_CONTAINER
 							ProductionGroup: Vehicle
 							Key: ProductionTypeVehicle
 							Children:
 								Image@ICON:
-									X: 7
-									Y: 7
+									X: 10
+									Y: 12
 									ImageCollection: production-icons
 						ProductionTypeButton@AIRCRAFT:
-							X: 64
-							Y: 32
-							Width: 30
-							Height: 30
+							X: 34
+							Y: 560
+							Width: 35
+							Height: 38
 							TooltipText: Aircraft
 							TooltipContainer: TOOLTIP_CONTAINER
 							ProductionGroup: Aircraft
 							Key: ProductionTypeAircraft
 							Children:
 								Image@ICON:
-									X: 7
-									Y: 7
+									X: 10
+									Y: 12
 									ImageCollection: production-icons
 						ProductionTypeButton@NAVAL:
-							X: 96
-							Y: 32
-							Width: 30
-							Height: 30
+							X: 34
+							Y: 608
+							Width: 35
+							Height: 38
 							TooltipText: Naval
 							TooltipContainer: TOOLTIP_CONTAINER
 							ProductionGroup: Ship
 							Key: ProductionTypeNaval
 							Children:
 								Image@ICON:
-									X: 7
-									Y: 7
+									X: 10
+									Y: 12
 									ImageCollection: production-icons2
 						ProductionTypeButton@RESEARCH:
-							X: 64
-							Y: 0
-							Width: 30
-							Height: 30
+							X: 34
+							Y: 656
+							Width: 35
+							Height: 38
 							TooltipText: Research
 							TooltipContainer: TOOLTIP_CONTAINER
 							ProductionGroup: Research
 							Key: ProductionTypeUpgrade
 							Children:
 								Image@ICON:
-									X: 7
-									Y: 7
+									X: 10
+									Y: 12
 									ImageCollection: production-icons2
 		Container@PRODUCTION_BACKGROUND:
 			X: WINDOW_RIGHT - 258

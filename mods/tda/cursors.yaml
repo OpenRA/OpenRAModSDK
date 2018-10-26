@@ -225,6 +225,12 @@ Cursors:
 		attackmove-blocked-minimap:
 			Start: 205
 			Length: 1
+		powerdown-blocked:
+			Start: 268
+			Length: 1
+		powerdown:
+			Start: 269
+			Length: 3
 	ramouse.shp: racursor
 		heal:
 			Start: 160

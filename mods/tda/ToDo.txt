@@ -43,4 +43,9 @@ add damage and dead animation to TGD
 add overlayidle animation to port
 add mouse over scqare show up in port building
 add renegate
- 
+
+
+add civilians with some geverment pick or afiliation left right wind or center?
+add life form side, stron in tiberium, can mutate other lifes, upgrade system with dna icons
+
+add faction to gdi that is more tank related, and insteed of commando add the artemys tank
