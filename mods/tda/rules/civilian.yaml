@@ -723,6 +723,16 @@ CHAN:
 	Tooltip:
 		Name: Dr. Chan
 
+SCIENTIST:
+	Inherits: ^CivInfantry
+	Tooltip:
+		Name: Scientist
+	RenderSprites:
+		Image: chan
+	Valued:
+		Cost: 500
+# later this unit will be capturable and provide tech points(when the openra devs add an extra resource trait aside from money, probably never)
+
 MOEBIUS:
 	Inherits: ^CivInfantry
 	-Wanders:

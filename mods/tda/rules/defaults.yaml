@@ -238,16 +238,6 @@
 		RequiresCondition: stance-attackanything || assault-move
 	AttackMove:
 		AssaultMoveScanCondition: assault-move
-	#^AutoTargetOpportunity:
-	#	AutoTargetPriority:
-	#	Priority: 100
-	#^AutoTargetFlesh:
-	#	AutoTargetPriority:
-	#	Priority: 10
-	#^AutoTargetMetal:
-	#	AutoTargetPriority:
-	#	Priority: 10
-
 
 ^AcceptsCloakCrate:
 	Cloak:
@@ -266,6 +256,16 @@
 	Inherits@1: ^ExistsInWorld
 	Inherits@3: ^SpriteActor
 	Inherits@bounty: ^GlobalBounty
+	Sellable:
+		RefundPercent: 30
+		RequiresCondition: OnPad
+	ProximityExternalCondition@REPAIRING:
+		Condition: Repairing
+		Range: 1c0
+		ValidStances: Ally
+		AffectsParent: False
+	ExternalCondition@ONPAD:
+		Condition: OnPad
 	Huntable:
 	Mobile:
 		Locomotor: wheeled
@@ -378,6 +378,16 @@
 	Inherits@2: ^SpriteActor
 	Inherits@3: ^GainsExperience 
 	Inherits@4: ^GlobalBounty
+	Sellable:
+		RefundPercent: 30
+		RequiresCondition: OnPad
+	ProximityExternalCondition@REPAIRING:
+		Condition: Repairing
+		Range: 1c0
+		ValidStances: Ally
+		AffectsParent: False
+	ExternalCondition@ONPAD:
+		Condition: OnPad
 	Huntable:
 	DrawLineToTarget:
 	AppearsOnRadar:
@@ -460,6 +470,16 @@
 	Inherits@2: ^GainsExperience
 	Inherits@3: ^SpriteActor
 	Inherits@bounty: ^GlobalBounty
+	Sellable:
+		RefundPercent: 30
+		RequiresCondition: OnPad
+	ProximityExternalCondition@REPAIRING:
+		Condition: Repairing
+		Range: 1c0
+		ValidStances: Ally
+		AffectsParent: False
+	ExternalCondition@ONPAD:
+		Condition: OnPad
 	Huntable:
 	AppearsOnRadar:
 		UseLocation: yes
@@ -480,6 +500,7 @@
 		CanHover: True
 		TakeOffOnResupply: False
 		VTOL: True
+		TakeOffOnCreation: False
 	HiddenUnderFog:
 		Type: GroundPosition
 	ActorLostNotification:

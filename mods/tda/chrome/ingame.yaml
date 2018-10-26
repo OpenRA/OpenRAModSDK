@@ -540,17 +540,17 @@ Container@PLAYER_WIDGETS:
 							ImageName: hold-fire
 		Background@SIDEBAR_BACKGROUND:
 			Logic: MenuButtonsChromeLogic
-			X: WINDOW_RIGHT - 258
-			Y: 30
-			Width: 258
-			Height: 595
-			Background: panel-black
+			X: WINDOW_RIGHT - 297
+			Y: 1
+			Width: 296
+			Height: 709
+			Background: panel-buildmenu
 			Children:
 				MenuButton@OPTIONS_BUTTON:
-					X: 22
-					Y: 0 - 24
-					Width: 30
-					Height: 25
+					X: 34
+					Y: 320
+					Width: 35
+					Height: 38
 					Font: Bold
 					Key: escape
 					TooltipText: Menu
@@ -558,60 +558,60 @@ Container@PLAYER_WIDGETS:
 					DisableWorldSounds: true
 					Children:
 						Image@ICON:
-							X: 7
-							Y: 5
+							X: 10
+							Y: 12
 							ImageCollection: order-icons
 							ImageName: options
 				Button@BEACON_BUTTON:
 					Logic: BeaconOrderButtonLogic
-					X: 62
-					Y: 0 - 24
-					Width: 30
-					Height: 25
+					X: 98
+					Y: 320
+					Width: 35
+					Height: 38
 					Font: Bold
 					Key: PlaceBeacon
 					TooltipText: Place Signal Flare
 					TooltipContainer: TOOLTIP_CONTAINER
 					Children:
 						Image@ICON:
-							X: 7
-							Y: 5
+							X: 10
+							Y: 12
 							ImageCollection: order-icons
 				Button@SELL_BUTTON:
 					Logic: SellOrderButtonLogic
-					X: 102
-					Y: 0 - 24
-					Width: 30
-					Height: 25
+					X: 162
+					Y: 320
+					Width: 35
+					Height: 38
 					Font: Bold
 					Key: Sell
 					TooltipText: Sell
 					TooltipContainer: TOOLTIP_CONTAINER
 					Children:
 						Image@ICON:
-							X: 7
-							Y: 5
+							X: 10
+							Y: 12
 							ImageCollection: order-icons
 				Button@REPAIR_BUTTON:
 					Logic: RepairOrderButtonLogic
-					X: 142
-					Y: 0 - 24
-					Width: 30
-					Height: 25
+					X: 226
+					Y: 320
+					Width: 35
+					Height: 38
 					Font: Bold
 					Key: Repair
 					TooltipText: Repair
 					TooltipContainer: TOOLTIP_CONTAINER
 					Children:
 						Image@ICON:
-							X: 7
-							Y: 5
+							X: 10
+							Y: 12
 							ImageCollection: order-icons
 				Background@RADAR:
-					X: 13
-					Y: 5
-					Width: 168
-					Height: 168
+					X: 30
+					Y: 28
+					Width: 236
+					Height: 190
 					Background: panel-gray
 					Children:
 						Radar@RADAR_MINIMAP:
@@ -631,11 +631,11 @@ Container@PLAYER_WIDGETS:
 							Skippable: false
 				Background@POWERBAR_PANEL:
 					Logic: IngamePowerBarLogic
-					X: 4
-					Y: 5
+					X: 7
+					Y: 31
 					Width: 10
-					Height: 168
-					Background: panel-black
+					Height: 664
+					Background: transparent
 					Children:
 						ResourceBar@POWERBAR:
 							X: 1
@@ -647,11 +647,11 @@ Container@PLAYER_WIDGETS:
 							IndicatorImage: indicator-left
 				Background@SILOBAR_PANEL:
 					Logic: IngameSiloBarLogic
-					X: 180
-					Y: 5
+					X: 279
+					Y: 31
 					Width: 10
-					Height: 168
-					Background: panel-black
+					Height: 664
+					Background: transparent
 					Children:
 						ResourceBar@SILOBAR:
 							X: 1
@@ -675,7 +675,7 @@ Container@PLAYER_WIDGETS:
 							Height: 17
 							TextColor: D4F461
 							Font: CashSmall
-							Text: t {0}
+							Text: $ {0}
 						ProductionTypeButton@BUILDING:
 							Width: 30
 							Height: 30
@@ -776,12 +776,11 @@ Container@PLAYER_WIDGETS:
 			Y: 297
 			Children:
 				Background@ICON_TEMPLATE:
-					Width: 66
-					Height: 50
-					Background: panel-black
+					Y: 32
+					Background: transparent
 		ProductionPalette@PRODUCTION_PALETTE:
-			X: WINDOW_RIGHT - 257
-			Y: 298
+			X: WINDOW_RIGHT - 213
+			Y: 364
 			TooltipContainer: TOOLTIP_CONTAINER
 			ReadyText: Ready
 			HoldText: On Hold
@@ -791,13 +790,13 @@ Container@PLAYER_WIDGETS:
 			Logic: ProductionTabsLogic
 			PaletteWidget: PRODUCTION_PALETTE
 			TypesContainer: PRODUCTION_TYPES
-			BackgroundContainer: PRODUCTION_BACKGROUND
+			BackgroundContainer: transparent
 			PreviousProductionTabKey: PreviousProductionTab
 			NextProductionTabKey: NextProductionTab
-			X: WINDOW_RIGHT - 258
-			Y: 268
-			Width: 258
-			Height: 30
+			X: WINDOW_RIGHT - 246
+			Y: 280
+			Width: 194
+			Height: 24
 Background@FMVPLAYER:
 	Width: WINDOW_RIGHT
 	Height: WINDOW_BOTTOM

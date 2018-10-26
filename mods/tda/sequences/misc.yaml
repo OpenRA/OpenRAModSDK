@@ -27,8 +27,9 @@ tibshimmering:
 	UseTilesetCode: false
 	idle:
 		Length: *
-	die-crushed: null
-		Start: 1
+	removed:
+		Start: 17
+		Length: 1
 	idle-shimmering:
 		BlendMode: Additive
 		Length: *

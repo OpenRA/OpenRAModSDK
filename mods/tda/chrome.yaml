@@ -15,11 +15,20 @@ lobby-bits: chrome.png
 panel-logotransparent: observer.png
 	background: 0,0,1024,512
 
+transparent: chrome2.png
+	background: 129,1,2,2
+
 flags: flags.png
 	nod: 0,0,32,16
 	nodda: 33,0,32,16
 	gdi: 0,17,32,16
 	Random: 66,34,32,16
+
+panel-buildmenu: buildmenu.png
+	background: 0,0,296,709
+
+panel-emptybuild: chrome2.png
+	background: 0,464,64,48
 
 production-icons: chrome.png
 	building: 384,0,16,16

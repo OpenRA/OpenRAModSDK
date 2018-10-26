@@ -252,6 +252,8 @@ HELI:
 		Speed: 180
 		TurnToLand: True
 		LandWhenIdle: False
+		# TakeoffSound: 
+		# LandingSound: 
 	Health:
 		HP: 130
 	Armor:

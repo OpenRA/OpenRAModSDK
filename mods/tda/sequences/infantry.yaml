@@ -1,3 +1,54 @@
+commander:
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 157
+		Length: 4
+		Facings: 8
+	idle1:
+		Start: 141
+		Length: 10
+		Tick: 120
+	idle2:
+		Start: 189
+		Length: 31
+		Tick: 120
+	die1:
+		Start: 221
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 229
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 237
+		Length: 12
+		Tick: 80
+	die4:
+		Start: 237
+		Length: 12
+		Tick: 80
+	die5:
+		Start: 237
+		Length: 18
+		Tick: 80
+	die6:
+		Start: 249
+		Length: 11
+		Tick: 80
+	die-crushed: e1rot
+		Start: 16
+		Length: 4
+		Tick: 1600
+		ZOffset: -511
+	icon: commandericon
+
 specops:
 	stand:
 		Facings: 8

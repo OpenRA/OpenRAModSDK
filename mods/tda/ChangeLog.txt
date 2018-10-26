@@ -63,6 +63,12 @@ Added: AI\Bots to build units when "only barracks" setting is on in the lobby. S
 
 Added: in "only barracks" mode an income of $1000 every 4 min to hand of nod and barracks (Like oils do).
 
+Added: new unit the Scientist, he will exit the tech center if you sell it.
+
+Added: new unit the Commander, he will exit the con yard if you sell it.(I made a custom animation were he sits down and takes out his radio after he extends the antena).
+
+Added: The original logic from tiberium dawn of selling vehicles\Tanks on repair facility and expanded it to helipad and airfield, now you can sell any vehicle tank or air unit when they are landed on repair facility, helipad, airfield.
+
 
 
 

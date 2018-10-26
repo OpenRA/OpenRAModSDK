@@ -16,6 +16,8 @@ FACT:
 	RevealsShroud:
 		Range: 10c0
 	WithBuildingBib:
+	SpawnActorsOnSell:
+		ActorTypes: e6,e6,commander,e1,e1,e1,e1,e1,e1
 	Production:
 		Produces: Building.GDI, Building.Nod, Building.Nodda, Defence.GDI, Defence.Nod, Defence.Nodda
 	Transforms:
@@ -740,6 +742,16 @@ AFLDRA:
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
+	ProximityExternalCondition:
+		Condition: OnPad
+		Range: 1c0
+		ValidStances: Ally
+		AffectsParent: False
+	Sellable:
+		RefundPercent: 30
+		RequiresCondition: !Repairing
+	ExternalCondition@REPAIRING:
+		Condition: Repairing
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -807,6 +819,16 @@ HPAD:
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 768,-512,0, 768,512,0, -281,-512,0, -630,512,0
+	ProximityExternalCondition:
+		Condition: OnPad
+		Range: 1c0
+		ValidStances: Ally
+		AffectsParent: False
+	Sellable:
+		RefundPercent: 30
+		RequiresCondition: !Repairing
+	ExternalCondition@REPAIRING:
+		Condition: Repairing
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -1137,6 +1159,16 @@ FIX:
 		Type: Rectangle
 			TopLeft: -640, -980
 			BottomRight: 640, 1110
+	ProximityExternalCondition:
+		Condition: OnPad
+		Range: 1c0
+		ValidStances: Ally
+		AffectsParent: False
+	Sellable:
+		RefundPercent: 30
+		RequiresCondition: !Repairing
+	ExternalCondition@REPAIRING:
+		Condition: Repairing
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -1189,6 +1221,16 @@ FIX_NOD:
 		Type: Rectangle
 			TopLeft: -640, -980
 			BottomRight: 640, 1110
+	ProximityExternalCondition:
+		Condition: OnPad
+		Range: 1c0
+		ValidStances: Ally
+		AffectsParent: False
+	Sellable:
+		RefundPercent: 30
+		RequiresCondition: !Repairing
+	ExternalCondition@REPAIRING:
+		Condition: Repairing
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -1415,6 +1457,8 @@ MISS_NOD:
 		Cost: 2000
 	WithBuildingBib:
 		HasMinibib: Yes
+	SpawnActorsOnSell:
+		ActorTypes: scientist,scientist,scientist,scientist,scientist,scientist,scientist,scientist,scientist
 	WithMakeAnimation:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
@@ -1460,6 +1504,8 @@ MISS_GDI:
 		Cost: 2000
 	WithBuildingBib:
 		HasMinibib: Yes
+	SpawnActorsOnSell:
+		ActorTypes: scientist,scientist,scientist,scientist,scientist,scientist,scientist,scientist,scientist
 	WithMakeAnimation:
 	WithIdleOverlay@DISH:
 		PauseOnCondition: lowpower

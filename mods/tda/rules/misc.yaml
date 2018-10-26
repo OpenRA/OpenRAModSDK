@@ -38,7 +38,9 @@ TibShimmering:
 		CrushClasses: TibShimmeringEffect
 		CrushedByFriendlies: True
 	WithDeathAnimation:
-		CrushedSequence: die-crushed
+		CrushedSequence: removed
+		UseDeathTypeSuffix: False
+		FallbackSequence: removed
 	HitShape:
 		Type: Circle
 			Radius: 1

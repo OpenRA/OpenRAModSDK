@@ -159,6 +159,28 @@ Pistol:
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
 
+USP45:
+	Inherits: ^ImpactSoundsBullet
+	Inherits: ^ImpactHitForceBulletLight
+	ReloadDelay: 20
+	Range: 3c0
+	InvalidTargets: Wall
+	Report: usp45.wav
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 15
+		InvalidTargets: Wall
+		Versus:
+			None: 100
+			Wood: 50
+			Light: 50
+			Heavy: 25
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
+
 M16:
 	Inherits: ^ImpactSoundsBullet
 	Inherits: ^ImpactHitForceBulletLight

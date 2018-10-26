@@ -1,7 +1,7 @@
 SPECOPS:
 	Inherits: ^Infantry
 	Buildable:
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 65
 		Prerequisites: ~anytech, ~techlevel.high
 		Queue: Infantry.Nod
 		BuildDuration: 500
@@ -101,7 +101,7 @@ MECH:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry.GDI, Infantry.Nod, Infantry.Nodda
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 40
 		Prerequisites: ~anyfix, ~techlevel.medium
 		Description: Repairs nearby vehicles and restores\nhusks to working condition by capturing them.\n  Unarmed
 	Valued:
@@ -538,6 +538,36 @@ RMBO:
 	#AttackWander:
 	#	WanderMoveRadius: 30
 
+COMMANDER:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Base Commander
+	Buildable:
+		BuildPaletteOrder: 70
+		Queue: Infantry.Nod, Infantry.Nodda, Infantry.GDI
+		Description: Anti-tank/Anti-aircraft infantry. \n  Strong vs Tanks, Aircraft\n  Weak vs Infantry
+	Mobile:
+		Speed: 71
+	Health:
+		HP: 45
+	AutoTarget:
+		ScanRadius: 6
+	Armament:
+		Weapon: USP45
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Armament@PILLBOX:
+		Name: pillbox
+		Weapon: USP45
+	Armament@GUARDTOWER:
+		Name: guardtower
+		Weapon: USP45
+	SoundOnDamageTransition:
+		DamagedSounds: inftakingfire1.wav, inftakingfire2.wav, inftakingfire3.wav, inftakingfire4.wav
 
 PVICE:
 	Inherits: ^Viceroid

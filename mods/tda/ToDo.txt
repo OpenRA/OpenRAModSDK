@@ -14,15 +14,16 @@ add cranes to service depots that come from the ground and repair
 make new Drowning animation for infantry in the water, make new dummy unit that will replace infantry in the water after impact death, dummy unit will use the new animation and die over time (2 secs)(edited)
 add animals: underwater shadow of shark (when dummy infantry in the water, nearby shark will attack) sheep, cow, eagle, seagull
 add selection sounds to buildings
-finish outpost vehicle model
+
+REDO outpost vehicle model
+
 edit sov barracks to look like an armory,  add a gdi version of allied tent with red cross on it (this will be the equevelent of nod armory)
 add fence crushing sound
 make engineers to be able to crush fences
 make fences electro kill infantry
 add power off\on button
 add new overlays for offline power
-enlarge the minimap and menu ingame
-make vehicles be able to be sold when on top of service depot (use conditions)
+enlarge the minimap and build menu ingame
 add kanes wrath stats(health, damage, armor,weapon types, ect)
 add some music tracks from retaliation
 wait for the openra team to fix the problem with the navy turret AND add some temporary navy units.
