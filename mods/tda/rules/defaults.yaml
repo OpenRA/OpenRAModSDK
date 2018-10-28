@@ -1110,6 +1110,9 @@
 		OpeningSound: cashturn.aud
 		ClosingSound: cashturn.aud
 		BlocksProjectilesHeight: 0
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 10
 
 ^Tree:
 	Inherits@1: ^SpriteActor

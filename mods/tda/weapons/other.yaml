@@ -357,7 +357,7 @@ NapalmB:
 AirBomb:
 	ValidTargets: Ground, Water, Trees
 	ReloadDelay: 4
-	Range: 2c0
+	Range: 1c0
 	Report: bombfall.wav
 	Projectile: GravityBomb
 		Image: BOMBLET

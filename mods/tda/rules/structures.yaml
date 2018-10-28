@@ -1123,6 +1123,7 @@ HQNODDA:
 		BeaconPoster: artystrike
 		BeaconPosterPalette: beaconposter
 		DisplayRadarPing: True
+		CameraRemoveDelay: 30
 		CameraActor: camera
 		ArrowSequence: arrow
 		CircleSequence: circles
@@ -1453,6 +1454,7 @@ MISS_NOD:
 		BuildPaletteOrder: 80
 		Prerequisites: ~anyhq, ~techlevel.high
 		Description: Provides Nod advanced technologies.
+		BuildLimit: 1
 	Valued:
 		Cost: 2000
 	WithBuildingBib:
@@ -1500,6 +1502,7 @@ MISS_GDI:
 		BuildPaletteOrder: 80
 		Prerequisites: ~anyhq, ~techlevel.high
 		Description: Provides GDI advanced technologies.
+		BuildLimit: 1
 	Valued:
 		Cost: 2000
 	WithBuildingBib:
@@ -1584,7 +1587,7 @@ GUN:
 
 SAM:
 	Inherits: ^Defense
-	Inherits@IDISABLE: ^DisableOnLowPower
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Inherits@shape: ^2x1Shape
 	HitShape:
@@ -1642,7 +1645,7 @@ SAM:
 
 OBLI:
 	Inherits: ^Defense
-	Inherits@IDISABLE: ^DisableOnLowPower
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Valued:
 		Cost: 1500
@@ -1733,6 +1736,8 @@ GTWR:
 	-QuantizeFacingsFromSequence:
 	Selectable:
 		Bounds: 24,24
+	RenderRangeCircle:
+		FallbackRange: 6c0
 
 PBOX:
 	Inherits: ^Defense
@@ -2084,7 +2089,7 @@ CTUR:
 
 ATWR:
 	Inherits: ^Defense
-	Inherits@IDISABLE: ^DisableOnLowPower
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Valued:
 		Cost: 1500

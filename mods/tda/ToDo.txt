@@ -46,6 +46,13 @@ add renegate
 
 
 add civilians with some geverment pick or afiliation left right wind or center?
-add life form side, stron in tiberium, can mutate other lifes, upgrade system with dna icons
+add life form side, strong in tiberium, can mutate other lifes, upgrade system with dna icons
 
 add faction to gdi that is more tank related, and insteed of commando add the artemys tank
+
+
+ADD:
+add fanatic to nod(rifleman who will run and explode on enemies when he is low on health and the enemies are 4-5 on target cell, he will also have black helmet).
+add GDI unit simular to nod rocket soldier.
+add repair vehicle that spawns engineers to repair units on the spot.
+add heavy lift helicopter for auto harverter and repairs pickup.

@@ -168,7 +168,7 @@ F22:
 		BuildDuration: 1750
 		Description: Fast Ground-Attack Plane.\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
 	Valued:
-		Cost: 2000
+		Cost: 2500
 	Tooltip:
 		Name: F-22
 	Health:
@@ -188,17 +188,12 @@ F22:
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
 		PauseOnCondition: !ammo
-	Armament@3:
-		Weapon: AirBomb
-		LocalOffset: 0,-640,0, 0,640,0
-		LocalYaw: -40, 24
-		PauseOnCondition: !ammo
 	AttackPlane:
 		FacingTolerance: 20
 	Aircraft:
 		InitialFacing: 192
 		TurnSpeed: 5
-		Speed: 280
+		Speed: 250
 		RepulsionSpeed: 40
 		MaximumPitch: 56
 	AmmoPool@1:
