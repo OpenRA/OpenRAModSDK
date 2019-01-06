@@ -31,7 +31,6 @@ ChromeLayout:
 	example|mainmenu.yaml
 
 Notifications:
-	example|notifications.yaml
 
 Translations:
 	example|english.yaml
@@ -49,6 +48,7 @@ ServerTraits:
 
 ChromeMetrics:
 	common|metrics.yaml
+	example|metrics.yaml
 
 Fonts:
 	Bold:

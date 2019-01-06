@@ -1,8 +1,5 @@
-Palettes:
-	cursor: template.pal
-
 Cursors:
-	mouse.shp: cursor
+	mouse.shp: terrain
 		default:
 			Start: 0
 			X: -16
