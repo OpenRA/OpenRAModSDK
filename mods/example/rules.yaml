@@ -15,12 +15,12 @@ World:
 		Filename: template.pal
 		CursorPalette: true
 		ShadowIndex:
+	Selection:
 
 DummyActor:
 	BodyOrientation:
 	HitShape:
 	AlwaysVisible:
-
 
 Player:
 	AlwaysVisible:

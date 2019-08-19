@@ -1,77 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{4E5B38F7-4E99-4C92-BB39-9100CC7F3829}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>OpenRA.Mods.Example</RootNamespace>
-    <AssemblyName>OpenRA.Mods.Example</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <OutputPath>bin\Debug\</OutputPath>
+    <TargetFramework>net461</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
     <Optimize>true</Optimize>
+    <LangVersion>5</LangVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <OutputPath>../mods/example</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <CodeAnalysisRuleSet>../engine/OpenRA.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-      <Reference Include="System" />
-      <Reference Include="System.Core" />
-      <Reference Include="System.Drawing" />
-      <Reference Include="Eluant">
-        <HintPath>..\engine\thirdparty\download\Eluant.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
+    <!-- Work around an issue where Rider does not detect files in the project root using the default glob -->
+    <Compile Include="**/*.cs" Exclude="$(DefaultItemExcludes)" />
   </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Widgets\Logic\TemplateMenuLogic.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Widgets\" />
-    <Folder Include="Widgets\Logic\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\engine\OpenRA.Mods.Common\OpenRA.Mods.Common.csproj">
-      <Project>{FE6C8CC0-2F07-442A-B29F-17617B3B7FC6}</Project>
-      <Name>OpenRA.Mods.Common</Name>
+    <Reference Include="Eluant">
+      <HintPath>../engine/thirdparty/download/Eluant.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <ProjectReference Include="../engine/OpenRA.Game/OpenRA.Game.csproj">
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\engine\OpenRA.Game\OpenRA.Game.csproj">
-      <Project>{0DFB103F-2962-400F-8C6D-E2C28CCBA633}</Project>
-      <Name>OpenRA.Game</Name>
+    <ProjectReference Include="../engine/OpenRA.Mods.Common/OpenRA.Mods.Common.csproj">
       <Private>False</Private>
     </ProjectReference>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" />
+    <AdditionalFiles Include="../engine/stylecop.json" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Target Name="AfterBuild">
-    <MakeDir Directories="$(SolutionDir)mods/example/" />
-    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(SolutionDir)mods/example/" />
-    <!--
-        We need to copy OpenRA.Mods.Cnc.pdb (not `.dll.pdb`). This is only necessary on Windows.
-        Mono outputs a `.dll.mdb` so we can just append `.mdb` directly.
-    -->
-    <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(SolutionDir)mods/example/" Condition="Exists('$(TargetDir)$(TargetName).pdb')" />
-    <Copy SourceFiles="$(TargetPath).mdb" DestinationFolder="$(SolutionDir)mods/example/" Condition="Exists('$(TargetPath).mdb')" />
-    <!-- Uncomment these lines when debugging or adding to this target
-    <Message Text="DEBUG OS:                     $(OS)"/>
-    <Message Text="DEBUG SolutionDir:            $(SolutionDir)"/>
-    <Message Text="DEBUG TargetPath:             $(TargetPath)"/>
-    <Message Text="DEBUG TargetDir:              $(TargetDir)"/>
-    <Message Text="DEBUG TargetName:             $(TargetName)"/>
-	-->
+  <Target Name="DisableAnalyzers" BeforeTargets="CoreCompile" Condition="'$(Configuration)'=='Release'">
+    <!-- Disable code style analysis on Release builds to improve compile-time performance -->
+    <ItemGroup Condition="'$(Configuration)'=='Release'">
+      <Analyzer Remove="@(Analyzer)" />
+    </ItemGroup>
   </Target>
 </Project>

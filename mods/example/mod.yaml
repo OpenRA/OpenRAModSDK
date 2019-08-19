@@ -53,7 +53,8 @@ ChromeMetrics:
 Fonts:
 	Bold:
 		Font: common|FreeSansBold.ttf
-		Size:14
+		Size: 14
+		Ascender: 11
 
 MapGrid:
 	TileSize: 32, 32
