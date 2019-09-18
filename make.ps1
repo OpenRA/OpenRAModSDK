@@ -294,7 +294,13 @@ if ($command -eq "all" -or $command -eq "clean")
 {
 	$templateDir = $pwd.Path
 	$versionFile = $env:ENGINE_DIRECTORY + "/VERSION"
-	if ((Test-Path $versionFile) -and [System.IO.File]::OpenText($versionFile).ReadLine() -eq $env:ENGINE_VERSION)
+	$currentEngine = ""
+	if (Test-Path $versionFile)
+	{
+		$currentEngine = [System.IO.File]::OpenText($versionFile).ReadLine()
+	}
+
+	if ($currentEngine -ne "" -and $currentEngine -eq $env:ENGINE_VERSION)
 	{
 		cd $env:ENGINE_DIRECTORY
 		Invoke-Expression ".\make.cmd $command"
@@ -313,7 +319,7 @@ if ($command -eq "all" -or $command -eq "clean")
 
 		if (Test-Path $env:ENGINE_DIRECTORY)
 		{
-			if ((Test-Path $versionFile) -and [System.IO.File]::OpenText($versionFile).ReadLine() -ne "")
+			if ($currentEngine -ne "")
 			{
 				echo "Deleting engine version $currentEngine."
 			}
