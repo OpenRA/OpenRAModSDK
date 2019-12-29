@@ -11,6 +11,6 @@ Templates:
 		Id: 255
 		Images: blank.shp
 		Size: 1,1
-		Category: Terrain
+		Categories: Terrain
 		Tiles:
 			0: Clear
