@@ -1,6 +1,7 @@
 General:
 	Name: Template
 	Id: TEMPLATE
+	EditorTemplateOrder: Terrain
 
 Terrain:
 	TerrainType@Clear:
