@@ -30,7 +30,11 @@ Assemblies:
 ChromeLayout:
 	example|mainmenu.yaml
 
+Music:
+	hv|audio/music.yaml
+
 Notifications:
+	hv|audio/notifications.yaml
 
 Translations:
 	example|english.yaml
