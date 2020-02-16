@@ -1,9 +1,16 @@
 # Travis-CI Build for OpenRAModSDK
 # see travis-ci.org for details
 
-dist: xenial
 language: csharp
 mono: 6.4.0
+
+jobs:
+  include:
+    - os: linux
+      dist: xenial
+    - os: osx
+      if: tag IS present
+      osx_image: xcode10
 
 addons:
   apt:
@@ -19,13 +26,13 @@ script:
    if [ "${TRAVIS_TEST_MOD}" == "True" ]; then
      make test || travis_terminate 1;
    fi;
-   if [ "${TRAVIS_TEST_PACKAGING}" == "True" ] || [ -n "${TRAVIS_TAG}" ]; then
+   if [ "$TRAVIS_OS_NAME" == "linux" ] && ( [ "${TRAVIS_TEST_PACKAGING}" == "True" ] || [ -n "${TRAVIS_TAG}" ] ); then
      wget http://mirrors.kernel.org/ubuntu/pool/universe/n/nsis/nsis-common_3.03-2_all.deb || travis_terminate 1;
      wget http://mirrors.kernel.org/ubuntu/pool/universe/n/nsis/nsis_3.03-2_amd64.deb || travis_terminate 1;
      sudo dpkg -i nsis-common_3.03-2_all.deb || travis_terminate 1;
      sudo dpkg -i nsis_3.03-2_amd64.deb || travis_terminate 1;
    fi
-   if [ "${TRAVIS_TEST_PACKAGING}" == "True" ] && [ -z "${TRAVIS_TAG}" ]; then
+   if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "${TRAVIS_TEST_PACKAGING}" == "True" ] && [ -z "${TRAVIS_TAG}" ]; then
      make check-packaging-scripts && ./packaging/package-all.sh test-0 || travis_terminate 1;
    fi
 
@@ -36,13 +43,8 @@ before_deploy:
 deploy:
   provider: releases
   api_key: ${GH_DEPLOY_API_KEY}
-  file:
-    - build/${PACKAGING_INSTALLER_NAME}-${TRAVIS_TAG}-x86.exe
-    - build/${PACKAGING_INSTALLER_NAME}-${TRAVIS_TAG}-x64.exe
-    - build/${PACKAGING_INSTALLER_NAME}-${TRAVIS_TAG}-x86-winportable.zip
-    - build/${PACKAGING_INSTALLER_NAME}-${TRAVIS_TAG}-x64-winportable.zip
-    - build/${PACKAGING_INSTALLER_NAME}-${TRAVIS_TAG}-macOS.zip
-    - build/${PACKAGING_INSTALLER_NAME}-${TRAVIS_TAG}-x86_64.AppImage
+  file_glob: true
+  file: build/*
   skip_cleanup: true
   on:
     tags: true
