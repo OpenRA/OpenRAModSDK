@@ -137,6 +137,9 @@ function Check-Command
 
 	if ((CheckForUtility) -eq 0)
 	{
+		Write-Host "Checking runtime assemblies..." -ForegroundColor Cyan
+		Invoke-Expression "$utilityPath $modID --check-runtime-assemblies"
+
 		Write-Host "Checking for explicit interface violations..." -ForegroundColor Cyan
 		Invoke-Expression "$utilityPath $modID --check-explicit-interfaces"
 
@@ -189,7 +192,7 @@ function CheckForUtility
 
 function CheckForDotnet
 {
-	if ((Get-Command "dotnet" -ErrorAction SilentlyContinue) -eq $null) 
+	if ((Get-Command "dotnet" -ErrorAction SilentlyContinue) -eq $null)
 	{
 		Write-Host "The 'dotnet' tool is required to compile OpenRA. Please install the .NET Core SDK or Visual Studio and try again. https://dotnet.microsoft.com/download" -ForegroundColor Red
 		return 1
@@ -223,7 +226,9 @@ function ReadConfigLine($line, $name)
 function ParseConfigFile($fileName)
 {
 	$names = @("MOD_ID", "ENGINE_VERSION", "AUTOMATIC_ENGINE_MANAGEMENT", "AUTOMATIC_ENGINE_SOURCE",
-		"AUTOMATIC_ENGINE_EXTRACT_DIRECTORY", "AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME", "ENGINE_DIRECTORY")
+		"AUTOMATIC_ENGINE_EXTRACT_DIRECTORY", "AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME", "ENGINE_DIRECTORY",
+		"WHITELISTED_OPENRA_ASSEMBLIES", "WHITELISTED_THIRDPARTY_ASSEMBLIES", "WHITELISTED_CORE_ASSEMBLIES",
+		"WHITELISTED_MOD_ASSEMBLIES")
 
 	$reader = [System.IO.File]::OpenText($fileName)
 	while($null -ne ($line = $reader.ReadLine()))
