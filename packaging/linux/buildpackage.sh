@@ -2,10 +2,10 @@
 # OpenRA packaging script for Linux (AppImage)
 set -e
 
-command -v make >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires make."; exit 1; }
-command -v python3 >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires python 3."; exit 1; }
-command -v tar >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires tar."; exit 1; }
-command -v curl >/dev/null 2>&1 || command -v wget > /dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires curl or wget."; exit 1; }
+command -v make >/dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK Linux packaging requires make."; exit 1; }
+command -v python3 >/dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK Linux packaging requires python 3."; exit 1; }
+command -v tar >/dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK Linux packaging requires tar."; exit 1; }
+command -v curl >/dev/null 2>&1 || command -v wget > /dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK Linux packaging requires curl or wget."; exit 1; }
 
 require_variables() {
 	missing=""
