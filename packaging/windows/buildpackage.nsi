@@ -24,8 +24,20 @@ OutFile "OpenRA.Setup.exe"
 
 ManifestDPIAware true
 
-InstallDir "$PROGRAMFILES\${PACKAGING_WINDOWS_INSTALL_DIR_NAME}"
-InstallDirRegKey HKLM "Software\${PACKAGING_WINDOWS_REGISTRY_KEY}" "InstallDir"
+Function .onInit
+	!ifndef USE_PROGRAMFILES32
+		SetRegView 64
+	!endif
+	ReadRegStr $INSTDIR HKLM "Software\${PACKAGING_WINDOWS_REGISTRY_KEY}" "InstallDir"
+	StrCmp $INSTDIR "" unset done
+	unset:
+	!ifndef USE_PROGRAMFILES32
+		StrCpy $INSTDIR "$PROGRAMFILES64\${PACKAGING_WINDOWS_INSTALL_DIR_NAME}"
+	!else
+		StrCpy $INSTDIR "$PROGRAMFILES32\${PACKAGING_WINDOWS_INSTALL_DIR_NAME}"
+	!endif
+	done:
+FunctionEnd
 
 SetCompressor lzma
 RequestExecutionLevel admin
