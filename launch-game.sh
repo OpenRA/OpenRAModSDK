@@ -1,11 +1,11 @@
 #!/bin/sh
 
 set -e
-command -v mono >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires mono."; exit 1; }
+command -v mono >/dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK requires mono."; exit 1; }
 if command -v python3 >/dev/null 2>&1; then
 	PYTHON="python3"
 else
-	command -v python >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires python."; exit 1; }
+	command -v python >/dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK requires python."; exit 1; }
 	PYTHON="python"
 fi
 

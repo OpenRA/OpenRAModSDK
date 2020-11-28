@@ -19,8 +19,8 @@ if [[ "$OSTYPE" != "darwin"* ]]; then
 	exit 1
 fi
 
-command -v make >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires make."; exit 1; }
-command -v python3 >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires python."; exit 1; }
+command -v make >/dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK macOS packaging requires make."; exit 1; }
+command -v python3 >/dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK macOS packaging requires python 3."; exit 1; }
 
 require_variables() {
 	missing=""

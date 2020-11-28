@@ -28,7 +28,7 @@ ifeq ($(PYTHON),)
 PYTHON = $(shell command -v python 2> /dev/null)
 endif
 ifeq ($(PYTHON),)
-$(error "The OpenRA mod template requires python.")
+$(error "The OpenRA mod SDK requires python.")
 endif
 
 VERSION = $(shell git name-rev --name-only --tags --no-undefined HEAD 2>/dev/null || echo git-`git rev-parse --short HEAD`)

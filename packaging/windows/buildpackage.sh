@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
-command -v makensis >/dev/null 2>&1 || { echo >&2 "Windows packaging requires makensis."; exit 1; }
-command -v convert >/dev/null 2>&1 || { echo >&2 "Windows packaging requires ImageMagick."; exit 1; }
-command -v python3 >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires python."; exit 1; }
+command -v makensis >/dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK Windows packaging requires makensis."; exit 1; }
+command -v convert >/dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK Windows packaging requires ImageMagick."; exit 1; }
+command -v python3 >/dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK Windows packaging requires python 3."; exit 1; }
 
 require_variables() {
 	missing=""
