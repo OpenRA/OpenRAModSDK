@@ -22,6 +22,8 @@
 Name "${PACKAGING_DISPLAY_NAME}"
 OutFile "OpenRA.Setup.exe"
 
+ManifestDPIAware true
+
 InstallDir "$PROGRAMFILES\${PACKAGING_WINDOWS_INSTALL_DIR_NAME}"
 InstallDirRegKey HKLM "Software\${PACKAGING_WINDOWS_REGISTRY_KEY}" "InstallDir"
 
