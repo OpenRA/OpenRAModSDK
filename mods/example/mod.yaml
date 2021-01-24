@@ -3,9 +3,9 @@ Metadata:
 	Version: {DEV_VERSION}
 
 Packages:
-	.
+	^EngineDir
 	$example: example
-	./mods/common: common
+	^EngineDir|mods/common: common
 	example|bits
 
 MapFolders:
@@ -24,8 +24,8 @@ Chrome:
 	example|chrome.yaml
 
 Assemblies:
-	common|OpenRA.Mods.Common.dll
-	example|OpenRA.Mods.Example.dll
+	^BinDir|OpenRA.Mods.Common.dll
+	^BinDir|OpenRA.Mods.Example.dll
 
 ChromeLayout:
 	example|mainmenu.yaml

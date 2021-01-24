@@ -6,3 +6,4 @@ Speech:
 Sounds:
 	DefaultVariant: .wav
 	Notifications:
+		ClickSound:
