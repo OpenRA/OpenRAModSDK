@@ -147,20 +147,6 @@ function Check-Scripts-Command
 	}
 }
 
-function Docs-Command
-{
-	if ((CheckForUtility) -eq 1)
-	{
-		return
-	}
-
-	./make.ps1 version
-	InvokeCommand "$utilityPath $modID --docs | Out-File -Encoding 'UTF8' DOCUMENTATION.md"
-	InvokeCommand "$utilityPath $modID --weapon-docs | Out-File -Encoding "UTF8" WEAPONS.md"
-	InvokeCommand "$utilityPath $modID --lua-docs | Out-File -Encoding 'UTF8' Lua-API.md"
-	echo "Docs generated." -ForegroundColor Green
-}
-
 function CheckForUtility
 {
 	if (Test-Path $utilityPath)
@@ -280,7 +266,6 @@ if ($args.Length -eq 0)
 	echo "  test            Tests the mod's MiniYAML for errors."
 	echo "  check           Checks .cs files for StyleCop violations."
 	echo "  check-scripts   Checks .lua files for syntax errors."
-	echo "  docs            Generates the trait and Lua API documentation."
 	echo ""
 	$command = (Read-Host "Enter command").Split(' ', 2)
 }
@@ -402,7 +387,6 @@ switch ($execute)
 	"test" { Test-Command }
 	"check" { Check-Command }
 	"check-scripts" { Check-Scripts-Command }
-	"docs" { Docs-Command }
 	Default { echo ("Invalid command '{0}'" -f $command) }
 }
 
