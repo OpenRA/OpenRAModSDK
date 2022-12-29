@@ -1,21 +1,30 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Mod SDK Example",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceRoot}/engine/bin/OpenRA.dll",
-            "windows": {
-                "program": "${workspaceRoot}/engine/bin/OpenRA.exe",
-            },
-            "args": [
-                "Engine.EngineDir=${workspaceRoot}/engine",
-                "Engine.ModSearchPaths=${workspaceRoot}/mods",
-                "Game.Mod=example",
-                "Debug.DisplayDeveloperSettings=true",
-            ]
-        },
-    ]
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch (Example)",
+			"type": "coreclr",
+			"request": "launch",
+			"program": "${workspaceRoot}/engine/bin/OpenRA.dll",
+			"args": [
+				"Game.Mod=example",
+				"Engine.EngineDir=${workspaceRoot}/engine",
+				"Engine.ModSearchPaths=${workspaceRoot}/mods, ${workspaceRoot}/engine/mods",
+				"Debug.DisplayDeveloperSettings=true",
+			],
+			"preLaunchTask": "build",
+		},
+		{
+			"name": "Launch Utility",
+			"type": "coreclr",
+			"request": "launch",
+			"program": "${workspaceRoot}/engine/bin/OpenRA.Utility.dll",
+			"args": ["example", "--docs", "{DEV_VERSION}"],
+			"env": {
+				"ENGINE_DIR": "${workspaceRoot}/engine",
+				"MOD_SEARCH_PATHS": "${workspaceRoot}/mods, ${workspaceRoot}/engine/mods"
+			},
+			"preLaunchTask": "build",
+		},
+	],
 }
