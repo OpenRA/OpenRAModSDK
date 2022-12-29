@@ -22,5 +22,8 @@ Players:
 		OwnsWorld: True
 		NonCombatant: True
 		Faction: example
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
 
 Actors:

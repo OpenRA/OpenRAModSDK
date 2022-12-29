@@ -17,7 +17,7 @@ namespace OpenRA.Mods.Example.Widgets.Logic
 	public class TemplateMenuLogic : ChromeLogic
 	{
 		[ObjectCreator.UseCtor]
-		public TemplateMenuLogic(Widget widget, World world, ModData modData)
+		public TemplateMenuLogic(Widget widget)
 		{
 			widget.Get<ButtonWidget>("QUIT_BUTTON").OnClick = Game.Exit;
 		}

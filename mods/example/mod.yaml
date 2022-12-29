@@ -37,7 +37,8 @@ Notifications:
 	example|audio/notifications.yaml
 
 Translations:
-	example|english.yaml
+	common|languages/en.ftl
+	example|languages/en.ftl
 
 Hotkeys:
 	common|hotkeys/game.yaml
@@ -66,12 +67,20 @@ MapGrid:
 
 SpriteFormats: ShpTS
 
+SoundFormats: Wav
+
+TerrainFormat: DefaultTerrain
+
 SpriteSequenceFormat: DefaultSpriteSequence
 
 ModelSequenceFormat: PlaceholderModelSequence
 
+DefaultOrderGenerator: UnitOrderGenerator
+
 GameSpeeds:
-	default:
-		Name: Normal
-		Timestep: 40
-		OrderLatency: 3
+	DefaultSpeed: default
+	Speeds:
+		default:
+			Name: Normal
+			Timestep: 40
+			OrderLatency: 3
