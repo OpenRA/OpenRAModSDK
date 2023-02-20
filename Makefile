@@ -56,12 +56,13 @@ DOTNET = dotnet
 RUNTIME ?= net6
 CONFIGURATION ?= Release
 DOTNET_RID = $(shell ${DOTNET} --info | grep RID: | cut -w -f3)
+ARCH_X64 = $(shell echo ${DOTNET_RID} | grep x64)
 
 ifndef TARGETPLATFORM
 UNAME_S := $(shell uname -s)
 UNAME_M := $(shell uname -m)
 ifeq ($(UNAME_S),Darwin)
-ifeq ($(RUNTIME)-$(DOTNET_RID),net6-osx-arm64)
+ifeq ($(ARCH_X64),)
 TARGETPLATFORM = osx-arm64
 else
 TARGETPLATFORM = osx-x64
