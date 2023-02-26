@@ -16,7 +16,7 @@ function All-Command
 		return
 	}
 
-	Write-Host "Building in" $configuration "configuration..." -ForegroundColor Cyan
+	Write-Host "Building $modID in" $configuration "configuration..." -ForegroundColor Cyan
 	dotnet build -c $configuration --nologo -p:TargetPlatform=win-x64
 
 	if ($lastexitcode -ne 0)
@@ -41,6 +41,8 @@ function Clean-Command
 	{
 		return
 	}
+
+	Write-Host "Cleaning $modID..." -ForegroundColor Cyan
 
 	dotnet clean /nologo
 	Remove-Item ./*/obj -Recurse -ErrorAction Ignore
@@ -114,7 +116,7 @@ function Check-Command
 		return
 	}
 
-	Write-Host "Compiling in Debug configuration..." -ForegroundColor Cyan
+	Write-Host "Compiling $modID in Debug configuration..." -ForegroundColor Cyan
 
 	# Enabling EnforceCodeStyleInBuild and GenerateDocumentationFile as a workaround for some code style rules (in particular IDE0005) being bugged and not reporting warnings/errors otherwise.
 	dotnet build -c Debug --nologo -warnaserror -p:TargetPlatform=win-x64 -p:EnforceCodeStyleInBuild=true -p:GenerateDocumentationFile=true
@@ -125,10 +127,10 @@ function Check-Command
 
 	if ((CheckForUtility) -eq 0)
 	{
-		Write-Host "Checking for explicit interface violations..." -ForegroundColor Cyan
+		Write-Host "Checking $modID for explicit interface violations..." -ForegroundColor Cyan
 		InvokeCommand "$utilityPath $modID --check-explicit-interfaces"
 
-		Write-Host "Checking for incorrect conditional trait interface overrides..." -ForegroundColor Cyan
+		Write-Host "Checking $modID for incorrect conditional trait interface overrides..." -ForegroundColor Cyan
 		InvokeCommand "$utilityPath $modID --check-conditional-trait-interface-overrides"
 	}
 }
