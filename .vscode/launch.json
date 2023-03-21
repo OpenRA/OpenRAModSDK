@@ -19,7 +19,7 @@
 			"type": "coreclr",
 			"request": "launch",
 			"program": "${workspaceRoot}/engine/bin/OpenRA.Utility.dll",
-			"args": ["example", "--docs", "{DEV_VERSION}"],
+			"args": ["example", "--check-yaml"],
 			"env": {
 				"ENGINE_DIR": "${workspaceRoot}/engine",
 				"MOD_SEARCH_PATHS": "${workspaceRoot}/mods, ${workspaceRoot}/engine/mods"
