@@ -1,2 +1,0 @@
-# Game speeds:
-Normal = Normal
