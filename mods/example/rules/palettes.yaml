@@ -1,0 +1,13 @@
+^palettes:
+	PaletteFromGrayscale@greyscale:
+		Name: greyscale
+	PlayerColorPalette@player:
+		BasePalette: greyscale
+	PlayerColorShift:
+		BasePalette: player
+	ColorPickerPalette@colorpicker:
+		Name: colorpicker
+		BasePalette: greyscale
+		AllowModifiers: false
+	ColorPickerColorShift:
+		BasePalette: colorpicker

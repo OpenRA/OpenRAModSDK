@@ -1,0 +1,18 @@
+General:
+	Name: Example
+	Id: EXAMPLE
+	EditorTemplateOrder: Terrain
+	Palette:
+
+Terrain:
+	TerrainType@Clear:
+		Type: Clear
+
+Templates:
+	Template@255:
+		Id: 255
+		Images: tilesets/example/example.png
+		Size: 1,1
+		Categories: Terrain
+		Tiles:
+			0: Clear

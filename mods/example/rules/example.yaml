@@ -1,0 +1,17 @@
+example:
+	AlwaysVisible:
+	BodyOrientation:
+	HitShape:
+	Immobile:
+	MapEditorData:
+		Categories: Actors
+	QuantizeFacingsFromSequence:
+	RenderSprites:
+	WithSpriteBody:
+
+example.colorpicker:
+	Inherits: example
+	RenderSprites:
+		Image: example
+		Palette: colorpicker
+	-MapEditorData:

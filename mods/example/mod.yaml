@@ -1,47 +1,26 @@
 Metadata:
 	Title: Example mod
 	Version: {DEV_VERSION}
+	WindowTitle: Example
 
 Packages:
 	^EngineDir
 	$example: example
 	^EngineDir|mods/common: common
-	example|bits
 
 MapFolders:
 	example|maps: System
-
-Rules:
-	example|rules.yaml
-
-TileSets:
-	example|tileset.yaml
-
-Cursors:
-	example|cursor.yaml
-
-Chrome:
-	example|chrome.yaml
 
 Assemblies:
 	^BinDir|OpenRA.Mods.Common.dll
 	^BinDir|OpenRA.Mods.Example.dll
 
-ChromeLayout:
-	example|mainmenu.yaml
+AssetBrowser:
+	AudioExtensions: .wav
+	SpriteExtensions: .png
+	VideoExtensions:
 
-Music:
-	example|audio/music.yaml
-
-Notifications:
-	example|audio/notifications.yaml
-
-Translations:
-	common|languages/en.ftl
-	example|languages/en.ftl
-
-Hotkeys:
-	common|hotkeys/game.yaml
+SupportsMapsFrom: Example
 
 LoadScreen: BlankLoadScreen
 
@@ -51,21 +30,11 @@ ServerTraits:
 	MasterServerPinger
 	LobbySettingsNotification
 
-ChromeMetrics:
-	common|metrics.yaml
-	example|metrics.yaml
-
-Fonts:
-	Bold:
-		Font: common|FreeSansBold.ttf
-		Size: 14
-		Ascender: 11
-
 MapGrid:
 	TileSize: 32, 32
 	Type: Rectangular
 
-SpriteFormats: ShpTS
+SpriteFormats: PngSheet
 
 SoundFormats: Wav
 
@@ -80,7 +49,30 @@ DefaultOrderGenerator: UnitOrderGenerator
 GameSpeeds:
 	DefaultSpeed: default
 	Speeds:
+		slowest:
+			Name: slowest
+			Timestep: 80
+			OrderLatency: 2
+		slower:
+			Name: slower
+			Timestep: 50
+			OrderLatency: 3
 		default:
-			Name: Normal
+			Name: normal
 			Timestep: 40
 			OrderLatency: 3
+		fast:
+			Name: fast
+			Timestep: 35
+			OrderLatency: 4
+		faster:
+			Name: faster
+			Timestep: 30
+			OrderLatency: 4
+		fastest:
+			Name: fastest
+			Timestep: 20
+			OrderLatency: 6
+
+Include: mod.content.yaml
+Include: mod.chrome.yaml
