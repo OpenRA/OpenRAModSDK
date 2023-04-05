@@ -5,6 +5,9 @@ on:
     tags:
     - '*'
 
+permissions:
+  contents: write  #  for release creation (svenstaro/upload-release-action)
+
 jobs:
   linux:
     name: Linux AppImages
