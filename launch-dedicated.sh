@@ -79,7 +79,7 @@ fi
 cd "${ENGINE_DIRECTORY}"
 
 while true; do
-     MOD_SEARCH_PATHS="${MOD_SEARCH_PATHS}"
+     MOD_SEARCH_PATHS="${MOD_SEARCH_PATHS}" \
      ${RUNTIME_LAUNCHER} bin/OpenRA.Server.dll Engine.EngineDir=".." Game.Mod="${LAUNCH_MOD}" \
      Server.Name="${NAME}" \
      Server.ListenPort="${LISTEN_PORT}" \
