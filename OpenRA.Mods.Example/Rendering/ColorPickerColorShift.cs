@@ -21,7 +21,7 @@ namespace OpenRA.Mods.Example.Rendering
 	public class ColorPickerColorShiftInfo : TraitInfo
 	{
 		[PaletteReference]
-		[FieldLoader.RequireAttribute]
+		[FieldLoader.Require]
 		[Desc("The name of the palette to base off.")]
 		public readonly string BasePalette = "";
 
@@ -37,46 +37,57 @@ namespace OpenRA.Mods.Example.Rendering
 		[Desc("Saturation reference for the color shift.")]
 		public readonly float ReferenceSaturation = 1;
 
+		[Desc("Value reference for the color shift.")]
+		public readonly float ReferenceValue = 0.95f;
+
 		public override object Create(ActorInitializer init) { return new ColorPickerColorShift(this); }
 	}
 
 	public class ColorPickerColorShift : ILoadsPalettes, ITickRender
 	{
 		readonly ColorPickerColorShiftInfo info;
-		readonly ColorPickerManagerInfo colorManager;
 		Color color;
+		Color preferredColor;
 
 		public ColorPickerColorShift(ColorPickerColorShiftInfo info)
 		{
-			colorManager = Game.ModData.DefaultRules.Actors[SystemActors.World].TraitInfo<ColorPickerManagerInfo>();
+			// All users need to use the same TraitInfo instance, chosen as the default mod rules
+			var colorManager = Game.ModData.DefaultRules.Actors[SystemActors.World].TraitInfo<IColorPickerManagerInfo>();
+			colorManager.OnColorPickerColorUpdate += c => preferredColor = c;
+			preferredColor = Game.Settings.Player.Color;
+
 			this.info = info;
 		}
 
 		void ILoadsPalettes.LoadPalettes(WorldRenderer worldRenderer)
 		{
-			color = colorManager.Color;
-			var (_, hue, saturation, _) = color.ToAhsv();
+			color = preferredColor;
+			var (r, g, b) = color.ToLinear();
+			var (hue, saturation, value) = Color.RgbToHsv(r, g, b);
 
 			worldRenderer.SetPaletteColorShift(
 				info.BasePalette,
 				hue - info.ReferenceHue,
 				saturation - info.ReferenceSaturation,
+				value / info.ReferenceValue,
 				info.MinHue,
 				info.MaxHue);
 		}
 
 		void ITickRender.TickRender(WorldRenderer worldRenderer, Actor self)
 		{
-			if (color == colorManager.Color)
+			if (color == preferredColor)
 				return;
 
-			color = colorManager.Color;
-			var (_, hue, saturation, _) = color.ToAhsv();
+			color = preferredColor;
+			var (r, g, b) = color.ToLinear();
+			var (hue, saturation, value) = Color.RgbToHsv(r, g, b);
 
 			worldRenderer.SetPaletteColorShift(
 				info.BasePalette,
 				hue - info.ReferenceHue,
 				saturation - info.ReferenceSaturation,
+				value / info.ReferenceValue,
 				info.MinHue,
 				info.MaxHue);
 		}
