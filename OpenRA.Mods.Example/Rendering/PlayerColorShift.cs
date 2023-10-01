@@ -20,7 +20,7 @@ namespace OpenRA.Mods.Example.Rendering
 	public class PlayerColorShiftInfo : TraitInfo
 	{
 		[PaletteReference(true)]
-		[FieldLoader.RequireAttribute]
+		[FieldLoader.Require]
 		[Desc("The name of the palette to base off.")]
 		public readonly string BasePalette = "";
 
@@ -36,6 +36,9 @@ namespace OpenRA.Mods.Example.Rendering
 		[Desc("Saturation reference for the color shift.")]
 		public readonly float ReferenceSaturation = 1;
 
+		[Desc("Value reference for the color shift.")]
+		public readonly float ReferenceValue = 0.95f;
+
 		public override object Create(ActorInitializer init) { return new PlayerColorShift(this); }
 	}
 
@@ -50,12 +53,14 @@ namespace OpenRA.Mods.Example.Rendering
 
 		void ILoadsPlayerPalettes.LoadPlayerPalettes(WorldRenderer worldRenderer, string playerName, Color color, bool replaceExisting)
 		{
-			var (_, hue, saturation, _) = color.ToAhsv();
+			var (r, g, b) = color.ToLinear();
+			var (hue, saturation, value) = Color.RgbToHsv(r, g, b);
 
 			worldRenderer.SetPaletteColorShift(
 				info.BasePalette + playerName,
 				hue - info.ReferenceHue,
 				saturation - info.ReferenceSaturation,
+				value - info.ReferenceValue,
 				info.MinHue,
 				info.MaxHue);
 		}
