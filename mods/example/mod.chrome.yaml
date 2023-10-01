@@ -24,8 +24,8 @@ ChromeLayout:
 	common|chrome/ingame-infoscripterror.yaml
 	common|chrome/ingame-infostats.yaml
 	common|chrome/ingame-menu.yaml
-	common|chrome/ingame-observer.yaml
 	common|chrome/ingame-perf.yaml
+	example|chrome/ingame-observer.yaml
 	example|chrome/layouts/ingame-player.yaml
 	common|chrome/ingame-transients.yaml
 	common|chrome/lobby.yaml
