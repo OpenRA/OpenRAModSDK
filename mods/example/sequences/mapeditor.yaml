@@ -1,8 +1,11 @@
 overlay:
-	build-invalid: sequences/assets/mapeditor.png
+	build-invalid:
+		Filename: sequences/assets/mapeditor.png
 		Start: 1
 
 editor-overlay:
-	copy: sequences/assets/mapeditor.png
-	paste: sequences/assets/mapeditor.png
+	Defaults:
+		Filename: sequences/assets/mapeditor.png
+	copy:
+	paste:
 		Start: 1

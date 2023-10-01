@@ -1,2 +1,3 @@
 example:
-	idle: sequences/assets/example.png
+	idle:
+		Filename: sequences/assets/example.png

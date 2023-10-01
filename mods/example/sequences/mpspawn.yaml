@@ -1,2 +1,3 @@
 mpspawn:
-	idle: sequences/assets/mpspawn.png
+	idle:
+		Filename: sequences/assets/mpspawn.png
