@@ -29,6 +29,7 @@ world:
 	StartingUnits@Example:
 		BaseActor: example
 		Factions: example
+		ClassName: options-starting-units.unlabeled
 
 editorworld:
 	Inherits: ^baseworld
