@@ -60,7 +60,7 @@ namespace OpenRA.Mods.Example.Rendering
 				info.BasePalette + playerName,
 				hue - info.ReferenceHue,
 				saturation - info.ReferenceSaturation,
-				value - info.ReferenceValue,
+				value / info.ReferenceValue,
 				info.MinHue,
 				info.MaxHue);
 		}
