@@ -41,8 +41,6 @@ TerrainFormat: DefaultTerrain
 
 SpriteSequenceFormat: DefaultSpriteSequence
 
-ModelSequenceFormat: PlaceholderModelSequence
-
 DefaultOrderGenerator: UnitOrderGenerator
 
 GameSpeeds:
