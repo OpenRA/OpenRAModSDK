@@ -3,17 +3,16 @@ Metadata:
 	Version: {DEV_VERSION}
 	WindowTitle: Example
 
-Packages:
-	^EngineDir
-	$example: example
-	^EngineDir|mods/common: common
+FileSystem: DefaultFileSystem
+	Packages:
+		^EngineDir
+		$example: example
+		^EngineDir|mods/common: common
 
 MapFolders:
 	example|maps: System
 
-Assemblies:
-	^BinDir|OpenRA.Mods.Common.dll
-	^BinDir|OpenRA.Mods.Example.dll
+Assemblies: OpenRA.Mods.Common.dll, OpenRA.Mods.Example.dll
 
 AssetBrowser:
 	AudioExtensions: .wav
