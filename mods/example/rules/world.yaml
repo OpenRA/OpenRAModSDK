@@ -39,6 +39,5 @@ editorworld:
 	EditorActionManager:
 	EditorActorLayer:
 	EditorCursorLayer:
-	EditorSelectionLayer:
-		Palette:
+	MarkerLayerOverlay:
 	TerrainGeometryOverlay:
