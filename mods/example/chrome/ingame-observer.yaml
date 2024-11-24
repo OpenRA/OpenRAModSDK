@@ -21,14 +21,14 @@ Container@OBSERVER_WIDGETS:
 					Width: PARENT_RIGHT - 30
 					Height: 25
 					Align: Right
-					Text: Audio Muted
+					Text: label-mute-indicator
 					Contrast: true
 		MenuButton@OPTIONS_BUTTON:
 			X: 5
 			Y: 5
 			Width: 160
 			Height: 25
-			Text: Options (Esc)
+			Text: button-observer-widgets-options
 			Font: Bold
 			Key: escape
 			DisableWorldSounds: true
@@ -116,7 +116,7 @@ Container@OBSERVER_WIDGETS:
 							Width: 26
 							Height: 26
 							Key: Pause
-							TooltipText: Pause
+							TooltipText: button-replay-player-pause-tooltip
 							TooltipContainer: TOOLTIP_CONTAINER
 							IgnoreChildMouseOver: true
 							Children:
@@ -131,7 +131,7 @@ Container@OBSERVER_WIDGETS:
 							Width: 26
 							Height: 26
 							Key: Pause
-							TooltipText: Play
+							TooltipText: button-replay-player-play-tooltip
 							TooltipContainer: TOOLTIP_CONTAINER
 							IgnoreChildMouseOver: true
 							Children:
@@ -146,9 +146,9 @@ Container@OBSERVER_WIDGETS:
 							Width: 36
 							Height: 20
 							Key: ReplaySpeedSlow
-							TooltipText: Slow speed
+							TooltipText: button-replay-player-slow.tooltip
 							TooltipContainer: TOOLTIP_CONTAINER
-							Text: 50%
+							Text: button-replay-player-slow.label
 							Font: TinyBold
 						Button@BUTTON_REGULAR:
 							X: 55 + 45
@@ -156,9 +156,9 @@ Container@OBSERVER_WIDGETS:
 							Width: 38
 							Height: 20
 							Key: ReplaySpeedRegular
-							TooltipText: Regular speed
+							TooltipText: button-replay-player-regular.tooltip
 							TooltipContainer: TOOLTIP_CONTAINER
-							Text: 100%
+							Text: button-replay-player-regular.label
 							Font: TinyBold
 						Button@BUTTON_FAST:
 							X: 55 + 45 * 2
@@ -166,9 +166,9 @@ Container@OBSERVER_WIDGETS:
 							Width: 38
 							Height: 20
 							Key: ReplaySpeedFast
-							TooltipText: Fast speed
+							TooltipText: button-replay-player-fast.tooltip
 							TooltipContainer: TOOLTIP_CONTAINER
-							Text: 200%
+							Text: button-replay-player-fast.label
 							Font: TinyBold
 						Button@BUTTON_MAXIMUM:
 							X: 55 + 45 * 3
@@ -176,7 +176,7 @@ Container@OBSERVER_WIDGETS:
 							Width: 38
 							Height: 20
 							Key: ReplaySpeedMax
-							TooltipText: Maximum speed
+							TooltipText: button-replay-player-maximum.tooltip
 							TooltipContainer: TOOLTIP_CONTAINER
-							Text: MAX
+							Text: button-replay-player-maximum.label
 							Font: TinyBold
