@@ -111,4 +111,4 @@ FluentMessages:
 	example|fluent/chrome.ftl
 	example|fluent/rules.ftl
 
-AllowUnusedFluentMessagesInExternalPackages: false
+AllowUnusedFluentMessagesInExternalPackages: true
