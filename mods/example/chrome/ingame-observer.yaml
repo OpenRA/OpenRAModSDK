@@ -5,20 +5,20 @@ Container@OBSERVER_WIDGETS:
 		LogicKeyListener@OBSERVER_KEY_LISTENER:
 		Container@MUTE_INDICATOR:
 			Logic: MuteIndicatorLogic
-			X: WINDOW_RIGHT - WIDTH - 260
+			X: WINDOW_WIDTH - WIDTH - 260
 			Y: 5
 			Width: 200
 			Height: 25
 			Children:
 				Image@ICON:
-					X: PARENT_RIGHT - WIDTH
+					X: PARENT_WIDTH - WIDTH
 					Y: 1
 					Width: 24
 					Height: 24
 					ImageCollection: sidebar-bits
 					ImageName: indicator-muted
 				Label@LABEL:
-					Width: PARENT_RIGHT - 30
+					Width: PARENT_WIDTH - 30
 					Height: 25
 					Align: Right
 					Text: label-mute-indicator
@@ -34,12 +34,12 @@ Container@OBSERVER_WIDGETS:
 			DisableWorldSounds: true
 		Container@GAME_TIMER_BLOCK:
 			Logic: GameTimerLogic
-			X: (WINDOW_RIGHT - WIDTH) / 2
+			X: (WINDOW_WIDTH - WIDTH) / 2
 			Width: 100
 			Height: 55
 			Children:
 				LabelWithTooltip@GAME_TIMER:
-					Width: PARENT_RIGHT
+					Width: PARENT_WIDTH
 					Height: 30
 					Align: Center
 					Font: Title
@@ -48,13 +48,13 @@ Container@OBSERVER_WIDGETS:
 					TooltipTemplate: SIMPLE_TOOLTIP
 				Label@GAME_TIMER_STATUS:
 					Y: 32
-					Width: PARENT_RIGHT
+					Width: PARENT_WIDTH
 					Height: 15
 					Align: Center
 					Font: Bold
 					Contrast: true
 		Background@RADAR_BG:
-			X: WINDOW_RIGHT - 255
+			X: WINDOW_WIDTH - 255
 			Y: 5
 			Width: 250
 			Height: 250
@@ -62,17 +62,17 @@ Container@OBSERVER_WIDGETS:
 				Radar@INGAME_RADAR:
 					X: 10
 					Y: 10
-					Width: PARENT_RIGHT - 19
-					Height: PARENT_BOTTOM - 19
+					Width: PARENT_WIDTH - 19
+					Height: PARENT_HEIGHT - 19
 					WorldInteractionController: INTERACTION_CONTROLLER
 				VideoPlayer@PLAYER:
 					X: 10
 					Y: 10
-					Width: PARENT_RIGHT - 20
-					Height: PARENT_BOTTOM - 20
+					Width: PARENT_WIDTH - 20
+					Height: PARENT_HEIGHT - 20
 					Skippable: false
 		Background@OBSERVER_CONTROL_BG:
-			X: WINDOW_RIGHT - 255
+			X: WINDOW_WIDTH - 255
 			Y: 260
 			Width: 250
 			Height: 55
@@ -95,12 +95,12 @@ Container@OBSERVER_WIDGETS:
 							Y: 5
 						Label@LABEL:
 							X: 34
-							Width: PARENT_RIGHT
+							Width: PARENT_WIDTH
 							Height: 25
 							Shadow: True
 						Label@NOFLAG_LABEL:
 							X: 5
-							Width: PARENT_RIGHT
+							Width: PARENT_WIDTH
 							Height: 25
 							Shadow: True
 				Container@REPLAY_PLAYER:
