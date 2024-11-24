@@ -5,11 +5,13 @@
 	ControlGroups:
 	Faction@Random:
 		InternalName: Random
-		Name: Random
+		Name: faction-random.name
 		RandomFactionMembers: example
+		Description: faction-random.description
 	Faction@example:
 		InternalName: example
-		Name: Example
+		Name: faction-example.name
+		Description: faction-example.description
 	LoadWidgetAtGameStart:
 	MusicPlaylist:
 	ScreenMap:
