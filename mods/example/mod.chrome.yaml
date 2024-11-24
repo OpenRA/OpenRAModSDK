@@ -107,5 +107,6 @@ FluentMessages:
 	common|fluent/chrome.ftl
 	common|fluent/hotkeys.ftl
 	common|fluent/rules.ftl
+	example|fluent/mod.ftl
 	example|fluent/chrome.ftl
 	example|fluent/rules.ftl
