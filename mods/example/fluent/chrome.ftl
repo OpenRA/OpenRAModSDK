@@ -26,9 +26,6 @@ dropdown-starting-units =
 options-starting-units =
     .unlabeled = Unlabeled
 
-options-difficulty =
-    .normal = Normal
-
 ## ingame-observer.yaml
 label-mute-indicator = Audio Muted
 button-observer-widgets-options = Options (Esc)
