@@ -1,7 +1,7 @@
 Metadata:
-	Title: Example mod
+	Title: mod-title
 	Version: {DEV_VERSION}
-	WindowTitle: Example
+	WindowTitle: mod-windowtitle
 
 FileSystem: DefaultFileSystem
 	Packages:
