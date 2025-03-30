@@ -33,17 +33,17 @@ button-replay-player-pause-tooltip = Pause
 button-replay-player-play-tooltip = Play
 
 button-replay-player-slow =
-   .tooltip = Slow speed
-   .label = 50%
+    .tooltip = Slow speed
+    .label = 50%
 
 button-replay-player-regular =
-   .tooltip = Regular speed
-   .label = 100%
+    .tooltip = Regular speed
+    .label = 100%
 
 button-replay-player-fast =
-   .tooltip = Fast speed
-   .label = 200%
+    .tooltip = Fast speed
+    .label = 200%
 
 button-replay-player-maximum =
-   .tooltip = Maximum speed
-   .label = MAX
+    .tooltip = Maximum speed
+    .label = MAX
