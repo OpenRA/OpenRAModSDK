@@ -147,18 +147,18 @@ all: engine
 ifeq ($(RUNTIME), mono)
 	@command -v $(MSBUILD) >/dev/null || (echo "OpenRA requires the '$(MSBUILD)' tool provided by Mono >= 6.12."; exit 1)
 ifneq ("$(MOD_SOLUTION_FILES)","")
-	@find . -maxdepth 1 -name '*.sln' -exec $(MSBUILD) -t:Build -restore -p:Configuration=${CONFIGURATION} -p:TargetPlatform=$(TARGETPLATFORM) -p:Mono=true \;
+	@find . -maxdepth 1 -name '*.sln' -exec $(MSBUILD) -t:Build -restore -p:Configuration=${CONFIGURATION} -p:TargetPlatform=$(TARGETPLATFORM) -p:Mono=true {} +
 endif
 else
-	@find . -maxdepth 1 -name '*.sln' -exec $(DOTNET) build -c ${CONFIGURATION} -p:TargetPlatform=$(TARGETPLATFORM) \;
+	@find . -maxdepth 1 -name '*.sln' -exec $(DOTNET) build -c ${CONFIGURATION} -p:TargetPlatform=$(TARGETPLATFORM) {} +
 endif
 
 clean: engine
 ifneq ("$(MOD_SOLUTION_FILES)","")
 ifeq ($(RUNTIME), mono)
-	@find . -maxdepth 1 -name '*.sln' -exec $(MSBUILD) -t:clean \;
+	@find . -maxdepth 1 -name '*.sln' -exec $(MSBUILD) -t:clean {} +
 else
-	@find . -maxdepth 1 -name '*.sln' -exec $(DOTNET) clean \;
+	@find . -maxdepth 1 -name '*.sln' -exec $(DOTNET) clean {} +
 endif
 endif
 	@cd $(ENGINE_DIRECTORY) && make clean
